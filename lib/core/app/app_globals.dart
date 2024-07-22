@@ -22,7 +22,7 @@ class AppGlobals {
   static void systemOverlay() {
     SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(
-        systemNavigationBarColor: AppColors.darkBlue,
+        systemNavigationBarColor: AppColors.primaryColor,
         statusBarColor: Colors.transparent,
         statusBarIconBrightness: Brightness.light,
       ),

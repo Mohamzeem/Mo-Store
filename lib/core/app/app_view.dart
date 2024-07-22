@@ -19,8 +19,7 @@ class AppView extends StatelessWidget {
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
-            primarySwatch: Colors.blue,
-            scaffoldBackgroundColor: AppColors.primaryColor,
+            scaffoldBackgroundColor: AppColors.white,
             fontFamily: AppGlobals.appFont,
           ),
           home: const OnboardingView(),
