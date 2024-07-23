@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mo_store/core/helpers/extensions.dart';
 import 'package:mo_store/core/helpers/text_fonts.dart';
 import 'package:mo_store/core/widgets/auth_email_pass_fields.dart';
 import 'package:mo_store/core/widgets/auth_two_btns.dart';
-import 'package:mo_store/core/widgets/custom_button.dart';
 import 'package:mo_store/core/widgets/custom_txt_fom_field.dart';
 
 class RegisterView extends StatelessWidget {
