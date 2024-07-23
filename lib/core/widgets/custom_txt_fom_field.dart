@@ -67,7 +67,7 @@ class CustomTextFormField extends StatelessWidget {
             filled: true,
             label: Text(
               label,
-              style: AppFonts.regular18Primary,
+              style: AppFonts.regular18LightBlue,
             ),
             border: const OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(16)),
