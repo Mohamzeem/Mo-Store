@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
 import 'package:mo_store/core/helpers/extensions.dart';
 import 'package:mo_store/core/helpers/text_fonts.dart';
-import 'package:mo_store/core/route/app_router.dart';
 import 'package:mo_store/core/route/routes.dart';
 import 'package:mo_store/core/widgets/custom_button.dart';
 

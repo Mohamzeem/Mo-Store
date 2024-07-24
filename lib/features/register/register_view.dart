@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mo_store/core/helpers/text_fonts.dart';
 import 'package:mo_store/core/widgets/auth_email_pass_fields.dart';
 import 'package:mo_store/core/widgets/auth_two_btns.dart';
+import 'package:mo_store/core/widgets/auth_waves.dart';
 import 'package:mo_store/core/widgets/custom_txt_fom_field.dart';
 
 class RegisterView extends StatelessWidget {
@@ -19,25 +20,13 @@ class RegisterView extends StatelessWidget {
     //     systemNavigationBarColor: AppColors.lightBlue);
     return Scaffold(
       //^ bottom wave
-      bottomNavigationBar: ClipPath(
-        clipper: WaveClipperTwo(reverse: true, flip: true),
-        child: Container(
-          height: 100.h,
-          color: AppColors.lightBlue,
-        ),
-      ),
+      bottomNavigationBar: AuthWaves.bottomWave(),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             //^ top wave
-            ClipPath(
-              clipper: WaveClipperTwo(),
-              child: Container(
-                height: 120.h,
-                color: AppColors.lightBlue,
-              ),
-            ),
+            AuthWaves.topWave(),
             20.verticalSpace,
             //^ create account text
             Padding(
@@ -69,13 +58,7 @@ class RegisterView extends StatelessWidget {
             ),
             10.verticalSpace,
             //^ email and password
-            AuthEmailAndPasswordFields(
-              emailValidator: (p0) {
-                return null;
-              },
-              passwordValidator: (p0) {
-                return null;
-              },
+            const AuthEmailAndPasswordFields(
               emailabel: 'Email',
               passwordLabel: 'Password',
               emailKeyBoard: TextInputType.name,
