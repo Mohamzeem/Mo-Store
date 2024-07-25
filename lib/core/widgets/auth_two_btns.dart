@@ -8,11 +8,12 @@ import 'package:mo_store/core/widgets/custom_button.dart';
 class AuthTwoButtons extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
-  const AuthTwoButtons({
-    super.key,
-    required this.text,
-    required this.onPressed,
-  });
+  final bool isLoading;
+  const AuthTwoButtons(
+      {super.key,
+      required this.text,
+      required this.onPressed,
+      this.isLoading = false});
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +25,7 @@ class AuthTwoButtons extends StatelessWidget {
           width: 400,
           height: 55,
           textStyle: AppFonts.medium24White,
+          isLoading: isLoading,
         ),
         10.verticalSpace,
         Row(

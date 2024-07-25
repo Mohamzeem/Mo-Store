@@ -1,9 +1,13 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
 import 'package:mo_store/core/helpers/extensions.dart';
+import 'package:mo_store/core/helpers/text_fonts.dart';
+import 'package:mo_store/core/route/routes.dart';
 
 class CustomDialog {
-  static Future<void> success({
+  static Future<void> show({
     required BuildContext context,
     required String text,
     bool isSuccess = true,
@@ -15,18 +19,14 @@ class CustomDialog {
       builder: (context) {
         Future.delayed(const Duration(seconds: 1), () => context.pop());
         return AlertDialog(
-          backgroundColor: isSuccess
-              ? AppColors.primaryColor.withOpacity(0.8)
-              : Colors.redAccent,
-          surfaceTintColor: isSuccess
-              ? AppColors.primaryColor.withOpacity(0.4)
-              : Colors.redAccent,
+          backgroundColor: isSuccess ? Colors.greenAccent : Colors.redAccent,
+          surfaceTintColor: isSuccess ? Colors.greenAccent : Colors.redAccent,
           title: Text(
             text,
             style: const TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w500,
-              color: AppColors.black,
+              color: AppColors.primaryColor,
             ),
             textAlign: TextAlign.center,
           ),
@@ -35,88 +35,62 @@ class CustomDialog {
     );
   }
 
-  // static Future<void> oneButtonDialog({
-  //   required BuildContext context,
-  //   required String textBody,
-  //   required String textButton,
-  //   required void Function() onPressed,
-  // }) async {
-  //   showDialog(
-  //     context: context,
-  //     barrierDismissible: true,
-  //     builder: (context) {
-  //       return AlertDialog(
-  //         backgroundColor: AppColors.kWhite,
-  //         title: SizedBox(
-  //             width: 200.w,
-  //             height: 200.h,
-  //             child: const Icon(Icons.account_circle_sharp)),
-  //         content: CustomText(
-  //           text: textBody,
-  //         ),
-  //         actions: [
-  //           CustomButton(
-  //             onPressed: onPressed,
-  //             text: textButton,
-  //             width: 320,
-  //             height: 45,
-  //             lastRadius: 10,
-  //             threeRadius: 10,
-  //           )
-  //         ],
-  //       );
-  //     },
-  //   );
-  // }
+  static void awsomeSuccess(
+    BuildContext context,
+    String? title,
+  ) {
+    AwesomeDialog(
+      customHeader: CircleAvatar(
+        backgroundColor: AppColors.lightBlue,
+        radius: 45.r,
+        child: Icon(
+          Icons.done,
+          size: 70.r,
+          color: AppColors.white,
+        ),
+      ),
+      dialogType: DialogType.success,
+      animType: AnimType.bottomSlide,
+      title: title,
+      titleTextStyle: AppFonts.regular20Primary,
+      btnOkOnPress: () {},
+      btnOkColor: AppColors.lightBlue,
+      context: context,
+      headerAnimationLoop: false,
+      autoDismiss: true,
+      autoHide: const Duration(seconds: 1),
+      transitionAnimationDuration: const Duration(milliseconds: 500),
+      onDismissCallback: (type) => context.pushNamedAndRemoveUntil(
+          Routes.controlView,
+          predicate: (route) => false),
+    ).show();
+  }
 
-  // static Future<void> twoButtonDialog({
-  //   required BuildContext context,
-  //   required String textBody,
-  //   Color? backGroundColor,
-  //   required String textButton1,
-  //   required String textButton2,
-  //   required void Function() onPressed,
-  // }) async {
-  //   showDialog(
-  //     barrierDismissible: true,
-  //     barrierColor: AppColors.mainColor.withOpacity(0.1),
-  //     context: context,
-  //     builder: (context) => AlertDialog(
-  //       elevation: 10,
-  //       surfaceTintColor: backGroundColor ?? AppColors.kWhite,
-  //       backgroundColor: backGroundColor ?? AppColors.kWhite,
-  //       title: Center(
-  //         child: CustomText(
-  //           text: textBody,
-  //           softWrap: true,
-  //           color: AppColors.mainColor,
-  //           fontSize: 22,
-  //           textAlign: TextAlign.center,
-  //         ),
-  //       ),
-  //       actions: [
-  //         Row(
-  //           mainAxisAlignment: MainAxisAlignment.spaceAround,
-  //           children: [
-  //             CustomButton(
-  //               onPressed: onPressed,
-  //               text: textButton1,
-  //               width: 80,
-  //               height: 40,
-  //               fontSize: 16,
-  //             ),
-  //             CustomButton(
-  //               onPressed: () => Get.back(),
-  //               text: textButton2,
-  //               width: 80,
-  //               height: 40,
-  //               fontSize: 16,
-  //               backgroundColor: AppColors.kBlack,
-  //             ),
-  //           ],
-  //         ),
-  //       ],
-  //     ),
-  //   );
-  // }
+  static Future<void> awsomeError(
+    BuildContext context,
+    String? title,
+  ) async {
+    AwesomeDialog(
+      customHeader: CircleAvatar(
+        backgroundColor: AppColors.redAccent,
+        radius: 45.r,
+        child: Icon(
+          Icons.close,
+          size: 70.r,
+          color: AppColors.white,
+        ),
+      ),
+      dialogType: DialogType.error,
+      animType: AnimType.bottomSlide,
+      title: title,
+      titleTextStyle: AppFonts.regular20Primary,
+      btnOkOnPress: () {},
+      btnOkColor: AppColors.redAccent,
+      context: context,
+      headerAnimationLoop: false,
+      autoDismiss: true,
+      autoHide: const Duration(seconds: 1),
+      transitionAnimationDuration: const Duration(milliseconds: 500),
+    ).show();
+  }
 }

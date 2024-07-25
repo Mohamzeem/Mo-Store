@@ -53,11 +53,11 @@ class CustomTextFormField extends StatelessWidget {
                     child: obscureText
                         ? const Icon(
                             Icons.visibility_off,
-                            color: AppColors.primaryColor,
+                            color: AppColors.lightBlue,
                           )
                         : const Icon(
                             Icons.visibility,
-                            color: AppColors.primaryColor,
+                            color: AppColors.lightBlue,
                           ),
                   )
                 : const SizedBox(),

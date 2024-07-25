@@ -19,6 +19,11 @@ extension Navigation on BuildContext {
         .pushNamedAndRemoveUntil(routeName, predicate, arguments: args);
   }
 
+  Future<dynamic> popAndPushNamed(String routeName, {Object? args}) async {
+    Prints.route('Page Closed');
+    return Navigator.of(this).popAndPushNamed(routeName);
+  }
+
   void pop() {
     Prints.route('Page Closed');
     return Navigator.of(this).pop();
