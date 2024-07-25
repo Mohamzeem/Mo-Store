@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mo_store/core/helpers/regex.dart';
+import 'package:mo_store/core/consts/app_colors.dart';
 import 'package:mo_store/core/widgets/auth_email_pass_fields.dart';
-import 'package:mo_store/core/widgets/auth_two_btns.dart';
 import 'package:mo_store/core/widgets/auth_waves.dart';
-import 'package:mo_store/core/widgets/custom_dialog.dart';
-import 'package:mo_store/features/login/logic/login/login_cubit.dart';
-import 'package:mo_store/features/login/logic/login/login_state.dart';
+import 'package:mo_store/features/login/view/widgets/login_btn_with_cubit.dart';
 import 'package:mo_store/features/login/view/widgets/login_texts.dart';
 
 class LoginView extends StatelessWidget {
@@ -15,6 +12,11 @@ class LoginView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        systemNavigationBarColor: AppColors.lightBlue,
+      ),
+    );
     return Scaffold(
       //^ bottom wave
       bottomNavigationBar: AuthWaves.bottomWave(),
@@ -39,44 +41,11 @@ class LoginView extends StatelessWidget {
               emailKeyBoard: TextInputType.name,
               passwordKeyBoard: TextInputType.visiblePassword,
             ),
-            60.verticalSpace,
+            40.verticalSpace,
             const LoginButtonWithCubit(),
           ],
         ),
       ),
-    );
-  }
-}
-
-class LoginButtonWithCubit extends StatelessWidget {
-  const LoginButtonWithCubit({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    final cubit = BlocProvider.of<LoginCubit>(context);
-
-    return BlocConsumer<LoginCubit, LoginState>(
-      listener: (context, state) {
-        state.whenOrNull(
-          success: (lgoinResponse) {
-            CustomDialog.show(context: context, text: 'Login Success');
-          },
-          failure: (message) {
-            CustomDialog.show(
-                context: context, text: message, isSuccess: false);
-          },
-        );
-      },
-      builder: (context, state) {
-        return AuthTwoButtons(
-          text: 'Login',
-          onPressed: () {
-            cubit.loginFunction(context);
-          },
-        );
-      },
     );
   }
 }

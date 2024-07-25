@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mo_store/core/app/app_globals.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
 import 'package:mo_store/core/route/app_router.dart';
+import 'package:mo_store/core/route/routes.dart';
 import 'package:mo_store/features/onboarding/onboarding_view.dart';
 
 class AppView extends StatelessWidget {
@@ -23,9 +24,9 @@ class AppView extends StatelessWidget {
             fontFamily: AppGlobals.appFont,
           ),
           home: const OnboardingView(),
-          // initialRoute: AppGlobals.isUserLoggedIn
-          //     ? Routes.homeView
-          //     : Routes.onboardingView,
+          initialRoute: AppGlobals.isUserLoggedIn
+              ? Routes.loginView
+              : Routes.onboardingView,
           onGenerateRoute: AppRouter().generateRoute,
         ),
       ),

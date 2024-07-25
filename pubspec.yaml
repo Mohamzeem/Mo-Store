@@ -39,9 +39,11 @@ dependencies:
   flutter_secure_storage: ^9.2.2
   ansicolor: ^2.0.2
   shimmer: ^3.0.0
+  awesome_dialog: ^3.2.1
   flutter_custom_clippers: ^2.1.0
   flutter_svg: ^2.0.10+1
   get_it: ^7.7.0
+  flutter_animate: ^4.5.0
 
   # flutter pub run build_runner build --delete-conflicting-outputs
   build_runner: ^2.4.9

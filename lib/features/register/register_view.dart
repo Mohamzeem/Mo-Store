@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -14,10 +14,11 @@ class RegisterView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // SystemUiOverlayStyle systemUiOverlayStyle = const SystemUiOverlayStyle(
-    //     statusBarColor: Colors.transparent,
-    //     statusBarIconBrightness: Brightness.dark,
-    //     systemNavigationBarColor: AppColors.lightBlue);
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        systemNavigationBarColor: AppColors.lightBlue,
+      ),
+    );
     return Scaffold(
       //^ bottom wave
       bottomNavigationBar: AuthWaves.bottomWave(),
@@ -64,7 +65,7 @@ class RegisterView extends StatelessWidget {
               emailKeyBoard: TextInputType.name,
               passwordKeyBoard: TextInputType.visiblePassword,
             ),
-            60.verticalSpace,
+            50.verticalSpace,
             AuthTwoButtons(text: 'Create Account', onPressed: () {})
           ],
         ),

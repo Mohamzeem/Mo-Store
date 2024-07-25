@@ -1,6 +1,10 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
 import 'package:mo_store/core/helpers/extensions.dart';
+import 'package:mo_store/core/helpers/text_fonts.dart';
+import 'package:mo_store/core/route/routes.dart';
 
 class CustomDialog {
   static Future<void> show({
@@ -29,5 +33,64 @@ class CustomDialog {
         );
       },
     );
+  }
+
+  static void awsomeSuccess(
+    BuildContext context,
+    String? title,
+  ) {
+    AwesomeDialog(
+      customHeader: CircleAvatar(
+        backgroundColor: AppColors.lightBlue,
+        radius: 45.r,
+        child: Icon(
+          Icons.done,
+          size: 70.r,
+          color: AppColors.white,
+        ),
+      ),
+      dialogType: DialogType.success,
+      animType: AnimType.bottomSlide,
+      title: title,
+      titleTextStyle: AppFonts.regular20Primary,
+      btnOkOnPress: () {},
+      btnOkColor: AppColors.lightBlue,
+      context: context,
+      headerAnimationLoop: false,
+      autoDismiss: true,
+      autoHide: const Duration(seconds: 1),
+      transitionAnimationDuration: const Duration(milliseconds: 500),
+      onDismissCallback: (type) => context.pushNamedAndRemoveUntil(
+          Routes.controlView,
+          predicate: (route) => false),
+    ).show();
+  }
+
+  static Future<void> awsomeError(
+    BuildContext context,
+    String? title,
+  ) async {
+    AwesomeDialog(
+      customHeader: CircleAvatar(
+        backgroundColor: AppColors.redAccent,
+        radius: 45.r,
+        child: Icon(
+          Icons.close,
+          size: 70.r,
+          color: AppColors.white,
+        ),
+      ),
+      dialogType: DialogType.error,
+      animType: AnimType.bottomSlide,
+      title: title,
+      titleTextStyle: AppFonts.regular20Primary,
+      btnOkOnPress: () {},
+      btnOkColor: AppColors.redAccent,
+      context: context,
+      headerAnimationLoop: false,
+      autoDismiss: true,
+      autoHide: const Duration(seconds: 1),
+      transitionAnimationDuration: const Duration(milliseconds: 500),
+    ).show();
   }
 }
