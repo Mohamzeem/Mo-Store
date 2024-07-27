@@ -92,15 +92,19 @@ class CustomDialog {
 
   static Future<void> awsomeTwoButtons(
     BuildContext context,
-    String? title,
-    VoidCallback? onPressOk,
-  ) async {
+    String? title, {
+    IconData? logIcon = Icons.logout,
+    String? okBtnTitle = 'Ok',
+    String? cancelBtnTitle = 'Cancel',
+    required VoidCallback? onPressCancel,
+    required VoidCallback? onPressOk,
+  }) async {
     AwesomeDialog(
       customHeader: CircleAvatar(
         backgroundColor: AppColors.lightBlue,
         radius: 45.r,
         child: Icon(
-          Icons.logout,
+          logIcon,
           size: 70.r,
           color: AppColors.white,
         ),
@@ -109,13 +113,15 @@ class CustomDialog {
       animType: AnimType.bottomSlide,
       title: title,
       titleTextStyle: AppFonts.regular20Primary,
+      btnOkText: okBtnTitle,
       btnOkOnPress: onPressOk,
       btnOkColor: AppColors.lightBlue,
-      btnCancelOnPress: () => context.pop(),
+      btnCancelText: cancelBtnTitle,
+      btnCancelOnPress: onPressCancel,
       btnCancelColor: AppColors.primaryColor,
       context: context,
       headerAnimationLoop: false,
-      autoDismiss: false,
+      autoDismiss: true,
       onDismissCallback: (type) {},
       // autoHide: const Duration(seconds: 1),
       transitionAnimationDuration: const Duration(milliseconds: 500),

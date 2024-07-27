@@ -10,7 +10,7 @@ import 'package:mo_store/features/login/logic/login/login_cubit.dart';
 import 'package:mo_store/features/login/view/login_view.dart';
 import 'package:mo_store/features/onboarding/onboarding_view.dart';
 import 'package:mo_store/features/profile/view/profile_view.dart';
-import 'package:mo_store/features/register/register_view.dart';
+import 'package:mo_store/features/register/view/register_view.dart';
 
 class AppRouter {
   Route generateRoute(RouteSettings settings) {

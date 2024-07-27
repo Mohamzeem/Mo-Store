@@ -3,10 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mo_store/core/helpers/text_fonts.dart';
 import 'package:mo_store/core/widgets/auth_email_pass_fields.dart';
 import 'package:mo_store/core/widgets/auth_two_btns.dart';
 import 'package:mo_store/core/widgets/custom_txt_fom_field.dart';
+import 'package:mo_store/features/register/view/widgets/create_account_text.dart';
 
 class RegisterView extends StatelessWidget {
   const RegisterView({super.key});
@@ -24,23 +24,7 @@ class RegisterView extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             //^ create account text
-            Container(
-              height: 250.h,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: AppColors.lightBlue,
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(50.r),
-                  bottomRight: Radius.circular(50.r),
-                ),
-              ),
-              child: Center(
-                child: Text(
-                  'Create\nAccount',
-                  style: AppFonts.bold60Primary,
-                ),
-              ),
-            ),
+            const CreateAccountText(),
             30.verticalSpace,
             //^ upload photo
             SvgPicture.asset(

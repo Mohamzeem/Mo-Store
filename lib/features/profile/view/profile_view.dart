@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:mo_store/core/helpers/extensions.dart';
+import 'package:mo_store/core/helpers/image_picker.dart';
 import 'package:mo_store/core/helpers/shared_prefs.dart';
 import 'package:mo_store/core/route/routes.dart';
 import 'package:mo_store/core/widgets/custom_app_bar.dart';
@@ -23,7 +25,23 @@ class ProfileView extends StatelessWidget {
               const CustomAppBar(title: 'Settings', photoUrl: ''),
               15.verticalSpace,
               const ProfileSubTitle(title: 'Personal', icon: Icons.person),
-              const ProfileItem(title: 'Profile', onTap: null),
+              ProfileItem(
+                  title: 'Profile',
+                  onTap: () => CustomDialog.awsomeTwoButtons(
+                        context,
+                        'Pick Image From?',
+                        logIcon: Icons.image,
+                        okBtnTitle: 'Gallary',
+                        cancelBtnTitle: 'Camera',
+                        onPressCancel: () {
+                          AppImagePicker().pickImage(
+                              source: ImageSource.camera, context: context);
+                        },
+                        onPressOk: () {
+                          AppImagePicker().pickImage(
+                              source: ImageSource.gallery, context: context);
+                        },
+                      )),
               const ProfileItem(title: 'Shipping Address', onTap: null),
               const ProfileItem(title: 'Payment Methods', onTap: null),
               20.verticalSpace,
@@ -36,22 +54,20 @@ class ProfileView extends StatelessWidget {
               const ProfileItem(title: 'Language', onTap: null),
               ProfileItem(
                 title: 'Logout',
-                onTap: () {
-                  CustomDialog.awsomeTwoButtons(
-                    context,
-                    'Logout',
-                    () {
-                      SharedPrefHelper.clearAllSecuredData();
-
-                      CustomDialog.awsomeSuccess(
-                          context,
-                          'Logged out successfully',
-                          (onDismiss) => context.pushNamedAndRemoveUntil(
-                              Routes.loginView,
-                              predicate: (route) => false));
-                    },
-                  );
-                },
+                onTap: () => CustomDialog.awsomeTwoButtons(
+                  context,
+                  'Logout',
+                  onPressCancel: () {},
+                  onPressOk: () {
+                    SharedPrefHelper.clearAllSecuredData();
+                    CustomDialog.awsomeSuccess(
+                        context,
+                        'Logged out successfully',
+                        (onDismiss) => context.pushNamedAndRemoveUntil(
+                            Routes.loginView,
+                            predicate: (route) => false));
+                  },
+                ),
               ),
               const ProfileItem(title: 'Delete Account', onTap: null),
             ],

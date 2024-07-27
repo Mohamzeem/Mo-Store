@@ -14,7 +14,6 @@ class LoginCubit extends Cubit<LoginState> {
 
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
-  final key = GlobalKey<FormState>();
 
   void disposeControllers() {
     emailController.dispose();
