@@ -1,3 +1,3 @@
 # Login View
-![Screenshot_1721911401](https://github.com/user-attachments/assets/b5c42a1f-8827-48bb-8dd7-c9e5606956e9)
+![Screenshot_1721911401](https://github.com/user-attachments/assets/a4da2f1c-fe8a-49fe-87ac-d24289d9df20)
 
