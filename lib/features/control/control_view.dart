@@ -5,7 +5,7 @@ import 'package:mo_store/features/cart/cart_view.dart';
 import 'package:mo_store/features/categories/categories_view.dart';
 import 'package:mo_store/features/favorites/favorites_view.dart';
 import 'package:mo_store/features/home/home_view.dart';
-import 'package:mo_store/features/profile/profile_view.dart';
+import 'package:mo_store/features/profile/view/profile_view.dart';
 
 class ControlView extends StatefulWidget {
   const ControlView({super.key});
@@ -80,7 +80,7 @@ class _ControlViewState extends State<ControlView> {
         showUnselectedLabels: false,
         selectedIconTheme: IconThemeData(size: 40.r),
       ),
-      body: getSelectedWidget(),
+      body: SafeArea(child: getSelectedWidget()),
     );
   }
 }

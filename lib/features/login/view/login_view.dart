@@ -14,26 +14,23 @@ class LoginView extends StatelessWidget {
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(
-        systemNavigationBarColor: AppColors.lightBlue,
+        statusBarColor: AppColors.lightBlue,
       ),
     );
     return Scaffold(
-      //^ bottom wave
-      bottomNavigationBar: AuthWaves.bottomWave(),
+      // //^ bottom wave
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            //^ top wave
-            AuthWaves.topWave(),
             20.verticalSpace,
             //^ login text
             const LoginTexts(),
             //^ image
             Center(
-              child: Image.asset('assets/images/pngs/shopping.png', scale: 2),
+              child: Image.asset('assets/images/pngs/shopping.png', scale: 1.9),
             ),
-            20.verticalSpace,
+            25.verticalSpace,
             //^ email and password
             const AuthEmailAndPasswordFields(
               emailabel: 'Email',

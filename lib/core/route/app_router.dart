@@ -5,11 +5,11 @@ import 'package:mo_store/core/route/routes.dart';
 import 'package:mo_store/features/cart/cart_view.dart';
 import 'package:mo_store/features/categories/categories_view.dart';
 import 'package:mo_store/features/favorites/favorites_view.dart';
-import 'package:mo_store/features/control/view/control_view.dart';
+import 'package:mo_store/features/control/control_view.dart';
 import 'package:mo_store/features/login/logic/login/login_cubit.dart';
 import 'package:mo_store/features/login/view/login_view.dart';
 import 'package:mo_store/features/onboarding/onboarding_view.dart';
-import 'package:mo_store/features/profile/profile_view.dart';
+import 'package:mo_store/features/profile/view/profile_view.dart';
 import 'package:mo_store/features/register/register_view.dart';
 
 class AppRouter {

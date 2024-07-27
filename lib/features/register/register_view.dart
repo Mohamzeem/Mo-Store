@@ -16,39 +16,41 @@ class RegisterView extends StatelessWidget {
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(
-        systemNavigationBarColor: AppColors.lightBlue,
+        statusBarColor: AppColors.lightBlue,
       ),
     );
     return Scaffold(
-      //^ bottom wave
-      bottomNavigationBar: AuthWaves.bottomWave(),
       body: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            //^ top wave
-            AuthWaves.topWave(),
-            20.verticalSpace,
             //^ create account text
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.w),
-              child: Text(
-                'Create\nAccount',
-                style: AppFonts.bold60Primary,
+            Container(
+              height: 250.h,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: AppColors.lightBlue,
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(50.r),
+                  bottomRight: Radius.circular(50.r),
+                ),
+              ),
+              child: Center(
+                child: Text(
+                  'Create\nAccount',
+                  style: AppFonts.bold60Primary,
+                ),
               ),
             ),
-            20.verticalSpace,
+            30.verticalSpace,
             //^ upload photo
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.w),
-              child: SvgPicture.asset(
-                'assets/images/svgs/Upload Photo.svg',
-                colorFilter: const ColorFilter.mode(
-                    AppColors.lightBlue, BlendMode.srcIn),
-                height: 120.h,
-              ),
+            SvgPicture.asset(
+              'assets/images/svgs/Upload Photo.svg',
+              colorFilter:
+                  const ColorFilter.mode(AppColors.lightBlue, BlendMode.srcIn),
+              height: 150.h,
             ),
-            20.verticalSpace,
+            30.verticalSpace,
             //^ user name
             CustomTextFormField(
               validator: (p0) {

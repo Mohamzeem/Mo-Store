@@ -11,36 +11,35 @@ class LoginTexts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w),
-          child: Text(
-            'Login',
-            style: AppFonts.bold60Primary,
-          ),
+    return Container(
+      height: 250.h,
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: AppColors.lightBlue,
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(50.r),
+          bottomRight: Radius.circular(50.r),
         ),
-        20.verticalSpace,
-        //^ text good to see you
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w),
-          child: Row(
-            children: [
-              Text(
-                'Good to see you back!',
-                style: AppFonts.regular20Primary,
-              ),
-              5.horizontalSpace,
-              SvgPicture.asset(
-                'assets/images/svgs/heart.svg',
-                colorFilter: const ColorFilter.mode(
-                    AppColors.primaryColor, BlendMode.srcIn),
-              ),
-            ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            child: Text(
+              'Login',
+              style: AppFonts.bold60Primary,
+            ),
           ),
-        ),
-      ],
+          20.verticalSpace,
+          //^ text good to see you
+          Text(
+            'Good to see you back ❤',
+            style: AppFonts.regular20Primary,
+          ),
+        ],
+      ),
     );
   }
 }
