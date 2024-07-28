@@ -6,7 +6,6 @@ import 'package:mo_store/core/helpers/text_fonts.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final TextEditingController? controller;
-  final Function(String?) validator;
   final String label;
   final VoidCallback? suffixIconFunction;
   final bool suffixIconShow;
@@ -17,7 +16,6 @@ class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
     super.key,
     this.controller,
-    required this.validator,
     required this.label,
     this.suffixIconFunction,
     this.suffixIconShow = false,
@@ -35,7 +33,6 @@ class CustomTextFormField extends StatelessWidget {
         height: 55.h,
         child: TextFormField(
           controller: controller,
-          validator: (value) => validator(value),
           keyboardType: keyBoard,
           inputFormatters: [LengthLimitingTextInputFormatter(maxLength)],
           cursorColor: AppColors.primaryColor,

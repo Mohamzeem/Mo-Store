@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
 import 'package:mo_store/core/helpers/extensions.dart';
 import 'package:mo_store/core/helpers/text_fonts.dart';
-import 'package:mo_store/core/route/routes.dart';
 
 class CustomDialog {
   static Future<void> show({
@@ -35,10 +34,8 @@ class CustomDialog {
     );
   }
 
-  static void awsomeSuccess(
-    BuildContext context,
-    String? title,
-  ) {
+  static void awsomeSuccess(BuildContext context, String? title,
+      void Function(DismissType) onDismissCallback) {
     AwesomeDialog(
       customHeader: CircleAvatar(
         backgroundColor: AppColors.lightBlue,
@@ -60,9 +57,7 @@ class CustomDialog {
       autoDismiss: true,
       autoHide: const Duration(seconds: 1),
       transitionAnimationDuration: const Duration(milliseconds: 500),
-      onDismissCallback: (type) => context.pushNamedAndRemoveUntil(
-          Routes.controlView,
-          predicate: (route) => false),
+      onDismissCallback: onDismissCallback,
     ).show();
   }
 
@@ -88,8 +83,47 @@ class CustomDialog {
       btnOkColor: AppColors.redAccent,
       context: context,
       headerAnimationLoop: false,
+      onDismissCallback: (type) {},
       autoDismiss: true,
       autoHide: const Duration(seconds: 1),
+      transitionAnimationDuration: const Duration(milliseconds: 500),
+    ).show();
+  }
+
+  static Future<void> awsomeTwoButtons(
+    BuildContext context,
+    String? title, {
+    IconData? logIcon = Icons.logout,
+    String? okBtnTitle = 'Ok',
+    String? cancelBtnTitle = 'Cancel',
+    required VoidCallback? onPressCancel,
+    required VoidCallback? onPressOk,
+  }) async {
+    AwesomeDialog(
+      customHeader: CircleAvatar(
+        backgroundColor: AppColors.lightBlue,
+        radius: 45.r,
+        child: Icon(
+          logIcon,
+          size: 70.r,
+          color: AppColors.white,
+        ),
+      ),
+      dialogType: DialogType.question,
+      animType: AnimType.bottomSlide,
+      title: title,
+      titleTextStyle: AppFonts.regular20Primary,
+      btnOkText: okBtnTitle,
+      btnOkOnPress: onPressOk,
+      btnOkColor: AppColors.lightBlue,
+      btnCancelText: cancelBtnTitle,
+      btnCancelOnPress: onPressCancel,
+      btnCancelColor: AppColors.primaryColor,
+      context: context,
+      headerAnimationLoop: false,
+      autoDismiss: true,
+      onDismissCallback: (type) {},
+      // autoHide: const Duration(seconds: 1),
       transitionAnimationDuration: const Duration(milliseconds: 500),
     ).show();
   }

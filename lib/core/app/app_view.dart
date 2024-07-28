@@ -25,7 +25,7 @@ class AppView extends StatelessWidget {
           ),
           home: const OnboardingView(),
           initialRoute: AppGlobals.isUserLoggedIn
-              ? Routes.loginView
+              ? Routes.controlView
               : Routes.onboardingView,
           onGenerateRoute: AppRouter().generateRoute,
         ),

@@ -18,6 +18,19 @@ class AppFonts {
     color: AppColors.primaryColor,
     height: 1,
   );
+  static TextStyle medium30Primary = TextStyle(
+    fontSize: 22.sp,
+    fontWeight: FontWeight.w700,
+    fontFamily: AppGlobals.appFont,
+    color: AppColors.primaryColor,
+    height: 1,
+  );
+  static TextStyle appBarTitle = TextStyle(
+    fontSize: 30.sp,
+    fontWeight: FontWeight.w700,
+    fontFamily: AppGlobals.appFont,
+    color: AppColors.primaryColor,
+  );
   static TextStyle regular18LightBlue = TextStyle(
     fontSize: 18.sp,
     fontWeight: FontWeight.w400,
