@@ -1,4 +1,4 @@
 # Login View
-![Screenshot_1722075617](https://github.com/user-attachments/assets/bcecdcb8-76ca-4656-a95f-8031e21777ea)
+![Screenshot_1722075635](https://github.com/user-attachments/assets/804c5ea6-1e79-407c-8c60-5f81529066c7)
 
 
