@@ -11,7 +11,7 @@ class AppImagePicker {
   factory AppImagePicker() => _instance;
 
   final ImagePicker _imagePicker = ImagePicker();
-  Future pickImage(
+  Future<XFile?> pickImage(
       {required ImageSource source, required BuildContext context}) async {
     try {
       final image = await _imagePicker.pickImage(
@@ -25,7 +25,7 @@ class AppImagePicker {
         return XFile(image.path);
       }
       return null;
-    } on Exception catch (e) {
+    } catch (e) {
       final permissionStatus = await Permission.photos.status;
       if (permissionStatus.isDenied) {
         await _permissions(context);
@@ -33,6 +33,7 @@ class AppImagePicker {
         CustomDialog.awsomeError(context, e.toString());
       }
     }
+    return null;
   }
 
   static Future<void> _permissions(BuildContext context) async {

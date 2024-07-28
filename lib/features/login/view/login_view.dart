@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
-import 'package:mo_store/core/widgets/auth_email_pass_fields.dart';
+import 'package:mo_store/features/login/view/widgets/login_fields.dart';
 import 'package:mo_store/features/login/view/widgets/login_btn_with_cubit.dart';
 import 'package:mo_store/features/login/view/widgets/login_texts.dart';
 
@@ -31,13 +32,9 @@ class LoginView extends StatelessWidget {
             ),
             25.verticalSpace,
             //^ email and password
-            const AuthEmailAndPasswordFields(
-              emailabel: 'Email',
-              passwordLabel: 'Password',
-              emailKeyBoard: TextInputType.name,
-              passwordKeyBoard: TextInputType.visiblePassword,
-            ),
+            const LoginFields(),
             40.verticalSpace,
+            //^ login button
             const LoginButtonWithCubit(),
           ],
         ),

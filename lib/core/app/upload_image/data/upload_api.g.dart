@@ -34,7 +34,7 @@ class _UploadImageApi implements UploadImageApi {
     )
             .compose(
               _dio.options,
-              'upload',
+              'files/upload',
               queryParameters: queryParameters,
               data: _data,
             )

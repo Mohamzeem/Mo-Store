@@ -1,31 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mo_store/core/helpers/regex.dart';
-import 'package:mo_store/core/widgets/custom_dialog.dart';
 import 'package:mo_store/core/widgets/custom_txt_fom_field.dart';
 import 'package:mo_store/features/login/logic/login/login_cubit.dart';
 
-class AuthEmailAndPasswordFields extends StatefulWidget {
-  final String emailabel;
-  final String passwordLabel;
-  final TextInputType emailKeyBoard;
-  final TextInputType passwordKeyBoard;
-  const AuthEmailAndPasswordFields({
+class LoginFields extends StatefulWidget {
+  const LoginFields({
     super.key,
-    required this.emailabel,
-    required this.passwordLabel,
-    required this.emailKeyBoard,
-    required this.passwordKeyBoard,
   });
 
   @override
-  State<AuthEmailAndPasswordFields> createState() =>
-      _AuthEmailAndPasswordFieldsState();
+  State<LoginFields> createState() => _LoginFieldsState();
 }
 
-class _AuthEmailAndPasswordFieldsState
-    extends State<AuthEmailAndPasswordFields> {
+class _LoginFieldsState extends State<LoginFields> {
   late LoginCubit _cubit;
   bool isObscure = true;
   @override
@@ -48,14 +36,6 @@ class _AuthEmailAndPasswordFieldsState
           //^ email
           CustomTextFormField(
             controller: _cubit.emailController,
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return CustomDialog.show(
-                    context: context, text: 'Email Required', isSuccess: false);
-              } else if (!_cubit.emailController.text.contains('@')) {
-                return 'Invalid Email';
-              }
-            },
             label: 'Email',
             keyBoard: TextInputType.name,
           ),
@@ -63,13 +43,6 @@ class _AuthEmailAndPasswordFieldsState
           //^ password
           CustomTextFormField(
             controller: _cubit.passwordController,
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Password Required';
-              } else if (!AppRegex.isPasswordValid(value)) {
-                return 'Wrong Password';
-              }
-            },
             label: 'Password',
             obscureText: isObscure,
             keyBoard: TextInputType.visiblePassword,

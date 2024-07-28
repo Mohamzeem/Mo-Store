@@ -1,11 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
 import 'package:mo_store/core/consts/pref_keys.dart';
 import 'package:mo_store/core/helpers/extensions.dart';
 import 'package:mo_store/core/helpers/shared_prefs.dart';
-import 'package:permission_handler/permission_handler.dart';
 
 class AppGlobals {
   static bool isUserLoggedIn = false;

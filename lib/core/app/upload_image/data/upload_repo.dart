@@ -10,9 +10,14 @@ class UploadImageRepo {
 
   Future<ApiResult<UploadImageResponseBody>> uploadImage(
       {required XFile image}) async {
-    final data = FormData.fromMap({
-      'files': [await MultipartFile.fromFile(image.path, filename: image.name)],
-    });
+    // final data = FormData.fromMap({
+    //   'files': [await MultipartFile.fromFile(image.path, filename: image.name)],
+    // });
+    final data = FormData();
+
+    data.files.add(
+      MapEntry('file', await MultipartFile.fromFile(image.path)),
+    );
     try {
       final result = await uploadImageApi.uploadImage(data);
       return ApiResult.success(result);

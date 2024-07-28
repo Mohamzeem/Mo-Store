@@ -25,23 +25,7 @@ class ProfileView extends StatelessWidget {
               const CustomAppBar(title: 'Settings', photoUrl: ''),
               15.verticalSpace,
               const ProfileSubTitle(title: 'Personal', icon: Icons.person),
-              ProfileItem(
-                  title: 'Profile',
-                  onTap: () => CustomDialog.awsomeTwoButtons(
-                        context,
-                        'Pick Image From?',
-                        logIcon: Icons.image,
-                        okBtnTitle: 'Gallary',
-                        cancelBtnTitle: 'Camera',
-                        onPressCancel: () {
-                          AppImagePicker().pickImage(
-                              source: ImageSource.camera, context: context);
-                        },
-                        onPressOk: () {
-                          AppImagePicker().pickImage(
-                              source: ImageSource.gallery, context: context);
-                        },
-                      )),
+              ProfileItem(title: 'Profile', onTap: () {}),
               const ProfileItem(title: 'Shipping Address', onTap: null),
               const ProfileItem(title: 'Payment Methods', onTap: null),
               20.verticalSpace,
@@ -64,7 +48,7 @@ class ProfileView extends StatelessWidget {
                         context,
                         'Logged out successfully',
                         (onDismiss) => context.pushNamedAndRemoveUntil(
-                            Routes.loginView,
+                            Routes.onboardingView,
                             predicate: (route) => false));
                   },
                 ),

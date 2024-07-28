@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mo_store/core/app/app_injection.dart';
+import 'package:mo_store/core/app/upload_image/logic/upload_image/upload_image_cubit.dart';
 import 'package:mo_store/core/route/routes.dart';
 import 'package:mo_store/features/cart/cart_view.dart';
 import 'package:mo_store/features/categories/categories_view.dart';
@@ -10,6 +11,7 @@ import 'package:mo_store/features/login/logic/login/login_cubit.dart';
 import 'package:mo_store/features/login/view/login_view.dart';
 import 'package:mo_store/features/onboarding/onboarding_view.dart';
 import 'package:mo_store/features/profile/view/profile_view.dart';
+import 'package:mo_store/features/register/logic/register/register_cubit.dart';
 import 'package:mo_store/features/register/view/register_view.dart';
 
 class AppRouter {
@@ -30,8 +32,11 @@ class AppRouter {
         );
       case Routes.registerView:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => di<LoginCubit>(),
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider(create: (context) => di<RegisterCubit>()),
+              BlocProvider(create: (context) => di<UploadImageCubit>()),
+            ],
             child: const RegisterView(),
           ),
         );

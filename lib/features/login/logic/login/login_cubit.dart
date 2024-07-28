@@ -20,7 +20,7 @@ class LoginCubit extends Cubit<LoginState> {
     passwordController.dispose();
   }
 
-  void login(String email, String password) async {
+  void login() async {
     emit(const LoginState.loading());
     final result = await loginRepo.login(LoginRequestModel(
         email: emailController.text.trim(),
@@ -47,10 +47,7 @@ class LoginCubit extends Cubit<LoginState> {
       return CustomDialog.show(
           context: context, text: 'Password Required', isSuccess: false);
     } else {
-      login(
-        emailController.text.trim(),
-        passwordController.text.trim(),
-      );
+      login();
     }
   }
 }
