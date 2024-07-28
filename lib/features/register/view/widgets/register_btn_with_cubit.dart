@@ -39,7 +39,10 @@ class RegisterButtonWithCubit extends StatelessWidget {
   _register(BuildContext context) async {
     final cubit = BlocProvider.of<RegisterCubit>(context);
     final uploadImg = BlocProvider.of<UploadImageCubit>(context).imageUrl;
-
-    cubit.registerFunction(uploadImg, context);
+    if (!uploadImg.isNullOrEmpty()) {
+      cubit.registerFunction(uploadImg, context);
+    } else {
+      CustomDialog.awsomeError(context, 'Please Upload Image');
+    }
   }
 }

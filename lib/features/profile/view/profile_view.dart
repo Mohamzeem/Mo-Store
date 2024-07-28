@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:mo_store/core/helpers/extensions.dart';
-import 'package:mo_store/core/helpers/image_picker.dart';
 import 'package:mo_store/core/helpers/shared_prefs.dart';
 import 'package:mo_store/core/route/routes.dart';
 import 'package:mo_store/core/widgets/custom_app_bar.dart';
