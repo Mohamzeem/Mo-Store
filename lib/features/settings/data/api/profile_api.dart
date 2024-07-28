@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:mo_store/core/network/end_points.dart';
-import 'package:mo_store/features/profile/data/data/models/profile_model.dart';
+import 'package:mo_store/features/settings/data/models/profile_model.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'profile_api.g.dart';

@@ -3,10 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
 import 'package:mo_store/core/helpers/text_fonts.dart';
 
-class ProfileItem extends StatelessWidget {
+class SettingsItem extends StatelessWidget {
   final VoidCallback? onTap;
   final String title;
-  const ProfileItem({super.key, this.onTap, required this.title});
+  const SettingsItem({super.key, this.onTap, required this.title});
 
   @override
   Widget build(BuildContext context) {

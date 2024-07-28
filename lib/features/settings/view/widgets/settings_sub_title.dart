@@ -3,10 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
 import 'package:mo_store/core/helpers/text_fonts.dart';
 
-class ProfileSubTitle extends StatelessWidget {
+class SettingsSubTitle extends StatelessWidget {
   final String title;
   final IconData icon;
-  const ProfileSubTitle({
+  const SettingsSubTitle({
     super.key,
     required this.title,
     required this.icon,

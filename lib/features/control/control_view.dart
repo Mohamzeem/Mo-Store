@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
 import 'package:mo_store/features/cart/cart_view.dart';
 import 'package:mo_store/features/categories/categories_view.dart';
 import 'package:mo_store/features/favorites/favorites_view.dart';
 import 'package:mo_store/features/home/home_view.dart';
-import 'package:mo_store/features/profile/view/profile_view.dart';
+import 'package:mo_store/features/settings/logic/profile/profile_cubit.dart';
+import 'package:mo_store/features/settings/view/profile_view.dart';
 
 class ControlView extends StatefulWidget {
   const ControlView({super.key});
@@ -16,6 +18,7 @@ class ControlView extends StatefulWidget {
 
 class _ControlViewState extends State<ControlView> {
   int index = 2;
+  late ProfileCubit _cubit;
 
   List<BottomNavigationBarItem> items = [
     const BottomNavigationBarItem(
@@ -35,7 +38,7 @@ class _ControlViewState extends State<ControlView> {
       label: 'Cart',
     ),
     const BottomNavigationBarItem(
-      icon: Icon(Icons.person_2_outlined),
+      icon: Icon(Icons.settings_outlined),
       label: 'Profile',
     ),
   ];
@@ -55,13 +58,20 @@ class _ControlViewState extends State<ControlView> {
         widget = const CartView();
         break;
       case 4:
-        widget = const ProfileView();
+        widget = const SettingsView();
         break;
       default:
         widget = const HomeView();
         break;
     }
     return widget;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _cubit = BlocProvider.of<ProfileCubit>(context);
+    _cubit.getProfile();
   }
 
   @override

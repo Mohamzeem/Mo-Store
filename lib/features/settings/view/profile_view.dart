@@ -5,11 +5,11 @@ import 'package:mo_store/core/helpers/shared_prefs.dart';
 import 'package:mo_store/core/route/routes.dart';
 import 'package:mo_store/core/widgets/custom_app_bar.dart';
 import 'package:mo_store/core/widgets/custom_dialog.dart';
-import 'package:mo_store/features/profile/view/widgets/profile_item.dart';
-import 'package:mo_store/features/profile/view/widgets/profile_sub_title.dart';
+import 'package:mo_store/features/settings/view/widgets/settings_item.dart';
+import 'package:mo_store/features/settings/view/widgets/settings_sub_title.dart';
 
-class ProfileView extends StatelessWidget {
-  const ProfileView({super.key});
+class SettingsView extends StatelessWidget {
+  const SettingsView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,19 +22,19 @@ class ProfileView extends StatelessWidget {
             children: [
               const CustomAppBar(title: 'Settings', photoUrl: ''),
               15.verticalSpace,
-              const ProfileSubTitle(title: 'Personal', icon: Icons.person),
-              ProfileItem(title: 'Profile', onTap: () {}),
-              const ProfileItem(title: 'Shipping Address', onTap: null),
-              const ProfileItem(title: 'Payment Methods', onTap: null),
+              const SettingsSubTitle(title: 'Personal', icon: Icons.person),
+              SettingsItem(title: 'Profile', onTap: () {}),
+              const SettingsItem(title: 'Shipping Address', onTap: null),
+              const SettingsItem(title: 'Payment Methods', onTap: null),
               20.verticalSpace,
-              const ProfileSubTitle(
+              const SettingsSubTitle(
                   title: 'Shop', icon: Icons.shopping_cart_sharp),
-              const ProfileItem(title: 'Country', onTap: null),
-              const ProfileItem(title: 'Currency', onTap: null),
+              const SettingsItem(title: 'Country', onTap: null),
+              const SettingsItem(title: 'Currency', onTap: null),
               20.verticalSpace,
-              const ProfileSubTitle(title: 'Account', icon: Icons.settings),
-              const ProfileItem(title: 'Language', onTap: null),
-              ProfileItem(
+              const SettingsSubTitle(title: 'Account', icon: Icons.settings),
+              const SettingsItem(title: 'Language', onTap: null),
+              SettingsItem(
                 title: 'Logout',
                 onTap: () => CustomDialog.awsomeTwoButtons(
                   context,
@@ -51,7 +51,7 @@ class ProfileView extends StatelessWidget {
                   },
                 ),
               ),
-              const ProfileItem(title: 'Delete Account', onTap: null),
+              const SettingsItem(title: 'Delete Account', onTap: null),
             ],
           ),
         ),

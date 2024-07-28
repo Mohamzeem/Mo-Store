@@ -20,24 +20,24 @@ mixin _$ProfileState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ProfileModel profileModel) failure,
-    required TResult Function() success,
+    required TResult Function(String message) failure,
+    required TResult Function(ProfileModel profileModel) success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ProfileModel profileModel)? failure,
-    TResult? Function()? success,
+    TResult? Function(String message)? failure,
+    TResult? Function(ProfileModel profileModel)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ProfileModel profileModel)? failure,
-    TResult Function()? success,
+    TResult Function(String message)? failure,
+    TResult Function(ProfileModel profileModel)? success,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -126,8 +126,8 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ProfileModel profileModel) failure,
-    required TResult Function() success,
+    required TResult Function(String message) failure,
+    required TResult Function(ProfileModel profileModel) success,
   }) {
     return initial();
   }
@@ -137,8 +137,8 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ProfileModel profileModel)? failure,
-    TResult? Function()? success,
+    TResult? Function(String message)? failure,
+    TResult? Function(ProfileModel profileModel)? success,
   }) {
     return initial?.call();
   }
@@ -148,8 +148,8 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ProfileModel profileModel)? failure,
-    TResult Function()? success,
+    TResult Function(String message)? failure,
+    TResult Function(ProfileModel profileModel)? success,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -240,8 +240,8 @@ class _$LoadingImpl implements Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ProfileModel profileModel) failure,
-    required TResult Function() success,
+    required TResult Function(String message) failure,
+    required TResult Function(ProfileModel profileModel) success,
   }) {
     return loading();
   }
@@ -251,8 +251,8 @@ class _$LoadingImpl implements Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ProfileModel profileModel)? failure,
-    TResult? Function()? success,
+    TResult? Function(String message)? failure,
+    TResult? Function(ProfileModel profileModel)? success,
   }) {
     return loading?.call();
   }
@@ -262,8 +262,8 @@ class _$LoadingImpl implements Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ProfileModel profileModel)? failure,
-    TResult Function()? success,
+    TResult Function(String message)? failure,
+    TResult Function(ProfileModel profileModel)? success,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -320,7 +320,7 @@ abstract class _$$FailureImplCopyWith<$Res> {
           _$FailureImpl value, $Res Function(_$FailureImpl) then) =
       __$$FailureImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({ProfileModel profileModel});
+  $Res call({String message});
 }
 
 /// @nodoc
@@ -334,13 +334,13 @@ class __$$FailureImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? profileModel = null,
+    Object? message = null,
   }) {
     return _then(_$FailureImpl(
-      null == profileModel
-          ? _value.profileModel
-          : profileModel // ignore: cast_nullable_to_non_nullable
-              as ProfileModel,
+      null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -348,14 +348,14 @@ class __$$FailureImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$FailureImpl implements Failure {
-  const _$FailureImpl(this.profileModel);
+  const _$FailureImpl(this.message);
 
   @override
-  final ProfileModel profileModel;
+  final String message;
 
   @override
   String toString() {
-    return 'ProfileState.failure(profileModel: $profileModel)';
+    return 'ProfileState.failure(message: $message)';
   }
 
   @override
@@ -363,12 +363,11 @@ class _$FailureImpl implements Failure {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FailureImpl &&
-            (identical(other.profileModel, profileModel) ||
-                other.profileModel == profileModel));
+            (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, profileModel);
+  int get hashCode => Object.hash(runtimeType, message);
 
   @JsonKey(ignore: true)
   @override
@@ -381,10 +380,10 @@ class _$FailureImpl implements Failure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ProfileModel profileModel) failure,
-    required TResult Function() success,
+    required TResult Function(String message) failure,
+    required TResult Function(ProfileModel profileModel) success,
   }) {
-    return failure(profileModel);
+    return failure(message);
   }
 
   @override
@@ -392,10 +391,10 @@ class _$FailureImpl implements Failure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ProfileModel profileModel)? failure,
-    TResult? Function()? success,
+    TResult? Function(String message)? failure,
+    TResult? Function(ProfileModel profileModel)? success,
   }) {
-    return failure?.call(profileModel);
+    return failure?.call(message);
   }
 
   @override
@@ -403,12 +402,12 @@ class _$FailureImpl implements Failure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ProfileModel profileModel)? failure,
-    TResult Function()? success,
+    TResult Function(String message)? failure,
+    TResult Function(ProfileModel profileModel)? success,
     required TResult orElse(),
   }) {
     if (failure != null) {
-      return failure(profileModel);
+      return failure(message);
     }
     return orElse();
   }
@@ -452,9 +451,9 @@ class _$FailureImpl implements Failure {
 }
 
 abstract class Failure implements ProfileState {
-  const factory Failure(final ProfileModel profileModel) = _$FailureImpl;
+  const factory Failure(final String message) = _$FailureImpl;
 
-  ProfileModel get profileModel;
+  String get message;
   @JsonKey(ignore: true)
   _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -465,6 +464,8 @@ abstract class _$$SuccessImplCopyWith<$Res> {
   factory _$$SuccessImplCopyWith(
           _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
       __$$SuccessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ProfileModel profileModel});
 }
 
 /// @nodoc
@@ -474,36 +475,61 @@ class __$$SuccessImplCopyWithImpl<$Res>
   __$$SuccessImplCopyWithImpl(
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? profileModel = null,
+  }) {
+    return _then(_$SuccessImpl(
+      null == profileModel
+          ? _value.profileModel
+          : profileModel // ignore: cast_nullable_to_non_nullable
+              as ProfileModel,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$SuccessImpl implements Success {
-  const _$SuccessImpl();
+  const _$SuccessImpl(this.profileModel);
+
+  @override
+  final ProfileModel profileModel;
 
   @override
   String toString() {
-    return 'ProfileState.success()';
+    return 'ProfileState.success(profileModel: $profileModel)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SuccessImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessImpl &&
+            (identical(other.profileModel, profileModel) ||
+                other.profileModel == profileModel));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, profileModel);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
+      __$$SuccessImplCopyWithImpl<_$SuccessImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ProfileModel profileModel) failure,
-    required TResult Function() success,
+    required TResult Function(String message) failure,
+    required TResult Function(ProfileModel profileModel) success,
   }) {
-    return success();
+    return success(profileModel);
   }
 
   @override
@@ -511,10 +537,10 @@ class _$SuccessImpl implements Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ProfileModel profileModel)? failure,
-    TResult? Function()? success,
+    TResult? Function(String message)? failure,
+    TResult? Function(ProfileModel profileModel)? success,
   }) {
-    return success?.call();
+    return success?.call(profileModel);
   }
 
   @override
@@ -522,12 +548,12 @@ class _$SuccessImpl implements Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ProfileModel profileModel)? failure,
-    TResult Function()? success,
+    TResult Function(String message)? failure,
+    TResult Function(ProfileModel profileModel)? success,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success();
+      return success(profileModel);
     }
     return orElse();
   }
@@ -571,5 +597,10 @@ class _$SuccessImpl implements Success {
 }
 
 abstract class Success implements ProfileState {
-  const factory Success() = _$SuccessImpl;
+  const factory Success(final ProfileModel profileModel) = _$SuccessImpl;
+
+  ProfileModel get profileModel;
+  @JsonKey(ignore: true)
+  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
