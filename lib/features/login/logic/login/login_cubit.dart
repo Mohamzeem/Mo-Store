@@ -26,11 +26,11 @@ class LoginCubit extends Cubit<LoginState> {
         email: emailController.text.trim(),
         password: passwordController.text.trim()));
     result.when(
-      success: (lgoinResponse) {
+      success: (loginResponse) {
         //^ save token
         SharedPrefHelper.setSecuredString(
-            PrefKeys.userToken, lgoinResponse.accessToken!);
-        emit(LoginState.success(lgoinResponse));
+            PrefKeys.userToken, loginResponse.accessToken!);
+        emit(LoginState.success(loginResponse));
       },
       failure: (message) => emit(LoginState.failure(message)),
     );
