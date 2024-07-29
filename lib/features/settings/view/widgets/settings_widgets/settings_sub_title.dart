@@ -6,10 +6,12 @@ import 'package:mo_store/core/helpers/text_fonts.dart';
 class SettingsSubTitle extends StatelessWidget {
   final String title;
   final IconData icon;
+  final bool visibleIcon;
   const SettingsSubTitle({
     super.key,
     required this.title,
     required this.icon,
+    this.visibleIcon = true,
   });
 
   @override
@@ -18,7 +20,9 @@ class SettingsSubTitle extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(title, style: AppFonts.medium30Primary),
-        Icon(icon, color: AppColors.primaryColor, size: 30.h),
+        visibleIcon
+            ? Icon(icon, color: AppColors.primaryColor, size: 30.h)
+            : const SizedBox.shrink(),
       ],
     );
   }

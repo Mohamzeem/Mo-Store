@@ -41,25 +41,16 @@ class AppRouter {
       case Routes.controlView:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => di<ProfileCubit>(),
+            create: (context) => di<ProfileCubit>()..getProfile(),
             child: const ControlView(),
           ),
         );
-      // case Routes.categoriesView:
-      //   return MaterialPageRoute(
-      //     builder: (_) => const CategoriesView(),
-      //   );
-      // case Routes.cartView:
-      //   return MaterialPageRoute(
-      //     builder: (_) => const CartView(),
-      //   );
-      // case Routes.favoritesView:
-      //   return MaterialPageRoute(
-      //     builder: (_) => const FavoritesView(),
-      //   );
       case Routes.profileView:
         return MaterialPageRoute(
-          builder: (_) => const SettingsView(),
+          builder: (_) => BlocProvider(
+            create: (context) => di<ProfileCubit>()..getOfflineProfile(),
+            child: const ProfileView(),
+          ),
         );
       default:
         return MaterialPageRoute(

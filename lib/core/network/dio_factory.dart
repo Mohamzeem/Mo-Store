@@ -33,11 +33,11 @@ class DioFactory {
     };
   }
 
-  // static void refreshToken(String token) {
-  //   dio?.options.headers = {
-  //     'Authorization': 'Bearer $token',
-  //   };
-  // }
+  static void refreshToken(String token) {
+    dio?.options.headers = {
+      'Authorization': 'Bearer $token',
+    };
+  }
 
   static void addDioInterceptor() {
     dio?.interceptors.add(

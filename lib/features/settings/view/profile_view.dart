@@ -1,58 +1,71 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mo_store/core/helpers/extensions.dart';
-import 'package:mo_store/core/helpers/shared_prefs.dart';
-import 'package:mo_store/core/route/routes.dart';
 import 'package:mo_store/core/widgets/custom_app_bar.dart';
-import 'package:mo_store/core/widgets/custom_dialog.dart';
-import 'package:mo_store/features/settings/view/widgets/settings_item.dart';
-import 'package:mo_store/features/settings/view/widgets/settings_sub_title.dart';
+import 'package:mo_store/core/widgets/custom_button.dart';
+import 'package:mo_store/features/settings/logic/profile/profile_cubit.dart';
+import 'package:mo_store/features/settings/logic/profile/profile_state.dart';
+import 'package:mo_store/features/settings/view/widgets/profile_widgets/profile_field.dart';
+import 'package:mo_store/features/settings/view/widgets/profile_widgets/profile_photo.dart';
+import 'package:mo_store/features/settings/view/widgets/settings_widgets/settings_sub_title.dart';
 
-class SettingsView extends StatelessWidget {
-  const SettingsView({super.key});
+class ProfileView extends StatelessWidget {
+  const ProfileView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const CustomAppBar(title: 'Settings', photoUrl: ''),
-              15.verticalSpace,
-              const SettingsSubTitle(title: 'Personal', icon: Icons.person),
-              SettingsItem(title: 'Profile', onTap: () {}),
-              const SettingsItem(title: 'Shipping Address', onTap: null),
-              const SettingsItem(title: 'Payment Methods', onTap: null),
-              20.verticalSpace,
-              const SettingsSubTitle(
-                  title: 'Shop', icon: Icons.shopping_cart_sharp),
-              const SettingsItem(title: 'Country', onTap: null),
-              const SettingsItem(title: 'Currency', onTap: null),
-              20.verticalSpace,
-              const SettingsSubTitle(title: 'Account', icon: Icons.settings),
-              const SettingsItem(title: 'Language', onTap: null),
-              SettingsItem(
-                title: 'Logout',
-                onTap: () => CustomDialog.awsomeTwoButtons(
-                  context,
-                  'Logout',
-                  onPressCancel: () {},
-                  onPressOk: () {
-                    SharedPrefHelper.clearAllSecuredData();
-                    CustomDialog.awsomeSuccess(
-                        context,
-                        'Logged out successfully',
-                        (onDismiss) => context.pushNamedAndRemoveUntil(
-                            Routes.onboardingView,
-                            predicate: (route) => false));
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const CustomAppBar(
+                  title: 'Settings',
+                  photoUrl: '',
+                  isArrowBack: true,
+                ),
+                15.verticalSpace,
+                const SettingsSubTitle(
+                  title: 'You Profile',
+                  icon: Icons.person,
+                  visibleIcon: false,
+                ),
+                20.verticalSpace,
+                const ProfilePhoto(),
+                20.verticalSpace,
+                BlocBuilder<ProfileCubit, ProfileState>(
+                  builder: (context, state) {
+                    return state.maybeWhen(
+                      success: (profileModel) {
+                        return Column(
+                          children: [
+                            ProfileField(initialValue: profileModel.name!),
+                            10.verticalSpace,
+                            ProfileField(initialValue: profileModel.email!),
+                            10.verticalSpace,
+                            ProfileField(
+                              initialValue: profileModel.password!,
+                              obscureText: true,
+                            ),
+                          ],
+                        );
+                      },
+                      orElse: () => const SizedBox.shrink(),
+                    );
                   },
                 ),
-              ),
-              const SettingsItem(title: 'Delete Account', onTap: null),
-            ],
+                300.verticalSpace,
+                CustomButton(
+                    padding: 0,
+                    onPressed: () {},
+                    text: 'Save Changes',
+                    width: double.infinity,
+                    height: 50)
+              ],
+            ),
           ),
         ),
       ),

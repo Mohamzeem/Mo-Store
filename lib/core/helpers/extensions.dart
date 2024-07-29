@@ -37,3 +37,9 @@ extension StringExt on String? {
 extension ListExt on List? {
   bool isNullOrEmpty() => this == null || this == [];
 }
+
+// extension UserInfo on ProfileModel {
+//   String toJson() => json.encode(toJson());
+//   static ProfileModel fromJson(String source) =>
+//       ProfileModel.fromJson(json.decode(source));
+// }

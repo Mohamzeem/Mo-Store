@@ -16,6 +16,7 @@ class CustomButton extends StatelessWidget {
   final TextAlign? textAlign;
   final double? loadingWidth;
   final double? loadingHeight;
+  final double padding;
   const CustomButton({
     super.key,
     required this.onPressed,
@@ -30,12 +31,13 @@ class CustomButton extends StatelessWidget {
     this.textAlign,
     this.loadingWidth = 30,
     this.loadingHeight = 30,
+    this.padding = 20,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20.w),
+      padding: EdgeInsets.symmetric(horizontal: padding.w),
       child: Container(
         width: width.w,
         height: height.h,

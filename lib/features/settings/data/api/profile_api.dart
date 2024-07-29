@@ -11,4 +11,8 @@ abstract class ProfileApi {
 
   @GET(AppEndPoints.getProfile)
   Future<ProfileModel> getProfile();
+
+  // @PUT(AppEndPoints.updateUserInfo +
+  //     SharedPrefHelper.getSecuredString(PrefKeys.userId))
+  // Future<ProfileModel> updateProfile(@Body() ProfileModel profileModel);
 }
