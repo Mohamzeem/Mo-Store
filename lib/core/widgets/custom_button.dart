@@ -25,7 +25,7 @@ class CustomButton extends StatelessWidget {
     required this.height,
     this.threeRadius,
     this.lastRadius,
-    this.backgroundColor = AppColors.lightBlue,
+    this.backgroundColor = Colors.transparent,
     this.textStyle,
     this.isLoading = false,
     this.textAlign,
@@ -49,14 +49,12 @@ class CustomButton extends StatelessWidget {
               AppColors.lightBlue,
               AppColors.darkBlue.withOpacity(0.7),
               AppColors.darkBlue.withOpacity(0.9),
-              // AppColors.lightBlue,
-              // AppColors.lightBlue,
             ],
           ),
         ),
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.transparent,
+            backgroundColor: backgroundColor,
             shadowColor: Colors.transparent,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.only(

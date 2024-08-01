@@ -53,17 +53,20 @@ class ProfilePhoto extends StatelessWidget {
         Positioned(
           top: 0,
           right: 0,
-          child: Container(
-            height: 40.h,
-            width: 40.w,
-            decoration: BoxDecoration(
-              color: AppColors.lightBlue,
-              shape: BoxShape.circle,
-              border: Border.all(width: 4, color: AppColors.white),
-            ),
-            child: const Icon(
-              Icons.edit,
-              color: AppColors.white,
+          child: InkWell(
+            onTap: () {},
+            child: Container(
+              height: 40.h,
+              width: 40.w,
+              decoration: BoxDecoration(
+                color: AppColors.lightBlue,
+                shape: BoxShape.circle,
+                border: Border.all(width: 4, color: AppColors.white),
+              ),
+              child: const Icon(
+                Icons.edit,
+                color: AppColors.white,
+              ),
             ),
           ),
         ),

@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mo_store/core/consts/pref_keys.dart';
 import 'package:mo_store/core/helpers/shared_prefs.dart';
@@ -14,6 +15,23 @@ class ProfileCubit extends Cubit<ProfileState> {
       : super(const ProfileState.initial());
 
   ProfileModel? profileModel;
+  TextEditingController nameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  bool isVisibleText = false;
+
+  void clearControllers() {
+    nameController.clear();
+    emailController.clear();
+    passwordController.clear();
+  }
+
+  void disposeControllers() {
+    nameController.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+  }
+
   void getProfile() async {
     emit(const ProfileState.loading());
     final result = await profileRepo.getProfile();

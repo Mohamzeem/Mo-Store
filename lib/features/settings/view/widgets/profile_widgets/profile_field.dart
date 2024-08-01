@@ -6,15 +6,20 @@ import 'package:mo_store/core/helpers/text_fonts.dart';
 
 class ProfileField extends StatelessWidget {
   final TextEditingController? controller;
+  final VoidCallback? suffixIconFunction;
+
   final String initialValue;
-  final bool obscureText;
+  final bool isVisibleText;
+  final bool showIcon;
   final int maxLength;
   final Color filled;
   const ProfileField({
     super.key,
     this.controller,
+    this.suffixIconFunction,
     required this.initialValue,
-    this.obscureText = false,
+    this.isVisibleText = true,
+    this.showIcon = false,
     this.maxLength = 50,
     this.filled = AppColors.white,
   });
@@ -25,18 +30,35 @@ class ProfileField extends StatelessWidget {
       height: 55.h,
       child: TextFormField(
         controller: controller,
-        initialValue: initialValue,
         keyboardType: TextInputType.text,
         inputFormatters: [LengthLimitingTextInputFormatter(maxLength)],
         cursorColor: AppColors.primaryColor,
         textInputAction: TextInputAction.done,
-        obscureText: obscureText,
         maxLines: 1,
         style: AppFonts.regular20Primary,
         decoration: InputDecoration(
-          suffixIcon: obscureText
-              ? const Icon(Icons.visibility_off, color: AppColors.lightBlue)
-              : const SizedBox.shrink(),
+          hintText: initialValue,
+          hintStyle: isVisibleText
+              ? AppFonts.regular20Primary
+              : AppFonts.regular20lightGrey,
+          // suffixIcon: showIcon
+          //     ? const Icon(Icons.visibility_off, color: AppColors.lightBlue)
+          //     : const SizedBox.shrink(),
+          suffixIcon: showIcon
+              ? InkWell(
+                  onTap: suffixIconFunction,
+                  child: !isVisibleText
+                      ? const Icon(
+                          Icons.visibility_off,
+                          color: AppColors.lightBlue,
+                        )
+                      : const Icon(
+                          Icons.visibility,
+                          color: AppColors.lightBlue,
+                        ),
+                )
+              : const SizedBox(),
+
           contentPadding:
               EdgeInsets.symmetric(horizontal: 10.w, vertical: 12.h),
           fillColor: AppColors.lightGrey,

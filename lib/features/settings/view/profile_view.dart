@@ -2,15 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mo_store/core/widgets/custom_app_bar.dart';
-import 'package:mo_store/core/widgets/custom_button.dart';
 import 'package:mo_store/features/settings/logic/profile/profile_cubit.dart';
 import 'package:mo_store/features/settings/logic/profile/profile_state.dart';
 import 'package:mo_store/features/settings/view/widgets/profile_widgets/profile_field.dart';
 import 'package:mo_store/features/settings/view/widgets/profile_widgets/profile_photo.dart';
+import 'package:mo_store/features/settings/view/widgets/profile_widgets/two_btns_with_cubit.dart';
 import 'package:mo_store/features/settings/view/widgets/settings_widgets/settings_sub_title.dart';
 
-class ProfileView extends StatelessWidget {
+class ProfileView extends StatefulWidget {
   const ProfileView({super.key});
+
+  @override
+  State<ProfileView> createState() => _ProfileViewState();
+}
+
+class _ProfileViewState extends State<ProfileView> {
+  late ProfileCubit _cubit;
+  @override
+  void initState() {
+    super.initState();
+    _cubit = BlocProvider.of<ProfileCubit>(context);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,12 +34,14 @@ class ProfileView extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                //^ app bar
                 const CustomAppBar(
                   title: 'Settings',
                   photoUrl: '',
                   isArrowBack: true,
                 ),
                 15.verticalSpace,
+                //^ you profile text
                 const SettingsSubTitle(
                   title: 'You Profile',
                   icon: Icons.person,
@@ -36,19 +50,30 @@ class ProfileView extends StatelessWidget {
                 20.verticalSpace,
                 const ProfilePhoto(),
                 20.verticalSpace,
+                //^ name, email, password fields
                 BlocBuilder<ProfileCubit, ProfileState>(
                   builder: (context, state) {
                     return state.maybeWhen(
                       success: (profileModel) {
                         return Column(
                           children: [
-                            ProfileField(initialValue: profileModel.name!),
+                            ProfileField(
+                              initialValue: profileModel.name!,
+                              controller: _cubit.nameController,
+                            ),
                             10.verticalSpace,
-                            ProfileField(initialValue: profileModel.email!),
+                            ProfileField(
+                              initialValue: profileModel.email!,
+                              controller: _cubit.emailController,
+                            ),
                             10.verticalSpace,
                             ProfileField(
                               initialValue: profileModel.password!,
-                              obscureText: true,
+                              isVisibleText: _cubit.isVisibleText,
+                              suffixIconFunction: () => setState(() =>
+                                  _cubit.isVisibleText = !_cubit.isVisibleText),
+                              showIcon: true,
+                              controller: _cubit.passwordController,
                             ),
                           ],
                         );
@@ -57,13 +82,8 @@ class ProfileView extends StatelessWidget {
                     );
                   },
                 ),
-                300.verticalSpace,
-                CustomButton(
-                    padding: 0,
-                    onPressed: () {},
-                    text: 'Save Changes',
-                    width: double.infinity,
-                    height: 50)
+                250.verticalSpace,
+                TwoButtonsWithCubit(cubit: _cubit)
               ],
             ),
           ),
