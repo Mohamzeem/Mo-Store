@@ -9,4 +9,10 @@ class ProfileState with _$ProfileState {
   const factory ProfileState.loading() = Loading;
   const factory ProfileState.failure(String message) = Failure;
   const factory ProfileState.success(ProfileModel profileModel) = Success;
+
+  const factory ProfileState.updateProfileSuccess(ProfileModel profileModel) =
+      UpdateProfileSuccess;
+  const factory ProfileState.updateProfileLoading() = updateProfileLoading;
+  const factory ProfileState.updateProfileFailure(String message) =
+      UpdateProfileFailure;
 }

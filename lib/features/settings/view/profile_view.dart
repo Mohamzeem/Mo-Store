@@ -3,8 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mo_store/core/widgets/custom_app_bar.dart';
 import 'package:mo_store/features/settings/logic/profile/profile_cubit.dart';
-import 'package:mo_store/features/settings/logic/profile/profile_state.dart';
-import 'package:mo_store/features/settings/view/widgets/profile_widgets/profile_field.dart';
+import 'package:mo_store/features/settings/view/widgets/profile_widgets/fields_with_cubit.dart';
 import 'package:mo_store/features/settings/view/widgets/profile_widgets/profile_photo.dart';
 import 'package:mo_store/features/settings/view/widgets/profile_widgets/two_btns_with_cubit.dart';
 import 'package:mo_store/features/settings/view/widgets/settings_widgets/settings_sub_title.dart';
@@ -51,36 +50,10 @@ class _ProfileViewState extends State<ProfileView> {
                 const ProfilePhoto(),
                 20.verticalSpace,
                 //^ name, email, password fields
-                BlocBuilder<ProfileCubit, ProfileState>(
-                  builder: (context, state) {
-                    return state.maybeWhen(
-                      success: (profileModel) {
-                        return Column(
-                          children: [
-                            ProfileField(
-                              initialValue: profileModel.name!,
-                              controller: _cubit.nameController,
-                            ),
-                            10.verticalSpace,
-                            ProfileField(
-                              initialValue: profileModel.email!,
-                              controller: _cubit.emailController,
-                            ),
-                            10.verticalSpace,
-                            ProfileField(
-                              initialValue: profileModel.password!,
-                              isVisibleText: _cubit.isVisibleText,
-                              suffixIconFunction: () => setState(() =>
-                                  _cubit.isVisibleText = !_cubit.isVisibleText),
-                              showIcon: true,
-                              controller: _cubit.passwordController,
-                            ),
-                          ],
-                        );
-                      },
-                      orElse: () => const SizedBox.shrink(),
-                    );
-                  },
+                FieldsWithCubit(
+                  cubit: _cubit,
+                  suffixIconFunction: () => setState(
+                      () => _cubit.isVisibleText = !_cubit.isVisibleText),
                 ),
                 250.verticalSpace,
                 TwoButtonsWithCubit(cubit: _cubit)

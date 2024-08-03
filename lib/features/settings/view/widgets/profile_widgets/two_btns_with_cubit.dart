@@ -8,19 +8,17 @@ import 'package:mo_store/features/settings/logic/profile/profile_cubit.dart';
 import 'package:mo_store/features/settings/logic/profile/profile_state.dart';
 
 class TwoButtonsWithCubit extends StatelessWidget {
-  const TwoButtonsWithCubit({
-    super.key,
-    required ProfileCubit cubit,
-  }) : _cubit = cubit;
-
-  final ProfileCubit _cubit;
+  final ProfileCubit cubit;
+  const TwoButtonsWithCubit({super.key, required this.cubit});
 
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<ProfileCubit, ProfileState>(
       listener: (context, state) {
         state.whenOrNull(
-          success: (profileModel) {},
+          updateProfileSuccess: (profileModel) {
+            CustomDialog.show(context: context, text: 'Profile Updated');
+          },
         );
       },
       builder: (context, state) {
@@ -28,7 +26,9 @@ class TwoButtonsWithCubit extends StatelessWidget {
           children: [
             CustomButton(
               padding: 0,
-              onPressed: () {},
+              onPressed: () {
+                cubit.updateProfile();
+              },
               text: 'Save Changes',
               width: double.infinity,
               height: 50,
@@ -37,7 +37,7 @@ class TwoButtonsWithCubit extends StatelessWidget {
             CustomButton(
               padding: 0,
               onPressed: () {
-                _cubit.clearControllers();
+                cubit.clearControllers();
                 CustomDialog.show(context: context, text: 'Changes Canceled');
               },
               text: 'Cancel Changes',

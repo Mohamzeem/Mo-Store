@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:mo_store/core/network/end_points.dart';
 import 'package:mo_store/features/settings/data/models/profile_model.dart';
+import 'package:mo_store/features/settings/data/models/update_profile_request.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'profile_api.g.dart';
@@ -12,6 +13,7 @@ abstract class ProfileApi {
   @GET(AppEndPoints.getProfile)
   Future<ProfileModel> getProfile();
 
-  // @PUT(AppEndPoints.updateUserInfo)
-  // Future<ProfileModel> updateProfile(@Body() ProfileModel profileModel);
+  @PUT('${AppEndPoints.updateUserInfo}/{id}')
+  Future<ProfileModel> updateProfile(
+      @Body() UpdateProfileRequest value, @Path('id') int id);
 }
