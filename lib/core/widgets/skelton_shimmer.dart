@@ -16,7 +16,7 @@ class SkeltonShimmer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Shimmer.fromColors(
       baseColor: AppColors.lightBlue,
-      highlightColor: AppColors.lightBlue,
+      highlightColor: AppColors.lightGrey,
       child: Container(
         height: height,
         width: width,

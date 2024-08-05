@@ -25,6 +25,10 @@ mixin _$ProfileState {
     required TResult Function(ProfileModel profileModel) updateProfileSuccess,
     required TResult Function() updateProfileLoading,
     required TResult Function(String message) updateProfileFailure,
+    required TResult Function() profileUdateImgLoading,
+    required TResult Function(String message) profileUdateImgFailure,
+    required TResult Function(String image) profileUdateImgSuccess,
+    required TResult Function(String image) profileUdateImgRemove,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -36,6 +40,10 @@ mixin _$ProfileState {
     TResult? Function(ProfileModel profileModel)? updateProfileSuccess,
     TResult? Function()? updateProfileLoading,
     TResult? Function(String message)? updateProfileFailure,
+    TResult? Function()? profileUdateImgLoading,
+    TResult? Function(String message)? profileUdateImgFailure,
+    TResult? Function(String image)? profileUdateImgSuccess,
+    TResult? Function(String image)? profileUdateImgRemove,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,6 +55,10 @@ mixin _$ProfileState {
     TResult Function(ProfileModel profileModel)? updateProfileSuccess,
     TResult Function()? updateProfileLoading,
     TResult Function(String message)? updateProfileFailure,
+    TResult Function()? profileUdateImgLoading,
+    TResult Function(String message)? profileUdateImgFailure,
+    TResult Function(String image)? profileUdateImgSuccess,
+    TResult Function(String image)? profileUdateImgRemove,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -57,8 +69,16 @@ mixin _$ProfileState {
     required TResult Function(Failure value) failure,
     required TResult Function(Success value) success,
     required TResult Function(UpdateProfileSuccess value) updateProfileSuccess,
-    required TResult Function(updateProfileLoading value) updateProfileLoading,
+    required TResult Function(UpdateProfileLoading value) updateProfileLoading,
     required TResult Function(UpdateProfileFailure value) updateProfileFailure,
+    required TResult Function(ProfileUpdateImgLoading value)
+        profileUdateImgLoading,
+    required TResult Function(ProfileUpdateImgFailure value)
+        profileUdateImgFailure,
+    required TResult Function(ProfileUdateImgSuccess value)
+        profileUdateImgSuccess,
+    required TResult Function(ProfileUdateImgRemove value)
+        profileUdateImgRemove,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -68,8 +88,12 @@ mixin _$ProfileState {
     TResult? Function(Failure value)? failure,
     TResult? Function(Success value)? success,
     TResult? Function(UpdateProfileSuccess value)? updateProfileSuccess,
-    TResult? Function(updateProfileLoading value)? updateProfileLoading,
+    TResult? Function(UpdateProfileLoading value)? updateProfileLoading,
     TResult? Function(UpdateProfileFailure value)? updateProfileFailure,
+    TResult? Function(ProfileUpdateImgLoading value)? profileUdateImgLoading,
+    TResult? Function(ProfileUpdateImgFailure value)? profileUdateImgFailure,
+    TResult? Function(ProfileUdateImgSuccess value)? profileUdateImgSuccess,
+    TResult? Function(ProfileUdateImgRemove value)? profileUdateImgRemove,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -79,8 +103,12 @@ mixin _$ProfileState {
     TResult Function(Failure value)? failure,
     TResult Function(Success value)? success,
     TResult Function(UpdateProfileSuccess value)? updateProfileSuccess,
-    TResult Function(updateProfileLoading value)? updateProfileLoading,
+    TResult Function(UpdateProfileLoading value)? updateProfileLoading,
     TResult Function(UpdateProfileFailure value)? updateProfileFailure,
+    TResult Function(ProfileUpdateImgLoading value)? profileUdateImgLoading,
+    TResult Function(ProfileUpdateImgFailure value)? profileUdateImgFailure,
+    TResult Function(ProfileUdateImgSuccess value)? profileUdateImgSuccess,
+    TResult Function(ProfileUdateImgRemove value)? profileUdateImgRemove,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -149,6 +177,10 @@ class _$InitialImpl implements _Initial {
     required TResult Function(ProfileModel profileModel) updateProfileSuccess,
     required TResult Function() updateProfileLoading,
     required TResult Function(String message) updateProfileFailure,
+    required TResult Function() profileUdateImgLoading,
+    required TResult Function(String message) profileUdateImgFailure,
+    required TResult Function(String image) profileUdateImgSuccess,
+    required TResult Function(String image) profileUdateImgRemove,
   }) {
     return initial();
   }
@@ -163,6 +195,10 @@ class _$InitialImpl implements _Initial {
     TResult? Function(ProfileModel profileModel)? updateProfileSuccess,
     TResult? Function()? updateProfileLoading,
     TResult? Function(String message)? updateProfileFailure,
+    TResult? Function()? profileUdateImgLoading,
+    TResult? Function(String message)? profileUdateImgFailure,
+    TResult? Function(String image)? profileUdateImgSuccess,
+    TResult? Function(String image)? profileUdateImgRemove,
   }) {
     return initial?.call();
   }
@@ -177,6 +213,10 @@ class _$InitialImpl implements _Initial {
     TResult Function(ProfileModel profileModel)? updateProfileSuccess,
     TResult Function()? updateProfileLoading,
     TResult Function(String message)? updateProfileFailure,
+    TResult Function()? profileUdateImgLoading,
+    TResult Function(String message)? profileUdateImgFailure,
+    TResult Function(String image)? profileUdateImgSuccess,
+    TResult Function(String image)? profileUdateImgRemove,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -193,8 +233,16 @@ class _$InitialImpl implements _Initial {
     required TResult Function(Failure value) failure,
     required TResult Function(Success value) success,
     required TResult Function(UpdateProfileSuccess value) updateProfileSuccess,
-    required TResult Function(updateProfileLoading value) updateProfileLoading,
+    required TResult Function(UpdateProfileLoading value) updateProfileLoading,
     required TResult Function(UpdateProfileFailure value) updateProfileFailure,
+    required TResult Function(ProfileUpdateImgLoading value)
+        profileUdateImgLoading,
+    required TResult Function(ProfileUpdateImgFailure value)
+        profileUdateImgFailure,
+    required TResult Function(ProfileUdateImgSuccess value)
+        profileUdateImgSuccess,
+    required TResult Function(ProfileUdateImgRemove value)
+        profileUdateImgRemove,
   }) {
     return initial(this);
   }
@@ -207,8 +255,12 @@ class _$InitialImpl implements _Initial {
     TResult? Function(Failure value)? failure,
     TResult? Function(Success value)? success,
     TResult? Function(UpdateProfileSuccess value)? updateProfileSuccess,
-    TResult? Function(updateProfileLoading value)? updateProfileLoading,
+    TResult? Function(UpdateProfileLoading value)? updateProfileLoading,
     TResult? Function(UpdateProfileFailure value)? updateProfileFailure,
+    TResult? Function(ProfileUpdateImgLoading value)? profileUdateImgLoading,
+    TResult? Function(ProfileUpdateImgFailure value)? profileUdateImgFailure,
+    TResult? Function(ProfileUdateImgSuccess value)? profileUdateImgSuccess,
+    TResult? Function(ProfileUdateImgRemove value)? profileUdateImgRemove,
   }) {
     return initial?.call(this);
   }
@@ -221,8 +273,12 @@ class _$InitialImpl implements _Initial {
     TResult Function(Failure value)? failure,
     TResult Function(Success value)? success,
     TResult Function(UpdateProfileSuccess value)? updateProfileSuccess,
-    TResult Function(updateProfileLoading value)? updateProfileLoading,
+    TResult Function(UpdateProfileLoading value)? updateProfileLoading,
     TResult Function(UpdateProfileFailure value)? updateProfileFailure,
+    TResult Function(ProfileUpdateImgLoading value)? profileUdateImgLoading,
+    TResult Function(ProfileUpdateImgFailure value)? profileUdateImgFailure,
+    TResult Function(ProfileUdateImgSuccess value)? profileUdateImgSuccess,
+    TResult Function(ProfileUdateImgRemove value)? profileUdateImgRemove,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -281,6 +337,10 @@ class _$LoadingImpl implements Loading {
     required TResult Function(ProfileModel profileModel) updateProfileSuccess,
     required TResult Function() updateProfileLoading,
     required TResult Function(String message) updateProfileFailure,
+    required TResult Function() profileUdateImgLoading,
+    required TResult Function(String message) profileUdateImgFailure,
+    required TResult Function(String image) profileUdateImgSuccess,
+    required TResult Function(String image) profileUdateImgRemove,
   }) {
     return loading();
   }
@@ -295,6 +355,10 @@ class _$LoadingImpl implements Loading {
     TResult? Function(ProfileModel profileModel)? updateProfileSuccess,
     TResult? Function()? updateProfileLoading,
     TResult? Function(String message)? updateProfileFailure,
+    TResult? Function()? profileUdateImgLoading,
+    TResult? Function(String message)? profileUdateImgFailure,
+    TResult? Function(String image)? profileUdateImgSuccess,
+    TResult? Function(String image)? profileUdateImgRemove,
   }) {
     return loading?.call();
   }
@@ -309,6 +373,10 @@ class _$LoadingImpl implements Loading {
     TResult Function(ProfileModel profileModel)? updateProfileSuccess,
     TResult Function()? updateProfileLoading,
     TResult Function(String message)? updateProfileFailure,
+    TResult Function()? profileUdateImgLoading,
+    TResult Function(String message)? profileUdateImgFailure,
+    TResult Function(String image)? profileUdateImgSuccess,
+    TResult Function(String image)? profileUdateImgRemove,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -325,8 +393,16 @@ class _$LoadingImpl implements Loading {
     required TResult Function(Failure value) failure,
     required TResult Function(Success value) success,
     required TResult Function(UpdateProfileSuccess value) updateProfileSuccess,
-    required TResult Function(updateProfileLoading value) updateProfileLoading,
+    required TResult Function(UpdateProfileLoading value) updateProfileLoading,
     required TResult Function(UpdateProfileFailure value) updateProfileFailure,
+    required TResult Function(ProfileUpdateImgLoading value)
+        profileUdateImgLoading,
+    required TResult Function(ProfileUpdateImgFailure value)
+        profileUdateImgFailure,
+    required TResult Function(ProfileUdateImgSuccess value)
+        profileUdateImgSuccess,
+    required TResult Function(ProfileUdateImgRemove value)
+        profileUdateImgRemove,
   }) {
     return loading(this);
   }
@@ -339,8 +415,12 @@ class _$LoadingImpl implements Loading {
     TResult? Function(Failure value)? failure,
     TResult? Function(Success value)? success,
     TResult? Function(UpdateProfileSuccess value)? updateProfileSuccess,
-    TResult? Function(updateProfileLoading value)? updateProfileLoading,
+    TResult? Function(UpdateProfileLoading value)? updateProfileLoading,
     TResult? Function(UpdateProfileFailure value)? updateProfileFailure,
+    TResult? Function(ProfileUpdateImgLoading value)? profileUdateImgLoading,
+    TResult? Function(ProfileUpdateImgFailure value)? profileUdateImgFailure,
+    TResult? Function(ProfileUdateImgSuccess value)? profileUdateImgSuccess,
+    TResult? Function(ProfileUdateImgRemove value)? profileUdateImgRemove,
   }) {
     return loading?.call(this);
   }
@@ -353,8 +433,12 @@ class _$LoadingImpl implements Loading {
     TResult Function(Failure value)? failure,
     TResult Function(Success value)? success,
     TResult Function(UpdateProfileSuccess value)? updateProfileSuccess,
-    TResult Function(updateProfileLoading value)? updateProfileLoading,
+    TResult Function(UpdateProfileLoading value)? updateProfileLoading,
     TResult Function(UpdateProfileFailure value)? updateProfileFailure,
+    TResult Function(ProfileUpdateImgLoading value)? profileUdateImgLoading,
+    TResult Function(ProfileUpdateImgFailure value)? profileUdateImgFailure,
+    TResult Function(ProfileUdateImgSuccess value)? profileUdateImgSuccess,
+    TResult Function(ProfileUdateImgRemove value)? profileUdateImgRemove,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -439,6 +523,10 @@ class _$FailureImpl implements Failure {
     required TResult Function(ProfileModel profileModel) updateProfileSuccess,
     required TResult Function() updateProfileLoading,
     required TResult Function(String message) updateProfileFailure,
+    required TResult Function() profileUdateImgLoading,
+    required TResult Function(String message) profileUdateImgFailure,
+    required TResult Function(String image) profileUdateImgSuccess,
+    required TResult Function(String image) profileUdateImgRemove,
   }) {
     return failure(message);
   }
@@ -453,6 +541,10 @@ class _$FailureImpl implements Failure {
     TResult? Function(ProfileModel profileModel)? updateProfileSuccess,
     TResult? Function()? updateProfileLoading,
     TResult? Function(String message)? updateProfileFailure,
+    TResult? Function()? profileUdateImgLoading,
+    TResult? Function(String message)? profileUdateImgFailure,
+    TResult? Function(String image)? profileUdateImgSuccess,
+    TResult? Function(String image)? profileUdateImgRemove,
   }) {
     return failure?.call(message);
   }
@@ -467,6 +559,10 @@ class _$FailureImpl implements Failure {
     TResult Function(ProfileModel profileModel)? updateProfileSuccess,
     TResult Function()? updateProfileLoading,
     TResult Function(String message)? updateProfileFailure,
+    TResult Function()? profileUdateImgLoading,
+    TResult Function(String message)? profileUdateImgFailure,
+    TResult Function(String image)? profileUdateImgSuccess,
+    TResult Function(String image)? profileUdateImgRemove,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -483,8 +579,16 @@ class _$FailureImpl implements Failure {
     required TResult Function(Failure value) failure,
     required TResult Function(Success value) success,
     required TResult Function(UpdateProfileSuccess value) updateProfileSuccess,
-    required TResult Function(updateProfileLoading value) updateProfileLoading,
+    required TResult Function(UpdateProfileLoading value) updateProfileLoading,
     required TResult Function(UpdateProfileFailure value) updateProfileFailure,
+    required TResult Function(ProfileUpdateImgLoading value)
+        profileUdateImgLoading,
+    required TResult Function(ProfileUpdateImgFailure value)
+        profileUdateImgFailure,
+    required TResult Function(ProfileUdateImgSuccess value)
+        profileUdateImgSuccess,
+    required TResult Function(ProfileUdateImgRemove value)
+        profileUdateImgRemove,
   }) {
     return failure(this);
   }
@@ -497,8 +601,12 @@ class _$FailureImpl implements Failure {
     TResult? Function(Failure value)? failure,
     TResult? Function(Success value)? success,
     TResult? Function(UpdateProfileSuccess value)? updateProfileSuccess,
-    TResult? Function(updateProfileLoading value)? updateProfileLoading,
+    TResult? Function(UpdateProfileLoading value)? updateProfileLoading,
     TResult? Function(UpdateProfileFailure value)? updateProfileFailure,
+    TResult? Function(ProfileUpdateImgLoading value)? profileUdateImgLoading,
+    TResult? Function(ProfileUpdateImgFailure value)? profileUdateImgFailure,
+    TResult? Function(ProfileUdateImgSuccess value)? profileUdateImgSuccess,
+    TResult? Function(ProfileUdateImgRemove value)? profileUdateImgRemove,
   }) {
     return failure?.call(this);
   }
@@ -511,8 +619,12 @@ class _$FailureImpl implements Failure {
     TResult Function(Failure value)? failure,
     TResult Function(Success value)? success,
     TResult Function(UpdateProfileSuccess value)? updateProfileSuccess,
-    TResult Function(updateProfileLoading value)? updateProfileLoading,
+    TResult Function(UpdateProfileLoading value)? updateProfileLoading,
     TResult Function(UpdateProfileFailure value)? updateProfileFailure,
+    TResult Function(ProfileUpdateImgLoading value)? profileUdateImgLoading,
+    TResult Function(ProfileUpdateImgFailure value)? profileUdateImgFailure,
+    TResult Function(ProfileUdateImgSuccess value)? profileUdateImgSuccess,
+    TResult Function(ProfileUdateImgRemove value)? profileUdateImgRemove,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -603,6 +715,10 @@ class _$SuccessImpl implements Success {
     required TResult Function(ProfileModel profileModel) updateProfileSuccess,
     required TResult Function() updateProfileLoading,
     required TResult Function(String message) updateProfileFailure,
+    required TResult Function() profileUdateImgLoading,
+    required TResult Function(String message) profileUdateImgFailure,
+    required TResult Function(String image) profileUdateImgSuccess,
+    required TResult Function(String image) profileUdateImgRemove,
   }) {
     return success(profileModel);
   }
@@ -617,6 +733,10 @@ class _$SuccessImpl implements Success {
     TResult? Function(ProfileModel profileModel)? updateProfileSuccess,
     TResult? Function()? updateProfileLoading,
     TResult? Function(String message)? updateProfileFailure,
+    TResult? Function()? profileUdateImgLoading,
+    TResult? Function(String message)? profileUdateImgFailure,
+    TResult? Function(String image)? profileUdateImgSuccess,
+    TResult? Function(String image)? profileUdateImgRemove,
   }) {
     return success?.call(profileModel);
   }
@@ -631,6 +751,10 @@ class _$SuccessImpl implements Success {
     TResult Function(ProfileModel profileModel)? updateProfileSuccess,
     TResult Function()? updateProfileLoading,
     TResult Function(String message)? updateProfileFailure,
+    TResult Function()? profileUdateImgLoading,
+    TResult Function(String message)? profileUdateImgFailure,
+    TResult Function(String image)? profileUdateImgSuccess,
+    TResult Function(String image)? profileUdateImgRemove,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -647,8 +771,16 @@ class _$SuccessImpl implements Success {
     required TResult Function(Failure value) failure,
     required TResult Function(Success value) success,
     required TResult Function(UpdateProfileSuccess value) updateProfileSuccess,
-    required TResult Function(updateProfileLoading value) updateProfileLoading,
+    required TResult Function(UpdateProfileLoading value) updateProfileLoading,
     required TResult Function(UpdateProfileFailure value) updateProfileFailure,
+    required TResult Function(ProfileUpdateImgLoading value)
+        profileUdateImgLoading,
+    required TResult Function(ProfileUpdateImgFailure value)
+        profileUdateImgFailure,
+    required TResult Function(ProfileUdateImgSuccess value)
+        profileUdateImgSuccess,
+    required TResult Function(ProfileUdateImgRemove value)
+        profileUdateImgRemove,
   }) {
     return success(this);
   }
@@ -661,8 +793,12 @@ class _$SuccessImpl implements Success {
     TResult? Function(Failure value)? failure,
     TResult? Function(Success value)? success,
     TResult? Function(UpdateProfileSuccess value)? updateProfileSuccess,
-    TResult? Function(updateProfileLoading value)? updateProfileLoading,
+    TResult? Function(UpdateProfileLoading value)? updateProfileLoading,
     TResult? Function(UpdateProfileFailure value)? updateProfileFailure,
+    TResult? Function(ProfileUpdateImgLoading value)? profileUdateImgLoading,
+    TResult? Function(ProfileUpdateImgFailure value)? profileUdateImgFailure,
+    TResult? Function(ProfileUdateImgSuccess value)? profileUdateImgSuccess,
+    TResult? Function(ProfileUdateImgRemove value)? profileUdateImgRemove,
   }) {
     return success?.call(this);
   }
@@ -675,8 +811,12 @@ class _$SuccessImpl implements Success {
     TResult Function(Failure value)? failure,
     TResult Function(Success value)? success,
     TResult Function(UpdateProfileSuccess value)? updateProfileSuccess,
-    TResult Function(updateProfileLoading value)? updateProfileLoading,
+    TResult Function(UpdateProfileLoading value)? updateProfileLoading,
     TResult Function(UpdateProfileFailure value)? updateProfileFailure,
+    TResult Function(ProfileUpdateImgLoading value)? profileUdateImgLoading,
+    TResult Function(ProfileUpdateImgFailure value)? profileUdateImgFailure,
+    TResult Function(ProfileUdateImgSuccess value)? profileUdateImgSuccess,
+    TResult Function(ProfileUdateImgRemove value)? profileUdateImgRemove,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -769,6 +909,10 @@ class _$UpdateProfileSuccessImpl implements UpdateProfileSuccess {
     required TResult Function(ProfileModel profileModel) updateProfileSuccess,
     required TResult Function() updateProfileLoading,
     required TResult Function(String message) updateProfileFailure,
+    required TResult Function() profileUdateImgLoading,
+    required TResult Function(String message) profileUdateImgFailure,
+    required TResult Function(String image) profileUdateImgSuccess,
+    required TResult Function(String image) profileUdateImgRemove,
   }) {
     return updateProfileSuccess(profileModel);
   }
@@ -783,6 +927,10 @@ class _$UpdateProfileSuccessImpl implements UpdateProfileSuccess {
     TResult? Function(ProfileModel profileModel)? updateProfileSuccess,
     TResult? Function()? updateProfileLoading,
     TResult? Function(String message)? updateProfileFailure,
+    TResult? Function()? profileUdateImgLoading,
+    TResult? Function(String message)? profileUdateImgFailure,
+    TResult? Function(String image)? profileUdateImgSuccess,
+    TResult? Function(String image)? profileUdateImgRemove,
   }) {
     return updateProfileSuccess?.call(profileModel);
   }
@@ -797,6 +945,10 @@ class _$UpdateProfileSuccessImpl implements UpdateProfileSuccess {
     TResult Function(ProfileModel profileModel)? updateProfileSuccess,
     TResult Function()? updateProfileLoading,
     TResult Function(String message)? updateProfileFailure,
+    TResult Function()? profileUdateImgLoading,
+    TResult Function(String message)? profileUdateImgFailure,
+    TResult Function(String image)? profileUdateImgSuccess,
+    TResult Function(String image)? profileUdateImgRemove,
     required TResult orElse(),
   }) {
     if (updateProfileSuccess != null) {
@@ -813,8 +965,16 @@ class _$UpdateProfileSuccessImpl implements UpdateProfileSuccess {
     required TResult Function(Failure value) failure,
     required TResult Function(Success value) success,
     required TResult Function(UpdateProfileSuccess value) updateProfileSuccess,
-    required TResult Function(updateProfileLoading value) updateProfileLoading,
+    required TResult Function(UpdateProfileLoading value) updateProfileLoading,
     required TResult Function(UpdateProfileFailure value) updateProfileFailure,
+    required TResult Function(ProfileUpdateImgLoading value)
+        profileUdateImgLoading,
+    required TResult Function(ProfileUpdateImgFailure value)
+        profileUdateImgFailure,
+    required TResult Function(ProfileUdateImgSuccess value)
+        profileUdateImgSuccess,
+    required TResult Function(ProfileUdateImgRemove value)
+        profileUdateImgRemove,
   }) {
     return updateProfileSuccess(this);
   }
@@ -827,8 +987,12 @@ class _$UpdateProfileSuccessImpl implements UpdateProfileSuccess {
     TResult? Function(Failure value)? failure,
     TResult? Function(Success value)? success,
     TResult? Function(UpdateProfileSuccess value)? updateProfileSuccess,
-    TResult? Function(updateProfileLoading value)? updateProfileLoading,
+    TResult? Function(UpdateProfileLoading value)? updateProfileLoading,
     TResult? Function(UpdateProfileFailure value)? updateProfileFailure,
+    TResult? Function(ProfileUpdateImgLoading value)? profileUdateImgLoading,
+    TResult? Function(ProfileUpdateImgFailure value)? profileUdateImgFailure,
+    TResult? Function(ProfileUdateImgSuccess value)? profileUdateImgSuccess,
+    TResult? Function(ProfileUdateImgRemove value)? profileUdateImgRemove,
   }) {
     return updateProfileSuccess?.call(this);
   }
@@ -841,8 +1005,12 @@ class _$UpdateProfileSuccessImpl implements UpdateProfileSuccess {
     TResult Function(Failure value)? failure,
     TResult Function(Success value)? success,
     TResult Function(UpdateProfileSuccess value)? updateProfileSuccess,
-    TResult Function(updateProfileLoading value)? updateProfileLoading,
+    TResult Function(UpdateProfileLoading value)? updateProfileLoading,
     TResult Function(UpdateProfileFailure value)? updateProfileFailure,
+    TResult Function(ProfileUpdateImgLoading value)? profileUdateImgLoading,
+    TResult Function(ProfileUpdateImgFailure value)? profileUdateImgFailure,
+    TResult Function(ProfileUdateImgSuccess value)? profileUdateImgSuccess,
+    TResult Function(ProfileUdateImgRemove value)? profileUdateImgRemove,
     required TResult orElse(),
   }) {
     if (updateProfileSuccess != null) {
@@ -863,25 +1031,25 @@ abstract class UpdateProfileSuccess implements ProfileState {
 }
 
 /// @nodoc
-abstract class _$$updateProfileLoadingImplCopyWith<$Res> {
-  factory _$$updateProfileLoadingImplCopyWith(_$updateProfileLoadingImpl value,
-          $Res Function(_$updateProfileLoadingImpl) then) =
-      __$$updateProfileLoadingImplCopyWithImpl<$Res>;
+abstract class _$$UpdateProfileLoadingImplCopyWith<$Res> {
+  factory _$$UpdateProfileLoadingImplCopyWith(_$UpdateProfileLoadingImpl value,
+          $Res Function(_$UpdateProfileLoadingImpl) then) =
+      __$$UpdateProfileLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$updateProfileLoadingImplCopyWithImpl<$Res>
-    extends _$ProfileStateCopyWithImpl<$Res, _$updateProfileLoadingImpl>
-    implements _$$updateProfileLoadingImplCopyWith<$Res> {
-  __$$updateProfileLoadingImplCopyWithImpl(_$updateProfileLoadingImpl _value,
-      $Res Function(_$updateProfileLoadingImpl) _then)
+class __$$UpdateProfileLoadingImplCopyWithImpl<$Res>
+    extends _$ProfileStateCopyWithImpl<$Res, _$UpdateProfileLoadingImpl>
+    implements _$$UpdateProfileLoadingImplCopyWith<$Res> {
+  __$$UpdateProfileLoadingImplCopyWithImpl(_$UpdateProfileLoadingImpl _value,
+      $Res Function(_$UpdateProfileLoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$updateProfileLoadingImpl implements updateProfileLoading {
-  const _$updateProfileLoadingImpl();
+class _$UpdateProfileLoadingImpl implements UpdateProfileLoading {
+  const _$UpdateProfileLoadingImpl();
 
   @override
   String toString() {
@@ -892,7 +1060,7 @@ class _$updateProfileLoadingImpl implements updateProfileLoading {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$updateProfileLoadingImpl);
+            other is _$UpdateProfileLoadingImpl);
   }
 
   @override
@@ -908,6 +1076,10 @@ class _$updateProfileLoadingImpl implements updateProfileLoading {
     required TResult Function(ProfileModel profileModel) updateProfileSuccess,
     required TResult Function() updateProfileLoading,
     required TResult Function(String message) updateProfileFailure,
+    required TResult Function() profileUdateImgLoading,
+    required TResult Function(String message) profileUdateImgFailure,
+    required TResult Function(String image) profileUdateImgSuccess,
+    required TResult Function(String image) profileUdateImgRemove,
   }) {
     return updateProfileLoading();
   }
@@ -922,6 +1094,10 @@ class _$updateProfileLoadingImpl implements updateProfileLoading {
     TResult? Function(ProfileModel profileModel)? updateProfileSuccess,
     TResult? Function()? updateProfileLoading,
     TResult? Function(String message)? updateProfileFailure,
+    TResult? Function()? profileUdateImgLoading,
+    TResult? Function(String message)? profileUdateImgFailure,
+    TResult? Function(String image)? profileUdateImgSuccess,
+    TResult? Function(String image)? profileUdateImgRemove,
   }) {
     return updateProfileLoading?.call();
   }
@@ -936,6 +1112,10 @@ class _$updateProfileLoadingImpl implements updateProfileLoading {
     TResult Function(ProfileModel profileModel)? updateProfileSuccess,
     TResult Function()? updateProfileLoading,
     TResult Function(String message)? updateProfileFailure,
+    TResult Function()? profileUdateImgLoading,
+    TResult Function(String message)? profileUdateImgFailure,
+    TResult Function(String image)? profileUdateImgSuccess,
+    TResult Function(String image)? profileUdateImgRemove,
     required TResult orElse(),
   }) {
     if (updateProfileLoading != null) {
@@ -952,8 +1132,16 @@ class _$updateProfileLoadingImpl implements updateProfileLoading {
     required TResult Function(Failure value) failure,
     required TResult Function(Success value) success,
     required TResult Function(UpdateProfileSuccess value) updateProfileSuccess,
-    required TResult Function(updateProfileLoading value) updateProfileLoading,
+    required TResult Function(UpdateProfileLoading value) updateProfileLoading,
     required TResult Function(UpdateProfileFailure value) updateProfileFailure,
+    required TResult Function(ProfileUpdateImgLoading value)
+        profileUdateImgLoading,
+    required TResult Function(ProfileUpdateImgFailure value)
+        profileUdateImgFailure,
+    required TResult Function(ProfileUdateImgSuccess value)
+        profileUdateImgSuccess,
+    required TResult Function(ProfileUdateImgRemove value)
+        profileUdateImgRemove,
   }) {
     return updateProfileLoading(this);
   }
@@ -966,8 +1154,12 @@ class _$updateProfileLoadingImpl implements updateProfileLoading {
     TResult? Function(Failure value)? failure,
     TResult? Function(Success value)? success,
     TResult? Function(UpdateProfileSuccess value)? updateProfileSuccess,
-    TResult? Function(updateProfileLoading value)? updateProfileLoading,
+    TResult? Function(UpdateProfileLoading value)? updateProfileLoading,
     TResult? Function(UpdateProfileFailure value)? updateProfileFailure,
+    TResult? Function(ProfileUpdateImgLoading value)? profileUdateImgLoading,
+    TResult? Function(ProfileUpdateImgFailure value)? profileUdateImgFailure,
+    TResult? Function(ProfileUdateImgSuccess value)? profileUdateImgSuccess,
+    TResult? Function(ProfileUdateImgRemove value)? profileUdateImgRemove,
   }) {
     return updateProfileLoading?.call(this);
   }
@@ -980,8 +1172,12 @@ class _$updateProfileLoadingImpl implements updateProfileLoading {
     TResult Function(Failure value)? failure,
     TResult Function(Success value)? success,
     TResult Function(UpdateProfileSuccess value)? updateProfileSuccess,
-    TResult Function(updateProfileLoading value)? updateProfileLoading,
+    TResult Function(UpdateProfileLoading value)? updateProfileLoading,
     TResult Function(UpdateProfileFailure value)? updateProfileFailure,
+    TResult Function(ProfileUpdateImgLoading value)? profileUdateImgLoading,
+    TResult Function(ProfileUpdateImgFailure value)? profileUdateImgFailure,
+    TResult Function(ProfileUdateImgSuccess value)? profileUdateImgSuccess,
+    TResult Function(ProfileUdateImgRemove value)? profileUdateImgRemove,
     required TResult orElse(),
   }) {
     if (updateProfileLoading != null) {
@@ -991,8 +1187,8 @@ class _$updateProfileLoadingImpl implements updateProfileLoading {
   }
 }
 
-abstract class updateProfileLoading implements ProfileState {
-  const factory updateProfileLoading() = _$updateProfileLoadingImpl;
+abstract class UpdateProfileLoading implements ProfileState {
+  const factory UpdateProfileLoading() = _$UpdateProfileLoadingImpl;
 }
 
 /// @nodoc
@@ -1068,6 +1264,10 @@ class _$UpdateProfileFailureImpl implements UpdateProfileFailure {
     required TResult Function(ProfileModel profileModel) updateProfileSuccess,
     required TResult Function() updateProfileLoading,
     required TResult Function(String message) updateProfileFailure,
+    required TResult Function() profileUdateImgLoading,
+    required TResult Function(String message) profileUdateImgFailure,
+    required TResult Function(String image) profileUdateImgSuccess,
+    required TResult Function(String image) profileUdateImgRemove,
   }) {
     return updateProfileFailure(message);
   }
@@ -1082,6 +1282,10 @@ class _$UpdateProfileFailureImpl implements UpdateProfileFailure {
     TResult? Function(ProfileModel profileModel)? updateProfileSuccess,
     TResult? Function()? updateProfileLoading,
     TResult? Function(String message)? updateProfileFailure,
+    TResult? Function()? profileUdateImgLoading,
+    TResult? Function(String message)? profileUdateImgFailure,
+    TResult? Function(String image)? profileUdateImgSuccess,
+    TResult? Function(String image)? profileUdateImgRemove,
   }) {
     return updateProfileFailure?.call(message);
   }
@@ -1096,6 +1300,10 @@ class _$UpdateProfileFailureImpl implements UpdateProfileFailure {
     TResult Function(ProfileModel profileModel)? updateProfileSuccess,
     TResult Function()? updateProfileLoading,
     TResult Function(String message)? updateProfileFailure,
+    TResult Function()? profileUdateImgLoading,
+    TResult Function(String message)? profileUdateImgFailure,
+    TResult Function(String image)? profileUdateImgSuccess,
+    TResult Function(String image)? profileUdateImgRemove,
     required TResult orElse(),
   }) {
     if (updateProfileFailure != null) {
@@ -1112,8 +1320,16 @@ class _$UpdateProfileFailureImpl implements UpdateProfileFailure {
     required TResult Function(Failure value) failure,
     required TResult Function(Success value) success,
     required TResult Function(UpdateProfileSuccess value) updateProfileSuccess,
-    required TResult Function(updateProfileLoading value) updateProfileLoading,
+    required TResult Function(UpdateProfileLoading value) updateProfileLoading,
     required TResult Function(UpdateProfileFailure value) updateProfileFailure,
+    required TResult Function(ProfileUpdateImgLoading value)
+        profileUdateImgLoading,
+    required TResult Function(ProfileUpdateImgFailure value)
+        profileUdateImgFailure,
+    required TResult Function(ProfileUdateImgSuccess value)
+        profileUdateImgSuccess,
+    required TResult Function(ProfileUdateImgRemove value)
+        profileUdateImgRemove,
   }) {
     return updateProfileFailure(this);
   }
@@ -1126,8 +1342,12 @@ class _$UpdateProfileFailureImpl implements UpdateProfileFailure {
     TResult? Function(Failure value)? failure,
     TResult? Function(Success value)? success,
     TResult? Function(UpdateProfileSuccess value)? updateProfileSuccess,
-    TResult? Function(updateProfileLoading value)? updateProfileLoading,
+    TResult? Function(UpdateProfileLoading value)? updateProfileLoading,
     TResult? Function(UpdateProfileFailure value)? updateProfileFailure,
+    TResult? Function(ProfileUpdateImgLoading value)? profileUdateImgLoading,
+    TResult? Function(ProfileUpdateImgFailure value)? profileUdateImgFailure,
+    TResult? Function(ProfileUdateImgSuccess value)? profileUdateImgSuccess,
+    TResult? Function(ProfileUdateImgRemove value)? profileUdateImgRemove,
   }) {
     return updateProfileFailure?.call(this);
   }
@@ -1140,8 +1360,12 @@ class _$UpdateProfileFailureImpl implements UpdateProfileFailure {
     TResult Function(Failure value)? failure,
     TResult Function(Success value)? success,
     TResult Function(UpdateProfileSuccess value)? updateProfileSuccess,
-    TResult Function(updateProfileLoading value)? updateProfileLoading,
+    TResult Function(UpdateProfileLoading value)? updateProfileLoading,
     TResult Function(UpdateProfileFailure value)? updateProfileFailure,
+    TResult Function(ProfileUpdateImgLoading value)? profileUdateImgLoading,
+    TResult Function(ProfileUpdateImgFailure value)? profileUdateImgFailure,
+    TResult Function(ProfileUdateImgSuccess value)? profileUdateImgSuccess,
+    TResult Function(ProfileUdateImgRemove value)? profileUdateImgRemove,
     required TResult orElse(),
   }) {
     if (updateProfileFailure != null) {
@@ -1158,5 +1382,752 @@ abstract class UpdateProfileFailure implements ProfileState {
   String get message;
   @JsonKey(ignore: true)
   _$$UpdateProfileFailureImplCopyWith<_$UpdateProfileFailureImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ProfileUpdateImgLoadingImplCopyWith<$Res> {
+  factory _$$ProfileUpdateImgLoadingImplCopyWith(
+          _$ProfileUpdateImgLoadingImpl value,
+          $Res Function(_$ProfileUpdateImgLoadingImpl) then) =
+      __$$ProfileUpdateImgLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ProfileUpdateImgLoadingImplCopyWithImpl<$Res>
+    extends _$ProfileStateCopyWithImpl<$Res, _$ProfileUpdateImgLoadingImpl>
+    implements _$$ProfileUpdateImgLoadingImplCopyWith<$Res> {
+  __$$ProfileUpdateImgLoadingImplCopyWithImpl(
+      _$ProfileUpdateImgLoadingImpl _value,
+      $Res Function(_$ProfileUpdateImgLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ProfileUpdateImgLoadingImpl implements ProfileUpdateImgLoading {
+  const _$ProfileUpdateImgLoadingImpl();
+
+  @override
+  String toString() {
+    return 'ProfileState.profileUdateImgLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ProfileUpdateImgLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String message) failure,
+    required TResult Function(ProfileModel profileModel) success,
+    required TResult Function(ProfileModel profileModel) updateProfileSuccess,
+    required TResult Function() updateProfileLoading,
+    required TResult Function(String message) updateProfileFailure,
+    required TResult Function() profileUdateImgLoading,
+    required TResult Function(String message) profileUdateImgFailure,
+    required TResult Function(String image) profileUdateImgSuccess,
+    required TResult Function(String image) profileUdateImgRemove,
+  }) {
+    return profileUdateImgLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String message)? failure,
+    TResult? Function(ProfileModel profileModel)? success,
+    TResult? Function(ProfileModel profileModel)? updateProfileSuccess,
+    TResult? Function()? updateProfileLoading,
+    TResult? Function(String message)? updateProfileFailure,
+    TResult? Function()? profileUdateImgLoading,
+    TResult? Function(String message)? profileUdateImgFailure,
+    TResult? Function(String image)? profileUdateImgSuccess,
+    TResult? Function(String image)? profileUdateImgRemove,
+  }) {
+    return profileUdateImgLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message)? failure,
+    TResult Function(ProfileModel profileModel)? success,
+    TResult Function(ProfileModel profileModel)? updateProfileSuccess,
+    TResult Function()? updateProfileLoading,
+    TResult Function(String message)? updateProfileFailure,
+    TResult Function()? profileUdateImgLoading,
+    TResult Function(String message)? profileUdateImgFailure,
+    TResult Function(String image)? profileUdateImgSuccess,
+    TResult Function(String image)? profileUdateImgRemove,
+    required TResult orElse(),
+  }) {
+    if (profileUdateImgLoading != null) {
+      return profileUdateImgLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(Loading value) loading,
+    required TResult Function(Failure value) failure,
+    required TResult Function(Success value) success,
+    required TResult Function(UpdateProfileSuccess value) updateProfileSuccess,
+    required TResult Function(UpdateProfileLoading value) updateProfileLoading,
+    required TResult Function(UpdateProfileFailure value) updateProfileFailure,
+    required TResult Function(ProfileUpdateImgLoading value)
+        profileUdateImgLoading,
+    required TResult Function(ProfileUpdateImgFailure value)
+        profileUdateImgFailure,
+    required TResult Function(ProfileUdateImgSuccess value)
+        profileUdateImgSuccess,
+    required TResult Function(ProfileUdateImgRemove value)
+        profileUdateImgRemove,
+  }) {
+    return profileUdateImgLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(Loading value)? loading,
+    TResult? Function(Failure value)? failure,
+    TResult? Function(Success value)? success,
+    TResult? Function(UpdateProfileSuccess value)? updateProfileSuccess,
+    TResult? Function(UpdateProfileLoading value)? updateProfileLoading,
+    TResult? Function(UpdateProfileFailure value)? updateProfileFailure,
+    TResult? Function(ProfileUpdateImgLoading value)? profileUdateImgLoading,
+    TResult? Function(ProfileUpdateImgFailure value)? profileUdateImgFailure,
+    TResult? Function(ProfileUdateImgSuccess value)? profileUdateImgSuccess,
+    TResult? Function(ProfileUdateImgRemove value)? profileUdateImgRemove,
+  }) {
+    return profileUdateImgLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(Failure value)? failure,
+    TResult Function(Success value)? success,
+    TResult Function(UpdateProfileSuccess value)? updateProfileSuccess,
+    TResult Function(UpdateProfileLoading value)? updateProfileLoading,
+    TResult Function(UpdateProfileFailure value)? updateProfileFailure,
+    TResult Function(ProfileUpdateImgLoading value)? profileUdateImgLoading,
+    TResult Function(ProfileUpdateImgFailure value)? profileUdateImgFailure,
+    TResult Function(ProfileUdateImgSuccess value)? profileUdateImgSuccess,
+    TResult Function(ProfileUdateImgRemove value)? profileUdateImgRemove,
+    required TResult orElse(),
+  }) {
+    if (profileUdateImgLoading != null) {
+      return profileUdateImgLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ProfileUpdateImgLoading implements ProfileState {
+  const factory ProfileUpdateImgLoading() = _$ProfileUpdateImgLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$ProfileUpdateImgFailureImplCopyWith<$Res> {
+  factory _$$ProfileUpdateImgFailureImplCopyWith(
+          _$ProfileUpdateImgFailureImpl value,
+          $Res Function(_$ProfileUpdateImgFailureImpl) then) =
+      __$$ProfileUpdateImgFailureImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$ProfileUpdateImgFailureImplCopyWithImpl<$Res>
+    extends _$ProfileStateCopyWithImpl<$Res, _$ProfileUpdateImgFailureImpl>
+    implements _$$ProfileUpdateImgFailureImplCopyWith<$Res> {
+  __$$ProfileUpdateImgFailureImplCopyWithImpl(
+      _$ProfileUpdateImgFailureImpl _value,
+      $Res Function(_$ProfileUpdateImgFailureImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$ProfileUpdateImgFailureImpl(
+      null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ProfileUpdateImgFailureImpl implements ProfileUpdateImgFailure {
+  const _$ProfileUpdateImgFailureImpl(this.message);
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'ProfileState.profileUdateImgFailure(message: $message)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ProfileUpdateImgFailureImpl &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ProfileUpdateImgFailureImplCopyWith<_$ProfileUpdateImgFailureImpl>
+      get copyWith => __$$ProfileUpdateImgFailureImplCopyWithImpl<
+          _$ProfileUpdateImgFailureImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String message) failure,
+    required TResult Function(ProfileModel profileModel) success,
+    required TResult Function(ProfileModel profileModel) updateProfileSuccess,
+    required TResult Function() updateProfileLoading,
+    required TResult Function(String message) updateProfileFailure,
+    required TResult Function() profileUdateImgLoading,
+    required TResult Function(String message) profileUdateImgFailure,
+    required TResult Function(String image) profileUdateImgSuccess,
+    required TResult Function(String image) profileUdateImgRemove,
+  }) {
+    return profileUdateImgFailure(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String message)? failure,
+    TResult? Function(ProfileModel profileModel)? success,
+    TResult? Function(ProfileModel profileModel)? updateProfileSuccess,
+    TResult? Function()? updateProfileLoading,
+    TResult? Function(String message)? updateProfileFailure,
+    TResult? Function()? profileUdateImgLoading,
+    TResult? Function(String message)? profileUdateImgFailure,
+    TResult? Function(String image)? profileUdateImgSuccess,
+    TResult? Function(String image)? profileUdateImgRemove,
+  }) {
+    return profileUdateImgFailure?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message)? failure,
+    TResult Function(ProfileModel profileModel)? success,
+    TResult Function(ProfileModel profileModel)? updateProfileSuccess,
+    TResult Function()? updateProfileLoading,
+    TResult Function(String message)? updateProfileFailure,
+    TResult Function()? profileUdateImgLoading,
+    TResult Function(String message)? profileUdateImgFailure,
+    TResult Function(String image)? profileUdateImgSuccess,
+    TResult Function(String image)? profileUdateImgRemove,
+    required TResult orElse(),
+  }) {
+    if (profileUdateImgFailure != null) {
+      return profileUdateImgFailure(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(Loading value) loading,
+    required TResult Function(Failure value) failure,
+    required TResult Function(Success value) success,
+    required TResult Function(UpdateProfileSuccess value) updateProfileSuccess,
+    required TResult Function(UpdateProfileLoading value) updateProfileLoading,
+    required TResult Function(UpdateProfileFailure value) updateProfileFailure,
+    required TResult Function(ProfileUpdateImgLoading value)
+        profileUdateImgLoading,
+    required TResult Function(ProfileUpdateImgFailure value)
+        profileUdateImgFailure,
+    required TResult Function(ProfileUdateImgSuccess value)
+        profileUdateImgSuccess,
+    required TResult Function(ProfileUdateImgRemove value)
+        profileUdateImgRemove,
+  }) {
+    return profileUdateImgFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(Loading value)? loading,
+    TResult? Function(Failure value)? failure,
+    TResult? Function(Success value)? success,
+    TResult? Function(UpdateProfileSuccess value)? updateProfileSuccess,
+    TResult? Function(UpdateProfileLoading value)? updateProfileLoading,
+    TResult? Function(UpdateProfileFailure value)? updateProfileFailure,
+    TResult? Function(ProfileUpdateImgLoading value)? profileUdateImgLoading,
+    TResult? Function(ProfileUpdateImgFailure value)? profileUdateImgFailure,
+    TResult? Function(ProfileUdateImgSuccess value)? profileUdateImgSuccess,
+    TResult? Function(ProfileUdateImgRemove value)? profileUdateImgRemove,
+  }) {
+    return profileUdateImgFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(Failure value)? failure,
+    TResult Function(Success value)? success,
+    TResult Function(UpdateProfileSuccess value)? updateProfileSuccess,
+    TResult Function(UpdateProfileLoading value)? updateProfileLoading,
+    TResult Function(UpdateProfileFailure value)? updateProfileFailure,
+    TResult Function(ProfileUpdateImgLoading value)? profileUdateImgLoading,
+    TResult Function(ProfileUpdateImgFailure value)? profileUdateImgFailure,
+    TResult Function(ProfileUdateImgSuccess value)? profileUdateImgSuccess,
+    TResult Function(ProfileUdateImgRemove value)? profileUdateImgRemove,
+    required TResult orElse(),
+  }) {
+    if (profileUdateImgFailure != null) {
+      return profileUdateImgFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ProfileUpdateImgFailure implements ProfileState {
+  const factory ProfileUpdateImgFailure(final String message) =
+      _$ProfileUpdateImgFailureImpl;
+
+  String get message;
+  @JsonKey(ignore: true)
+  _$$ProfileUpdateImgFailureImplCopyWith<_$ProfileUpdateImgFailureImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ProfileUdateImgSuccessImplCopyWith<$Res> {
+  factory _$$ProfileUdateImgSuccessImplCopyWith(
+          _$ProfileUdateImgSuccessImpl value,
+          $Res Function(_$ProfileUdateImgSuccessImpl) then) =
+      __$$ProfileUdateImgSuccessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String image});
+}
+
+/// @nodoc
+class __$$ProfileUdateImgSuccessImplCopyWithImpl<$Res>
+    extends _$ProfileStateCopyWithImpl<$Res, _$ProfileUdateImgSuccessImpl>
+    implements _$$ProfileUdateImgSuccessImplCopyWith<$Res> {
+  __$$ProfileUdateImgSuccessImplCopyWithImpl(
+      _$ProfileUdateImgSuccessImpl _value,
+      $Res Function(_$ProfileUdateImgSuccessImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? image = null,
+  }) {
+    return _then(_$ProfileUdateImgSuccessImpl(
+      null == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ProfileUdateImgSuccessImpl implements ProfileUdateImgSuccess {
+  const _$ProfileUdateImgSuccessImpl(this.image);
+
+  @override
+  final String image;
+
+  @override
+  String toString() {
+    return 'ProfileState.profileUdateImgSuccess(image: $image)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ProfileUdateImgSuccessImpl &&
+            (identical(other.image, image) || other.image == image));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, image);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ProfileUdateImgSuccessImplCopyWith<_$ProfileUdateImgSuccessImpl>
+      get copyWith => __$$ProfileUdateImgSuccessImplCopyWithImpl<
+          _$ProfileUdateImgSuccessImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String message) failure,
+    required TResult Function(ProfileModel profileModel) success,
+    required TResult Function(ProfileModel profileModel) updateProfileSuccess,
+    required TResult Function() updateProfileLoading,
+    required TResult Function(String message) updateProfileFailure,
+    required TResult Function() profileUdateImgLoading,
+    required TResult Function(String message) profileUdateImgFailure,
+    required TResult Function(String image) profileUdateImgSuccess,
+    required TResult Function(String image) profileUdateImgRemove,
+  }) {
+    return profileUdateImgSuccess(image);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String message)? failure,
+    TResult? Function(ProfileModel profileModel)? success,
+    TResult? Function(ProfileModel profileModel)? updateProfileSuccess,
+    TResult? Function()? updateProfileLoading,
+    TResult? Function(String message)? updateProfileFailure,
+    TResult? Function()? profileUdateImgLoading,
+    TResult? Function(String message)? profileUdateImgFailure,
+    TResult? Function(String image)? profileUdateImgSuccess,
+    TResult? Function(String image)? profileUdateImgRemove,
+  }) {
+    return profileUdateImgSuccess?.call(image);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message)? failure,
+    TResult Function(ProfileModel profileModel)? success,
+    TResult Function(ProfileModel profileModel)? updateProfileSuccess,
+    TResult Function()? updateProfileLoading,
+    TResult Function(String message)? updateProfileFailure,
+    TResult Function()? profileUdateImgLoading,
+    TResult Function(String message)? profileUdateImgFailure,
+    TResult Function(String image)? profileUdateImgSuccess,
+    TResult Function(String image)? profileUdateImgRemove,
+    required TResult orElse(),
+  }) {
+    if (profileUdateImgSuccess != null) {
+      return profileUdateImgSuccess(image);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(Loading value) loading,
+    required TResult Function(Failure value) failure,
+    required TResult Function(Success value) success,
+    required TResult Function(UpdateProfileSuccess value) updateProfileSuccess,
+    required TResult Function(UpdateProfileLoading value) updateProfileLoading,
+    required TResult Function(UpdateProfileFailure value) updateProfileFailure,
+    required TResult Function(ProfileUpdateImgLoading value)
+        profileUdateImgLoading,
+    required TResult Function(ProfileUpdateImgFailure value)
+        profileUdateImgFailure,
+    required TResult Function(ProfileUdateImgSuccess value)
+        profileUdateImgSuccess,
+    required TResult Function(ProfileUdateImgRemove value)
+        profileUdateImgRemove,
+  }) {
+    return profileUdateImgSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(Loading value)? loading,
+    TResult? Function(Failure value)? failure,
+    TResult? Function(Success value)? success,
+    TResult? Function(UpdateProfileSuccess value)? updateProfileSuccess,
+    TResult? Function(UpdateProfileLoading value)? updateProfileLoading,
+    TResult? Function(UpdateProfileFailure value)? updateProfileFailure,
+    TResult? Function(ProfileUpdateImgLoading value)? profileUdateImgLoading,
+    TResult? Function(ProfileUpdateImgFailure value)? profileUdateImgFailure,
+    TResult? Function(ProfileUdateImgSuccess value)? profileUdateImgSuccess,
+    TResult? Function(ProfileUdateImgRemove value)? profileUdateImgRemove,
+  }) {
+    return profileUdateImgSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(Failure value)? failure,
+    TResult Function(Success value)? success,
+    TResult Function(UpdateProfileSuccess value)? updateProfileSuccess,
+    TResult Function(UpdateProfileLoading value)? updateProfileLoading,
+    TResult Function(UpdateProfileFailure value)? updateProfileFailure,
+    TResult Function(ProfileUpdateImgLoading value)? profileUdateImgLoading,
+    TResult Function(ProfileUpdateImgFailure value)? profileUdateImgFailure,
+    TResult Function(ProfileUdateImgSuccess value)? profileUdateImgSuccess,
+    TResult Function(ProfileUdateImgRemove value)? profileUdateImgRemove,
+    required TResult orElse(),
+  }) {
+    if (profileUdateImgSuccess != null) {
+      return profileUdateImgSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ProfileUdateImgSuccess implements ProfileState {
+  const factory ProfileUdateImgSuccess(final String image) =
+      _$ProfileUdateImgSuccessImpl;
+
+  String get image;
+  @JsonKey(ignore: true)
+  _$$ProfileUdateImgSuccessImplCopyWith<_$ProfileUdateImgSuccessImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ProfileUdateImgRemoveImplCopyWith<$Res> {
+  factory _$$ProfileUdateImgRemoveImplCopyWith(
+          _$ProfileUdateImgRemoveImpl value,
+          $Res Function(_$ProfileUdateImgRemoveImpl) then) =
+      __$$ProfileUdateImgRemoveImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String image});
+}
+
+/// @nodoc
+class __$$ProfileUdateImgRemoveImplCopyWithImpl<$Res>
+    extends _$ProfileStateCopyWithImpl<$Res, _$ProfileUdateImgRemoveImpl>
+    implements _$$ProfileUdateImgRemoveImplCopyWith<$Res> {
+  __$$ProfileUdateImgRemoveImplCopyWithImpl(_$ProfileUdateImgRemoveImpl _value,
+      $Res Function(_$ProfileUdateImgRemoveImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? image = null,
+  }) {
+    return _then(_$ProfileUdateImgRemoveImpl(
+      null == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ProfileUdateImgRemoveImpl implements ProfileUdateImgRemove {
+  const _$ProfileUdateImgRemoveImpl(this.image);
+
+  @override
+  final String image;
+
+  @override
+  String toString() {
+    return 'ProfileState.profileUdateImgRemove(image: $image)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ProfileUdateImgRemoveImpl &&
+            (identical(other.image, image) || other.image == image));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, image);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ProfileUdateImgRemoveImplCopyWith<_$ProfileUdateImgRemoveImpl>
+      get copyWith => __$$ProfileUdateImgRemoveImplCopyWithImpl<
+          _$ProfileUdateImgRemoveImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String message) failure,
+    required TResult Function(ProfileModel profileModel) success,
+    required TResult Function(ProfileModel profileModel) updateProfileSuccess,
+    required TResult Function() updateProfileLoading,
+    required TResult Function(String message) updateProfileFailure,
+    required TResult Function() profileUdateImgLoading,
+    required TResult Function(String message) profileUdateImgFailure,
+    required TResult Function(String image) profileUdateImgSuccess,
+    required TResult Function(String image) profileUdateImgRemove,
+  }) {
+    return profileUdateImgRemove(image);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String message)? failure,
+    TResult? Function(ProfileModel profileModel)? success,
+    TResult? Function(ProfileModel profileModel)? updateProfileSuccess,
+    TResult? Function()? updateProfileLoading,
+    TResult? Function(String message)? updateProfileFailure,
+    TResult? Function()? profileUdateImgLoading,
+    TResult? Function(String message)? profileUdateImgFailure,
+    TResult? Function(String image)? profileUdateImgSuccess,
+    TResult? Function(String image)? profileUdateImgRemove,
+  }) {
+    return profileUdateImgRemove?.call(image);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message)? failure,
+    TResult Function(ProfileModel profileModel)? success,
+    TResult Function(ProfileModel profileModel)? updateProfileSuccess,
+    TResult Function()? updateProfileLoading,
+    TResult Function(String message)? updateProfileFailure,
+    TResult Function()? profileUdateImgLoading,
+    TResult Function(String message)? profileUdateImgFailure,
+    TResult Function(String image)? profileUdateImgSuccess,
+    TResult Function(String image)? profileUdateImgRemove,
+    required TResult orElse(),
+  }) {
+    if (profileUdateImgRemove != null) {
+      return profileUdateImgRemove(image);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(Loading value) loading,
+    required TResult Function(Failure value) failure,
+    required TResult Function(Success value) success,
+    required TResult Function(UpdateProfileSuccess value) updateProfileSuccess,
+    required TResult Function(UpdateProfileLoading value) updateProfileLoading,
+    required TResult Function(UpdateProfileFailure value) updateProfileFailure,
+    required TResult Function(ProfileUpdateImgLoading value)
+        profileUdateImgLoading,
+    required TResult Function(ProfileUpdateImgFailure value)
+        profileUdateImgFailure,
+    required TResult Function(ProfileUdateImgSuccess value)
+        profileUdateImgSuccess,
+    required TResult Function(ProfileUdateImgRemove value)
+        profileUdateImgRemove,
+  }) {
+    return profileUdateImgRemove(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(Loading value)? loading,
+    TResult? Function(Failure value)? failure,
+    TResult? Function(Success value)? success,
+    TResult? Function(UpdateProfileSuccess value)? updateProfileSuccess,
+    TResult? Function(UpdateProfileLoading value)? updateProfileLoading,
+    TResult? Function(UpdateProfileFailure value)? updateProfileFailure,
+    TResult? Function(ProfileUpdateImgLoading value)? profileUdateImgLoading,
+    TResult? Function(ProfileUpdateImgFailure value)? profileUdateImgFailure,
+    TResult? Function(ProfileUdateImgSuccess value)? profileUdateImgSuccess,
+    TResult? Function(ProfileUdateImgRemove value)? profileUdateImgRemove,
+  }) {
+    return profileUdateImgRemove?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(Failure value)? failure,
+    TResult Function(Success value)? success,
+    TResult Function(UpdateProfileSuccess value)? updateProfileSuccess,
+    TResult Function(UpdateProfileLoading value)? updateProfileLoading,
+    TResult Function(UpdateProfileFailure value)? updateProfileFailure,
+    TResult Function(ProfileUpdateImgLoading value)? profileUdateImgLoading,
+    TResult Function(ProfileUpdateImgFailure value)? profileUdateImgFailure,
+    TResult Function(ProfileUdateImgSuccess value)? profileUdateImgSuccess,
+    TResult Function(ProfileUdateImgRemove value)? profileUdateImgRemove,
+    required TResult orElse(),
+  }) {
+    if (profileUdateImgRemove != null) {
+      return profileUdateImgRemove(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ProfileUdateImgRemove implements ProfileState {
+  const factory ProfileUdateImgRemove(final String image) =
+      _$ProfileUdateImgRemoveImpl;
+
+  String get image;
+  @JsonKey(ignore: true)
+  _$$ProfileUdateImgRemoveImplCopyWith<_$ProfileUdateImgRemoveImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

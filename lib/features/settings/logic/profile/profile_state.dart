@@ -12,7 +12,15 @@ class ProfileState with _$ProfileState {
 
   const factory ProfileState.updateProfileSuccess(ProfileModel profileModel) =
       UpdateProfileSuccess;
-  const factory ProfileState.updateProfileLoading() = updateProfileLoading;
+  const factory ProfileState.updateProfileLoading() = UpdateProfileLoading;
   const factory ProfileState.updateProfileFailure(String message) =
       UpdateProfileFailure;
+
+  const factory ProfileState.profileUdateImgLoading() = ProfileUpdateImgLoading;
+  const factory ProfileState.profileUdateImgFailure(String message) =
+      ProfileUpdateImgFailure;
+  const factory ProfileState.profileUdateImgSuccess(String image) =
+      ProfileUdateImgSuccess;
+  const factory ProfileState.profileUdateImgRemove(String image) =
+      ProfileUdateImgRemove;
 }

@@ -46,6 +46,7 @@ class AppInjection {
     di
       ..registerLazySingleton<ProfileApi>(() => ProfileApi(dio))
       ..registerLazySingleton<ProfileRepo>(() => ProfileRepo(profileApi: di()))
-      ..registerFactory<ProfileCubit>(() => ProfileCubit(profileRepo: di()));
+      ..registerFactory<ProfileCubit>(
+          () => ProfileCubit(profileRepo: di(), uploadImageRepo: di()));
   }
 }

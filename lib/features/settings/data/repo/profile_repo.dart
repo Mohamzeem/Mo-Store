@@ -1,5 +1,3 @@
-import 'package:mo_store/core/consts/pref_keys.dart';
-import 'package:mo_store/core/helpers/shared_prefs.dart';
 import 'package:mo_store/core/network/api_result.dart';
 import 'package:mo_store/features/settings/data/api/profile_api.dart';
 import 'package:mo_store/features/settings/data/models/profile_model.dart';
@@ -19,8 +17,11 @@ class ProfileRepo {
   }
 
   Future<ApiResult<ProfileModel>> updateProfile(
-      UpdateProfileRequest value) async {
-    int id = int.parse(SharedPrefHelper.getSecuredString(PrefKeys.userId));
+      UpdateProfileRequest value, int id) async {
+    // String stringId = SharedPrefHelper.getSecuredString(PrefKeys.userId);
+    // print('stringId : $stringId');
+    // int id = int.parse(stringId);
+    // print('intId : $id');
     try {
       final result = await profileApi.updateProfile(value, id);
       return ApiResult.success(result);

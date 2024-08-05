@@ -2,7 +2,11 @@ import 'dart:convert';
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:mo_store/core/app/upload_image/data/upload_repo.dart';
 import 'package:mo_store/core/consts/pref_keys.dart';
+import 'package:mo_store/core/helpers/extensions.dart';
+import 'package:mo_store/core/helpers/image_picker.dart';
 import 'package:mo_store/core/helpers/prints.dart';
 import 'package:mo_store/core/helpers/shared_prefs.dart';
 import 'package:mo_store/features/settings/data/models/profile_model.dart';
@@ -12,9 +16,11 @@ import 'package:mo_store/features/settings/logic/profile/profile_state.dart';
 
 class ProfileCubit extends Cubit<ProfileState> {
   final ProfileRepo profileRepo;
-  ProfileCubit({required this.profileRepo})
+  final UploadImageRepo uploadImageRepo;
+  ProfileCubit({required this.profileRepo, required this.uploadImageRepo})
       : super(const ProfileState.initial());
 
+  String imageUrl = "";
   ProfileModel? userModel;
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
@@ -63,34 +69,54 @@ class ProfileCubit extends Cubit<ProfileState> {
 
   Future<void> updateProfile() async {
     emit(const ProfileState.loading());
-    // ProfileModel model = ProfileModel(
-    //   id: userModel!.id,
-    //   name: nameController.text.trim().isNullOrEmpty()
-    //       ? userModel!.name
-    //       : nameController.text.trim(),
-    //   email: emailController.text.trim().isNullOrEmpty()
-    //       ? userModel!.email
-    //       : emailController.text.trim(),
-    //   password: passwordController.text.trim().isNullOrEmpty()
-    //       ? userModel!.password
-    //       : passwordController.text.trim(),
-    //   role: userModel!.role,
-    //   avatar: userModel!.avatar,
-    //   creationAt: userModel!.creationAt,
-    //   updatedAt: DateTime.now().toString(),
-    // );
-    UpdateProfileRequest request =
-        UpdateProfileRequest(name: nameController.text.trim());
-    final result = await profileRepo.updateProfile(request);
+    UpdateProfileRequest request = UpdateProfileRequest(
+      name: nameController.text.isNullOrEmpty()
+          ? userModel!.name
+          : nameController.text.trim(),
+      email: emailController.text.isNullOrEmpty()
+          ? userModel!.email
+          : emailController.text.trim(),
+      password: passwordController.text.trim().isNullOrEmpty()
+          ? userModel!.password
+          : passwordController.text.trim(),
+      avatar: imageUrl == "" || imageUrl.isNullOrEmpty()
+          ? userModel!.avatar
+          : imageUrl,
+      updatedAt: DateTime.now().toString(),
+    );
+    int id = int.parse('${userModel!.id}');
+    final result = await profileRepo.updateProfile(request, id);
     result.when(
       success: (profileModel) async {
-        emit(ProfileState.updateProfileSuccess(profileModel));
-        await getProfile();
+        String offlineProfile = jsonEncode(profileModel);
+        SharedPrefHelper.setSecuredString(PrefKeys.userProfile, offlineProfile);
         await getOfflineProfile();
-        Prints.debug(
-            message: SharedPrefHelper.getSecuredString(PrefKeys.userId));
+        emit(ProfileState.updateProfileSuccess(profileModel));
       },
       failure: (message) => emit(ProfileState.updateProfileFailure(message)),
     );
+  }
+
+  Future uploadImage(ImageSource source, BuildContext context) async {
+    final response =
+        await AppImagePicker().pickImage(source: source, context: context);
+    if (response == null) return;
+
+    emit(const ProfileState.profileUdateImgLoading());
+    final result = await uploadImageRepo.uploadImage(image: response);
+    result.when(
+      success: (data) {
+        imageUrl = data.location ?? "";
+        emit(ProfileState.profileUdateImgSuccess(imageUrl));
+      },
+      failure: (error) {
+        emit(ProfileState.profileUdateImgFailure(error));
+      },
+    );
+  }
+
+  void removeImage() {
+    final img = imageUrl = "";
+    emit(ProfileState.profileUdateImgRemove(img));
   }
 }

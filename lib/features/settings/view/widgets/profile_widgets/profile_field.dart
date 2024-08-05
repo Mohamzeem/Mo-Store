@@ -41,9 +41,6 @@ class ProfileField extends StatelessWidget {
           hintStyle: isVisibleText
               ? AppFonts.regular20Primary
               : AppFonts.regular20lightGrey,
-          // suffixIcon: showIcon
-          //     ? const Icon(Icons.visibility_off, color: AppColors.lightBlue)
-          //     : const SizedBox.shrink(),
           suffixIcon: showIcon
               ? InkWell(
                   onTap: suffixIconFunction,
@@ -58,7 +55,6 @@ class ProfileField extends StatelessWidget {
                         ),
                 )
               : const SizedBox(),
-
           contentPadding:
               EdgeInsets.symmetric(horizontal: 10.w, vertical: 12.h),
           fillColor: AppColors.lightGrey,
