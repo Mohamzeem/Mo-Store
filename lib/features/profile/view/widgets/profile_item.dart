@@ -6,7 +6,12 @@ import 'package:mo_store/core/helpers/text_fonts.dart';
 class ProfileItem extends StatelessWidget {
   final VoidCallback? onTap;
   final String title;
+<<<<<<< Updated upstream:lib/features/profile/view/widgets/profile_item.dart
   const ProfileItem({super.key, this.onTap, required this.title});
+=======
+  final TextStyle? style;
+  const SettingsItem({super.key, this.onTap, this.style, required this.title});
+>>>>>>> Stashed changes:lib/features/settings/view/widgets/settings_widgets/settings_item.dart
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +29,7 @@ class ProfileItem extends StatelessWidget {
           children: [
             Text(
               title,
-              style: AppFonts.regular20Primary,
+              style: style ?? AppFonts.regular20Primary,
             ),
             const Icon(
               Icons.arrow_forward_ios_outlined,
