@@ -1,29 +1,22 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'profile_model.g.dart';
+part 'update_profile_request.g.dart';
 
 @JsonSerializable()
-class ProfileModel {
-  int? id;
+class UpdateProfileRequest {
   String? email;
   String? password;
   String? name;
-  String? role;
   String? avatar;
-  String? creationAt;
   String? updatedAt;
 
-  ProfileModel({
-    this.id,
+  UpdateProfileRequest({
     this.name,
     this.email,
     this.password,
-    this.role,
     this.avatar,
-    this.creationAt,
     this.updatedAt,
   });
 
-  factory ProfileModel.fromJson(Map<String, dynamic> json) =>
-      _$ProfileModelFromJson(json);
+  Map<String, dynamic> toJson() => _$UpdateProfileRequestToJson(this);
 }

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class CategoriesView extends StatelessWidget {
-  const CategoriesView({super.key});
+class NotificationsView extends StatelessWidget {
+  const NotificationsView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Categories View'),
+        title: const Text('Notifications View'),
       ),
     );
   }

@@ -10,6 +10,9 @@ import 'package:mo_store/features/login/logic/login/login_cubit.dart';
 import 'package:mo_store/features/register/data/api/register_api.dart';
 import 'package:mo_store/features/register/data/repo/register_repo.dart';
 import 'package:mo_store/features/register/logic/register/register_cubit.dart';
+import 'package:mo_store/features/settings/data/api/profile_api.dart';
+import 'package:mo_store/features/settings/data/repo/profile_repo.dart';
+import 'package:mo_store/features/settings/logic/profile/profile_cubit.dart';
 
 GetIt di = GetIt.instance;
 
@@ -39,11 +42,11 @@ class AppInjection {
       ..registerFactory<UploadImageCubit>(
           () => UploadImageCubit(uploadImageRepo: di()));
 
-// //^ home cubit and repo
-//     di
-//       ..registerLazySingleton<HomeApi>(() => HomeApi(dio))
-//       ..registerLazySingleton<HomeRepo>(() => HomeRepo(homeApi: di()))
-//       ..registerFactory<HomeCubit>(() => HomeCubit(homeRepo: di()));
-//   }
+//^ profile cubit and repo
+    di
+      ..registerLazySingleton<ProfileApi>(() => ProfileApi(dio))
+      ..registerLazySingleton<ProfileRepo>(() => ProfileRepo(profileApi: di()))
+      ..registerFactory<ProfileCubit>(
+          () => ProfileCubit(profileRepo: di(), uploadImageRepo: di()));
   }
 }

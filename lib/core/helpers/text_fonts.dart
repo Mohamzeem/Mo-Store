@@ -44,6 +44,12 @@ class AppFonts {
     color: AppColors.primaryColor,
   );
 
+  static TextStyle regular20lightGrey = TextStyle(
+    fontSize: 20.sp,
+    fontWeight: FontWeight.w400,
+    fontFamily: AppGlobals.appFont,
+    color: AppColors.lightGrey,
+  );
   static TextStyle medium24White = TextStyle(
     fontSize: 24.sp,
     fontWeight: FontWeight.w400,

@@ -3,10 +3,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
 import 'package:mo_store/core/helpers/text_fonts.dart';
 
-class ProfileItem extends StatelessWidget {
+class SettingsItem extends StatelessWidget {
   final VoidCallback? onTap;
   final String title;
-  const ProfileItem({super.key, this.onTap, required this.title});
+  final TextStyle? textStyle;
+  const SettingsItem({
+    super.key,
+    this.onTap,
+    required this.title,
+    this.textStyle,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +30,7 @@ class ProfileItem extends StatelessWidget {
           children: [
             Text(
               title,
-              style: AppFonts.regular20Primary,
+              style: textStyle ?? AppFonts.regular20Primary,
             ),
             const Icon(
               Icons.arrow_forward_ios_outlined,

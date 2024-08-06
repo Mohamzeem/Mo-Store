@@ -13,6 +13,8 @@ class CustomCachedImage extends StatelessWidget {
   final BoxFit fit;
   final BoxShape shape;
   final bool? isBorder;
+  final double loadingCircle;
+  final Color loadingColor;
   const CustomCachedImage({
     super.key,
     required this.photoUrl,
@@ -21,7 +23,9 @@ class CustomCachedImage extends StatelessWidget {
     required this.height,
     this.shape = BoxShape.circle,
     this.fit = BoxFit.fill,
-    this.isBorder = false,
+    this.isBorder = true,
+    this.loadingCircle = 30,
+    this.loadingColor = AppColors.lightBlue,
   });
 
   @override
@@ -41,8 +45,8 @@ class CustomCachedImage extends StatelessWidget {
             shape: shape,
             border: isBorder!
                 ? Border.all(
-                    width: 0.5,
-                    color: AppColors.primaryColor,
+                    width: 1,
+                    color: AppColors.bordersGrey,
                   )
                 : Border.all(width: 0, color: Colors.transparent),
             image: DecorationImage(
@@ -53,10 +57,14 @@ class CustomCachedImage extends StatelessWidget {
           child: child,
         ),
         progressIndicatorBuilder: (context, url, progress) =>
-            const CustomCircularLoading(height: 30, width: 30),
-        errorWidget: (context, url, error) => const Icon(
+            CustomCircularLoading(
+          height: loadingCircle.h,
+          width: loadingCircle.w,
+          color: loadingColor,
+        ),
+        errorWidget: (context, url, error) => Icon(
           Icons.error,
-          size: 40,
+          size: height / 2,
           color: AppColors.redAccent,
         ),
       ),

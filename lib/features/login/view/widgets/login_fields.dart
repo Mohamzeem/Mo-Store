@@ -19,7 +19,7 @@ class _LoginFieldsState extends State<LoginFields> {
   @override
   void initState() {
     super.initState();
-    _cubit = context.read<LoginCubit>();
+    _cubit = BlocProvider.of<LoginCubit>(context);
   }
 
   @override

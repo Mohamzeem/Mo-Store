@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'login_api.dart';
+part of 'profile_api.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,8 +8,8 @@ part of 'login_api.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element
 
-class _LoginApi implements LoginApi {
-  _LoginApi(
+class _ProfileApi implements ProfileApi {
+  _ProfileApi(
     this._dio, {
     this.baseUrl,
   }) {
@@ -21,21 +21,20 @@ class _LoginApi implements LoginApi {
   String? baseUrl;
 
   @override
-  Future<LoginResponseBody> login(LoginRequestModel loginRequestModel) async {
+  Future<ProfileModel> getProfile() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(loginRequestModel.toJson());
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<LoginResponseBody>(Options(
-      method: 'POST',
+        .fetch<Map<String, dynamic>>(_setStreamType<ProfileModel>(Options(
+      method: 'GET',
       headers: _headers,
       extra: _extra,
     )
             .compose(
               _dio.options,
-              'auth/login',
+              'auth/profile',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -44,7 +43,38 @@ class _LoginApi implements LoginApi {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final _value = LoginResponseBody.fromJson(_result.data!);
+    final _value = ProfileModel.fromJson(_result.data!);
+    return _value;
+  }
+
+  @override
+  Future<ProfileModel> updateProfile(
+    UpdateProfileRequest value,
+    int id,
+  ) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(value.toJson());
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<ProfileModel>(Options(
+      method: 'PUT',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'users/${id}',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final _value = ProfileModel.fromJson(_result.data!);
     return _value;
   }
 

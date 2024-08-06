@@ -24,7 +24,7 @@ class AppGlobals {
       const SystemUiOverlayStyle(
         systemNavigationBarColor: AppColors.white,
         statusBarColor: Colors.transparent,
-        statusBarIconBrightness: Brightness.light,
+        statusBarIconBrightness: Brightness.dark,
       ),
     );
   }

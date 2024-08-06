@@ -4,4 +4,5 @@ class AppEndPoints {
   static const String getProfile = "auth/profile";
   static const String registerRequest = "users/";
   static const String uploadFile = "files/upload";
+  static const String updateUserInfo = "users";
 }

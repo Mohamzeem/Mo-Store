@@ -1,8 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mo_store/core/consts/pref_keys.dart';
-import 'package:mo_store/core/helpers/shared_prefs.dart';
 import 'package:mo_store/core/widgets/custom_dialog.dart';
 import 'package:mo_store/features/login/data/models/login_request.dart';
 import 'package:mo_store/features/login/data/repo/login_repo.dart';
@@ -26,11 +24,10 @@ class LoginCubit extends Cubit<LoginState> {
         email: emailController.text.trim(),
         password: passwordController.text.trim()));
     result.when(
-      success: (lgoinResponse) {
+      success: (loginResponse) {
         //^ save token
-        SharedPrefHelper.setSecuredString(
-            PrefKeys.userToken, lgoinResponse.accessToken!);
-        emit(LoginState.success(lgoinResponse));
+        loginRepo.saveUserToken(loginResponse.accessToken!);
+        emit(LoginState.success(loginResponse));
       },
       failure: (message) => emit(LoginState.failure(message)),
     );
