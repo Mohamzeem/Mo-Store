@@ -1,6 +1,6 @@
 # settings View
-![Screenshot_1722174345](https://github.com/user-attachments/assets/ff6651b4-933f-4800-83ae-f4c330742d12)
+![Screenshot_1722934239](https://github.com/user-attachments/assets/69dab612-8af5-43b2-8d44-ebae91d4d4c2)
 
 # profile View
-![Screenshot_1722075617](https://github.com/user-attachments/assets/91ad0c11-7e33-4c16-a4e8-44c24e842529)
+![Screenshot_1722934256](https://github.com/user-attachments/assets/668f8ea1-e889-4768-a639-6e7db4642a92)
 
