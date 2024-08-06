@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mo_store/core/helpers/extensions.dart';
+import 'package:mo_store/core/helpers/text_fonts.dart';
 import 'package:mo_store/core/route/routes.dart';
 import 'package:mo_store/core/widgets/custom_app_bar.dart';
 import 'package:mo_store/features/settings/view/widgets/settings_widgets/logout_btn.dart';
@@ -24,9 +25,7 @@ class SettingsView extends StatelessWidget {
               const SettingsSubTitle(title: 'Personal', icon: Icons.person),
               SettingsItem(
                   title: 'Profile',
-                  onTap: () {
-                    context.pushName(Routes.profileView);
-                  }),
+                  onTap: () => context.pushName(Routes.profileView)),
               const SettingsItem(title: 'Shipping Address', onTap: null),
               const SettingsItem(title: 'Payment Methods', onTap: null),
               20.verticalSpace,
@@ -38,7 +37,13 @@ class SettingsView extends StatelessWidget {
               const SettingsSubTitle(title: 'Account', icon: Icons.settings),
               const SettingsItem(title: 'Language', onTap: null),
               const LogoutButton(),
-              const SettingsItem(title: 'Delete Account', onTap: null),
+              SettingsItem(
+                title: 'Delete Account',
+                onTap: null,
+                textStyle: AppFonts.regular20Primary.copyWith(
+                  color: Colors.red,
+                ),
+              ),
             ],
           ),
         ),
