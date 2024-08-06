@@ -1,4 +1,6 @@
-# profile View
-![Screenshot_1722174345](https://github.com/user-attachments/assets/e60573d1-cbcb-4f51-b4d7-a25ae877abe2)
+# settings View
+![Screenshot_1722174345](https://github.com/user-attachments/assets/ff6651b4-933f-4800-83ae-f4c330742d12)
 
+# profile View
+![Screenshot_1722075617](https://github.com/user-attachments/assets/91ad0c11-7e33-4c16-a4e8-44c24e842529)
 
