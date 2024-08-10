@@ -41,7 +41,7 @@ class AppRouter {
       case Routes.controlView:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => di<ProfileCubit>()..getProfile(),
+            create: (context) => di<ProfileCubit>(),
             child: const ControlView(),
           ),
         );

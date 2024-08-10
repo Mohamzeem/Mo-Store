@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
 import 'package:mo_store/features/cart/cart_view.dart';
 import 'package:mo_store/features/favorites/favorites_view.dart';
-import 'package:mo_store/features/home/home_view.dart';
+import 'package:mo_store/features/home/view/home_view.dart';
 import 'package:mo_store/features/notifications/notifications_view.dart';
+import 'package:mo_store/features/settings/logic/profile/profile_cubit.dart';
 import 'package:mo_store/features/settings/view/settings_view.dart';
 
 class ControlView extends StatefulWidget {
@@ -62,6 +64,14 @@ class _ControlViewState extends State<ControlView> {
         break;
     }
     return widget;
+  }
+
+  late ProfileCubit _cubit;
+  @override
+  void initState() {
+    super.initState();
+    _cubit = BlocProvider.of<ProfileCubit>(context);
+    _cubit.getProfile();
   }
 
   @override

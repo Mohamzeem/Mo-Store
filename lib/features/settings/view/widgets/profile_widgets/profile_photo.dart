@@ -35,7 +35,7 @@ class ProfilePhoto extends StatelessWidget {
               return state.maybeWhen(
                 success: (profileModel) {
                   return CustomCachedImage(
-                    photoUrl: profileModel.avatar!,
+                    photoUrl: cubit.userModel!.avatar!,
                     width: 150.w,
                     height: 150.h,
                     isBorder: true,
