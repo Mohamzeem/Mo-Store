@@ -5,4 +5,7 @@ class AppEndPoints {
   static const String registerRequest = "users/";
   static const String uploadFile = "files/upload";
   static const String updateUserInfo = "users";
+  static const String getCategories = "categories/";
+
+  static const String getProducts = "";
 }
