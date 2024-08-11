@@ -23,10 +23,12 @@ mixin _$HomeState {
     required TResult Function(String message) failureCategories,
     required TResult Function(List<CategoriesResponseBody> categories)
         successCategories,
+    required TResult Function() emptyCategories,
     required TResult Function() loadingProducts,
     required TResult Function(String message) failureProducts,
     required TResult Function(List<ProductsResponseBody> products)
         successProducts,
+    required TResult Function() emptyProducts,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -36,9 +38,11 @@ mixin _$HomeState {
     TResult? Function(String message)? failureCategories,
     TResult? Function(List<CategoriesResponseBody> categories)?
         successCategories,
+    TResult? Function()? emptyCategories,
     TResult? Function()? loadingProducts,
     TResult? Function(String message)? failureProducts,
     TResult? Function(List<ProductsResponseBody> products)? successProducts,
+    TResult? Function()? emptyProducts,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -48,9 +52,11 @@ mixin _$HomeState {
     TResult Function(String message)? failureCategories,
     TResult Function(List<CategoriesResponseBody> categories)?
         successCategories,
+    TResult Function()? emptyCategories,
     TResult Function()? loadingProducts,
     TResult Function(String message)? failureProducts,
     TResult Function(List<ProductsResponseBody> products)? successProducts,
+    TResult Function()? emptyProducts,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -60,9 +66,11 @@ mixin _$HomeState {
     required TResult Function(_LoadingCategories value) loadingCategories,
     required TResult Function(_FailureCategories value) failureCategories,
     required TResult Function(_SuccessCategories value) successCategories,
+    required TResult Function(_EmptyCategories value) emptyCategories,
     required TResult Function(_LoadingProducts value) loadingProducts,
     required TResult Function(_FailureProducts value) failureProducts,
     required TResult Function(_SuccessProducts value) successProducts,
+    required TResult Function(_EmptyProducts value) emptyProducts,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -71,9 +79,11 @@ mixin _$HomeState {
     TResult? Function(_LoadingCategories value)? loadingCategories,
     TResult? Function(_FailureCategories value)? failureCategories,
     TResult? Function(_SuccessCategories value)? successCategories,
+    TResult? Function(_EmptyCategories value)? emptyCategories,
     TResult? Function(_LoadingProducts value)? loadingProducts,
     TResult? Function(_FailureProducts value)? failureProducts,
     TResult? Function(_SuccessProducts value)? successProducts,
+    TResult? Function(_EmptyProducts value)? emptyProducts,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -82,9 +92,11 @@ mixin _$HomeState {
     TResult Function(_LoadingCategories value)? loadingCategories,
     TResult Function(_FailureCategories value)? failureCategories,
     TResult Function(_SuccessCategories value)? successCategories,
+    TResult Function(_EmptyCategories value)? emptyCategories,
     TResult Function(_LoadingProducts value)? loadingProducts,
     TResult Function(_FailureProducts value)? failureProducts,
     TResult Function(_SuccessProducts value)? successProducts,
+    TResult Function(_EmptyProducts value)? emptyProducts,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -150,10 +162,12 @@ class _$InitialImpl implements _Initial {
     required TResult Function(String message) failureCategories,
     required TResult Function(List<CategoriesResponseBody> categories)
         successCategories,
+    required TResult Function() emptyCategories,
     required TResult Function() loadingProducts,
     required TResult Function(String message) failureProducts,
     required TResult Function(List<ProductsResponseBody> products)
         successProducts,
+    required TResult Function() emptyProducts,
   }) {
     return initial();
   }
@@ -166,9 +180,11 @@ class _$InitialImpl implements _Initial {
     TResult? Function(String message)? failureCategories,
     TResult? Function(List<CategoriesResponseBody> categories)?
         successCategories,
+    TResult? Function()? emptyCategories,
     TResult? Function()? loadingProducts,
     TResult? Function(String message)? failureProducts,
     TResult? Function(List<ProductsResponseBody> products)? successProducts,
+    TResult? Function()? emptyProducts,
   }) {
     return initial?.call();
   }
@@ -181,9 +197,11 @@ class _$InitialImpl implements _Initial {
     TResult Function(String message)? failureCategories,
     TResult Function(List<CategoriesResponseBody> categories)?
         successCategories,
+    TResult Function()? emptyCategories,
     TResult Function()? loadingProducts,
     TResult Function(String message)? failureProducts,
     TResult Function(List<ProductsResponseBody> products)? successProducts,
+    TResult Function()? emptyProducts,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -199,9 +217,11 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_LoadingCategories value) loadingCategories,
     required TResult Function(_FailureCategories value) failureCategories,
     required TResult Function(_SuccessCategories value) successCategories,
+    required TResult Function(_EmptyCategories value) emptyCategories,
     required TResult Function(_LoadingProducts value) loadingProducts,
     required TResult Function(_FailureProducts value) failureProducts,
     required TResult Function(_SuccessProducts value) successProducts,
+    required TResult Function(_EmptyProducts value) emptyProducts,
   }) {
     return initial(this);
   }
@@ -213,9 +233,11 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_LoadingCategories value)? loadingCategories,
     TResult? Function(_FailureCategories value)? failureCategories,
     TResult? Function(_SuccessCategories value)? successCategories,
+    TResult? Function(_EmptyCategories value)? emptyCategories,
     TResult? Function(_LoadingProducts value)? loadingProducts,
     TResult? Function(_FailureProducts value)? failureProducts,
     TResult? Function(_SuccessProducts value)? successProducts,
+    TResult? Function(_EmptyProducts value)? emptyProducts,
   }) {
     return initial?.call(this);
   }
@@ -227,9 +249,11 @@ class _$InitialImpl implements _Initial {
     TResult Function(_LoadingCategories value)? loadingCategories,
     TResult Function(_FailureCategories value)? failureCategories,
     TResult Function(_SuccessCategories value)? successCategories,
+    TResult Function(_EmptyCategories value)? emptyCategories,
     TResult Function(_LoadingProducts value)? loadingProducts,
     TResult Function(_FailureProducts value)? failureProducts,
     TResult Function(_SuccessProducts value)? successProducts,
+    TResult Function(_EmptyProducts value)? emptyProducts,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -286,10 +310,12 @@ class _$LoadingCategoriesImpl implements _LoadingCategories {
     required TResult Function(String message) failureCategories,
     required TResult Function(List<CategoriesResponseBody> categories)
         successCategories,
+    required TResult Function() emptyCategories,
     required TResult Function() loadingProducts,
     required TResult Function(String message) failureProducts,
     required TResult Function(List<ProductsResponseBody> products)
         successProducts,
+    required TResult Function() emptyProducts,
   }) {
     return loadingCategories();
   }
@@ -302,9 +328,11 @@ class _$LoadingCategoriesImpl implements _LoadingCategories {
     TResult? Function(String message)? failureCategories,
     TResult? Function(List<CategoriesResponseBody> categories)?
         successCategories,
+    TResult? Function()? emptyCategories,
     TResult? Function()? loadingProducts,
     TResult? Function(String message)? failureProducts,
     TResult? Function(List<ProductsResponseBody> products)? successProducts,
+    TResult? Function()? emptyProducts,
   }) {
     return loadingCategories?.call();
   }
@@ -317,9 +345,11 @@ class _$LoadingCategoriesImpl implements _LoadingCategories {
     TResult Function(String message)? failureCategories,
     TResult Function(List<CategoriesResponseBody> categories)?
         successCategories,
+    TResult Function()? emptyCategories,
     TResult Function()? loadingProducts,
     TResult Function(String message)? failureProducts,
     TResult Function(List<ProductsResponseBody> products)? successProducts,
+    TResult Function()? emptyProducts,
     required TResult orElse(),
   }) {
     if (loadingCategories != null) {
@@ -335,9 +365,11 @@ class _$LoadingCategoriesImpl implements _LoadingCategories {
     required TResult Function(_LoadingCategories value) loadingCategories,
     required TResult Function(_FailureCategories value) failureCategories,
     required TResult Function(_SuccessCategories value) successCategories,
+    required TResult Function(_EmptyCategories value) emptyCategories,
     required TResult Function(_LoadingProducts value) loadingProducts,
     required TResult Function(_FailureProducts value) failureProducts,
     required TResult Function(_SuccessProducts value) successProducts,
+    required TResult Function(_EmptyProducts value) emptyProducts,
   }) {
     return loadingCategories(this);
   }
@@ -349,9 +381,11 @@ class _$LoadingCategoriesImpl implements _LoadingCategories {
     TResult? Function(_LoadingCategories value)? loadingCategories,
     TResult? Function(_FailureCategories value)? failureCategories,
     TResult? Function(_SuccessCategories value)? successCategories,
+    TResult? Function(_EmptyCategories value)? emptyCategories,
     TResult? Function(_LoadingProducts value)? loadingProducts,
     TResult? Function(_FailureProducts value)? failureProducts,
     TResult? Function(_SuccessProducts value)? successProducts,
+    TResult? Function(_EmptyProducts value)? emptyProducts,
   }) {
     return loadingCategories?.call(this);
   }
@@ -363,9 +397,11 @@ class _$LoadingCategoriesImpl implements _LoadingCategories {
     TResult Function(_LoadingCategories value)? loadingCategories,
     TResult Function(_FailureCategories value)? failureCategories,
     TResult Function(_SuccessCategories value)? successCategories,
+    TResult Function(_EmptyCategories value)? emptyCategories,
     TResult Function(_LoadingProducts value)? loadingProducts,
     TResult Function(_FailureProducts value)? failureProducts,
     TResult Function(_SuccessProducts value)? successProducts,
+    TResult Function(_EmptyProducts value)? emptyProducts,
     required TResult orElse(),
   }) {
     if (loadingCategories != null) {
@@ -449,10 +485,12 @@ class _$FailureCategoriesImpl implements _FailureCategories {
     required TResult Function(String message) failureCategories,
     required TResult Function(List<CategoriesResponseBody> categories)
         successCategories,
+    required TResult Function() emptyCategories,
     required TResult Function() loadingProducts,
     required TResult Function(String message) failureProducts,
     required TResult Function(List<ProductsResponseBody> products)
         successProducts,
+    required TResult Function() emptyProducts,
   }) {
     return failureCategories(message);
   }
@@ -465,9 +503,11 @@ class _$FailureCategoriesImpl implements _FailureCategories {
     TResult? Function(String message)? failureCategories,
     TResult? Function(List<CategoriesResponseBody> categories)?
         successCategories,
+    TResult? Function()? emptyCategories,
     TResult? Function()? loadingProducts,
     TResult? Function(String message)? failureProducts,
     TResult? Function(List<ProductsResponseBody> products)? successProducts,
+    TResult? Function()? emptyProducts,
   }) {
     return failureCategories?.call(message);
   }
@@ -480,9 +520,11 @@ class _$FailureCategoriesImpl implements _FailureCategories {
     TResult Function(String message)? failureCategories,
     TResult Function(List<CategoriesResponseBody> categories)?
         successCategories,
+    TResult Function()? emptyCategories,
     TResult Function()? loadingProducts,
     TResult Function(String message)? failureProducts,
     TResult Function(List<ProductsResponseBody> products)? successProducts,
+    TResult Function()? emptyProducts,
     required TResult orElse(),
   }) {
     if (failureCategories != null) {
@@ -498,9 +540,11 @@ class _$FailureCategoriesImpl implements _FailureCategories {
     required TResult Function(_LoadingCategories value) loadingCategories,
     required TResult Function(_FailureCategories value) failureCategories,
     required TResult Function(_SuccessCategories value) successCategories,
+    required TResult Function(_EmptyCategories value) emptyCategories,
     required TResult Function(_LoadingProducts value) loadingProducts,
     required TResult Function(_FailureProducts value) failureProducts,
     required TResult Function(_SuccessProducts value) successProducts,
+    required TResult Function(_EmptyProducts value) emptyProducts,
   }) {
     return failureCategories(this);
   }
@@ -512,9 +556,11 @@ class _$FailureCategoriesImpl implements _FailureCategories {
     TResult? Function(_LoadingCategories value)? loadingCategories,
     TResult? Function(_FailureCategories value)? failureCategories,
     TResult? Function(_SuccessCategories value)? successCategories,
+    TResult? Function(_EmptyCategories value)? emptyCategories,
     TResult? Function(_LoadingProducts value)? loadingProducts,
     TResult? Function(_FailureProducts value)? failureProducts,
     TResult? Function(_SuccessProducts value)? successProducts,
+    TResult? Function(_EmptyProducts value)? emptyProducts,
   }) {
     return failureCategories?.call(this);
   }
@@ -526,9 +572,11 @@ class _$FailureCategoriesImpl implements _FailureCategories {
     TResult Function(_LoadingCategories value)? loadingCategories,
     TResult Function(_FailureCategories value)? failureCategories,
     TResult Function(_SuccessCategories value)? successCategories,
+    TResult Function(_EmptyCategories value)? emptyCategories,
     TResult Function(_LoadingProducts value)? loadingProducts,
     TResult Function(_FailureProducts value)? failureProducts,
     TResult Function(_SuccessProducts value)? successProducts,
+    TResult Function(_EmptyProducts value)? emptyProducts,
     required TResult orElse(),
   }) {
     if (failureCategories != null) {
@@ -626,10 +674,12 @@ class _$SuccessCategoriesImpl implements _SuccessCategories {
     required TResult Function(String message) failureCategories,
     required TResult Function(List<CategoriesResponseBody> categories)
         successCategories,
+    required TResult Function() emptyCategories,
     required TResult Function() loadingProducts,
     required TResult Function(String message) failureProducts,
     required TResult Function(List<ProductsResponseBody> products)
         successProducts,
+    required TResult Function() emptyProducts,
   }) {
     return successCategories(categories);
   }
@@ -642,9 +692,11 @@ class _$SuccessCategoriesImpl implements _SuccessCategories {
     TResult? Function(String message)? failureCategories,
     TResult? Function(List<CategoriesResponseBody> categories)?
         successCategories,
+    TResult? Function()? emptyCategories,
     TResult? Function()? loadingProducts,
     TResult? Function(String message)? failureProducts,
     TResult? Function(List<ProductsResponseBody> products)? successProducts,
+    TResult? Function()? emptyProducts,
   }) {
     return successCategories?.call(categories);
   }
@@ -657,9 +709,11 @@ class _$SuccessCategoriesImpl implements _SuccessCategories {
     TResult Function(String message)? failureCategories,
     TResult Function(List<CategoriesResponseBody> categories)?
         successCategories,
+    TResult Function()? emptyCategories,
     TResult Function()? loadingProducts,
     TResult Function(String message)? failureProducts,
     TResult Function(List<ProductsResponseBody> products)? successProducts,
+    TResult Function()? emptyProducts,
     required TResult orElse(),
   }) {
     if (successCategories != null) {
@@ -675,9 +729,11 @@ class _$SuccessCategoriesImpl implements _SuccessCategories {
     required TResult Function(_LoadingCategories value) loadingCategories,
     required TResult Function(_FailureCategories value) failureCategories,
     required TResult Function(_SuccessCategories value) successCategories,
+    required TResult Function(_EmptyCategories value) emptyCategories,
     required TResult Function(_LoadingProducts value) loadingProducts,
     required TResult Function(_FailureProducts value) failureProducts,
     required TResult Function(_SuccessProducts value) successProducts,
+    required TResult Function(_EmptyProducts value) emptyProducts,
   }) {
     return successCategories(this);
   }
@@ -689,9 +745,11 @@ class _$SuccessCategoriesImpl implements _SuccessCategories {
     TResult? Function(_LoadingCategories value)? loadingCategories,
     TResult? Function(_FailureCategories value)? failureCategories,
     TResult? Function(_SuccessCategories value)? successCategories,
+    TResult? Function(_EmptyCategories value)? emptyCategories,
     TResult? Function(_LoadingProducts value)? loadingProducts,
     TResult? Function(_FailureProducts value)? failureProducts,
     TResult? Function(_SuccessProducts value)? successProducts,
+    TResult? Function(_EmptyProducts value)? emptyProducts,
   }) {
     return successCategories?.call(this);
   }
@@ -703,9 +761,11 @@ class _$SuccessCategoriesImpl implements _SuccessCategories {
     TResult Function(_LoadingCategories value)? loadingCategories,
     TResult Function(_FailureCategories value)? failureCategories,
     TResult Function(_SuccessCategories value)? successCategories,
+    TResult Function(_EmptyCategories value)? emptyCategories,
     TResult Function(_LoadingProducts value)? loadingProducts,
     TResult Function(_FailureProducts value)? failureProducts,
     TResult Function(_SuccessProducts value)? successProducts,
+    TResult Function(_EmptyProducts value)? emptyProducts,
     required TResult orElse(),
   }) {
     if (successCategories != null) {
@@ -723,6 +783,154 @@ abstract class _SuccessCategories implements HomeState {
   @JsonKey(ignore: true)
   _$$SuccessCategoriesImplCopyWith<_$SuccessCategoriesImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$EmptyCategoriesImplCopyWith<$Res> {
+  factory _$$EmptyCategoriesImplCopyWith(_$EmptyCategoriesImpl value,
+          $Res Function(_$EmptyCategoriesImpl) then) =
+      __$$EmptyCategoriesImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$EmptyCategoriesImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$EmptyCategoriesImpl>
+    implements _$$EmptyCategoriesImplCopyWith<$Res> {
+  __$$EmptyCategoriesImplCopyWithImpl(
+      _$EmptyCategoriesImpl _value, $Res Function(_$EmptyCategoriesImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$EmptyCategoriesImpl implements _EmptyCategories {
+  const _$EmptyCategoriesImpl();
+
+  @override
+  String toString() {
+    return 'HomeState.emptyCategories()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$EmptyCategoriesImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingCategories,
+    required TResult Function(String message) failureCategories,
+    required TResult Function(List<CategoriesResponseBody> categories)
+        successCategories,
+    required TResult Function() emptyCategories,
+    required TResult Function() loadingProducts,
+    required TResult Function(String message) failureProducts,
+    required TResult Function(List<ProductsResponseBody> products)
+        successProducts,
+    required TResult Function() emptyProducts,
+  }) {
+    return emptyCategories();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingCategories,
+    TResult? Function(String message)? failureCategories,
+    TResult? Function(List<CategoriesResponseBody> categories)?
+        successCategories,
+    TResult? Function()? emptyCategories,
+    TResult? Function()? loadingProducts,
+    TResult? Function(String message)? failureProducts,
+    TResult? Function(List<ProductsResponseBody> products)? successProducts,
+    TResult? Function()? emptyProducts,
+  }) {
+    return emptyCategories?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingCategories,
+    TResult Function(String message)? failureCategories,
+    TResult Function(List<CategoriesResponseBody> categories)?
+        successCategories,
+    TResult Function()? emptyCategories,
+    TResult Function()? loadingProducts,
+    TResult Function(String message)? failureProducts,
+    TResult Function(List<ProductsResponseBody> products)? successProducts,
+    TResult Function()? emptyProducts,
+    required TResult orElse(),
+  }) {
+    if (emptyCategories != null) {
+      return emptyCategories();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadingCategories value) loadingCategories,
+    required TResult Function(_FailureCategories value) failureCategories,
+    required TResult Function(_SuccessCategories value) successCategories,
+    required TResult Function(_EmptyCategories value) emptyCategories,
+    required TResult Function(_LoadingProducts value) loadingProducts,
+    required TResult Function(_FailureProducts value) failureProducts,
+    required TResult Function(_SuccessProducts value) successProducts,
+    required TResult Function(_EmptyProducts value) emptyProducts,
+  }) {
+    return emptyCategories(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingCategories value)? loadingCategories,
+    TResult? Function(_FailureCategories value)? failureCategories,
+    TResult? Function(_SuccessCategories value)? successCategories,
+    TResult? Function(_EmptyCategories value)? emptyCategories,
+    TResult? Function(_LoadingProducts value)? loadingProducts,
+    TResult? Function(_FailureProducts value)? failureProducts,
+    TResult? Function(_SuccessProducts value)? successProducts,
+    TResult? Function(_EmptyProducts value)? emptyProducts,
+  }) {
+    return emptyCategories?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadingCategories value)? loadingCategories,
+    TResult Function(_FailureCategories value)? failureCategories,
+    TResult Function(_SuccessCategories value)? successCategories,
+    TResult Function(_EmptyCategories value)? emptyCategories,
+    TResult Function(_LoadingProducts value)? loadingProducts,
+    TResult Function(_FailureProducts value)? failureProducts,
+    TResult Function(_SuccessProducts value)? successProducts,
+    TResult Function(_EmptyProducts value)? emptyProducts,
+    required TResult orElse(),
+  }) {
+    if (emptyCategories != null) {
+      return emptyCategories(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EmptyCategories implements HomeState {
+  const factory _EmptyCategories() = _$EmptyCategoriesImpl;
 }
 
 /// @nodoc
@@ -768,10 +976,12 @@ class _$LoadingProductsImpl implements _LoadingProducts {
     required TResult Function(String message) failureCategories,
     required TResult Function(List<CategoriesResponseBody> categories)
         successCategories,
+    required TResult Function() emptyCategories,
     required TResult Function() loadingProducts,
     required TResult Function(String message) failureProducts,
     required TResult Function(List<ProductsResponseBody> products)
         successProducts,
+    required TResult Function() emptyProducts,
   }) {
     return loadingProducts();
   }
@@ -784,9 +994,11 @@ class _$LoadingProductsImpl implements _LoadingProducts {
     TResult? Function(String message)? failureCategories,
     TResult? Function(List<CategoriesResponseBody> categories)?
         successCategories,
+    TResult? Function()? emptyCategories,
     TResult? Function()? loadingProducts,
     TResult? Function(String message)? failureProducts,
     TResult? Function(List<ProductsResponseBody> products)? successProducts,
+    TResult? Function()? emptyProducts,
   }) {
     return loadingProducts?.call();
   }
@@ -799,9 +1011,11 @@ class _$LoadingProductsImpl implements _LoadingProducts {
     TResult Function(String message)? failureCategories,
     TResult Function(List<CategoriesResponseBody> categories)?
         successCategories,
+    TResult Function()? emptyCategories,
     TResult Function()? loadingProducts,
     TResult Function(String message)? failureProducts,
     TResult Function(List<ProductsResponseBody> products)? successProducts,
+    TResult Function()? emptyProducts,
     required TResult orElse(),
   }) {
     if (loadingProducts != null) {
@@ -817,9 +1031,11 @@ class _$LoadingProductsImpl implements _LoadingProducts {
     required TResult Function(_LoadingCategories value) loadingCategories,
     required TResult Function(_FailureCategories value) failureCategories,
     required TResult Function(_SuccessCategories value) successCategories,
+    required TResult Function(_EmptyCategories value) emptyCategories,
     required TResult Function(_LoadingProducts value) loadingProducts,
     required TResult Function(_FailureProducts value) failureProducts,
     required TResult Function(_SuccessProducts value) successProducts,
+    required TResult Function(_EmptyProducts value) emptyProducts,
   }) {
     return loadingProducts(this);
   }
@@ -831,9 +1047,11 @@ class _$LoadingProductsImpl implements _LoadingProducts {
     TResult? Function(_LoadingCategories value)? loadingCategories,
     TResult? Function(_FailureCategories value)? failureCategories,
     TResult? Function(_SuccessCategories value)? successCategories,
+    TResult? Function(_EmptyCategories value)? emptyCategories,
     TResult? Function(_LoadingProducts value)? loadingProducts,
     TResult? Function(_FailureProducts value)? failureProducts,
     TResult? Function(_SuccessProducts value)? successProducts,
+    TResult? Function(_EmptyProducts value)? emptyProducts,
   }) {
     return loadingProducts?.call(this);
   }
@@ -845,9 +1063,11 @@ class _$LoadingProductsImpl implements _LoadingProducts {
     TResult Function(_LoadingCategories value)? loadingCategories,
     TResult Function(_FailureCategories value)? failureCategories,
     TResult Function(_SuccessCategories value)? successCategories,
+    TResult Function(_EmptyCategories value)? emptyCategories,
     TResult Function(_LoadingProducts value)? loadingProducts,
     TResult Function(_FailureProducts value)? failureProducts,
     TResult Function(_SuccessProducts value)? successProducts,
+    TResult Function(_EmptyProducts value)? emptyProducts,
     required TResult orElse(),
   }) {
     if (loadingProducts != null) {
@@ -931,10 +1151,12 @@ class _$FailureProductsImpl implements _FailureProducts {
     required TResult Function(String message) failureCategories,
     required TResult Function(List<CategoriesResponseBody> categories)
         successCategories,
+    required TResult Function() emptyCategories,
     required TResult Function() loadingProducts,
     required TResult Function(String message) failureProducts,
     required TResult Function(List<ProductsResponseBody> products)
         successProducts,
+    required TResult Function() emptyProducts,
   }) {
     return failureProducts(message);
   }
@@ -947,9 +1169,11 @@ class _$FailureProductsImpl implements _FailureProducts {
     TResult? Function(String message)? failureCategories,
     TResult? Function(List<CategoriesResponseBody> categories)?
         successCategories,
+    TResult? Function()? emptyCategories,
     TResult? Function()? loadingProducts,
     TResult? Function(String message)? failureProducts,
     TResult? Function(List<ProductsResponseBody> products)? successProducts,
+    TResult? Function()? emptyProducts,
   }) {
     return failureProducts?.call(message);
   }
@@ -962,9 +1186,11 @@ class _$FailureProductsImpl implements _FailureProducts {
     TResult Function(String message)? failureCategories,
     TResult Function(List<CategoriesResponseBody> categories)?
         successCategories,
+    TResult Function()? emptyCategories,
     TResult Function()? loadingProducts,
     TResult Function(String message)? failureProducts,
     TResult Function(List<ProductsResponseBody> products)? successProducts,
+    TResult Function()? emptyProducts,
     required TResult orElse(),
   }) {
     if (failureProducts != null) {
@@ -980,9 +1206,11 @@ class _$FailureProductsImpl implements _FailureProducts {
     required TResult Function(_LoadingCategories value) loadingCategories,
     required TResult Function(_FailureCategories value) failureCategories,
     required TResult Function(_SuccessCategories value) successCategories,
+    required TResult Function(_EmptyCategories value) emptyCategories,
     required TResult Function(_LoadingProducts value) loadingProducts,
     required TResult Function(_FailureProducts value) failureProducts,
     required TResult Function(_SuccessProducts value) successProducts,
+    required TResult Function(_EmptyProducts value) emptyProducts,
   }) {
     return failureProducts(this);
   }
@@ -994,9 +1222,11 @@ class _$FailureProductsImpl implements _FailureProducts {
     TResult? Function(_LoadingCategories value)? loadingCategories,
     TResult? Function(_FailureCategories value)? failureCategories,
     TResult? Function(_SuccessCategories value)? successCategories,
+    TResult? Function(_EmptyCategories value)? emptyCategories,
     TResult? Function(_LoadingProducts value)? loadingProducts,
     TResult? Function(_FailureProducts value)? failureProducts,
     TResult? Function(_SuccessProducts value)? successProducts,
+    TResult? Function(_EmptyProducts value)? emptyProducts,
   }) {
     return failureProducts?.call(this);
   }
@@ -1008,9 +1238,11 @@ class _$FailureProductsImpl implements _FailureProducts {
     TResult Function(_LoadingCategories value)? loadingCategories,
     TResult Function(_FailureCategories value)? failureCategories,
     TResult Function(_SuccessCategories value)? successCategories,
+    TResult Function(_EmptyCategories value)? emptyCategories,
     TResult Function(_LoadingProducts value)? loadingProducts,
     TResult Function(_FailureProducts value)? failureProducts,
     TResult Function(_SuccessProducts value)? successProducts,
+    TResult Function(_EmptyProducts value)? emptyProducts,
     required TResult orElse(),
   }) {
     if (failureProducts != null) {
@@ -1106,10 +1338,12 @@ class _$SuccessProductsImpl implements _SuccessProducts {
     required TResult Function(String message) failureCategories,
     required TResult Function(List<CategoriesResponseBody> categories)
         successCategories,
+    required TResult Function() emptyCategories,
     required TResult Function() loadingProducts,
     required TResult Function(String message) failureProducts,
     required TResult Function(List<ProductsResponseBody> products)
         successProducts,
+    required TResult Function() emptyProducts,
   }) {
     return successProducts(products);
   }
@@ -1122,9 +1356,11 @@ class _$SuccessProductsImpl implements _SuccessProducts {
     TResult? Function(String message)? failureCategories,
     TResult? Function(List<CategoriesResponseBody> categories)?
         successCategories,
+    TResult? Function()? emptyCategories,
     TResult? Function()? loadingProducts,
     TResult? Function(String message)? failureProducts,
     TResult? Function(List<ProductsResponseBody> products)? successProducts,
+    TResult? Function()? emptyProducts,
   }) {
     return successProducts?.call(products);
   }
@@ -1137,9 +1373,11 @@ class _$SuccessProductsImpl implements _SuccessProducts {
     TResult Function(String message)? failureCategories,
     TResult Function(List<CategoriesResponseBody> categories)?
         successCategories,
+    TResult Function()? emptyCategories,
     TResult Function()? loadingProducts,
     TResult Function(String message)? failureProducts,
     TResult Function(List<ProductsResponseBody> products)? successProducts,
+    TResult Function()? emptyProducts,
     required TResult orElse(),
   }) {
     if (successProducts != null) {
@@ -1155,9 +1393,11 @@ class _$SuccessProductsImpl implements _SuccessProducts {
     required TResult Function(_LoadingCategories value) loadingCategories,
     required TResult Function(_FailureCategories value) failureCategories,
     required TResult Function(_SuccessCategories value) successCategories,
+    required TResult Function(_EmptyCategories value) emptyCategories,
     required TResult Function(_LoadingProducts value) loadingProducts,
     required TResult Function(_FailureProducts value) failureProducts,
     required TResult Function(_SuccessProducts value) successProducts,
+    required TResult Function(_EmptyProducts value) emptyProducts,
   }) {
     return successProducts(this);
   }
@@ -1169,9 +1409,11 @@ class _$SuccessProductsImpl implements _SuccessProducts {
     TResult? Function(_LoadingCategories value)? loadingCategories,
     TResult? Function(_FailureCategories value)? failureCategories,
     TResult? Function(_SuccessCategories value)? successCategories,
+    TResult? Function(_EmptyCategories value)? emptyCategories,
     TResult? Function(_LoadingProducts value)? loadingProducts,
     TResult? Function(_FailureProducts value)? failureProducts,
     TResult? Function(_SuccessProducts value)? successProducts,
+    TResult? Function(_EmptyProducts value)? emptyProducts,
   }) {
     return successProducts?.call(this);
   }
@@ -1183,9 +1425,11 @@ class _$SuccessProductsImpl implements _SuccessProducts {
     TResult Function(_LoadingCategories value)? loadingCategories,
     TResult Function(_FailureCategories value)? failureCategories,
     TResult Function(_SuccessCategories value)? successCategories,
+    TResult Function(_EmptyCategories value)? emptyCategories,
     TResult Function(_LoadingProducts value)? loadingProducts,
     TResult Function(_FailureProducts value)? failureProducts,
     TResult Function(_SuccessProducts value)? successProducts,
+    TResult Function(_EmptyProducts value)? emptyProducts,
     required TResult orElse(),
   }) {
     if (successProducts != null) {
@@ -1203,4 +1447,152 @@ abstract class _SuccessProducts implements HomeState {
   @JsonKey(ignore: true)
   _$$SuccessProductsImplCopyWith<_$SuccessProductsImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$EmptyProductsImplCopyWith<$Res> {
+  factory _$$EmptyProductsImplCopyWith(
+          _$EmptyProductsImpl value, $Res Function(_$EmptyProductsImpl) then) =
+      __$$EmptyProductsImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$EmptyProductsImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$EmptyProductsImpl>
+    implements _$$EmptyProductsImplCopyWith<$Res> {
+  __$$EmptyProductsImplCopyWithImpl(
+      _$EmptyProductsImpl _value, $Res Function(_$EmptyProductsImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$EmptyProductsImpl implements _EmptyProducts {
+  const _$EmptyProductsImpl();
+
+  @override
+  String toString() {
+    return 'HomeState.emptyProducts()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$EmptyProductsImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingCategories,
+    required TResult Function(String message) failureCategories,
+    required TResult Function(List<CategoriesResponseBody> categories)
+        successCategories,
+    required TResult Function() emptyCategories,
+    required TResult Function() loadingProducts,
+    required TResult Function(String message) failureProducts,
+    required TResult Function(List<ProductsResponseBody> products)
+        successProducts,
+    required TResult Function() emptyProducts,
+  }) {
+    return emptyProducts();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingCategories,
+    TResult? Function(String message)? failureCategories,
+    TResult? Function(List<CategoriesResponseBody> categories)?
+        successCategories,
+    TResult? Function()? emptyCategories,
+    TResult? Function()? loadingProducts,
+    TResult? Function(String message)? failureProducts,
+    TResult? Function(List<ProductsResponseBody> products)? successProducts,
+    TResult? Function()? emptyProducts,
+  }) {
+    return emptyProducts?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingCategories,
+    TResult Function(String message)? failureCategories,
+    TResult Function(List<CategoriesResponseBody> categories)?
+        successCategories,
+    TResult Function()? emptyCategories,
+    TResult Function()? loadingProducts,
+    TResult Function(String message)? failureProducts,
+    TResult Function(List<ProductsResponseBody> products)? successProducts,
+    TResult Function()? emptyProducts,
+    required TResult orElse(),
+  }) {
+    if (emptyProducts != null) {
+      return emptyProducts();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadingCategories value) loadingCategories,
+    required TResult Function(_FailureCategories value) failureCategories,
+    required TResult Function(_SuccessCategories value) successCategories,
+    required TResult Function(_EmptyCategories value) emptyCategories,
+    required TResult Function(_LoadingProducts value) loadingProducts,
+    required TResult Function(_FailureProducts value) failureProducts,
+    required TResult Function(_SuccessProducts value) successProducts,
+    required TResult Function(_EmptyProducts value) emptyProducts,
+  }) {
+    return emptyProducts(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingCategories value)? loadingCategories,
+    TResult? Function(_FailureCategories value)? failureCategories,
+    TResult? Function(_SuccessCategories value)? successCategories,
+    TResult? Function(_EmptyCategories value)? emptyCategories,
+    TResult? Function(_LoadingProducts value)? loadingProducts,
+    TResult? Function(_FailureProducts value)? failureProducts,
+    TResult? Function(_SuccessProducts value)? successProducts,
+    TResult? Function(_EmptyProducts value)? emptyProducts,
+  }) {
+    return emptyProducts?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadingCategories value)? loadingCategories,
+    TResult Function(_FailureCategories value)? failureCategories,
+    TResult Function(_SuccessCategories value)? successCategories,
+    TResult Function(_EmptyCategories value)? emptyCategories,
+    TResult Function(_LoadingProducts value)? loadingProducts,
+    TResult Function(_FailureProducts value)? failureProducts,
+    TResult Function(_SuccessProducts value)? successProducts,
+    TResult Function(_EmptyProducts value)? emptyProducts,
+    required TResult orElse(),
+  }) {
+    if (emptyProducts != null) {
+      return emptyProducts(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EmptyProducts implements HomeState {
+  const factory _EmptyProducts() = _$EmptyProductsImpl;
 }

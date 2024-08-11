@@ -10,7 +10,12 @@ class HomeCubit extends Cubit<HomeState> {
     emit(const HomeState.loadingCategories());
     final result = await homeRepo.getCategories();
     result.when(
-      success: (categories) => emit(HomeState.successCategories(categories)),
+      success: (categories) {
+        if (categories.isEmpty) {
+          emit(const HomeState.emptyCategories());
+        }
+        emit(HomeState.successCategories(categories));
+      },
       failure: (message) => emit(HomeState.failureCategories(message)),
     );
   }
@@ -19,7 +24,12 @@ class HomeCubit extends Cubit<HomeState> {
     emit(const HomeState.loadingProducts());
     final result = await homeRepo.getProducts();
     result.when(
-      success: (products) => emit(HomeState.successProducts(products)),
+      success: (products) {
+        if (products.isEmpty) {
+          emit(const HomeState.emptyProducts());
+        }
+        emit(HomeState.successProducts(products));
+      },
       failure: (message) => emit(HomeState.failureProducts(message)),
     );
   }

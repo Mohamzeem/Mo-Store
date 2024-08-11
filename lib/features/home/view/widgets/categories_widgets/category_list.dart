@@ -7,18 +7,16 @@ class CategoryList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverToBoxAdapter(
-      child: SizedBox(
-        height: 100.h,
-        child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemCount: 20,
-          itemBuilder: (context, index) {
-            return CategoryItem(
-              index: index,
-            );
-          },
-        ),
+    return SizedBox(
+      height: 100.h,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: 20,
+        itemBuilder: (context, index) {
+          return CategoryItem(
+            index: index,
+          );
+        },
       ),
     );
   }

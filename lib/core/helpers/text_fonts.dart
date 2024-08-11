@@ -58,7 +58,7 @@ class AppFonts {
   );
   static TextStyle medium18White = TextStyle(
     fontSize: 17.sp,
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.w500,
     fontFamily: AppGlobals.appFont,
     color: AppColors.white,
   );

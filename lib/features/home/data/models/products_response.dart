@@ -6,18 +6,43 @@ part 'products_response.g.dart';
 @JsonSerializable()
 class ProductsResponseBody {
   int? id;
-  String? name;
-  String? image;
+  String? title;
+  int? price;
+  String? description;
+  List<String>? images;
+  Category? category;
   String? creationAt;
   String? updatedAt;
   ProductsResponseBody(
     this.id,
-    this.name,
-    this.image,
+    this.title,
+    this.price,
+    this.description,
+    this.images,
+    this.category,
     this.creationAt,
     this.updatedAt,
   );
 
   factory ProductsResponseBody.fromJson(Map<String, dynamic> json) =>
       _$ProductsResponseBodyFromJson(json);
+}
+
+@JsonSerializable()
+class Category {
+  int? id;
+  String? name;
+  String? image;
+  String? creationAt;
+  String? updatedAt;
+
+  Category(
+    this.id,
+    this.name,
+    this.image,
+    this.creationAt,
+    this.updatedAt,
+  );
+  factory Category.fromJson(Map<String, dynamic> json) =>
+      _$CategoryFromJson(json);
 }

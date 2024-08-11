@@ -58,9 +58,10 @@ class ProfilePhoto extends StatelessWidget {
                   );
                 },
                 loading: () => const SkeltonShimmer(
-                  shape: BoxShape.circle,
+                  shape: BoxShape.rectangle,
                   height: 50,
                   width: 50,
+                  border: 50,
                 ),
                 orElse: () => const SkeltonShimmer(
                   shape: BoxShape.circle,

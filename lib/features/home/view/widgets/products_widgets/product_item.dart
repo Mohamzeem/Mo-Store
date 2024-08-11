@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
 import 'package:mo_store/core/helpers/text_fonts.dart';
+import 'package:mo_store/features/home/data/models/products_response.dart';
 import 'package:mo_store/features/home/view/widgets/home_cached_image.dart';
 
 class ProductItem extends StatelessWidget {
+  final ProductsResponseBody product;
   const ProductItem({
     super.key,
+    required this.product,
   });
 
   @override
@@ -28,6 +31,7 @@ class ProductItem extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsets.symmetric(vertical: 5.h, horizontal: 10.w),
+            //^ share and favorite
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -51,12 +55,14 @@ class ProductItem extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 5.w),
-            child: const HomeCachedNetworkImage(
-              photoUrl: '',
+            padding: EdgeInsets.symmetric(horizontal: 10.w),
+            child: HomeCachedNetworkImage(
+              photoUrl:
+                  product.images!.first.replaceAll(RegExp(r'[\[\]]^"'), ''),
               width: double.infinity,
               height: 110,
               shape: BoxShape.rectangle,
+              fit: BoxFit.cover,
             ),
           ),
           Padding(
@@ -65,12 +71,12 @@ class ProductItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  'Product Name asdasdasd',
+                  product.title!,
                   style: AppFonts.medium18White.copyWith(
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),
-                Text('100 \$', style: AppFonts.medium18White),
+                Text('${product.price} \$', style: AppFonts.medium18White),
               ],
             ),
           ),

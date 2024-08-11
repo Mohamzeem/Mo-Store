@@ -12,9 +12,11 @@ class HomeState with _$HomeState {
       _FailureCategories;
   const factory HomeState.successCategories(
       List<CategoriesResponseBody> categories) = _SuccessCategories;
+  const factory HomeState.emptyCategories() = _EmptyCategories;
 
   const factory HomeState.loadingProducts() = _LoadingProducts;
   const factory HomeState.failureProducts(String message) = _FailureProducts;
   const factory HomeState.successProducts(List<ProductsResponseBody> products) =
       _SuccessProducts;
+  const factory HomeState.emptyProducts() = _EmptyProducts;
 }

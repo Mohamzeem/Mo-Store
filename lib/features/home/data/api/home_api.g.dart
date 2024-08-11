@@ -64,7 +64,7 @@ class _HomeApi implements HomeApi {
     )
             .compose(
               _dio.options,
-              '',
+              'products/',
               queryParameters: queryParameters,
               data: _data,
             )

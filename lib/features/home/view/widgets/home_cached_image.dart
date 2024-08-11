@@ -32,7 +32,7 @@ class HomeCachedNetworkImage extends StatelessWidget {
       imageUrl: photoUrl.isNullOrEmpty()
           ? 'https://via.placeholder.com/300'
           : photoUrl,
-      fit: BoxFit.fill,
+      fit: BoxFit.cover,
       imageBuilder: (context, imageProvider) => Container(
         width: width.w,
         height: height.h,
@@ -41,20 +41,30 @@ class HomeCachedNetworkImage extends StatelessWidget {
           borderRadius: BorderRadius.circular(10.r),
           image: DecorationImage(
             image: imageProvider,
-            fit: BoxFit.fill,
+            fit: fit,
           ),
         ),
       ),
-      progressIndicatorBuilder: (context, url, progress) =>
-          CustomCircularLoading(
-        height: 30.h,
-        width: 30.w,
-        color: AppColors.lightBlue,
+      progressIndicatorBuilder: (context, url, progress) => SizedBox(
+        height: 110.h,
+        width: double.infinity,
+        child: CustomCircularLoading(
+          height: height / 2.h,
+          width: height / 2.w,
+          color: AppColors.white,
+        ),
       ),
-      errorWidget: (context, url, error) => const Icon(
-        Icons.error,
-        size: 66 / 2,
-        color: AppColors.redAccent,
+      errorWidget: (context, url, error) => Container(
+        height: 110.h,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10.r),
+        ),
+        child: Icon(
+          Icons.error,
+          size: height / 2,
+          color: AppColors.redAccent,
+        ),
       ),
     );
   }

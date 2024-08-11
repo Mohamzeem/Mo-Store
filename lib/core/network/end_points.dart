@@ -6,6 +6,5 @@ class AppEndPoints {
   static const String uploadFile = "files/upload";
   static const String updateUserInfo = "users";
   static const String getCategories = "categories/";
-
-  static const String getProducts = "";
+  static const String getProducts = "products/";
 }
