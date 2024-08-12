@@ -11,7 +11,7 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  bool _isAtBottom = false;
+  bool isAtBottom = false;
   final _scrollController = ScrollController();
 
   @override
@@ -35,9 +35,9 @@ class _HomeViewState extends State<HomeView> {
     if (_scrollController.position.atEdge) {
       bool isBottom = _scrollController.position.pixels ==
           _scrollController.position.maxScrollExtent;
-      setState(() => _isAtBottom = isBottom);
+      setState(() => isAtBottom = isBottom);
     } else {
-      setState(() => _isAtBottom = false);
+      setState(() => isAtBottom = false);
     }
   }
 
@@ -48,7 +48,7 @@ class _HomeViewState extends State<HomeView> {
       child: Stack(
         children: [
           HomeBody(scrollController: _scrollController),
-          HomeScrolllButton(isAtBottom: _isAtBottom, onTap: () => scrollUp()),
+          HomeScrolllButton(onTap: () => scrollUp()),
         ],
       ),
     );

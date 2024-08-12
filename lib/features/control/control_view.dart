@@ -4,7 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
 import 'package:mo_store/features/cart/cart_view.dart';
 import 'package:mo_store/features/favorites/favorites_view.dart';
-import 'package:mo_store/features/home/logic/home_cubit/home_cubit.dart';
+import 'package:mo_store/features/home/logic/categories_cubit/categories_cubit.dart';
+import 'package:mo_store/features/home/logic/products_cubit/products_cubit.dart';
 import 'package:mo_store/features/home/view/home_view.dart';
 import 'package:mo_store/features/notifications/notifications_view.dart';
 import 'package:mo_store/features/settings/logic/profile/profile_cubit.dart';
@@ -19,8 +20,9 @@ class ControlView extends StatefulWidget {
 
 class _ControlViewState extends State<ControlView> {
   int index = 2;
-  late ProfileCubit _cubit;
-  late HomeCubit _homeCubit;
+  late ProfileCubit _profileCubit;
+  late CategoriesCubit _categoriesCubit;
+  late ProductsCubit _productsCubit;
 
   List<BottomNavigationBarItem> items = [
     const BottomNavigationBarItem(
@@ -72,12 +74,13 @@ class _ControlViewState extends State<ControlView> {
   @override
   void initState() {
     super.initState();
-    // _cubit = BlocProvider.of<ProfileCubit>(context);
-    // _cubit.getProfile();
+    _profileCubit = BlocProvider.of<ProfileCubit>(context);
+    _profileCubit.getProfile();
 
-    _homeCubit = BlocProvider.of<HomeCubit>(context);
-    _homeCubit.getProducts();
-    // _homeCubit.getCategories();
+    _categoriesCubit = BlocProvider.of<CategoriesCubit>(context);
+    _productsCubit = BlocProvider.of<ProductsCubit>(context);
+    _categoriesCubit.getCategories();
+    _productsCubit.getProducts();
   }
 
   @override

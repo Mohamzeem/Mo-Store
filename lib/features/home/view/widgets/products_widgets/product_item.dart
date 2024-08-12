@@ -24,14 +24,13 @@ class ProductItem extends StatelessWidget {
             AppColors.darkBlue.withOpacity(0.9),
           ],
         ),
-        color: AppColors.bordersGrey,
         borderRadius: BorderRadius.circular(10.r),
       ),
       child: Column(
         children: [
+          //^ share and favorite
           Padding(
             padding: EdgeInsets.symmetric(vertical: 5.h, horizontal: 10.w),
-            //^ share and favorite
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -54,6 +53,7 @@ class ProductItem extends StatelessWidget {
               ],
             ),
           ),
+          //^ image
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.w),
             child: HomeCachedNetworkImage(
@@ -64,6 +64,7 @@ class ProductItem extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
+          //^ title and price
           Padding(
             padding: EdgeInsets.symmetric(vertical: 2.h, horizontal: 10.w),
             child: Column(

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mo_store/core/helpers/prints.dart';
 import 'package:mo_store/core/widgets/skelton_shimmer.dart';
-import 'package:mo_store/features/home/logic/home_cubit/home_cubit.dart';
-import 'package:mo_store/features/home/logic/home_cubit/home_state.dart';
+import 'package:mo_store/features/home/logic/categories_cubit/categories_cubit.dart';
+import 'package:mo_store/features/home/logic/categories_cubit/categories_state.dart';
 import 'package:mo_store/features/home/view/widgets/categories_widgets/category_list.dart';
 import 'package:mo_store/features/home/view/widgets/empty_error_container.dart';
 
@@ -13,11 +12,11 @@ class CategoriesWithCubit extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverToBoxAdapter(child: BlocBuilder<HomeCubit, HomeState>(
+    return SliverToBoxAdapter(
+        child: BlocBuilder<CategoriesCubit, CategoriesState>(
       builder: (context, state) {
         return state.maybeWhen(
           successCategories: (categories) {
-            Prints.debug(message: 'Categories: ${categories.length}');
             return CategoryList(categories: categories);
           },
           loadingCategories: () => SizedBox(
@@ -26,26 +25,29 @@ class CategoriesWithCubit extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemCount: 4,
               itemBuilder: (context, index) {
-                return Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(right: 10.w),
-                      child: SkeltonShimmer(
-                        width: 85.w,
-                        height: 70.h,
-                        shape: BoxShape.rectangle,
+                return Padding(
+                  padding: EdgeInsets.only(bottom: 5.h),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(right: 10.w),
+                        child: SkeltonShimmer(
+                          width: 85.w,
+                          height: 70.h,
+                          shape: BoxShape.rectangle,
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(right: 10.w),
-                      child: SkeltonShimmer(
-                        width: 85.w,
-                        height: 25.h,
-                        shape: BoxShape.rectangle,
+                      Padding(
+                        padding: EdgeInsets.only(right: 10.w),
+                        child: SkeltonShimmer(
+                          width: 85.w,
+                          height: 20.h,
+                          shape: BoxShape.rectangle,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 );
               },
             ),
@@ -53,8 +55,10 @@ class CategoriesWithCubit extends StatelessWidget {
           emptyCategories: () {
             return const EmptyErrorContainer(text: 'No Categories');
           },
-          orElse: () =>
-              const EmptyErrorContainer(text: 'Error While Loading Categories'),
+          orElse: () {
+            return const EmptyErrorContainer(
+                text: 'Error While Loading Categories');
+          },
         );
       },
     ));

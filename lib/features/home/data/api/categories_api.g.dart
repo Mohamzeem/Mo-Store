@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'home_api.dart';
+part of 'categories_api.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,8 +8,8 @@ part of 'home_api.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element
 
-class _HomeApi implements HomeApi {
-  _HomeApi(
+class _CategoriesApi implements CategoriesApi {
+  _CategoriesApi(
     this._dio, {
     this.baseUrl,
   }) {
@@ -46,36 +46,6 @@ class _HomeApi implements HomeApi {
     var _value = _result.data!
         .map((dynamic i) =>
             CategoriesResponseBody.fromJson(i as Map<String, dynamic>))
-        .toList();
-    return _value;
-  }
-
-  @override
-  Future<List<ProductsResponseBody>> getProducts() async {
-    final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
-    final _result = await _dio.fetch<List<dynamic>>(
-        _setStreamType<List<ProductsResponseBody>>(Options(
-      method: 'GET',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              'products/',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    var _value = _result.data!
-        .map((dynamic i) =>
-            ProductsResponseBody.fromJson(i as Map<String, dynamic>))
         .toList();
     return _value;
   }
