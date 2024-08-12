@@ -72,11 +72,12 @@ class _ControlViewState extends State<ControlView> {
   @override
   void initState() {
     super.initState();
-    _cubit = BlocProvider.of<ProfileCubit>(context);
-    _cubit.getProfile();
+    // _cubit = BlocProvider.of<ProfileCubit>(context);
+    // _cubit.getProfile();
 
     _homeCubit = BlocProvider.of<HomeCubit>(context);
     _homeCubit.getProducts();
+    // _homeCubit.getCategories();
   }
 
   @override

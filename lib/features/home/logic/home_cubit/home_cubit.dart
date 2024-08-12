@@ -13,8 +13,9 @@ class HomeCubit extends Cubit<HomeState> {
       success: (categories) {
         if (categories.isEmpty) {
           emit(const HomeState.emptyCategories());
+        } else {
+          emit(HomeState.successCategories(categories));
         }
-        emit(HomeState.successCategories(categories));
       },
       failure: (message) => emit(HomeState.failureCategories(message)),
     );
@@ -27,8 +28,9 @@ class HomeCubit extends Cubit<HomeState> {
       success: (products) {
         if (products.isEmpty) {
           emit(const HomeState.emptyProducts());
+        } else {
+          emit(HomeState.successProducts(products));
         }
-        emit(HomeState.successProducts(products));
       },
       failure: (message) => emit(HomeState.failureProducts(message)),
     );

@@ -1,11 +1,10 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mo_store/core/helpers/prints.dart';
-import 'package:mo_store/core/helpers/text_fonts.dart';
 import 'package:mo_store/core/widgets/skelton_shimmer.dart';
 import 'package:mo_store/features/home/logic/home_cubit/home_cubit.dart';
 import 'package:mo_store/features/home/logic/home_cubit/home_state.dart';
+import 'package:mo_store/features/home/view/widgets/empty_error_container.dart';
 import 'package:mo_store/features/home/view/widgets/products_widgets/products_list.dart';
 
 class ProductsListWithCubit extends StatelessWidget {
@@ -18,22 +17,12 @@ class ProductsListWithCubit extends StatelessWidget {
         builder: (context, state) {
           return state.maybeWhen(
             successProducts: (products) {
-              Prints.debug(
-                  message:
-                      products[0].images![0].replaceAll(RegExp(r'[\[\]]'), '') +
-                          products[0].title!);
               return ProductsList(products: products);
             },
             emptyProducts: () {
-              return SizedBox(
+              return EmptyErrorContainer(
+                text: 'No Products',
                 height: 320.h,
-                width: double.infinity,
-                child: Center(
-                  child: Text(
-                    'No Products',
-                    style: AppFonts.bold50Primary,
-                  ),
-                ),
               );
             },
             loadingProducts: () {
@@ -59,7 +48,10 @@ class ProductsListWithCubit extends StatelessWidget {
                 },
               ));
             },
-            orElse: () => const SizedBox(),
+            orElse: () => EmptyErrorContainer(
+              text: 'Error Loading Products',
+              height: 340.h,
+            ),
           );
         },
       ),

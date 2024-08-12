@@ -57,8 +57,7 @@ class ProductItem extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.w),
             child: HomeCachedNetworkImage(
-              photoUrl:
-                  product.images!.first.replaceAll(RegExp(r'[\[\]]^"'), ''),
+              photoUrl: product.images!.first,
               width: double.infinity,
               height: 110,
               shape: BoxShape.rectangle,

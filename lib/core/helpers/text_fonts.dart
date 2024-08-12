@@ -37,6 +37,12 @@ class AppFonts {
     fontFamily: AppGlobals.appFont,
     color: AppColors.lightBlue,
   );
+  static TextStyle regular16LightBlue = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w400,
+    fontFamily: AppGlobals.appFont,
+    color: AppColors.lightBlue,
+  );
   static TextStyle regular20Primary = TextStyle(
     fontSize: 20.sp,
     fontWeight: FontWeight.w400,
