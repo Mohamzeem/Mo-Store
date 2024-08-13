@@ -4,6 +4,7 @@ import 'package:mo_store/core/app/app_injection.dart';
 import 'package:mo_store/core/app/upload_image/logic/upload_image/upload_image_cubit.dart';
 import 'package:mo_store/core/route/routes.dart';
 import 'package:mo_store/features/control/control_view.dart';
+import 'package:mo_store/features/home/logic/all_products_cubit/all_products_cubit.dart';
 import 'package:mo_store/features/home/logic/categories_cubit/categories_cubit.dart';
 import 'package:mo_store/features/home/logic/products_cubit/products_cubit.dart';
 import 'package:mo_store/features/home/view/all_products_view.dart';
@@ -61,7 +62,10 @@ class AppRouter {
         );
       case Routes.allProductsView:
         return MaterialPageRoute(
-          builder: (_) => const AllProductsView(),
+          builder: (_) => BlocProvider(
+            create: (context) => di<AllProductsCubit>(),
+            child: const AllProductsView(),
+          ),
         );
       default:
         return MaterialPageRoute(

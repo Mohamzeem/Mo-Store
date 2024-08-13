@@ -4,10 +4,13 @@ import 'package:mo_store/core/app/upload_image/data/upload_api.dart';
 import 'package:mo_store/core/app/upload_image/data/upload_repo.dart';
 import 'package:mo_store/core/app/upload_image/logic/upload_image/upload_image_cubit.dart';
 import 'package:mo_store/core/network/dio_factory.dart';
+import 'package:mo_store/features/home/data/api/all_products_api.dart';
 import 'package:mo_store/features/home/data/api/categories_api.dart';
 import 'package:mo_store/features/home/data/api/products_api.dart';
+import 'package:mo_store/features/home/data/repo/all_products_repo.dart';
 import 'package:mo_store/features/home/data/repo/categories_repo.dart';
 import 'package:mo_store/features/home/data/repo/products_repo.dart';
+import 'package:mo_store/features/home/logic/all_products_cubit/all_products_cubit.dart';
 import 'package:mo_store/features/home/logic/categories_cubit/categories_cubit.dart';
 import 'package:mo_store/features/home/logic/products_cubit/products_cubit.dart';
 import 'package:mo_store/features/login/data/api/login_api.dart';
@@ -66,5 +69,13 @@ class AppInjection {
       ..registerFactory<CategoriesCubit>(
           () => CategoriesCubit(categoriesRepo: di()))
       ..registerFactory<ProductsCubit>(() => ProductsCubit(productsRepo: di()));
+
+//^ all products view cubit & repo & api
+    di
+      ..registerLazySingleton<AllProductsApi>(() => AllProductsApi(dio))
+      ..registerLazySingleton<AllProductsRepo>(
+          () => AllProductsRepo(allProductsApi: di()))
+      ..registerFactory<AllProductsCubit>(
+          () => AllProductsCubit(allProductsRepo: di()));
   }
 }
