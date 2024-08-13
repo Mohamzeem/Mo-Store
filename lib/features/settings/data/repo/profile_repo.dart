@@ -18,10 +18,6 @@ class ProfileRepo {
 
   Future<ApiResult<ProfileModel>> updateProfile(
       UpdateProfileRequest value, int id) async {
-    // String stringId = SharedPrefHelper.getSecuredString(PrefKeys.userId);
-    // print('stringId : $stringId');
-    // int id = int.parse(stringId);
-    // print('intId : $id');
     try {
       final result = await profileApi.updateProfile(value, id);
       return ApiResult.success(result);

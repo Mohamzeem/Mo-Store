@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mo_store/core/widgets/skelton_shimmer.dart';
 import 'package:mo_store/features/home/logic/products_cubit/products_cubit.dart';
 import 'package:mo_store/features/home/logic/products_cubit/products_state.dart';
-import 'package:mo_store/features/home/view/widgets/empty_error_container.dart';
+import 'package:mo_store/features/home/view/widgets/home_widgets/empty_error_container.dart';
 import 'package:mo_store/features/home/view/widgets/products_widgets/products_list.dart';
 
 class ProductsListWithCubit extends StatelessWidget {

@@ -5,7 +5,7 @@ import 'package:mo_store/core/widgets/skelton_shimmer.dart';
 import 'package:mo_store/features/home/logic/categories_cubit/categories_cubit.dart';
 import 'package:mo_store/features/home/logic/categories_cubit/categories_state.dart';
 import 'package:mo_store/features/home/view/widgets/categories_widgets/category_list.dart';
-import 'package:mo_store/features/home/view/widgets/empty_error_container.dart';
+import 'package:mo_store/features/home/view/widgets/home_widgets/empty_error_container.dart';
 
 class CategoriesWithCubit extends StatelessWidget {
   const CategoriesWithCubit({super.key});

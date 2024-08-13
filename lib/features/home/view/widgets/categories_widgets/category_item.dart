@@ -1,11 +1,10 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:mo_store/core/consts/app_colors.dart';
 import 'package:mo_store/core/helpers/text_fonts.dart';
 import 'package:mo_store/features/home/data/models/categories_response.dart';
-import 'package:mo_store/features/home/view/widgets/home_cached_image.dart';
+import 'package:mo_store/features/home/view/widgets/home_widgets/home_cached_image.dart';
 
 class CategoryItem extends StatelessWidget {
   final int index;
@@ -40,7 +39,7 @@ class CategoryItem extends StatelessWidget {
             width: 85.w,
             child: Text(
               category.name!,
-              style: AppFonts.regular16LightBlue,
+              style: AppFonts.regular16Primary,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.center,
             ),

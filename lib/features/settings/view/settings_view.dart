@@ -20,7 +20,7 @@ class SettingsView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const CustomAppBar(title: 'Settings', photoUrl: ''),
+              const CustomAppBar(title: 'Settings'),
               15.verticalSpace,
               const SettingsSubTitle(title: 'Personal', icon: Icons.person),
               SettingsItem(

@@ -36,7 +36,6 @@ class _ProfileViewState extends State<ProfileView> {
                 //^ app bar
                 const CustomAppBar(
                   title: 'Settings',
-                  photoUrl: '',
                   isArrowBack: true,
                 ),
                 15.verticalSpace,

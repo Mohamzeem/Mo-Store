@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
 import 'package:mo_store/core/helpers/text_fonts.dart';
 import 'package:mo_store/features/home/data/models/products_response.dart';
-import 'package:mo_store/features/home/view/widgets/home_cached_image.dart';
+import 'package:mo_store/features/home/view/widgets/home_widgets/home_cached_image.dart';
 
 class ProductItem extends StatelessWidget {
   final ProductsResponseBody product;
@@ -18,12 +18,13 @@ class ProductItem extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            AppColors.lightBlue,
-            AppColors.lightBlue,
+            AppColors.lightBlue.withOpacity(0.3),
+            AppColors.lightBlue.withOpacity(0.7),
             AppColors.darkBlue.withOpacity(0.7),
             AppColors.darkBlue.withOpacity(0.9),
           ],
         ),
+        // color: AppColors.darkBlue.withOpacity(0.3),
         borderRadius: BorderRadius.circular(10.r),
       ),
       child: Column(
@@ -39,7 +40,7 @@ class ProductItem extends StatelessWidget {
                   child: Icon(
                     Icons.share,
                     size: 25.r,
-                    color: AppColors.white,
+                    color: AppColors.primaryColor,
                   ),
                 ),
                 InkWell(
@@ -47,7 +48,7 @@ class ProductItem extends StatelessWidget {
                   child: Icon(
                     Icons.favorite,
                     size: 25.r,
-                    color: AppColors.white,
+                    color: AppColors.primaryColor,
                   ),
                 ),
               ],
@@ -72,11 +73,11 @@ class ProductItem extends StatelessWidget {
               children: [
                 Text(
                   product.title!,
-                  style: AppFonts.medium18White.copyWith(
+                  style: AppFonts.medium18Primary.copyWith(
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),
-                Text('${product.price} \$', style: AppFonts.medium18White),
+                Text('${product.price} \$', style: AppFonts.medium18Primary),
               ],
             ),
           ),

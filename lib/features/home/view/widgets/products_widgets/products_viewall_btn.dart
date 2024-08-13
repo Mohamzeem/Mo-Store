@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mo_store/core/consts/app_colors.dart';
+import 'package:mo_store/core/helpers/extensions.dart';
+import 'package:mo_store/core/route/routes.dart';
 import 'package:mo_store/core/widgets/custom_button.dart';
 
 class ViewAllProductsButton extends StatelessWidget {
@@ -14,12 +15,11 @@ class ViewAllProductsButton extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.only(top: 10.h),
         child: CustomButton(
-          onPressed: () {},
+          onPressed: () => context.pushName(Routes.allProductsView),
           padding: 0,
           text: 'View All Products',
           width: 50,
           height: 50,
-          backgroundColor: AppColors.primaryColor,
         ),
       ),
     );

@@ -11,7 +11,7 @@ class Banners extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 10.h),
+        padding: EdgeInsets.only(bottom: 10.h),
         child: Column(
           children: [
             SizedBox(

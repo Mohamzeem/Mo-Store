@@ -43,6 +43,12 @@ class AppFonts {
     fontFamily: AppGlobals.appFont,
     color: AppColors.lightBlue,
   );
+  static TextStyle regular16Primary = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w400,
+    fontFamily: AppGlobals.appFont,
+    color: AppColors.primaryColor,
+  );
   static TextStyle regular20Primary = TextStyle(
     fontSize: 20.sp,
     fontWeight: FontWeight.w400,
@@ -62,10 +68,10 @@ class AppFonts {
     fontFamily: AppGlobals.appFont,
     color: AppColors.white,
   );
-  static TextStyle medium18White = TextStyle(
+  static TextStyle medium18Primary = TextStyle(
     fontSize: 17.sp,
     fontWeight: FontWeight.w500,
     fontFamily: AppGlobals.appFont,
-    color: AppColors.white,
+    color: AppColors.primaryColor,
   );
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mo_store/features/home/view/widgets/home_body.dart';
-import 'package:mo_store/features/home/view/widgets/home_scroll_btn.dart';
+import 'package:mo_store/features/home/view/widgets/home_widgets/home_body.dart';
+import 'package:mo_store/features/home/view/widgets/home_widgets/home_scroll_btn.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});

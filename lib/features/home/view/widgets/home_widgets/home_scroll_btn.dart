@@ -3,11 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
 
 class HomeScrolllButton extends StatelessWidget {
-  // final bool isAtBottom;
   final void Function() onTap;
   const HomeScrolllButton({
     super.key,
-    // required this.isAtBottom,
     required this.onTap,
   });
 

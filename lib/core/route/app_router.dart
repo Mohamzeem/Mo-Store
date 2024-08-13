@@ -6,6 +6,7 @@ import 'package:mo_store/core/route/routes.dart';
 import 'package:mo_store/features/control/control_view.dart';
 import 'package:mo_store/features/home/logic/categories_cubit/categories_cubit.dart';
 import 'package:mo_store/features/home/logic/products_cubit/products_cubit.dart';
+import 'package:mo_store/features/home/view/all_products_view.dart';
 import 'package:mo_store/features/login/logic/login/login_cubit.dart';
 import 'package:mo_store/features/login/view/login_view.dart';
 import 'package:mo_store/features/onboarding/onboarding_view.dart';
@@ -57,6 +58,10 @@ class AppRouter {
             create: (context) => di<ProfileCubit>()..getOfflineProfile(),
             child: const ProfileView(),
           ),
+        );
+      case Routes.allProductsView:
+        return MaterialPageRoute(
+          builder: (_) => const AllProductsView(),
         );
       default:
         return MaterialPageRoute(
