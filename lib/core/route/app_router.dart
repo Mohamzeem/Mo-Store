@@ -4,6 +4,9 @@ import 'package:mo_store/core/app/app_injection.dart';
 import 'package:mo_store/core/app/upload_image/logic/upload_image/upload_image_cubit.dart';
 import 'package:mo_store/core/route/routes.dart';
 import 'package:mo_store/features/control/control_view.dart';
+import 'package:mo_store/features/home/logic/categories_cubit/categories_cubit.dart';
+import 'package:mo_store/features/home/logic/products_cubit/products_cubit.dart';
+import 'package:mo_store/features/home/view/all_products_view.dart';
 import 'package:mo_store/features/login/logic/login/login_cubit.dart';
 import 'package:mo_store/features/login/view/login_view.dart';
 import 'package:mo_store/features/onboarding/onboarding_view.dart';
@@ -40,8 +43,12 @@ class AppRouter {
         );
       case Routes.controlView:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => di<ProfileCubit>()..getProfile(),
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider(create: (context) => di<ProfileCubit>()),
+              BlocProvider(create: (context) => di<CategoriesCubit>()),
+              BlocProvider(create: (context) => di<ProductsCubit>()),
+            ],
             child: const ControlView(),
           ),
         );
@@ -51,6 +58,10 @@ class AppRouter {
             create: (context) => di<ProfileCubit>()..getOfflineProfile(),
             child: const ProfileView(),
           ),
+        );
+      case Routes.allProductsView:
+        return MaterialPageRoute(
+          builder: (_) => const AllProductsView(),
         );
       default:
         return MaterialPageRoute(

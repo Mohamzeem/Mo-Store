@@ -7,7 +7,6 @@ import 'package:mo_store/core/app/upload_image/data/upload_repo.dart';
 import 'package:mo_store/core/consts/pref_keys.dart';
 import 'package:mo_store/core/helpers/extensions.dart';
 import 'package:mo_store/core/helpers/image_picker.dart';
-import 'package:mo_store/core/helpers/prints.dart';
 import 'package:mo_store/core/helpers/shared_prefs.dart';
 import 'package:mo_store/features/settings/data/models/profile_model.dart';
 import 'package:mo_store/features/settings/data/models/update_profile_request.dart';
@@ -44,8 +43,9 @@ class ProfileCubit extends Cubit<ProfileState> {
     final result = await profileRepo.getProfile();
     result.when(
       success: (data) {
-        SharedPrefHelper.setSecuredString(PrefKeys.userId, '${data.id}');
-        String offlineProfile = jsonEncode(data);
+        userModel = data;
+        SharedPrefHelper.setSecuredString(PrefKeys.userId, data.id.toString());
+        String offlineProfile = jsonEncode(data.toJson());
         SharedPrefHelper.setSecuredString(PrefKeys.userProfile, offlineProfile);
         emit(ProfileState.success(data));
       },
@@ -60,7 +60,6 @@ class ProfileCubit extends Cubit<ProfileState> {
     if (profileJson != null) {
       final profileModel = ProfileModel.fromJson(jsonDecode(profileJson));
       userModel = profileModel;
-      Prints.debug(message: userModel!.id.toString());
       emit(ProfileState.success(profileModel));
     } else {
       emit(const ProfileState.failure('No Profile Found'));

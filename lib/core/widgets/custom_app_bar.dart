@@ -6,7 +6,6 @@ import 'package:mo_store/core/helpers/text_fonts.dart';
 
 class CustomAppBar extends StatelessWidget {
   final String title;
-  final String photoUrl;
   final bool isArrowBack;
   final bool isAPhoto;
 
@@ -14,7 +13,6 @@ class CustomAppBar extends StatelessWidget {
     super.key,
     required this.title,
     this.isAPhoto = false,
-    required this.photoUrl,
     this.isArrowBack = false,
   });
 

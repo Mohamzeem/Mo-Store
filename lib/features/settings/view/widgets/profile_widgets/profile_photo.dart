@@ -35,7 +35,7 @@ class ProfilePhoto extends StatelessWidget {
               return state.maybeWhen(
                 success: (profileModel) {
                   return CustomCachedImage(
-                    photoUrl: profileModel.avatar!,
+                    photoUrl: cubit.userModel!.avatar!,
                     width: 150.w,
                     height: 150.h,
                     isBorder: true,
@@ -58,9 +58,10 @@ class ProfilePhoto extends StatelessWidget {
                   );
                 },
                 loading: () => const SkeltonShimmer(
-                  shape: BoxShape.circle,
+                  shape: BoxShape.rectangle,
                   height: 50,
                   width: 50,
+                  border: 50,
                 ),
                 orElse: () => const SkeltonShimmer(
                   shape: BoxShape.circle,

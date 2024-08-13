@@ -4,5 +4,5 @@ class Routes {
   static const String registerView = 'Register_View';
   static const String controlView = 'Control_View';
   static const String profileView = 'Profile_View';
-  // static const String cartView = 'Cart_View';
+  static const String allProductsView = 'All_Products_View';
 }

@@ -4,6 +4,12 @@ import 'package:mo_store/core/app/upload_image/data/upload_api.dart';
 import 'package:mo_store/core/app/upload_image/data/upload_repo.dart';
 import 'package:mo_store/core/app/upload_image/logic/upload_image/upload_image_cubit.dart';
 import 'package:mo_store/core/network/dio_factory.dart';
+import 'package:mo_store/features/home/data/api/categories_api.dart';
+import 'package:mo_store/features/home/data/api/products_api.dart';
+import 'package:mo_store/features/home/data/repo/categories_repo.dart';
+import 'package:mo_store/features/home/data/repo/products_repo.dart';
+import 'package:mo_store/features/home/logic/categories_cubit/categories_cubit.dart';
+import 'package:mo_store/features/home/logic/products_cubit/products_cubit.dart';
 import 'package:mo_store/features/login/data/api/login_api.dart';
 import 'package:mo_store/features/login/data/repo/login_repo.dart';
 import 'package:mo_store/features/login/logic/login/login_cubit.dart';
@@ -21,20 +27,20 @@ class AppInjection {
 //^ dio services
     Dio dio = DioFactory.getDio();
 
-// //^ login cubit and repo
+// //^ login cubit & repo & api
     di
       ..registerLazySingleton<LoginApi>(() => LoginApi(dio))
       ..registerLazySingleton<LoginRepo>(() => LoginRepo(loginApi: di()))
       ..registerFactory<LoginCubit>(() => LoginCubit(loginRepo: di()));
 
-//^ register cubit and repo
+//^ register cubit & repo & api
     di
       ..registerLazySingleton<RegisterApi>(() => RegisterApi(dio))
       ..registerLazySingleton<RegisterRepo>(
           () => RegisterRepo(registerApi: di()))
       ..registerFactory<RegisterCubit>(() => RegisterCubit(registerRepo: di()));
 
-//^ uploadimage cubit and repo
+//^ uploadimage cubit & repo & api
     di
       ..registerLazySingleton<UploadImageApi>(() => UploadImageApi(dio))
       ..registerLazySingleton<UploadImageRepo>(
@@ -42,11 +48,23 @@ class AppInjection {
       ..registerFactory<UploadImageCubit>(
           () => UploadImageCubit(uploadImageRepo: di()));
 
-//^ profile cubit and repo
+//^ profile cubit & repo & api
     di
       ..registerLazySingleton<ProfileApi>(() => ProfileApi(dio))
       ..registerLazySingleton<ProfileRepo>(() => ProfileRepo(profileApi: di()))
       ..registerFactory<ProfileCubit>(
           () => ProfileCubit(profileRepo: di(), uploadImageRepo: di()));
+
+//^ home cubit & repo & api
+    di
+      ..registerLazySingleton<CategoriesApi>(() => CategoriesApi(dio))
+      ..registerLazySingleton<ProductsApi>(() => ProductsApi(dio))
+      ..registerLazySingleton<CategoriesRepo>(
+          () => CategoriesRepo(categoriesApi: di()))
+      ..registerLazySingleton<ProductsRepo>(
+          () => ProductsRepo(productsApi: di()))
+      ..registerFactory<CategoriesCubit>(
+          () => CategoriesCubit(categoriesRepo: di()))
+      ..registerFactory<ProductsCubit>(() => ProductsCubit(productsRepo: di()));
   }
 }
