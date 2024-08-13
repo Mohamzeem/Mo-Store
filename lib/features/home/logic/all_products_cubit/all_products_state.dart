@@ -5,14 +5,16 @@ part 'all_products_state.freezed.dart';
 
 @freezed
 class AllProductsState with _$AllProductsState {
-  const factory AllProductsState.initial() = _Initial;
+  const factory AllProductsState.initial(
+      List<ProductsResponseBody> productsList) = _Initial;
 
-  const factory AllProductsState.loading() = _Loading;
+  const factory AllProductsState.loading(
+      List<ProductsResponseBody> productsList) = _Loading;
 
   const factory AllProductsState.failure(String message) = _Failure;
 
-  const factory AllProductsState.success(List<ProductsResponseBody> products) =
-      _Success;
+  const factory AllProductsState.success(
+      List<ProductsResponseBody> productsList) = _Success;
 
   const factory AllProductsState.empty() = _Empty;
 }

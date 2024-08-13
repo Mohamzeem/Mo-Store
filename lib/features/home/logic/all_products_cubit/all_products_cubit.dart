@@ -8,16 +8,15 @@ import 'package:mo_store/features/home/logic/all_products_cubit/all_products_sta
 class AllProductsCubit extends Cubit<AllProductsState> {
   final AllProductsRepo allProductsRepo;
   AllProductsCubit({required this.allProductsRepo})
-      : super(const AllProductsState.initial());
+      : super(const AllProductsState.initial([]));
 
   final ScrollController scrollController = ScrollController();
   final List<ProductsResponseBody> list = [];
   bool isLoading = false;
   bool hasMore = true;
-  int totalProds = 0;
 
   Future<void> getPaginatedProducts() async {
-    emit(const AllProductsState.loading());
+    emit(const AllProductsState.loading([]));
     final result = await allProductsRepo.getPaginatedProducts(
         offset: list.length, limit: 8);
     result.when(
@@ -27,7 +26,6 @@ class AllProductsCubit extends Cubit<AllProductsState> {
         } else {
           hasMore = true;
           list.addAll(products);
-          totalProds = list.length;
           emit(AllProductsState.success(products));
         }
       },
@@ -37,8 +35,18 @@ class AllProductsCubit extends Cubit<AllProductsState> {
 
   Future<void> getMoreProducts() async {
     if (scrollController.position.pixels ==
-        scrollController.position.maxScrollExtent) {
-      getPaginatedProducts();
+            scrollController.position.maxScrollExtent &&
+        hasMore) {
+      emit(AllProductsState.loading(list));
+      final result = await allProductsRepo.getPaginatedProducts(
+          offset: list.length, limit: 8);
+      result.when(
+        success: (products) {
+          list.addAll(products);
+          emit(AllProductsState.success(list));
+        },
+        failure: (message) => emit(AllProductsState.failure(message)),
+      );
     }
   }
 }

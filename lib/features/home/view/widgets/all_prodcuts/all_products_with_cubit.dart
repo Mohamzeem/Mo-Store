@@ -30,7 +30,7 @@ class AllProductsListWithCubit extends StatelessWidget {
                 height: 320.h,
               );
             },
-            loading: () {
+            loading: (_) {
               return Padding(
                 padding: EdgeInsets.symmetric(vertical: 5.h),
                 child: Center(
@@ -38,7 +38,7 @@ class AllProductsListWithCubit extends StatelessWidget {
                   shrinkWrap: true,
                   padding: EdgeInsets.zero,
                   physics: const NeverScrollableScrollPhysics(),
-                  itemCount: 4,
+                  itemCount: 8,
                   semanticChildCount: 2,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
