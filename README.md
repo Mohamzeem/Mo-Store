@@ -1,4 +1,4 @@
-# profile View
-![Screenshot_1722174345](https://github.com/user-attachments/assets/e60573d1-cbcb-4f51-b4d7-a25ae877abe2)
+# Home View
+![Screenshot_1723545253](https://github.com/user-attachments/assets/594a3be2-0ead-4b25-8e4d-f0d03e50d0fb)
 
 
