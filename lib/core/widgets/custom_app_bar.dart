@@ -18,40 +18,37 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(top: 10.h),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          SizedBox(
-            width: 220.w,
-            child: Text(
-              title,
-              style: AppFonts.appBarTitle,
-            ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        SizedBox(
+          width: 220.w,
+          child: Text(
+            title,
+            style: AppFonts.appBarTitle,
           ),
-          isArrowBack
-              ? Container(
-                  height: 40.h,
-                  width: 40.w,
-                  decoration: BoxDecoration(
-                    color: AppColors.lightBlue,
-                    borderRadius: BorderRadius.all(Radius.circular(10.r)),
-                  ),
-                  child: InkWell(
-                    onTap: () => context.pop(),
-                    child: const Center(
-                      child: Icon(
-                        Icons.arrow_back,
-                        size: 25,
-                        color: AppColors.primaryColor,
-                      ),
+        ),
+        isArrowBack
+            ? Container(
+                height: 40.h,
+                width: 40.w,
+                decoration: BoxDecoration(
+                  color: AppColors.lightBlue,
+                  borderRadius: BorderRadius.all(Radius.circular(10.r)),
+                ),
+                child: InkWell(
+                  onTap: () => context.pop(),
+                  child: const Center(
+                    child: Icon(
+                      Icons.arrow_back,
+                      size: 25,
+                      color: AppColors.primaryColor,
                     ),
                   ),
-                )
-              : const SizedBox.shrink()
-        ],
-      ),
+                ),
+              )
+            : const SizedBox.shrink()
+      ],
     );
   }
 }

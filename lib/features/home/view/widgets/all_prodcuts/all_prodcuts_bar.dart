@@ -10,7 +10,7 @@ class AllProdcutsBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(bottom: 15.h, right: 20.w, left: 20.w),
+      padding: EdgeInsets.only(right: 20.w, left: 20.w),
       child: const CustomAppBar(
         title: 'All Products',
         isArrowBack: true,

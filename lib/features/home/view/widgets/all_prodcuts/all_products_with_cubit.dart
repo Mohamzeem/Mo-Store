@@ -51,7 +51,7 @@ class _AllProductsListWithCubitState extends State<AllProductsListWithCubit> {
               padding: EdgeInsets.symmetric(vertical: 5.h),
               child: Column(
                 children: [
-                  SizedBox(height: 60.h),
+                  SizedBox(height: 55.h),
                   Expanded(
                     child: GridView.builder(
                       controller: scrollController,
@@ -88,7 +88,7 @@ class _AllProductsListWithCubitState extends State<AllProductsListWithCubit> {
             Prints.debug(message: state.list.length.toString());
             return Column(
               children: [
-                SizedBox(height: 60.h),
+                SizedBox(height: 55.h),
                 Expanded(
                   child: GridView.builder(
                     controller: scrollController,
