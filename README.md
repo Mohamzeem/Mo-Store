@@ -1,4 +1,4 @@
-# profile View
-![Screenshot_1722174345](https://github.com/user-attachments/assets/e60573d1-cbcb-4f51-b4d7-a25ae877abe2)
+# all products View
+![Screenshot_1723545253](https://github.com/user-attachments/assets/dcff0704-911d-4179-a153-1ad676b8cec2)
 
 
