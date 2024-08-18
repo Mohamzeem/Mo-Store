@@ -1,20 +1,47 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:equatable/equatable.dart';
 import 'package:mo_store/features/home/data/models/products_response.dart';
 
-part 'all_products_state.freezed.dart';
+abstract class AllProductsState extends Equatable {
+  final List<ProductsResponseBody> list;
+  final bool hasMore;
+  const AllProductsState({
+    required this.list,
+    required this.hasMore,
+  });
+  @override
+  List<Object> get props => [list, hasMore];
+}
 
-@freezed
-class AllProductsState with _$AllProductsState {
-  const factory AllProductsState.initial(
-      List<ProductsResponseBody> productsList) = _Initial;
+class AllProductsInitial extends AllProductsState {
+  const AllProductsInitial({required super.list, required super.hasMore});
+}
 
-  const factory AllProductsState.loading(
-      List<ProductsResponseBody> productsList) = _Loading;
+class AllProductsLoading extends AllProductsState {
+  const AllProductsLoading({required super.list, required super.hasMore});
+}
 
-  const factory AllProductsState.failure(String message) = _Failure;
+class AllProductsSuccess extends AllProductsState {
+  const AllProductsSuccess({required super.list, required super.hasMore});
+}
 
-  const factory AllProductsState.success(
-      List<ProductsResponseBody> productsList) = _Success;
+class AllProductsFailure extends AllProductsState {
+  final String errMessage;
+  const AllProductsFailure({
+    required this.errMessage,
+    required super.list,
+    required super.hasMore,
+  });
+  @override
+  List<Object> get props => [errMessage];
+}
 
-  const factory AllProductsState.empty() = _Empty;
+class AllProductsEmpty extends AllProductsState {
+  final String errMessage;
+  const AllProductsEmpty({
+    required this.errMessage,
+    required super.list,
+    required super.hasMore,
+  });
+  @override
+  List<Object> get props => [errMessage];
 }
