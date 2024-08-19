@@ -8,23 +8,25 @@ class CustomAppBar extends StatelessWidget {
   final String title;
   final bool isArrowBack;
   final bool isAPhoto;
+  final int padding;
 
   const CustomAppBar({
     super.key,
     required this.title,
     this.isAPhoto = false,
     this.isArrowBack = false,
+    this.padding = 0,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 10.h),
+      padding: EdgeInsets.symmetric(horizontal: padding.w),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           SizedBox(
-            width: 220.w,
+            width: 320.w,
             child: Text(
               title,
               style: AppFonts.appBarTitle,

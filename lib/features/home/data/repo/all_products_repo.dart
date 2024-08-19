@@ -6,9 +6,10 @@ class AllProductsRepo {
   final AllProductsApi allProductsApi;
   AllProductsRepo({required this.allProductsApi});
 
-  Future<ApiResult<List<ProductsResponseBody>>> getPaginatedProducts() async {
+  Future<ApiResult<List<ProductsResponseBody>>> getPaginatedProducts(
+      {required int offset, required int limit}) async {
     try {
-      final result = await allProductsApi.paginatedProducts(6, 6);
+      final result = await allProductsApi.paginatedProducts(offset, limit);
       return ApiResult.success(result);
     } catch (e) {
       return ApiResult.failure(e.toString());

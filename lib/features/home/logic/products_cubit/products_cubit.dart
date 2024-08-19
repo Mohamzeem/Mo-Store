@@ -9,7 +9,7 @@ class ProductsCubit extends Cubit<ProductsState> {
 
   Future<void> getProducts() async {
     emit(const ProductsState.loadingProducts());
-    final result = await productsRepo.getProducts();
+    final result = await productsRepo.getProducts(offset: 0, limit: 10);
     result.when(
       success: (products) {
         if (products.isEmpty) {

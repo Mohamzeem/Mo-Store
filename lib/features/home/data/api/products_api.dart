@@ -9,6 +9,7 @@ part 'products_api.g.dart';
 abstract class ProductsApi {
   factory ProductsApi(Dio dio, {String baseUrl}) = _ProductsApi;
 
-  @GET(AppEndPoints.getProducts)
-  Future<List<ProductsResponseBody>> getProducts();
+  @GET('${AppEndPoints.getProducts}/?offset={offset}&limit={limit}')
+  Future<List<ProductsResponseBody>> getProducts(
+      @Path('offset') int offset, @Path('limit') int limit);
 }

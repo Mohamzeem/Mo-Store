@@ -21,7 +21,10 @@ class _ProductsApi implements ProductsApi {
   String? baseUrl;
 
   @override
-  Future<List<ProductsResponseBody>> getProducts() async {
+  Future<List<ProductsResponseBody>> getProducts(
+    int offset,
+    int limit,
+  ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -34,7 +37,7 @@ class _ProductsApi implements ProductsApi {
     )
             .compose(
               _dio.options,
-              'products/',
+              'products//?offset=${offset}&limit=${limit}',
               queryParameters: queryParameters,
               data: _data,
             )
