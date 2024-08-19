@@ -2,7 +2,6 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
-import 'package:mo_store/core/helpers/prints.dart';
 import 'package:mo_store/core/helpers/text_fonts.dart';
 import 'package:mo_store/core/widgets/skelton_shimmer.dart';
 import 'package:mo_store/features/home/logic/all_products_cubit/all_products_cubit.dart';
@@ -85,7 +84,6 @@ class _AllProductsListWithCubitState extends State<AllProductsListWithCubit> {
             );
           } else {
             final products = state.list;
-            Prints.debug(message: state.list.length.toString());
             return Column(
               children: [
                 SizedBox(height: 55.h),

@@ -8,47 +8,52 @@ class CustomAppBar extends StatelessWidget {
   final String title;
   final bool isArrowBack;
   final bool isAPhoto;
+  final int padding;
 
   const CustomAppBar({
     super.key,
     required this.title,
     this.isAPhoto = false,
     this.isArrowBack = false,
+    this.padding = 0,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        SizedBox(
-          width: 220.w,
-          child: Text(
-            title,
-            style: AppFonts.appBarTitle,
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: padding.w),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          SizedBox(
+            width: 320.w,
+            child: Text(
+              title,
+              style: AppFonts.appBarTitle,
+            ),
           ),
-        ),
-        isArrowBack
-            ? Container(
-                height: 40.h,
-                width: 40.w,
-                decoration: BoxDecoration(
-                  color: AppColors.lightBlue,
-                  borderRadius: BorderRadius.all(Radius.circular(10.r)),
-                ),
-                child: InkWell(
-                  onTap: () => context.pop(),
-                  child: const Center(
-                    child: Icon(
-                      Icons.arrow_back,
-                      size: 25,
-                      color: AppColors.primaryColor,
+          isArrowBack
+              ? Container(
+                  height: 40.h,
+                  width: 40.w,
+                  decoration: BoxDecoration(
+                    color: AppColors.lightBlue,
+                    borderRadius: BorderRadius.all(Radius.circular(10.r)),
+                  ),
+                  child: InkWell(
+                    onTap: () => context.pop(),
+                    child: const Center(
+                      child: Icon(
+                        Icons.arrow_back,
+                        size: 25,
+                        color: AppColors.primaryColor,
+                      ),
                     ),
                   ),
-                ),
-              )
-            : const SizedBox.shrink()
-      ],
+                )
+              : const SizedBox.shrink()
+        ],
+      ),
     );
   }
 }

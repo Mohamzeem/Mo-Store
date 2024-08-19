@@ -8,6 +8,7 @@ import 'package:mo_store/features/home/logic/all_products_cubit/all_products_cub
 import 'package:mo_store/features/home/logic/categories_cubit/categories_cubit.dart';
 import 'package:mo_store/features/home/logic/products_cubit/products_cubit.dart';
 import 'package:mo_store/features/home/view/all_products_view.dart';
+import 'package:mo_store/features/home/view/product_details.dart';
 import 'package:mo_store/features/login/logic/login/login_cubit.dart';
 import 'package:mo_store/features/login/view/login_view.dart';
 import 'package:mo_store/features/onboarding/onboarding_view.dart';
@@ -66,6 +67,10 @@ class AppRouter {
             create: (context) => di<AllProductsCubit>(),
             child: const AllProductsView(),
           ),
+        );
+      case Routes.productDetailsView:
+        return MaterialPageRoute(
+          builder: (_) => const ProductDetailsView(),
         );
       default:
         return MaterialPageRoute(
