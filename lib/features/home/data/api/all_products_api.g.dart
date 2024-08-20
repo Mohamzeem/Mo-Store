@@ -12,6 +12,7 @@ class _AllProductsApi implements AllProductsApi {
   _AllProductsApi(
     this._dio, {
     this.baseUrl,
+    this.errorLogger,
   }) {
     baseUrl ??= 'https://api.escuelajs.co/api/v1/';
   }
@@ -19,6 +20,8 @@ class _AllProductsApi implements AllProductsApi {
   final Dio _dio;
 
   String? baseUrl;
+
+  final ParseErrorLogger? errorLogger;
 
   @override
   Future<List<ProductsResponseBody>> paginatedProducts(
@@ -29,27 +32,33 @@ class _AllProductsApi implements AllProductsApi {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _result = await _dio.fetch<List<dynamic>>(
-        _setStreamType<List<ProductsResponseBody>>(Options(
+    final _options = _setStreamType<List<ProductsResponseBody>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              'products//?offset=${offset}&limit=${limit}',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    var _value = _result.data!
-        .map((dynamic i) =>
-            ProductsResponseBody.fromJson(i as Map<String, dynamic>))
-        .toList();
+        .compose(
+          _dio.options,
+          'products//?offset=${offset}&limit=${limit}',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<ProductsResponseBody> _value;
+    try {
+      _value = _result.data!
+          .map((dynamic i) =>
+              ProductsResponseBody.fromJson(i as Map<String, dynamic>))
+          .toList();
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 

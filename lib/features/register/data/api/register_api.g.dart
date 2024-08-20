@@ -12,6 +12,7 @@ class _RegisterApi implements RegisterApi {
   _RegisterApi(
     this._dio, {
     this.baseUrl,
+    this.errorLogger,
   }) {
     baseUrl ??= 'https://api.escuelajs.co/api/v1/';
   }
@@ -20,6 +21,8 @@ class _RegisterApi implements RegisterApi {
 
   String? baseUrl;
 
+  final ParseErrorLogger? errorLogger;
+
   @override
   Future<dynamic> register(RegisterRequestModel registerRequestModel) async {
     final _extra = <String, dynamic>{};
@@ -27,7 +30,7 @@ class _RegisterApi implements RegisterApi {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(registerRequestModel.toJson());
-    final _result = await _dio.fetch(_setStreamType<dynamic>(Options(
+    final _options = _setStreamType<dynamic>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -42,7 +45,8 @@ class _RegisterApi implements RegisterApi {
             baseUrl: _combineBaseUrls(
           _dio.options.baseUrl,
           baseUrl,
-        ))));
+        )));
+    final _result = await _dio.fetch(_options);
     final _value = _result.data;
     return _value;
   }
