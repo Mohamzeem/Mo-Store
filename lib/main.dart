@@ -6,6 +6,7 @@ import 'package:mo_store/core/app/app_globals.dart';
 import 'package:mo_store/core/app/app_injection.dart';
 import 'package:mo_store/core/app/app_view.dart';
 import 'package:mo_store/core/app/bloc_observer.dart';
+import 'package:mo_store/core/local_database/local_database.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,6 +14,7 @@ void main() async {
   await AppInjection.injectorInit();
   await ScreenUtil.ensureScreenSize();
   AppGlobals.systemOverlay();
+  await LocalDatabase().initLocalDatabase();
   await AppGlobals.checkUserLoggedIn();
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp]).then((_) {

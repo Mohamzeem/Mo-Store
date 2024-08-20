@@ -10,6 +10,7 @@ class CustomAppBar extends StatelessWidget {
   final bool isAPhoto;
   final int padding;
   final TextStyle? style;
+  final VoidCallback? backBtn;
 
   const CustomAppBar({
     super.key,
@@ -18,6 +19,7 @@ class CustomAppBar extends StatelessWidget {
     this.isArrowBack = false,
     this.padding = 0,
     this.style,
+    this.backBtn,
   });
 
   @override
@@ -45,7 +47,7 @@ class CustomAppBar extends StatelessWidget {
                     borderRadius: BorderRadius.all(Radius.circular(10.r)),
                   ),
                   child: InkWell(
-                    onTap: () => context.pop(),
+                    onTap: backBtn ?? () => context.pop(),
                     child: const Center(
                       child: Icon(
                         Icons.arrow_back,

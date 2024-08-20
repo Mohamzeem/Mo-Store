@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mo_store/core/widgets/custom_dialog.dart';
 import 'package:mo_store/features/login/data/models/login_request.dart';
 import 'package:mo_store/features/login/data/repo/login_repo.dart';
-import 'package:mo_store/features/login/logic/login/login_state.dart';
+import 'package:mo_store/features/login/logic/login_cubit/login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {
   final LoginRepo loginRepo;

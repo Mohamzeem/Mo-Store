@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mo_store/core/widgets/custom_txt_fom_field.dart';
-import 'package:mo_store/features/login/logic/login/login_cubit.dart';
+import 'package:mo_store/features/login/logic/login_cubit/login_cubit.dart';
 
 class LoginFields extends StatefulWidget {
   const LoginFields({

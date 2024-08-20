@@ -41,50 +41,12 @@ class _AllProductsListWithCubitState extends State<AllProductsListWithCubit> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20.w),
-      child: BlocBuilder<AllProductsCubit, AllProductsState>(
-        builder: (context, state) {
-          if (state is AllProductsLoading) {
-            return Padding(
-              padding: EdgeInsets.symmetric(vertical: 5.h),
-              child: Column(
-                children: [
-                  SizedBox(height: 55.h),
-                  Expanded(
-                    child: GridView.builder(
-                      controller: scrollController,
-                      shrinkWrap: true,
-                      padding: EdgeInsets.zero,
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemCount: 8,
-                      semanticChildCount: 2,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        mainAxisSpacing: 10.h,
-                        crossAxisSpacing: 10.w,
-                        childAspectRatio: 0.9,
-                      ),
-                      itemBuilder: (context, index) {
-                        return const SkeltonShimmer(
-                          height: 110,
-                          width: double.infinity,
-                          shape: BoxShape.rectangle,
-                        );
-                      },
-                    ),
-                  ),
-                ],
-              ),
-            );
-          } else if (state is AllProductsFailure) {
-            return EmptyErrorContainer(
-              text: state.errMessage.toString(),
-              height: double.infinity,
-            );
-          } else {
-            final products = state.list;
-            return Column(
+    return BlocBuilder<AllProductsCubit, AllProductsState>(
+      builder: (context, state) {
+        if (state is AllProductsLoading) {
+          return Padding(
+            padding: EdgeInsets.symmetric(vertical: 5.h),
+            child: Column(
               children: [
                 SizedBox(height: 55.h),
                 Expanded(
@@ -92,7 +54,8 @@ class _AllProductsListWithCubitState extends State<AllProductsListWithCubit> {
                     controller: scrollController,
                     shrinkWrap: true,
                     padding: EdgeInsets.zero,
-                    itemCount: products.length,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: 8,
                     semanticChildCount: 2,
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
@@ -101,25 +64,59 @@ class _AllProductsListWithCubitState extends State<AllProductsListWithCubit> {
                       childAspectRatio: 0.9,
                     ),
                     itemBuilder: (context, index) {
-                      final product = products[index];
-                      return ProductItem(product: product);
+                      return const SkeltonShimmer(
+                        height: 110,
+                        width: double.infinity,
+                        shape: BoxShape.rectangle,
+                      );
                     },
                   ),
                 ),
-                if (state.hasMore == true && state.list.isNotEmpty)
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      'Scroll down...',
-                      style: AppFonts.regular16Primary
-                          .copyWith(color: AppColors.lightBlue),
-                    ),
-                  ),
               ],
-            );
-          }
-        },
-      ),
+            ),
+          );
+        } else if (state is AllProductsFailure) {
+          return EmptyErrorContainer(
+            text: state.errMessage.toString(),
+            height: double.infinity,
+          );
+        } else {
+          final products = state.list;
+          return Column(
+            children: [
+              SizedBox(height: 55.h),
+              Expanded(
+                child: GridView.builder(
+                  controller: scrollController,
+                  shrinkWrap: true,
+                  padding: EdgeInsets.zero,
+                  itemCount: products.length,
+                  semanticChildCount: 2,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 10.h,
+                    crossAxisSpacing: 10.w,
+                    childAspectRatio: 0.9,
+                  ),
+                  itemBuilder: (context, index) {
+                    final product = products[index];
+                    return ProductItem(product: product);
+                  },
+                ),
+              ),
+              if (state.hasMore == true && state.list.isNotEmpty)
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    'Scroll down...',
+                    style: AppFonts.regular16Primary
+                        .copyWith(color: AppColors.lightBlue),
+                  ),
+                ),
+            ],
+          );
+        }
+      },
     );
   }
 }

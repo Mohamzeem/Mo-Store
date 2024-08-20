@@ -2,18 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
-import 'package:mo_store/core/helpers/extensions.dart';
 import 'package:mo_store/core/helpers/text_fonts.dart';
-import 'package:mo_store/core/route/routes.dart';
 import 'package:mo_store/core/widgets/custom_favorite_icon.dart';
+import 'package:mo_store/features/favorites/data/models/favorit_model.dart';
 import 'package:mo_store/features/favorites/logic/favorites_cubit/favorites_cubit.dart';
 import 'package:mo_store/features/favorites/logic/favorites_cubit/favorites_state.dart';
-import 'package:mo_store/features/home/data/models/products_response.dart';
 import 'package:mo_store/features/home/view/widgets/home_widgets/home_cached_image.dart';
 
-class ProductItem extends StatelessWidget {
-  final ProductsResponseBody product;
-  const ProductItem({
+class FavoriteItem extends StatelessWidget {
+  final FavoritModel product;
+  const FavoriteItem({
     super.key,
     required this.product,
   });
@@ -21,8 +19,7 @@ class ProductItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () =>
-          context.pushReplacmentName(Routes.productDetailsView, args: product),
+      // onTap: () => context.pushName(Routes.productDetailsView, args: product),
       child: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -57,13 +54,16 @@ class ProductItem extends StatelessWidget {
                       return CustomFavoiteIcon(
                         size: 25,
                         color: AppColors.primaryColor,
-                        onTap: () => cubit.addRemoveFavorite(
-                          id: product.id!,
-                          description: product.description!,
-                          images: product.images!,
-                          price: product.price!,
-                          title: product.title!,
-                        ),
+                        onTap: () {
+                          cubit.addRemoveFavorite(
+                            id: product.id!,
+                            description: product.description!,
+                            images: product.images!,
+                            price: product.price!,
+                            title: product.title!,
+                          );
+                          cubit.getFavorites();
+                        },
                         isFavorite: cubit.isFavorite(favoriteId: product.id!),
                       );
                     },
