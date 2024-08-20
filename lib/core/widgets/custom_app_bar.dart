@@ -9,6 +9,7 @@ class CustomAppBar extends StatelessWidget {
   final bool isArrowBack;
   final bool isAPhoto;
   final int padding;
+  final TextStyle? style;
 
   const CustomAppBar({
     super.key,
@@ -16,6 +17,7 @@ class CustomAppBar extends StatelessWidget {
     this.isAPhoto = false,
     this.isArrowBack = false,
     this.padding = 0,
+    this.style,
   });
 
   @override
@@ -29,7 +31,9 @@ class CustomAppBar extends StatelessWidget {
             width: 320.w,
             child: Text(
               title,
-              style: AppFonts.appBarTitle,
+              style: style ?? AppFonts.appBarTitle,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
             ),
           ),
           isArrowBack

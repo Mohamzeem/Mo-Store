@@ -12,6 +12,7 @@ class _UploadImageApi implements UploadImageApi {
   _UploadImageApi(
     this._dio, {
     this.baseUrl,
+    this.errorLogger,
   }) {
     baseUrl ??= 'https://api.escuelajs.co/api/v1/';
   }
@@ -20,30 +21,38 @@ class _UploadImageApi implements UploadImageApi {
 
   String? baseUrl;
 
+  final ParseErrorLogger? errorLogger;
+
   @override
   Future<UploadImageResponseBody> uploadImage(FormData formData) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = formData;
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<UploadImageResponseBody>(Options(
+    final _options = _setStreamType<UploadImageResponseBody>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              'files/upload',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final _value = UploadImageResponseBody.fromJson(_result.data!);
+        .compose(
+          _dio.options,
+          'files/upload',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late UploadImageResponseBody _value;
+    try {
+      _value = UploadImageResponseBody.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 

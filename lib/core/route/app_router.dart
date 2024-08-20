@@ -4,11 +4,12 @@ import 'package:mo_store/core/app/app_injection.dart';
 import 'package:mo_store/core/app/upload_image/logic/upload_image/upload_image_cubit.dart';
 import 'package:mo_store/core/route/routes.dart';
 import 'package:mo_store/features/control/control_view.dart';
+import 'package:mo_store/features/home/data/models/products_response.dart';
 import 'package:mo_store/features/home/logic/all_products_cubit/all_products_cubit.dart';
 import 'package:mo_store/features/home/logic/categories_cubit/categories_cubit.dart';
 import 'package:mo_store/features/home/logic/products_cubit/products_cubit.dart';
 import 'package:mo_store/features/home/view/all_products_view.dart';
-import 'package:mo_store/features/home/view/product_details.dart';
+import 'package:mo_store/features/home/view/product_details_view.dart';
 import 'package:mo_store/features/login/logic/login/login_cubit.dart';
 import 'package:mo_store/features/login/view/login_view.dart';
 import 'package:mo_store/features/onboarding/onboarding_view.dart';
@@ -19,7 +20,7 @@ import 'package:mo_store/features/settings/view/profile_view.dart';
 
 class AppRouter {
   Route generateRoute(RouteSettings settings) {
-    // final args = settings.arguments;
+    final args = settings.arguments;
 
     switch (settings.name) {
       case Routes.onboardingView:
@@ -70,7 +71,9 @@ class AppRouter {
         );
       case Routes.productDetailsView:
         return MaterialPageRoute(
-          builder: (_) => const ProductDetailsView(),
+          builder: (_) {
+            return ProductDetailsView(product: args as ProductsResponseBody);
+          },
         );
       default:
         return MaterialPageRoute(
