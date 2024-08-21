@@ -30,8 +30,8 @@ class ProductDetailsView extends StatelessWidget {
               title: product.title!,
               isArrowBack: true,
               style: AppFonts.medium30Primary.copyWith(fontSize: 25.sp),
-              backBtn: () =>
-                  context.pushReplacmentName(Routes.controlView, args: product),
+              // backBtn: () =>
+              //     context.pushReplacmentName(Routes.controlView, args: product),
             ),
             20.verticalSpace,
             ProductDetailsImages(product: product),

@@ -16,14 +16,17 @@ class SettingsSubTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(title, style: AppFonts.medium30Primary),
-        visibleIcon
-            ? Icon(icon, color: AppColors.primaryColor, size: 30.h)
-            : const SizedBox.shrink(),
-      ],
+    return SizedBox(
+      height: 30.h,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(title, style: AppFonts.medium30Primary),
+          visibleIcon
+              ? Icon(icon, color: AppColors.primaryColor, size: 30.h)
+              : const SizedBox.shrink(),
+        ],
+      ),
     );
   }
 }

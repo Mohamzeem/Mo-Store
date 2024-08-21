@@ -11,7 +11,7 @@ import 'package:mo_store/features/favorites/logic/favorites_cubit/favorites_stat
 import 'package:mo_store/features/home/data/models/products_response.dart';
 import 'package:mo_store/features/home/view/widgets/home_widgets/home_cached_image.dart';
 
-class ProductItem extends StatelessWidget {
+class ProductItem extends StatefulWidget {
   final ProductsResponseBody product;
   const ProductItem({
     super.key,
@@ -19,10 +19,16 @@ class ProductItem extends StatelessWidget {
   });
 
   @override
+  State<ProductItem> createState() => _ProductItemState();
+}
+
+class _ProductItemState extends State<ProductItem> {
+  @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () =>
-          context.pushReplacmentName(Routes.productDetailsView, args: product),
+      onTap: () => context
+          .pushName(Routes.productDetailsView, args: widget.product)
+          .then((value) => setState(() {})),
       child: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -58,13 +64,14 @@ class ProductItem extends StatelessWidget {
                         size: 25,
                         color: AppColors.primaryColor,
                         onTap: () => cubit.addRemoveFavorite(
-                          id: product.id!,
-                          description: product.description!,
-                          images: product.images!,
-                          price: product.price!,
-                          title: product.title!,
+                          id: widget.product.id!,
+                          description: widget.product.description!,
+                          images: widget.product.images!,
+                          price: widget.product.price!,
+                          title: widget.product.title!,
                         ),
-                        isFavorite: cubit.isFavorite(favoriteId: product.id!),
+                        isFavorite:
+                            cubit.isFavorite(favoriteId: widget.product.id!),
                       );
                     },
                   ),
@@ -75,7 +82,7 @@ class ProductItem extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 10.w),
               child: HomeCachedNetworkImage(
-                photoUrl: product.images!.first,
+                photoUrl: widget.product.images!.first,
                 width: double.infinity,
                 height: 110,
                 shape: BoxShape.rectangle,
@@ -89,12 +96,13 @@ class ProductItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    product.title!,
+                    widget.product.title!,
                     style: AppFonts.medium18Primary.copyWith(
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
-                  Text('${product.price} \$', style: AppFonts.medium18Primary),
+                  Text('${widget.product.price} \$',
+                      style: AppFonts.medium18Primary),
                 ],
               ),
             ),

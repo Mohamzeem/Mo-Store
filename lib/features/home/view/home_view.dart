@@ -21,6 +21,12 @@ class _HomeViewState extends State<HomeView> {
   }
 
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    setState(() {});
+  }
+
+  @override
   void dispose() {
     _scrollController.dispose();
     super.dispose();

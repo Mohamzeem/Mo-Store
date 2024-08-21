@@ -24,9 +24,9 @@ class AppView extends StatelessWidget {
             fontFamily: AppGlobals.appFont,
           ),
           home: const OnboardingView(),
-          initialRoute: AppGlobals.isUserLoggedIn
-              ? Routes.controlView
-              : Routes.onboardingView,
+          initialRoute: AppGlobals().isUserLoggedIn
+              ? Routes.onboardingView
+              : Routes.controlView,
           onGenerateRoute: AppRouter().generateRoute,
         ),
       ),

@@ -13,9 +13,9 @@ void main() async {
   Bloc.observer = AppBlocObserver();
   await AppInjection.injectorInit();
   await ScreenUtil.ensureScreenSize();
+  await AppGlobals().checkUserLoggedIn();
   AppGlobals.systemOverlay();
   await LocalDatabase().initLocalDatabase();
-  await AppGlobals.checkUserLoggedIn();
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp]).then((_) {
     runApp(const AppView());

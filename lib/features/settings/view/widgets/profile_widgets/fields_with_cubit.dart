@@ -117,17 +117,17 @@ class FieldsWithCubit extends StatelessWidget {
             return Column(
               children: [
                 SkeltonShimmer(
-                  height: 50.h,
+                  height: 55.h,
                   width: double.infinity,
                 ),
                 10.verticalSpace,
                 SkeltonShimmer(
-                  height: 50.h,
+                  height: 55.h,
                   width: double.infinity,
                 ),
                 10.verticalSpace,
                 SkeltonShimmer(
-                  height: 50.h,
+                  height: 55.h,
                   width: double.infinity,
                 ),
               ],
@@ -160,19 +160,19 @@ class FieldsWithCubit extends StatelessWidget {
             children: [
               SkeltonShimmer(
                 shape: BoxShape.rectangle,
-                height: 50.h,
+                height: 55.h,
                 width: double.infinity,
               ),
               10.verticalSpace,
               SkeltonShimmer(
                 shape: BoxShape.rectangle,
-                height: 50.h,
+                height: 55.h,
                 width: double.infinity,
               ),
               10.verticalSpace,
               SkeltonShimmer(
                 shape: BoxShape.rectangle,
-                height: 50.h,
+                height: 55.h,
                 width: double.infinity,
               ),
             ],

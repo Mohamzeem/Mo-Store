@@ -58,13 +58,13 @@ class AppRouter {
             child: const ControlView(),
           ),
         );
-      case Routes.homeView:
-        return MaterialPageRoute(
-          builder: (_) => MultiBlocProvider(
-            providers: [],
-            child: const HomeView(),
-          ),
-        );
+      // case Routes.homeView:
+      //   return MaterialPageRoute(
+      //     builder: (_) => MultiBlocProvider(
+      //       providers: [],
+      //       child: const HomeView(),
+      //     ),
+      //   );
       case Routes.profileView:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(

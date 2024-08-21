@@ -1,8 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:mo_store/core/consts/app_colors.dart';
 import 'package:mo_store/core/widgets/custom_button.dart';
 import 'package:mo_store/core/widgets/custom_favorite_icon.dart';
@@ -20,7 +20,8 @@ class AddToCartAndFavorit extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 20.w),
+      margin: EdgeInsets.symmetric(
+          horizontal: 20.w, vertical: Platform.isIOS ? 20.h : 0),
       height: 50.h,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.r),

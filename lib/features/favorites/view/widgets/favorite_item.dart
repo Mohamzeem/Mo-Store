@@ -2,14 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
+import 'package:mo_store/core/helpers/extensions.dart';
 import 'package:mo_store/core/helpers/text_fonts.dart';
+import 'package:mo_store/core/route/routes.dart';
 import 'package:mo_store/core/widgets/custom_favorite_icon.dart';
 import 'package:mo_store/features/favorites/data/models/favorit_model.dart';
 import 'package:mo_store/features/favorites/logic/favorites_cubit/favorites_cubit.dart';
 import 'package:mo_store/features/favorites/logic/favorites_cubit/favorites_state.dart';
+import 'package:mo_store/features/home/data/models/products_response.dart';
 import 'package:mo_store/features/home/view/widgets/home_widgets/home_cached_image.dart';
 
-class FavoriteItem extends StatelessWidget {
+class FavoriteItem extends StatefulWidget {
   final FavoritModel product;
   const FavoriteItem({
     super.key,
@@ -17,9 +20,26 @@ class FavoriteItem extends StatelessWidget {
   });
 
   @override
+  State<FavoriteItem> createState() => _FavoriteItemState();
+}
+
+class _FavoriteItemState extends State<FavoriteItem> {
+  @override
   Widget build(BuildContext context) {
+    var model = ProductsResponseBody(
+      widget.product.id,
+      widget.product.title,
+      widget.product.price,
+      widget.product.description,
+      widget.product.images,
+      Category(0, '', '', '', ''),
+      '',
+      '',
+    );
     return InkWell(
-      // onTap: () => context.pushName(Routes.productDetailsView, args: product),
+      onTap: () => context
+          .pushName(Routes.productDetailsView, args: model)
+          .then((value) => setState(() {})),
       child: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -56,15 +76,16 @@ class FavoriteItem extends StatelessWidget {
                         color: AppColors.primaryColor,
                         onTap: () {
                           cubit.addRemoveFavorite(
-                            id: product.id!,
-                            description: product.description!,
-                            images: product.images!,
-                            price: product.price!,
-                            title: product.title!,
+                            id: widget.product.id!,
+                            description: widget.product.description!,
+                            images: widget.product.images!,
+                            price: widget.product.price!,
+                            title: widget.product.title!,
                           );
                           cubit.getFavorites();
                         },
-                        isFavorite: cubit.isFavorite(favoriteId: product.id!),
+                        isFavorite:
+                            cubit.isFavorite(favoriteId: widget.product.id!),
                       );
                     },
                   ),
@@ -75,7 +96,7 @@ class FavoriteItem extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 10.w),
               child: HomeCachedNetworkImage(
-                photoUrl: product.images!.first,
+                photoUrl: widget.product.images!.first,
                 width: double.infinity,
                 height: 110,
                 shape: BoxShape.rectangle,
@@ -89,12 +110,13 @@ class FavoriteItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    product.title!,
+                    widget.product.title!,
                     style: AppFonts.medium18Primary.copyWith(
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
-                  Text('${product.price} \$', style: AppFonts.medium18Primary),
+                  Text('${widget.product.price} \$',
+                      style: AppFonts.medium18Primary),
                 ],
               ),
             ),

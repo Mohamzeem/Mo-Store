@@ -25,9 +25,10 @@ class SkeltonShimmer extends StatelessWidget {
         width: width,
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
-            shape: shape ?? BoxShape.circle,
-            color: AppColors.lightBlue.withOpacity(0.4),
-            borderRadius: BorderRadius.circular(10.r)),
+          shape: shape ?? BoxShape.circle,
+          color: AppColors.lightBlue.withOpacity(0.4),
+          borderRadius: BorderRadius.circular(10.r),
+        ),
       ),
     );
   }
