@@ -39,7 +39,9 @@ class _FavoriteItemState extends State<FavoriteItem> {
     return InkWell(
       onTap: () => context
           .pushName(Routes.productDetailsView, args: model)
-          .then((value) => setState(() {})),
+          .then((value) => setState(() {
+                context.read<FavoritesCubit>().getFavorites();
+              })),
       child: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(

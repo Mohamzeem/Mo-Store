@@ -6,6 +6,8 @@ import 'package:mo_store/features/favorites/logic/favorites_cubit/favorites_stat
 class FavoritesCubit extends Cubit<FavoritesState> {
   FavoritesCubit() : super(const FavoritesState.initial());
 
+  List<FavoritModel> favoritesList = [];
+
   void addRemoveFavorite({
     required int id,
     required String description,
@@ -45,9 +47,10 @@ class FavoritesCubit extends Cubit<FavoritesState> {
   }
 
   List<FavoritModel> getFavorites() {
-    emit(const FavoritesState.initial());
+    // emit(const FavoritesState.initial());
     final result = LocalDatabase().favoritBox!.values.toList();
     if (result.isNotEmpty) {
+      favoritesList = result;
       emit(FavoritesState.getFavorites(result));
     } else {
       emit(const FavoritesState.emptyFavorites());
