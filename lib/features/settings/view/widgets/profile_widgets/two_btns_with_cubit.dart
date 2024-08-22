@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -22,34 +23,41 @@ class TwoButtonsWithCubit extends StatelessWidget {
         );
       },
       builder: (context, state) {
-        return Column(
-          children: [
-            CustomButton(
-              padding: 0,
-              onPressed: () {
-                cubit.updateProfile();
-              },
-              text: 'Save Changes',
-              width: double.infinity,
-              height: 50,
+        return Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
+          child: SizedBox(
+            height: 130.h,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                CustomButton(
+                  padding: 0,
+                  onPressed: () => cubit.updateProfile(),
+                  text: 'Save Changes',
+                  width: double.infinity,
+                  height: 50,
+                ),
+                10.verticalSpace,
+                CustomButton(
+                  padding: 0,
+                  onPressed: () {
+                    cubit.clearControllers();
+                    CustomDialog.show(
+                        context: context, text: 'Changes Canceled');
+                  },
+                  text: 'Cancel Changes',
+                  width: double.infinity,
+                  height: 50,
+                  backgroundColor: AppColors.primaryColor,
+                  isLoading: state.maybeWhen(
+                    loading: () => true,
+                    orElse: () => false,
+                  ),
+                ),
+                Platform.isIOS ? 20.verticalSpace : 0.verticalSpace
+              ],
             ),
-            10.verticalSpace,
-            CustomButton(
-              padding: 0,
-              onPressed: () {
-                cubit.clearControllers();
-                CustomDialog.show(context: context, text: 'Changes Canceled');
-              },
-              text: 'Cancel Changes',
-              width: double.infinity,
-              height: 50,
-              backgroundColor: AppColors.primaryColor,
-              isLoading: state.maybeWhen(
-                loading: () => true,
-                orElse: () => false,
-              ),
-            ),
-          ],
+          ),
         );
       },
     );

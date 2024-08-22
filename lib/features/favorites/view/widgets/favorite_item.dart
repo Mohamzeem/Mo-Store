@@ -6,29 +6,42 @@ import 'package:mo_store/core/helpers/extensions.dart';
 import 'package:mo_store/core/helpers/text_fonts.dart';
 import 'package:mo_store/core/route/routes.dart';
 import 'package:mo_store/core/widgets/custom_favorite_icon.dart';
+import 'package:mo_store/features/favorites/data/models/favorit_model.dart';
 import 'package:mo_store/features/favorites/logic/favorites_cubit/favorites_cubit.dart';
 import 'package:mo_store/features/favorites/logic/favorites_cubit/favorites_state.dart';
 import 'package:mo_store/features/home/data/models/products_response.dart';
 import 'package:mo_store/features/home/view/widgets/home_widgets/home_cached_image.dart';
 
-class ProductItem extends StatefulWidget {
-  final ProductsResponseBody product;
-  const ProductItem({
+class FavoriteItem extends StatefulWidget {
+  final FavoritModel product;
+  const FavoriteItem({
     super.key,
     required this.product,
   });
 
   @override
-  State<ProductItem> createState() => _ProductItemState();
+  State<FavoriteItem> createState() => _FavoriteItemState();
 }
 
-class _ProductItemState extends State<ProductItem> {
+class _FavoriteItemState extends State<FavoriteItem> {
   @override
   Widget build(BuildContext context) {
+    var model = ProductsResponseBody(
+      widget.product.id,
+      widget.product.title,
+      widget.product.price,
+      widget.product.description,
+      widget.product.images,
+      Category(0, '', '', '', ''),
+      '',
+      '',
+    );
     return InkWell(
       onTap: () => context
-          .pushName(Routes.productDetailsView, args: widget.product)
-          .then((value) => setState(() {})),
+          .pushName(Routes.productDetailsView, args: model)
+          .then((value) => setState(() {
+                context.read<FavoritesCubit>().getFavorites();
+              })),
       child: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -63,13 +76,16 @@ class _ProductItemState extends State<ProductItem> {
                       return CustomFavoiteIcon(
                         size: 25,
                         color: AppColors.primaryColor,
-                        onTap: () => cubit.addRemoveFavorite(
-                          id: widget.product.id!,
-                          description: widget.product.description!,
-                          images: widget.product.images!,
-                          price: widget.product.price!,
-                          title: widget.product.title!,
-                        ),
+                        onTap: () {
+                          cubit.addRemoveFavorite(
+                            id: widget.product.id!,
+                            description: widget.product.description!,
+                            images: widget.product.images!,
+                            price: widget.product.price!,
+                            title: widget.product.title!,
+                          );
+                          cubit.getFavorites();
+                        },
                         isFavorite:
                             cubit.isFavorite(favoriteId: widget.product.id!),
                       );

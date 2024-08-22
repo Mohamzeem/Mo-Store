@@ -4,6 +4,7 @@ import 'package:mo_store/core/app/upload_image/data/upload_api.dart';
 import 'package:mo_store/core/app/upload_image/data/upload_repo.dart';
 import 'package:mo_store/core/app/upload_image/logic/upload_image/upload_image_cubit.dart';
 import 'package:mo_store/core/network/dio_factory.dart';
+import 'package:mo_store/features/favorites/logic/favorites_cubit/favorites_cubit.dart';
 import 'package:mo_store/features/home/data/api/all_products_api.dart';
 import 'package:mo_store/features/home/data/api/categories_api.dart';
 import 'package:mo_store/features/home/data/api/products_api.dart';
@@ -15,7 +16,7 @@ import 'package:mo_store/features/home/logic/categories_cubit/categories_cubit.d
 import 'package:mo_store/features/home/logic/products_cubit/products_cubit.dart';
 import 'package:mo_store/features/login/data/api/login_api.dart';
 import 'package:mo_store/features/login/data/repo/login_repo.dart';
-import 'package:mo_store/features/login/logic/login/login_cubit.dart';
+import 'package:mo_store/features/login/logic/login_cubit/login_cubit.dart';
 import 'package:mo_store/features/register/data/api/register_api.dart';
 import 'package:mo_store/features/register/data/repo/register_repo.dart';
 import 'package:mo_store/features/register/logic/register/register_cubit.dart';
@@ -77,5 +78,8 @@ class AppInjection {
           () => AllProductsRepo(allProductsApi: di()))
       ..registerFactory<AllProductsCubit>(
           () => AllProductsCubit(allProductsRepo: di()));
+
+    //^ favorites cubit & repo & api
+    di.registerFactory<FavoritesCubit>(() => FavoritesCubit());
   }
 }

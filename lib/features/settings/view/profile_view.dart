@@ -26,6 +26,7 @@ class _ProfileViewState extends State<ProfileView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: TwoButtonsWithCubit(cubit: _cubit),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -54,8 +55,8 @@ class _ProfileViewState extends State<ProfileView> {
                   suffixIconFunction: () => setState(
                       () => _cubit.isVisibleText = !_cubit.isVisibleText),
                 ),
-                250.verticalSpace,
-                TwoButtonsWithCubit(cubit: _cubit)
+                200.verticalSpace,
+                // TwoButtonsWithCubit(cubit: _cubit)
               ],
             ),
           ),

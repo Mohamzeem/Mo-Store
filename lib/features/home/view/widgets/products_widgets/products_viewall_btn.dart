@@ -15,7 +15,7 @@ class ViewAllProductsButton extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.only(top: 10.h),
         child: CustomButton(
-          onPressed: () => context.pushName(Routes.allProductsView),
+          onPressed: () => context.pushReplacmentName(Routes.allProductsView),
           padding: 0,
           text: 'View All Products',
           width: 50,

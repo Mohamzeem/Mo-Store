@@ -1,4 +1,6 @@
-# product details View
-![Screenshot_1724146694](https://github.com/user-attachments/assets/67e9b87c-9df5-415e-be4c-62c8601c945a)
+
+# favorites View
+![Simulator Screenshot - iPhone 15 Pro Max - 2024-08-22 at 14 31 28](https://github.com/user-attachments/assets/02be5fdf-b6ab-4f20-92e3-6d358f250b06)
+
 
 

@@ -10,6 +10,7 @@ class CustomAppBar extends StatelessWidget {
   final bool isAPhoto;
   final int padding;
   final TextStyle? style;
+  final VoidCallback? backBtn;
 
   const CustomAppBar({
     super.key,
@@ -18,45 +19,49 @@ class CustomAppBar extends StatelessWidget {
     this.isArrowBack = false,
     this.padding = 0,
     this.style,
+    this.backBtn,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: padding.w),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          SizedBox(
-            width: 320.w,
-            child: Text(
-              title,
-              style: style ?? AppFonts.appBarTitle,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
+      child: SizedBox(
+        height: 40.h,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            SizedBox(
+              width: 320.w,
+              child: Text(
+                title,
+                style: style ?? AppFonts.appBarTitle,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
-          ),
-          isArrowBack
-              ? Container(
-                  height: 40.h,
-                  width: 40.w,
-                  decoration: BoxDecoration(
-                    color: AppColors.lightBlue,
-                    borderRadius: BorderRadius.all(Radius.circular(10.r)),
-                  ),
-                  child: InkWell(
-                    onTap: () => context.pop(),
-                    child: const Center(
-                      child: Icon(
-                        Icons.arrow_back,
-                        size: 25,
-                        color: AppColors.primaryColor,
+            isArrowBack
+                ? Container(
+                    height: 40.h,
+                    width: 40.w,
+                    decoration: BoxDecoration(
+                      color: AppColors.lightBlue,
+                      borderRadius: BorderRadius.all(Radius.circular(10.r)),
+                    ),
+                    child: InkWell(
+                      onTap: backBtn ?? () => context.pop(),
+                      child: const Center(
+                        child: Icon(
+                          Icons.arrow_back,
+                          size: 25,
+                          color: AppColors.primaryColor,
+                        ),
                       ),
                     ),
-                  ),
-                )
-              : const SizedBox.shrink()
-        ],
+                  )
+                : const SizedBox.shrink()
+          ],
+        ),
       ),
     );
   }
