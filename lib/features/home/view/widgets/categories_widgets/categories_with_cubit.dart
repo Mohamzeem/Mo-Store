@@ -22,6 +22,7 @@ class CategoriesWithCubit extends StatelessWidget {
           loadingCategories: () => SizedBox(
             height: 100.h,
             child: ListView.builder(
+              physics: const AlwaysScrollableScrollPhysics(),
               scrollDirection: Axis.horizontal,
               itemCount: 4,
               itemBuilder: (context, index) {

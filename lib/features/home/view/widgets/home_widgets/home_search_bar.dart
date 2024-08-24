@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
+import 'package:mo_store/core/helpers/extensions.dart';
 import 'package:mo_store/core/helpers/text_fonts.dart';
+import 'package:mo_store/core/route/routes.dart';
 
 class HomeSearchBar extends StatelessWidget {
   const HomeSearchBar({
@@ -29,7 +31,7 @@ class HomeSearchBar extends StatelessWidget {
                 borderRadius: BorderRadius.all(Radius.circular(10.r)),
               ),
               child: InkWell(
-                onTap: () {},
+                onTap: () => context.pushName(Routes.searchProductsView),
                 child: const Center(
                   child: Icon(
                     Icons.search_rounded,

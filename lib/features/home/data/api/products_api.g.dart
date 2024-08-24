@@ -24,10 +24,7 @@ class _ProductsApi implements ProductsApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<List<ProductsResponseBody>> getProducts(
-    int offset,
-    int limit,
-  ) async {
+  Future<List<ProductsResponseBody>> allProducts() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -39,7 +36,7 @@ class _ProductsApi implements ProductsApi {
     )
         .compose(
           _dio.options,
-          'products//?offset=${offset}&limit=${limit}',
+          'products/',
           queryParameters: queryParameters,
           data: _data,
         )

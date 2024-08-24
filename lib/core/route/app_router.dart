@@ -10,8 +10,8 @@ import 'package:mo_store/features/home/logic/all_products_cubit/all_products_cub
 import 'package:mo_store/features/home/logic/categories_cubit/categories_cubit.dart';
 import 'package:mo_store/features/home/logic/products_cubit/products_cubit.dart';
 import 'package:mo_store/features/home/view/all_products_view.dart';
-import 'package:mo_store/features/home/view/home_view.dart';
 import 'package:mo_store/features/home/view/product_details_view.dart';
+import 'package:mo_store/features/home/view/search_products_view.dart';
 import 'package:mo_store/features/login/logic/login_cubit/login_cubit.dart';
 import 'package:mo_store/features/login/view/login_view.dart';
 import 'package:mo_store/features/onboarding/onboarding_view.dart';
@@ -58,13 +58,10 @@ class AppRouter {
             child: const ControlView(),
           ),
         );
-      // case Routes.homeView:
-      //   return MaterialPageRoute(
-      //     builder: (_) => MultiBlocProvider(
-      //       providers: [],
-      //       child: const HomeView(),
-      //     ),
-      //   );
+      case Routes.searchProductsView:
+        return MaterialPageRoute(
+          builder: (_) => const SearchProductsView(),
+        );
       case Routes.profileView:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(

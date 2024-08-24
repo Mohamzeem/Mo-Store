@@ -6,10 +6,9 @@ class ProductsRepo {
   final ProductsApi productsApi;
   ProductsRepo({required this.productsApi});
 
-  Future<ApiResult<List<ProductsResponseBody>>> getProducts(
-      {required int offset, required int limit}) async {
+  Future<ApiResult<List<ProductsResponseBody>>> getProducts() async {
     try {
-      final result = await productsApi.getProducts(offset, limit);
+      final result = await productsApi.allProducts();
       return ApiResult.success(result);
     } catch (e) {
       return ApiResult.failure(e.toString());
