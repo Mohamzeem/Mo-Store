@@ -9,12 +9,14 @@ class SearchField extends StatelessWidget {
   final bool showIcon;
   final double width;
   final String lable;
+  final TextEditingController controller;
   const SearchField({
     super.key,
     required this.width,
     this.closeSearch = false,
     this.showIcon = true,
     required this.lable,
+    required this.controller,
   });
 
   @override
@@ -23,7 +25,7 @@ class SearchField extends StatelessWidget {
       height: 45.h,
       width: width.w,
       child: TextFormField(
-        controller: TextEditingController(),
+        controller: controller,
         keyboardType: TextInputType.text,
         inputFormatters: [LengthLimitingTextInputFormatter(20)],
         cursorColor: AppColors.primaryColor,
@@ -34,20 +36,6 @@ class SearchField extends StatelessWidget {
             color: AppColors.primaryColor,
             fontWeight: FontWeight.w700),
         decoration: InputDecoration(
-          // suffixIcon: showIcon
-          //     ? InkWell(
-          //         onTap: () {},
-          //         child: closeSearch
-          //             ? const Icon(
-          //                 Icons.close,
-          //                 color: AppColors.lightBlue,
-          //               )
-          //             : const Icon(
-          //                 Icons.circle_outlined,
-          //                 color: AppColors.lightBlue,
-          //               ),
-          //       )
-          //     : const SizedBox.shrink(),
           contentPadding:
               EdgeInsets.symmetric(horizontal: 10.w, vertical: 12.h),
           fillColor: AppColors.white,

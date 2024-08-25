@@ -50,17 +50,20 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => MultiBlocProvider(
             providers: [
-              BlocProvider(create: (context) => di<ProfileCubit>()),
-              BlocProvider(create: (context) => di<CategoriesCubit>()),
-              BlocProvider(create: (context) => di<ProductsCubit>()),
-              BlocProvider(create: (context) => di<FavoritesCubit>()),
+              // BlocProvider(create: (context) => di<ProfileCubit>()),
+              // BlocProvider(create: (context) => di<CategoriesCubit>()),
+              // BlocProvider(create: (context) => di<ProductsCubit>()),
+              // BlocProvider(create: (context) => di<FavoritesCubit>()),
             ],
             child: const ControlView(),
           ),
         );
       case Routes.searchProductsView:
         return MaterialPageRoute(
-          builder: (_) => const SearchProductsView(),
+          builder: (_) => BlocProvider(
+            create: (context) => di<ProductsCubit>(),
+            child: const SearchProductsView(),
+          ),
         );
       case Routes.profileView:
         return MaterialPageRoute(

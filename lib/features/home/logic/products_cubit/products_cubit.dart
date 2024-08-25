@@ -10,6 +10,8 @@ class ProductsCubit extends Cubit<ProductsState> {
       : super(const ProductsState.initial());
 
   final TextEditingController searchController = TextEditingController();
+  final TextEditingController minPriceController = TextEditingController();
+  final TextEditingController maxPriceController = TextEditingController();
 
   List<ProductsResponseBody> allProductsList = [];
   Future<void> getProducts() async {
