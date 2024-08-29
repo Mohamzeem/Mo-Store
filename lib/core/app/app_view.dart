@@ -21,7 +21,7 @@ class AppView extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => di<ProfileCubit>()),
         BlocProvider(create: (context) => di<CategoriesCubit>()),
-        BlocProvider(create: (context) => di<ProductsCubit>()),
+        BlocProvider(create: (context) => di<ProductsCubit>()..getProducts()),
         BlocProvider(create: (context) => di<FavoritesCubit>()),
       ],
       child: GestureDetector(

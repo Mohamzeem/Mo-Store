@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:mo_store/core/consts/pref_keys.dart';
-import 'package:mo_store/core/helpers/shared_prefs.dart';
+import 'package:mo_store/core/local_database/shared_prefs.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class DioFactory {

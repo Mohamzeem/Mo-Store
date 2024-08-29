@@ -25,6 +25,9 @@ class SearchField extends StatelessWidget {
       height: 45.h,
       width: width.w,
       child: TextFormField(
+        onChanged: (value) {
+          controller.text = value;
+        },
         controller: controller,
         keyboardType: TextInputType.text,
         inputFormatters: [LengthLimitingTextInputFormatter(20)],

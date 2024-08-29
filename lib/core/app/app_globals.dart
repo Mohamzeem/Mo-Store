@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
 import 'package:mo_store/core/consts/pref_keys.dart';
 import 'package:mo_store/core/helpers/extensions.dart';
-import 'package:mo_store/core/helpers/shared_prefs.dart';
+import 'package:mo_store/core/local_database/shared_prefs.dart';
 
 class AppGlobals {
   bool isUserLoggedIn = false;

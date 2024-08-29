@@ -20,9 +20,9 @@ class ControlView extends StatefulWidget {
 
 class _ControlViewState extends State<ControlView> {
   int index = 2;
-  late ProfileCubit _profileCubit;
-  late CategoriesCubit _categoriesCubit;
-  late ProductsCubit _productsCubit;
+  // late ProfileCubit _profileCubit;
+  // late CategoriesCubit _categoriesCubit;
+  // late ProductsCubit _productsCubit;
 
   List<BottomNavigationBarItem> items = [
     const BottomNavigationBarItem(
@@ -74,13 +74,14 @@ class _ControlViewState extends State<ControlView> {
   @override
   void initState() {
     super.initState();
-    _profileCubit = BlocProvider.of<ProfileCubit>(context);
-    _profileCubit.getProfile();
+    // _profileCubit = BlocProvider.of<ProfileCubit>(context);
+    // _profileCubit.getProfile();
 
-    _categoriesCubit = BlocProvider.of<CategoriesCubit>(context);
-    _productsCubit = BlocProvider.of<ProductsCubit>(context);
-    _categoriesCubit.getCategories();
-    _productsCubit.getProducts();
+    // _categoriesCubit = BlocProvider.of<CategoriesCubit>(context);
+    // _categoriesCubit.getCategories();
+
+    // _productsCubit = BlocProvider.of<ProductsCubit>(context);
+    // _productsCubit.getProducts();
   }
 
   @override

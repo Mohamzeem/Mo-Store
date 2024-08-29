@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,6 +9,8 @@ import 'package:mo_store/core/helpers/prints.dart';
 import 'package:mo_store/core/helpers/text_fonts.dart';
 import 'package:mo_store/core/widgets/custom_app_bar.dart';
 import 'package:mo_store/core/widgets/custom_button.dart';
+import 'package:mo_store/core/widgets/custom_dialog.dart';
+import 'package:mo_store/features/home/data/models/products_response.dart';
 import 'package:mo_store/features/home/logic/products_cubit/products_cubit.dart';
 import 'package:mo_store/features/home/logic/products_cubit/products_state.dart';
 import 'package:mo_store/features/home/view/widgets/search_widgets/name_price_btns.dart';
@@ -26,6 +29,8 @@ class _SearchProductsViewState extends State<SearchProductsView> {
     if (searchTybe == SearchEnum.none || searchTybe == SearchEnum.byName) {
       setState(() {
         searchTybe = SearchEnum.byPrice;
+        closeSearch = false;
+        list.clear();
       });
     } else {
       setState(() {
@@ -38,6 +43,9 @@ class _SearchProductsViewState extends State<SearchProductsView> {
     if (searchTybe == SearchEnum.none || searchTybe == SearchEnum.byPrice) {
       setState(() {
         searchTybe = SearchEnum.byName;
+        closeSearch = false;
+        list.clear();
+        _cubit.searchController.clear();
       });
     } else {
       setState(() {
@@ -46,10 +54,19 @@ class _SearchProductsViewState extends State<SearchProductsView> {
     }
   }
 
+  List<ProductsResponseBody> list = [];
+
   @override
   void initState() {
     super.initState();
     _cubit = BlocProvider.of<ProductsCubit>(context);
+    _cubit.getProducts();
+  }
+
+  @override
+  void dispose() {
+    _cubit.searchController.dispose();
+    super.dispose();
   }
 
   var searchTybe = SearchEnum.none;
@@ -63,9 +80,8 @@ class _SearchProductsViewState extends State<SearchProductsView> {
           padding: EdgeInsets.symmetric(horizontal: 20.w),
           child: BlocBuilder<ProductsCubit, ProductsState>(
             builder: (context, state) {
-              final list = _cubit.allProductsList;
+              list = _cubit.foundProductsList;
               Prints.debug(message: list.length.toString());
-
               return Column(
                 children: [
                   const CustomFadeInDown(
@@ -79,89 +95,108 @@ class _SearchProductsViewState extends State<SearchProductsView> {
                     byPriceFunction: byPriceFunction,
                   ),
                   if (searchTybe == SearchEnum.none) ...[
-                    list.isEmpty
-                        ? Padding(
-                            padding: EdgeInsets.only(top: 100.h),
-                            child: CustomFadeInUp(
-                              child: Column(
-                                children: [
-                                  Text(
-                                    'Find Products',
-                                    style: AppFonts.regular18LightBlue.copyWith(
-                                      fontSize: 35.sp,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
-                                  Icon(
-                                    Icons.search,
-                                    size: 250.r,
-                                    color: AppColors.lightBlue,
-                                  ),
-                                ],
+                    Padding(
+                      padding: EdgeInsets.only(top: 100.h),
+                      child: CustomFadeInUp(
+                        child: Column(
+                          children: [
+                            Text(
+                              'Find Products',
+                              style: AppFonts.regular18LightBlue.copyWith(
+                                fontSize: 35.sp,
+                                fontWeight: FontWeight.w600,
                               ),
                             ),
-                          )
-                        : Expanded(
-                            child: ListView.builder(
-                                itemCount: list.length,
-                                itemBuilder: (context, index) {
-                                  final product = list[index];
-                                  return SearchItem(product: product);
-                                }),
-                          )
+                            Icon(
+                              Icons.search,
+                              size: 250.r,
+                              color: AppColors.lightBlue,
+                            ),
+                          ],
+                        ),
+                      ),
+                    )
                   ],
                   if (searchTybe == SearchEnum.byName) ...[
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    Column(
                       children: [
-                        SearchField(
-                          controller: _cubit.searchController,
-                          width: 300.w,
-                          lable: 'By Name',
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            SearchField(
+                              controller: _cubit.searchController,
+                              width: 300.w,
+                              lable: 'By Name',
+                            ),
+                            SizedBox(
+                              width: 50.w,
+                              child: InkWell(
+                                onTap: () {
+                                  if (_cubit.searchController.text.isNotEmpty) {
+                                    _cubit.searchProductsByName();
+                                    if (closeSearch == true) {
+                                      setState(() {
+                                        _cubit.foundProductsList.clear();
+                                        list.clear();
+                                        _cubit.searchController.clear();
+                                      });
+                                    }
+                                    setState(() {
+                                      closeSearch = !closeSearch;
+                                    });
+                                  } else {
+                                    CustomDialog.show(
+                                        context: context,
+                                        text: 'Product name required',
+                                        isSuccess: false);
+                                    return;
+                                  }
+                                },
+                                child: closeSearch
+                                    ? Container(
+                                        width: 45.w,
+                                        height: 45.h,
+                                        decoration: BoxDecoration(
+                                            shape: BoxShape.rectangle,
+                                            borderRadius:
+                                                BorderRadius.circular(5.r),
+                                            color: AppColors.lightBlue),
+                                        child: Icon(
+                                          Icons.close,
+                                          color: AppColors.white,
+                                          size: 35.r,
+                                        ),
+                                      )
+                                    : Container(
+                                        width: 45.w,
+                                        height: 45.h,
+                                        decoration: BoxDecoration(
+                                            shape: BoxShape.rectangle,
+                                            borderRadius:
+                                                BorderRadius.circular(5.r),
+                                            color: AppColors.lightBlue),
+                                        child: Icon(
+                                          Icons.circle_outlined,
+                                          size: 35.r,
+                                          color: AppColors.white,
+                                        ),
+                                      ),
+                              ),
+                            )
+                          ],
                         ),
-                        SizedBox(
-                          width: 50.w,
-                          child: InkWell(
-                            onTap: () {
-                              _cubit.searchProductsByName();
-                              Prints.debug(
-                                  message:
-                                      _cubit.allProductsList.length.toString());
-                              setState(() {
-                                closeSearch = !closeSearch;
-                              });
-                            },
-                            child: closeSearch
-                                ? Container(
-                                    width: 45.w,
-                                    height: 45.h,
-                                    decoration: BoxDecoration(
-                                        shape: BoxShape.rectangle,
-                                        borderRadius:
-                                            BorderRadius.circular(5.r),
-                                        color: AppColors.lightBlue),
-                                    child: Icon(
-                                      Icons.close,
-                                      color: AppColors.white,
-                                      size: 35.r,
-                                    ),
-                                  )
-                                : Container(
-                                    width: 45.w,
-                                    height: 45.h,
-                                    decoration: BoxDecoration(
-                                        shape: BoxShape.rectangle,
-                                        borderRadius:
-                                            BorderRadius.circular(5.r),
-                                        color: AppColors.lightBlue),
-                                    child: Icon(
-                                      Icons.circle_outlined,
-                                      size: 35.r,
-                                      color: AppColors.white,
-                                    ),
-                                  ),
-                          ),
-                        )
+                        list.isNotEmpty
+                            ? SizedBox(
+                                height: 500.h,
+                                child: ListView.builder(
+                                  itemCount: list.length,
+                                  itemBuilder: (context, index) {
+                                    final item = list[index];
+                                    return SearchItem(product: item);
+                                  },
+                                ),
+                              )
+                            : const SizedBox.shrink()
                       ],
                     )
                   ],
