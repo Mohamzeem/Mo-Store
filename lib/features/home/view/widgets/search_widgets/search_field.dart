@@ -10,6 +10,7 @@ class SearchField extends StatelessWidget {
   final double width;
   final String lable;
   final TextEditingController controller;
+  final TextInputType keyboardType;
   const SearchField({
     super.key,
     required this.width,
@@ -17,6 +18,7 @@ class SearchField extends StatelessWidget {
     this.showIcon = true,
     required this.lable,
     required this.controller,
+    this.keyboardType = TextInputType.text,
   });
 
   @override
@@ -29,7 +31,7 @@ class SearchField extends StatelessWidget {
           controller.text = value;
         },
         controller: controller,
-        keyboardType: TextInputType.text,
+        keyboardType: keyboardType,
         inputFormatters: [LengthLimitingTextInputFormatter(20)],
         cursorColor: AppColors.primaryColor,
         textInputAction: TextInputAction.done,

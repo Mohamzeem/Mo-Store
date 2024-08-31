@@ -7,19 +7,19 @@ import 'package:mo_store/core/helpers/text_fonts.dart';
 class CustomAppBar extends StatelessWidget {
   final String title;
   final bool isArrowBack;
-  final bool isAPhoto;
   final int padding;
   final TextStyle? style;
   final VoidCallback? backBtn;
+  final Widget? endWidget;
 
   const CustomAppBar({
     super.key,
     required this.title,
-    this.isAPhoto = false,
     this.isArrowBack = false,
     this.padding = 0,
     this.style,
     this.backBtn,
+    this.endWidget = const SizedBox.shrink(),
   });
 
   @override
@@ -59,7 +59,7 @@ class CustomAppBar extends StatelessWidget {
                       ),
                     ),
                   )
-                : const SizedBox.shrink()
+                : endWidget!,
           ],
         ),
       ),

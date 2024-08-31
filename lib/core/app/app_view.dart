@@ -19,8 +19,9 @@ class AppView extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => di<ProfileCubit>()),
-        BlocProvider(create: (context) => di<CategoriesCubit>()),
+        BlocProvider(create: (context) => di<ProfileCubit>()..getProfile()),
+        BlocProvider(
+            create: (context) => di<CategoriesCubit>()..getCategories()),
         BlocProvider(create: (context) => di<ProductsCubit>()..getProducts()),
         BlocProvider(create: (context) => di<FavoritesCubit>()),
       ],
