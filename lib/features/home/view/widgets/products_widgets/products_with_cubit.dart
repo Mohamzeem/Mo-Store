@@ -31,7 +31,7 @@ class ProductsListWithCubit extends StatelessWidget {
                   shrinkWrap: true,
                   padding: EdgeInsets.zero,
                   physics: const NeverScrollableScrollPhysics(),
-                  itemCount: 8,
+                  itemCount: 6,
                   semanticChildCount: 2,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,

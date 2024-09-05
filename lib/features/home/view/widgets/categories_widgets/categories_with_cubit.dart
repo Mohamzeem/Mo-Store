@@ -1,14 +1,21 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:mo_store/core/widgets/skelton_shimmer.dart';
+import 'package:mo_store/features/home/data/models/products_response.dart';
 import 'package:mo_store/features/home/logic/categories_cubit/categories_cubit.dart';
 import 'package:mo_store/features/home/logic/categories_cubit/categories_state.dart';
 import 'package:mo_store/features/home/view/widgets/categories_widgets/category_list.dart';
 import 'package:mo_store/features/home/view/widgets/home_widgets/empty_error_container.dart';
 
 class CategoriesWithCubit extends StatelessWidget {
-  const CategoriesWithCubit({super.key});
+  final List<ProductsResponseBody> allprodList;
+  const CategoriesWithCubit({
+    super.key,
+    required this.allprodList,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,11 +24,15 @@ class CategoriesWithCubit extends StatelessWidget {
       builder: (context, state) {
         return state.maybeWhen(
           successCategories: (categories) {
-            return CategoryList(categories: categories);
+            return CategoryList(
+              categories: categories,
+              allprodList: allprodList,
+            );
           },
           loadingCategories: () => SizedBox(
             height: 100.h,
             child: ListView.builder(
+              physics: const AlwaysScrollableScrollPhysics(),
               scrollDirection: Axis.horizontal,
               itemCount: 4,
               itemBuilder: (context, index) {

@@ -1,6 +1,5 @@
-
-# favorites View
-![Simulator Screenshot - iPhone 15 Pro Max - 2024-08-22 at 14 31 28](https://github.com/user-attachments/assets/02be5fdf-b6ab-4f20-92e3-6d358f250b06)
+# Search products View
+![Simulator Screenshot - iPhone 15 Pro Max - 2024-09-05 at 16 01 40](https://github.com/user-attachments/assets/9c2850c7-7f0a-4203-9d16-7b73717024d8)
 
 
 

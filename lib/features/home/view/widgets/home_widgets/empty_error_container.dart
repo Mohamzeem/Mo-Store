@@ -26,7 +26,8 @@ class EmptyErrorContainer extends StatelessWidget {
       child: Center(
         child: Text(
           text,
-          style: AppFonts.medium30Primary,
+          style: AppFonts.regular18LightBlue
+              .copyWith(fontWeight: FontWeight.w600, fontSize: 32.sp),
           textAlign: TextAlign.center,
         ),
       ),

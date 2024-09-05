@@ -1,11 +1,18 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:mo_store/core/consts/app_colors.dart';
+import 'package:mo_store/core/helpers/extensions.dart';
 import 'package:mo_store/core/helpers/text_fonts.dart';
+import 'package:mo_store/core/route/routes.dart';
+import 'package:mo_store/features/home/data/models/products_response.dart';
 
 class HomeSearchBar extends StatelessWidget {
+  final List<ProductsResponseBody> allprodList;
   const HomeSearchBar({
     super.key,
+    required this.allprodList,
   });
 
   @override
@@ -29,7 +36,8 @@ class HomeSearchBar extends StatelessWidget {
                 borderRadius: BorderRadius.all(Radius.circular(10.r)),
               ),
               child: InkWell(
-                onTap: () {},
+                onTap: () => context.pushName(Routes.searchProductsView,
+                    args: allprodList),
                 child: const Center(
                   child: Icon(
                     Icons.search_rounded,

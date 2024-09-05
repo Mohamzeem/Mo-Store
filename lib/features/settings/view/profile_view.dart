@@ -21,6 +21,7 @@ class _ProfileViewState extends State<ProfileView> {
   void initState() {
     super.initState();
     _cubit = BlocProvider.of<ProfileCubit>(context);
+    _cubit.getProfile();
   }
 
   @override

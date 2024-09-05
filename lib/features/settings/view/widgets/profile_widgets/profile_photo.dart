@@ -3,11 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
-import 'package:mo_store/core/widgets/custom_cached_image.dart';
 import 'package:mo_store/core/widgets/custom_dialog.dart';
-import 'package:mo_store/core/widgets/skelton_shimmer.dart';
 import 'package:mo_store/features/settings/logic/profile/profile_cubit.dart';
 import 'package:mo_store/features/settings/logic/profile/profile_state.dart';
+import 'package:mo_store/features/settings/view/widgets/profile_widgets/profile_cached_image.dart';
+import 'package:mo_store/features/settings/view/widgets/profile_widgets/profile_shimmer.dart';
 
 class ProfilePhoto extends StatelessWidget {
   const ProfilePhoto({
@@ -34,41 +34,29 @@ class ProfilePhoto extends StatelessWidget {
             builder: (context, state) {
               return state.maybeWhen(
                 success: (profileModel) {
-                  return CustomCachedImage(
+                  return ProfileCachedImage(
                     photoUrl: cubit.userModel!.avatar!,
-                    width: 150.w,
-                    height: 150.h,
-                    isBorder: true,
+                    isCircle: false,
                   );
                 },
                 profileUdateImgSuccess: (img) {
-                  return CustomCachedImage(
+                  return ProfileCachedImage(
                     photoUrl: cubit.imageUrl,
-                    width: 150.w,
-                    height: 150.h,
-                    isBorder: true,
+                    isCircle: false,
                   );
                 },
                 updateProfileSuccess: (profileModel) {
-                  return CustomCachedImage(
+                  return ProfileCachedImage(
                     photoUrl: profileModel.avatar!,
-                    width: 150.w,
-                    height: 150.h,
-                    isBorder: true,
+                    isCircle: false,
                   );
                 },
-                loading: () => const SkeltonShimmer(
-                  shape: BoxShape.rectangle,
-                  height: 50,
-                  width: 50,
-                  border: 50,
-                ),
-                orElse: () => const SkeltonShimmer(
-                  shape: BoxShape.rectangle,
-                  height: 50,
-                  width: 50,
-                  border: 50,
-                ),
+                loading: () => const ProfileShimmer(isCircle: true),
+                profileUdateImgLoading: () =>
+                    const ProfileShimmer(isCircle: true),
+                updateProfileLoading: () =>
+                    const ProfileShimmer(isCircle: true),
+                orElse: () => const SizedBox.shrink(),
               );
             },
           ),
