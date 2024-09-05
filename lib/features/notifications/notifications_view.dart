@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// TODO: add flutter_svg to pubspec.yaml
 import 'package:flutter_svg/flutter_svg.dart';
 
 class NotificationsView extends StatelessWidget {
@@ -29,8 +28,8 @@ class NotificationsView extends StatelessWidget {
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +58,7 @@ class HomeHeader extends StatelessWidget {
 }
 
 class SearchField extends StatelessWidget {
-  const SearchField({Key? key}) : super(key: key);
+  const SearchField({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -94,11 +93,11 @@ class SearchField extends StatelessWidget {
 
 class IconBtnWithCounter extends StatelessWidget {
   const IconBtnWithCounter({
-    Key? key,
+    super.key,
     required this.svgSrc,
     this.numOfitem = 0,
     required this.press,
-  }) : super(key: key);
+  });
 
   final String svgSrc;
   final int numOfitem;
@@ -303,12 +302,12 @@ class RecentlyAddedProducts extends StatelessWidget {
 
 class ProductCard extends StatelessWidget {
   const ProductCard({
-    Key? key,
+    super.key,
     this.width = 140,
     this.aspectRetio = 1.02,
     required this.product,
     required this.onPress,
-  }) : super(key: key);
+  });
 
   final double width, aspectRetio;
   final Product product;

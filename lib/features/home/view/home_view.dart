@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mo_store/core/consts/app_colors.dart';
+import 'package:mo_store/features/home/logic/products_cubit/products_cubit.dart';
 import 'package:mo_store/features/home/view/widgets/home_widgets/home_body.dart';
 import 'package:mo_store/features/home/view/widgets/home_widgets/home_scroll_btn.dart';
 
@@ -18,12 +21,6 @@ class _HomeViewState extends State<HomeView> {
   void initState() {
     super.initState();
     _scrollController.addListener(_scrollListener);
-  }
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    setState(() {});
   }
 
   @override
@@ -51,11 +48,16 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20.w),
-      child: Stack(
-        children: [
-          HomeBody(scrollController: _scrollController),
-          HomeScrolllButton(onTap: () => scrollUp()),
-        ],
+      child: RefreshIndicator(
+        color: AppColors.white,
+        backgroundColor: AppColors.lightBlue,
+        onRefresh: () => BlocProvider.of<ProductsCubit>(context).getProducts(),
+        child: Stack(
+          children: [
+            HomeBody(scrollController: _scrollController),
+            HomeScrolllButton(onTap: () => scrollUp()),
+          ],
+        ),
       ),
     );
   }

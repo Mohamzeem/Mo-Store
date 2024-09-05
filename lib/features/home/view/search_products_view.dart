@@ -1,6 +1,8 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:mo_store/core/consts/app_colors.dart';
 import 'package:mo_store/core/helpers/animation.dart';
 import 'package:mo_store/core/helpers/app_enums.dart';
@@ -17,7 +19,12 @@ import 'package:mo_store/features/home/view/widgets/search_widgets/search_field.
 import 'package:mo_store/features/home/view/widgets/search_widgets/search_item.dart';
 
 class SearchProductsView extends StatefulWidget {
-  const SearchProductsView({super.key});
+  final List<ProductsResponseBody> allprodList;
+
+  const SearchProductsView({
+    super.key,
+    required this.allprodList,
+  });
 
   @override
   State<SearchProductsView> createState() => _SearchProductsViewState();
@@ -35,7 +42,7 @@ class _SearchProductsViewState extends State<SearchProductsView> {
     _cubit.minPriceController.clear();
   }
 
-  void byPriceFunction() {
+  void byPriceUi() {
     if (searchTybe == SearchEnum.none || searchTybe == SearchEnum.byName) {
       setState(() {
         searchTybe = SearchEnum.byPrice;
@@ -50,7 +57,7 @@ class _SearchProductsViewState extends State<SearchProductsView> {
     }
   }
 
-  void byNameFunction() {
+  void byNameUi() {
     if (searchTybe == SearchEnum.none || searchTybe == SearchEnum.byPrice) {
       setState(() {
         searchTybe = SearchEnum.byName;
@@ -67,7 +74,7 @@ class _SearchProductsViewState extends State<SearchProductsView> {
 
   void searchNameFunction() {
     if (_cubit.searchController.text.isNotEmpty) {
-      _cubit.searchProductsByName();
+      _cubit.searchProductsByName(widget.allprodList);
 
       if (closeSearch == true) {
         setState(() {
@@ -92,7 +99,7 @@ class _SearchProductsViewState extends State<SearchProductsView> {
   void searchPriceFunction() {
     if (_cubit.minPriceController.text.isNotEmpty &&
         _cubit.maxPriceController.text.isNotEmpty) {
-      _cubit.searchProductsByprice();
+      _cubit.searchProductsByprice(widget.allprodList);
       if (closeSearch == true) {
         setState(() {
           _cubit.foundProductsList.clear();
@@ -120,7 +127,6 @@ class _SearchProductsViewState extends State<SearchProductsView> {
   void initState() {
     super.initState();
     _cubit = BlocProvider.of<ProductsCubit>(context);
-    _cubit.getProducts();
   }
 
   @override
@@ -151,8 +157,8 @@ class _SearchProductsViewState extends State<SearchProductsView> {
                       ),
                     ),
                     NameAndPriceButtons(
-                      byNameFunction: byNameFunction,
-                      byPriceFunction: byPriceFunction,
+                      byNameFunction: byNameUi,
+                      byPriceFunction: byPriceUi,
                     ),
                     if (searchTybe == SearchEnum.none) ...[
                       Padding(
@@ -228,16 +234,20 @@ class _SearchProductsViewState extends State<SearchProductsView> {
                             ],
                           ),
                           list.isNotEmpty
-                              ? Padding(
-                                  padding: EdgeInsets.symmetric(vertical: 10.h),
-                                  child: SizedBox(
-                                    height: 800.h,
-                                    child: ListView.builder(
-                                      itemCount: list.length,
-                                      itemBuilder: (context, index) {
-                                        final item = list[index];
-                                        return SearchItem(product: item);
-                                      },
+                              ? state.maybeWhen(
+                                  orElse: () => const SizedBox.shrink(),
+                                  successSearch: (searchProducts) => Padding(
+                                    padding:
+                                        EdgeInsets.symmetric(vertical: 10.h),
+                                    child: SizedBox(
+                                      height: 800.h,
+                                      child: ListView.builder(
+                                        itemCount: list.length,
+                                        itemBuilder: (context, index) {
+                                          final item = list[index];
+                                          return SearchItem(product: item);
+                                        },
+                                      ),
                                     ),
                                   ),
                                 )
@@ -269,9 +279,7 @@ class _SearchProductsViewState extends State<SearchProductsView> {
                           ),
                           10.verticalSpace,
                           CustomButton(
-                            onPressed: () {
-                              searchPriceFunction();
-                            },
+                            onPressed: () => searchPriceFunction(),
                             text: !closeSearch ? 'Search' : 'Reset Search',
                             width: double.infinity,
                             padding: 0,
@@ -279,16 +287,20 @@ class _SearchProductsViewState extends State<SearchProductsView> {
                             backgroundColor: AppColors.primaryColor,
                           ),
                           list.isNotEmpty
-                              ? Padding(
-                                  padding: EdgeInsets.symmetric(vertical: 10.h),
-                                  child: SizedBox(
-                                    height: 700.h,
-                                    child: ListView.builder(
-                                      itemCount: list.length,
-                                      itemBuilder: (context, index) {
-                                        final item = list[index];
-                                        return SearchItem(product: item);
-                                      },
+                              ? state.maybeWhen(
+                                  orElse: () => const SizedBox.shrink(),
+                                  successSearch: (searchProducts) => Padding(
+                                    padding:
+                                        EdgeInsets.symmetric(vertical: 10.h),
+                                    child: SizedBox(
+                                      height: 700.h,
+                                      child: ListView.builder(
+                                        itemCount: list.length,
+                                        itemBuilder: (context, index) {
+                                          final item = list[index];
+                                          return SearchItem(product: item);
+                                        },
+                                      ),
                                     ),
                                   ),
                                 )

@@ -1,6 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
-
 import 'package:json_annotation/json_annotation.dart';
 
 part 'products_response.g.dart';
@@ -30,16 +29,6 @@ class ProductsResponseBody {
       _$ProductsResponseBodyFromJson(json);
 
   Map<String, dynamic> toJson() => _$ProductsResponseBodyToJson(this);
-
-  // Convert a ProductsModel to JSON string
-  String toStringJson() {
-    return json.encode(toJson());
-  }
-
-  // Convert JSON string to a ProductsModel
-  factory ProductsResponseBody.fromStringJson(String source) {
-    return ProductsResponseBody.fromJson(json.decode(source));
-  }
 }
 
 @JsonSerializable()

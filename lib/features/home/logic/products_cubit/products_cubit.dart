@@ -16,6 +16,7 @@ class ProductsCubit extends Cubit<ProductsState> {
 
   List<ProductsResponseBody> allProductsList = [];
   List<ProductsResponseBody> foundProductsList = [];
+  List<ProductsResponseBody> categoryProductsList = [];
 
   Future<void> getProducts() async {
     emit(const ProductsState.loadingProducts());
@@ -26,7 +27,8 @@ class ProductsCubit extends Cubit<ProductsState> {
           emit(const ProductsState.emptyProducts());
         } else {
           allProductsList.addAll(products);
-          Prints.debug(message: allProductsList.length.toString());
+          Prints.debug(
+              message: 'allProductsList ${allProductsList.length.toString()}');
           emit(ProductsState.successProducts(products));
         }
       },
@@ -34,23 +36,53 @@ class ProductsCubit extends Cubit<ProductsState> {
     );
   }
 
-  Future<List<ProductsResponseBody>> searchProductsByName() async {
-    final findProducts = allProductsList
+  Future<List<ProductsResponseBody>> searchProductsByName(
+      List<ProductsResponseBody> list) async {
+    emit(const ProductsState.loadingSearch());
+    final findProducts = list
         .where((e) => e.title!
             .toLowerCase()
             .contains(searchController.text.toLowerCase()))
         .toList();
+    if (findProducts.isEmpty) {
+      emit(const ProductsState.emptySearch());
+    } else {
+      emit(ProductsState.successSearch(findProducts));
+    }
     foundProductsList = findProducts;
     return findProducts;
   }
 
-  Future<List<ProductsResponseBody>> searchProductsByprice() async {
-    final findProducts = allProductsList
+  Future<List<ProductsResponseBody>> searchProductsByprice(
+      List<ProductsResponseBody> list) async {
+    emit(const ProductsState.loadingSearch());
+    final findProducts = list
         .where((e) =>
             e.price! >= double.parse(minPriceController.text) &&
             e.price! <= double.parse(maxPriceController.text))
         .toList();
+    if (findProducts.isEmpty) {
+      emit(const ProductsState.emptySearch());
+    } else {
+      emit(ProductsState.successSearch(findProducts));
+    }
     foundProductsList = findProducts;
     return findProducts;
+  }
+
+  Future<List<ProductsResponseBody>> categoriesProducts(
+    categoryId,
+    List<ProductsResponseBody> list,
+  ) async {
+    emit(const ProductsState.loadingCategory());
+    categoryProductsList =
+        list.where((e) => e.category!.id! == categoryId).toList();
+    if (categoryProductsList.isEmpty) {
+      emit(const ProductsState.emptyCategory());
+    } else {
+      emit(ProductsState.successCategory(categoryProductsList));
+    }
+
+    return categoryProductsList;
   }
 }

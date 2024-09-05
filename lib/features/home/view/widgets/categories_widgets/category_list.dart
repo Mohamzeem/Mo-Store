@@ -1,13 +1,18 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:mo_store/features/home/data/models/categories_response.dart';
+import 'package:mo_store/features/home/data/models/products_response.dart';
 import 'package:mo_store/features/home/view/widgets/categories_widgets/category_item.dart';
 
 class CategoryList extends StatelessWidget {
   final List<CategoriesResponseBody> categories;
-  const CategoryList({super.key, required this.categories});
+  final List<ProductsResponseBody> allprodList;
+
+  const CategoryList({
+    super.key,
+    required this.categories,
+    required this.allprodList,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +24,10 @@ class CategoryList extends StatelessWidget {
         itemCount: categories.length,
         itemBuilder: (context, index) {
           final category = categories[index];
-          return CategoryItem(index: index, category: category);
+          return CategoryItem(
+            index: index,
+            categoryInfo: (allprodList: allprodList, category: category),
+          );
         },
       ),
     );

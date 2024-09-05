@@ -3,16 +3,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
 import 'package:shimmer/shimmer.dart';
 
-class SkeltonShimmer extends StatelessWidget {
+class ProfileShimmer extends StatelessWidget {
   final double? height, width;
-  final BoxShape shape;
-  final bool? isBorder;
-  const SkeltonShimmer({
+  final bool isCircle;
+  const ProfileShimmer({
     super.key,
     this.height,
     this.width,
-    this.shape = BoxShape.circle,
-    this.isBorder = true,
+    this.isCircle = true,
   });
 
   @override
@@ -21,19 +19,17 @@ class SkeltonShimmer extends StatelessWidget {
       baseColor: AppColors.lightBlue,
       highlightColor: AppColors.lightGrey,
       child: Container(
-        height: height,
-        width: width,
+        height: 150.h,
+        width: 150.w,
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
-          shape: shape,
-          border: isBorder!
-              ? Border.all(
-                  width: 1,
-                  color: AppColors.bordersGrey,
-                )
-              : Border.all(width: 0, color: Colors.transparent),
+          shape: isCircle ? BoxShape.circle : BoxShape.rectangle,
+          borderRadius: isCircle ? null : BorderRadius.circular(100.r),
+          border: Border.all(
+            width: 1,
+            color: AppColors.bordersGrey,
+          ),
           color: AppColors.lightBlue.withOpacity(0.4),
-          borderRadius: BorderRadius.circular(10.r),
         ),
       ),
     );

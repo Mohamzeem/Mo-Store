@@ -4,10 +4,12 @@ import 'package:mo_store/core/app/app_injection.dart';
 import 'package:mo_store/core/app/upload_image/logic/upload_image/upload_image_cubit.dart';
 import 'package:mo_store/core/route/routes.dart';
 import 'package:mo_store/features/control/control_view.dart';
+import 'package:mo_store/features/home/data/models/categories_response.dart';
 import 'package:mo_store/features/home/data/models/products_response.dart';
 import 'package:mo_store/features/home/logic/all_products_cubit/all_products_cubit.dart';
 import 'package:mo_store/features/home/logic/products_cubit/products_cubit.dart';
 import 'package:mo_store/features/home/view/all_products_view.dart';
+import 'package:mo_store/features/home/view/categories_view.dart';
 import 'package:mo_store/features/home/view/product_details_view.dart';
 import 'package:mo_store/features/home/view/search_products_view.dart';
 import 'package:mo_store/features/login/logic/login_cubit/login_cubit.dart';
@@ -52,7 +54,8 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
             create: (context) => di<ProductsCubit>(),
-            child: const SearchProductsView(),
+            child: SearchProductsView(
+                allprodList: args as List<ProductsResponseBody>),
           ),
         );
       case Routes.profileView:
@@ -73,6 +76,19 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) {
             return ProductDetailsView(product: args as ProductsResponseBody);
+          },
+        );
+      case Routes.categoriesView:
+        return MaterialPageRoute(
+          builder: (_) {
+            return BlocProvider(
+              create: (context) => di<ProductsCubit>(),
+              child: CategoriesView(
+                  categoryInfo: args as ({
+                List<ProductsResponseBody> allprodList,
+                CategoriesResponseBody category
+              })),
+            );
           },
         );
       default:

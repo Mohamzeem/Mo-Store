@@ -17,4 +17,9 @@ class LocalDatabase {
     allproductsBox =
         await Hive.openBox<List<FavoritModel>>(PrefKeys.allProductsBox);
   }
+
+  Future<void> clearAllData() async {
+    await favoritBox!.clear();
+    await allproductsBox!.clear();
+  }
 }
