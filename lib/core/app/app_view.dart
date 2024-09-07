@@ -9,7 +9,6 @@ import 'package:mo_store/core/route/routes.dart';
 import 'package:mo_store/features/favorites/logic/favorites_cubit/favorites_cubit.dart';
 import 'package:mo_store/features/home/logic/categories_cubit/categories_cubit.dart';
 import 'package:mo_store/features/home/logic/products_cubit/products_cubit.dart';
-import 'package:mo_store/features/onboarding/onboarding_view.dart';
 
 class AppView extends StatelessWidget {
   const AppView({super.key});
@@ -18,7 +17,6 @@ class AppView extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        // BlocProvider(create: (context) => di<ProfileCubit>()..getProfile()),
         BlocProvider(
             create: (context) => di<CategoriesCubit>()..getCategories()),
         BlocProvider(create: (context) => di<ProductsCubit>()..getProducts()),
@@ -36,10 +34,9 @@ class AppView extends StatelessWidget {
               scaffoldBackgroundColor: AppColors.white,
               fontFamily: AppGlobals.appFont,
             ),
-            home: const OnboardingView(),
             initialRoute: AppGlobals().isUserLoggedIn
-                ? Routes.onboardingView
-                : Routes.controlView,
+                ? Routes.controlView
+                : Routes.onboardingView,
             onGenerateRoute: AppRouter().generateRoute,
           ),
         ),

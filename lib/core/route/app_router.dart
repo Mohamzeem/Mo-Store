@@ -61,7 +61,7 @@ class AppRouter {
       case Routes.profileView:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => di<ProfileCubit>()..getOfflineProfile(),
+            create: (context) => di<ProfileCubit>()..getProfile(),
             child: const ProfileView(),
           ),
         );

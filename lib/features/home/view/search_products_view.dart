@@ -240,7 +240,7 @@ class _SearchProductsViewState extends State<SearchProductsView> {
                                     padding:
                                         EdgeInsets.symmetric(vertical: 10.h),
                                     child: SizedBox(
-                                      height: 800.h,
+                                      height: 600.h,
                                       child: ListView.builder(
                                         itemCount: list.length,
                                         itemBuilder: (context, index) {
@@ -293,9 +293,9 @@ class _SearchProductsViewState extends State<SearchProductsView> {
                                     padding:
                                         EdgeInsets.symmetric(vertical: 10.h),
                                     child: SizedBox(
-                                      height: 700.h,
+                                      height: 550.h,
                                       child: ListView.builder(
-                                        itemCount: list.length,
+                                        shrinkWrap: true,
                                         itemBuilder: (context, index) {
                                           final item = list[index];
                                           return SearchItem(product: item);

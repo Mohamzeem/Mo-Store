@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
 import 'package:mo_store/core/consts/pref_keys.dart';
 import 'package:mo_store/core/helpers/extensions.dart';
+import 'package:mo_store/core/helpers/prints.dart';
 import 'package:mo_store/core/local_database/shared_prefs.dart';
 
 class AppGlobals {
@@ -12,11 +13,13 @@ class AppGlobals {
 
   checkUserLoggedIn() async {
     String token = await SharedPrefHelper.getSecuredString(PrefKeys.userToken);
-    if (token.isNullOrEmpty()) {
+    if (token.isNullOrEmptyString()) {
       isUserLoggedIn = false;
     } else {
       isUserLoggedIn = true;
     }
+    Prints.debug(message: 'isUserLoggedIn => $isUserLoggedIn');
+    Prints.debug(message: 'token => $token');
   }
 
   static void systemOverlay() {
