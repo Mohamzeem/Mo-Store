@@ -31,15 +31,9 @@ extension Navigation on BuildContext {
 }
 
 extension StringExt on String? {
-  bool isNullOrEmpty() => this == null || this == '';
+  bool isNullOrEmptyString() => this == null || this == "";
 }
 
 extension ListExt on List? {
-  bool isNullOrEmpty() => this == null || this == [];
+  bool isNullOrEmptyList() => this == null || this == [];
 }
-
-// extension UserInfo on ProfileModel {
-//   String toJson() => json.encode(toJson());
-//   static ProfileModel fromJson(String source) =>
-//       ProfileModel.fromJson(json.decode(source));
-// }

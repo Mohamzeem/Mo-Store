@@ -63,12 +63,16 @@ class CategoriesWithCubit extends StatelessWidget {
               },
             ),
           ),
-          emptyCategories: () {
-            return const EmptyErrorContainer(text: 'No Categories');
-          },
+          emptyCategories: () => Padding(
+            padding: EdgeInsets.symmetric(vertical: 20.h),
+            child: const EmptyErrorContainer(text: 'No Categories'),
+          ),
           orElse: () {
-            return const EmptyErrorContainer(
-                text: 'Error While Loading Categories');
+            return Padding(
+              padding: EdgeInsets.symmetric(vertical: 10.h),
+              child:
+                  const EmptyErrorContainer(text: 'Error Loading Categories'),
+            );
           },
         );
       },

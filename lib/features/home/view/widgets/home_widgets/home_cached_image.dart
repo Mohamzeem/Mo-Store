@@ -29,7 +29,7 @@ class HomeCachedNetworkImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CachedNetworkImage(
-      imageUrl: photoUrl.isNullOrEmpty()
+      imageUrl: photoUrl.isNullOrEmptyString()
           ? 'https://via.placeholder.com/300'
           : photoUrl,
       fit: BoxFit.cover,

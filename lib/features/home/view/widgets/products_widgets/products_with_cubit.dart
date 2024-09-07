@@ -20,7 +20,7 @@ class ProductsListWithCubit extends StatelessWidget {
             emptyProducts: () {
               return EmptyErrorContainer(
                 text: 'No Products',
-                height: 320.h,
+                height: 280.h,
               );
             },
             loadingProducts: () {
@@ -52,7 +52,7 @@ class ProductsListWithCubit extends StatelessWidget {
             orElse: () {
               return EmptyErrorContainer(
                 text: 'Error Loading Products',
-                height: 340.h,
+                height: 280.h,
               );
             },
           );

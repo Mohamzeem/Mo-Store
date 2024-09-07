@@ -44,41 +44,38 @@ class ProfileCubit extends Cubit<ProfileState> {
     result.when(
       success: (data) {
         userModel = data;
-        SharedPrefHelper.setSecuredString(PrefKeys.userId, data.id.toString());
-        String offlineProfile = jsonEncode(data.toJson());
-        SharedPrefHelper.setSecuredString(PrefKeys.userProfile, offlineProfile);
         emit(ProfileState.success(data));
       },
       failure: (message) => emit(ProfileState.failure(message)),
     );
   }
 
-  Future<void> getOfflineProfile() async {
-    emit(const ProfileState.loading());
-    final profileJson =
-        await SharedPrefHelper.getSecuredString(PrefKeys.userProfile);
-    if (profileJson != null) {
-      final profileModel = ProfileModel.fromJson(jsonDecode(profileJson));
-      userModel = profileModel;
-      emit(ProfileState.success(profileModel));
-    } else {
-      emit(const ProfileState.failure('No Profile Found'));
-    }
-  }
+  // Future<void> getOfflineProfile() async {
+  //   emit(const ProfileState.loading());
+  //   final profileJson =
+  //       await SharedPrefHelper.getSecuredString(PrefKeys.userProfile);
+  //   if (profileJson != null) {
+  //     final profileModel = ProfileModel.fromJson(jsonDecode(profileJson));
+  //     userModel = profileModel;
+  //     emit(ProfileState.success(profileModel));
+  //   } else {
+  //     emit(const ProfileState.failure('No Profile Found'));
+  //   }
+  // }
 
   Future<void> updateProfile() async {
     emit(const ProfileState.loading());
     UpdateProfileRequest request = UpdateProfileRequest(
-      name: nameController.text.isNullOrEmpty()
+      name: nameController.text.isNullOrEmptyString()
           ? userModel!.name
           : nameController.text.trim(),
-      email: emailController.text.isNullOrEmpty()
+      email: emailController.text.isNullOrEmptyString()
           ? userModel!.email
           : emailController.text.trim(),
-      password: passwordController.text.trim().isNullOrEmpty()
+      password: passwordController.text.trim().isNullOrEmptyString()
           ? userModel!.password
           : passwordController.text.trim(),
-      avatar: imageUrl == "" || imageUrl.isNullOrEmpty()
+      avatar: imageUrl == "" || imageUrl.isNullOrEmptyString()
           ? userModel!.avatar
           : imageUrl,
       updatedAt: DateTime.now().toString(),
@@ -89,7 +86,7 @@ class ProfileCubit extends Cubit<ProfileState> {
       success: (profileModel) async {
         String offlineProfile = jsonEncode(profileModel);
         SharedPrefHelper.setSecuredString(PrefKeys.userProfile, offlineProfile);
-        await getOfflineProfile();
+        // await getOfflineProfile();
         emit(ProfileState.updateProfileSuccess(profileModel));
       },
       failure: (message) => emit(ProfileState.updateProfileFailure(message)),

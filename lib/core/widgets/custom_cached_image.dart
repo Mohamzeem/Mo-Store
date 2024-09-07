@@ -34,7 +34,7 @@ class CustomCachedImage extends StatelessWidget {
       width: width,
       height: height,
       child: CachedNetworkImage(
-        imageUrl: photoUrl.isNullOrEmpty()
+        imageUrl: photoUrl.isNullOrEmptyString()
             ? 'https://via.placeholder.com/300'
             : photoUrl,
         fit: BoxFit.fill,

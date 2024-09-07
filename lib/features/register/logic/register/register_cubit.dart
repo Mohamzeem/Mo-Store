@@ -40,7 +40,7 @@ class RegisterCubit extends Cubit<RegisterState> {
   }
 
   void registerFunction(String imageUrl, BuildContext context) async {
-    if (nameController.text.isNullOrEmpty()) {
+    if (nameController.text.isNullOrEmptyString()) {
       return CustomDialog.show(
           context: context, text: 'Name Required Or Invalid', isSuccess: false);
     } else if (emailController.text.isEmpty) {
