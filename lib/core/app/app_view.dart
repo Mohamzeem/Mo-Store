@@ -4,11 +4,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mo_store/core/app/app_globals.dart';
 import 'package:mo_store/core/app/app_injection.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
+import 'package:mo_store/core/consts/pref_keys.dart';
+import 'package:mo_store/core/local_database/shared_prefs.dart';
 import 'package:mo_store/core/route/app_router.dart';
 import 'package:mo_store/core/route/routes.dart';
 import 'package:mo_store/features/favorites/logic/favorites_cubit/favorites_cubit.dart';
 import 'package:mo_store/features/home/logic/categories_cubit/categories_cubit.dart';
 import 'package:mo_store/features/home/logic/products_cubit/products_cubit.dart';
+import 'package:mo_store/features/settings/logic/profile/profile_cubit.dart';
 
 class AppView extends StatelessWidget {
   const AppView({super.key});
@@ -17,9 +20,9 @@ class AppView extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(
-            create: (context) => di<CategoriesCubit>()..getCategories()),
-        BlocProvider(create: (context) => di<ProductsCubit>()..getProducts()),
+        BlocProvider(create: (context) => di<ProfileCubit>()),
+        BlocProvider(create: (context) => di<CategoriesCubit>()),
+        BlocProvider(create: (context) => di<ProductsCubit>()),
         BlocProvider(create: (context) => di<FavoritesCubit>()),
       ],
       child: GestureDetector(
@@ -34,8 +37,11 @@ class AppView extends StatelessWidget {
               scaffoldBackgroundColor: AppColors.white,
               fontFamily: AppGlobals.appFont,
             ),
-            initialRoute: AppGlobals().isUserLoggedIn
-                ? Routes.controlView
+            initialRoute: !AppGlobals().isUserLoggedIn
+                ? SharedPrefHelper.getSecuredString(PrefKeys.userRole) ==
+                        'customer'
+                    ? Routes.controlView
+                    : Routes.adminView
                 : Routes.onboardingView,
             onGenerateRoute: AppRouter().generateRoute,
           ),

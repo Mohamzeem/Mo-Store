@@ -6,6 +6,7 @@ import 'package:mo_store/features/register/view/widgets/create_account_text.dart
 import 'package:mo_store/features/register/view/widgets/register_btn_with_cubit.dart';
 import 'package:mo_store/features/register/view/widgets/register_fields.dart';
 import 'package:mo_store/features/register/view/widgets/register_image.dart';
+import 'package:mo_store/features/register/view/widgets/register_role.dart';
 
 class RegisterView extends StatelessWidget {
   const RegisterView({super.key});
@@ -27,7 +28,8 @@ class RegisterView extends StatelessWidget {
             30.verticalSpace,
             //^ upload photo
             const RegisterImage(),
-            30.verticalSpace,
+            const RegisterRole(),
+            20.verticalSpace,
             //^ email and password
             const RegisterFields(),
             50.verticalSpace,

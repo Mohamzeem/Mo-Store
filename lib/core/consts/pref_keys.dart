@@ -1,6 +1,7 @@
 class PrefKeys {
   static const String userToken = 'USER_TOKEN';
   static const String userId = 'USER_ID';
+  static const String userRole = 'USER_ROLE';
   static const String userProfile = 'USER_PROFILE';
   static const String favoriteBox = 'FAVORITE_BOX';
   static const String allProductsBox = 'ALL_PRODUCTS_BOX';

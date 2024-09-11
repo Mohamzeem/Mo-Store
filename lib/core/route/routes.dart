@@ -8,4 +8,5 @@ class Routes {
   static const String productDetailsView = 'Products_Details_View';
   static const String searchProductsView = 'Search_Products_View';
   static const String categoriesView = 'Categories_View';
+  static const String adminView = 'Admin_View';
 }
