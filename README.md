@@ -1,5 +1,5 @@
-# Search products View
-![Simulator Screenshot - iPhone 15 Pro Max - 2024-09-05 at 16 01 40](https://github.com/user-attachments/assets/9c2850c7-7f0a-4203-9d16-7b73717024d8)
+# Admin View
+![Simulator Screenshot - iPhone 15 Pro Max - 2024-09-11 at 18 47 00](https://github.com/user-attachments/assets/ca089d4e-afbd-48e6-b8d4-c696d523f74d)
 
 
 

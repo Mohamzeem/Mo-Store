@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mo_store/core/helpers/extensions.dart';
-import 'package:mo_store/core/local_database/local_database.dart';
-import 'package:mo_store/core/local_database/shared_prefs.dart';
-import 'package:mo_store/core/route/routes.dart';
-import 'package:mo_store/core/widgets/custom_dialog.dart';
+import 'package:mo_store/core/app/app_globals.dart';
 import 'package:mo_store/features/settings/view/widgets/settings_widgets/settings_item.dart';
 
 class LogoutButton extends StatelessWidget {
@@ -15,22 +11,9 @@ class LogoutButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SettingsItem(
       title: 'Logout',
-      onTap: () => CustomDialog.awsomeTwoButtons(
-        context,
-        'Logout',
-        onPressCancel: () {},
-        onPressOk: () {
-          SharedPrefHelper.clearAllSecuredData();
-          SharedPrefHelper.clearAllData();
-          LocalDatabase().clearAllData();
-          CustomDialog.awsomeSuccess(
-              context,
-              'Logged out successfully',
-              (onDismiss) => context.pushNamedAndRemoveUntil(
-                  Routes.onboardingView,
-                  predicate: (route) => false));
-        },
-      ),
+      onTap: () {
+        AppGlobals.logOut(context);
+      },
     );
   }
 }

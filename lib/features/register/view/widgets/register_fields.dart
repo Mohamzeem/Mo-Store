@@ -54,8 +54,9 @@ class _RegisterFieldsState extends State<RegisterFields> {
             obscureText: _cubit.isObscure,
             keyBoard: TextInputType.visiblePassword,
             suffixIconShow: true,
-            suffixIconFunction: () =>
-                setState(() => _cubit.isObscure = !_cubit.isObscure),
+            suffixIconFunction: () => setState(
+              () => _cubit.isObscure = !_cubit.isObscure,
+            ),
           ),
         ],
       ),

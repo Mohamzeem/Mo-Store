@@ -16,7 +16,9 @@ class RegisterCubit extends Cubit<RegisterState> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   bool isObscure = true;
-
+  List<String> roleList = ['customer', 'admin'];
+  String selectedRole = '';
+  void dropDownValue(String val) => selectedRole = val;
   void disposeControllers() {
     nameController.dispose();
     emailController.dispose();
@@ -31,6 +33,7 @@ class RegisterCubit extends Cubit<RegisterState> {
         email: emailController.text.trim(),
         password: passwordController.text.trim(),
         avatar: imageUrl,
+        role: selectedRole,
       ),
     );
     result.when(
@@ -40,7 +43,10 @@ class RegisterCubit extends Cubit<RegisterState> {
   }
 
   void registerFunction(String imageUrl, BuildContext context) async {
-    if (nameController.text.isNullOrEmptyString()) {
+    if (selectedRole.isNullOrEmptyString()) {
+      return CustomDialog.show(
+          context: context, text: 'Role Required', isSuccess: false);
+    } else if (nameController.text.isNullOrEmptyString()) {
       return CustomDialog.show(
           context: context, text: 'Name Required Or Invalid', isSuccess: false);
     } else if (emailController.text.isEmpty) {

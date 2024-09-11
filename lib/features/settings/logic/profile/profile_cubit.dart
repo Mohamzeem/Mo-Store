@@ -10,7 +10,6 @@ import 'package:mo_store/features/settings/data/models/profile_model.dart';
 import 'package:mo_store/features/settings/data/models/update_profile_request.dart';
 import 'package:mo_store/features/settings/data/repo/profile_repo.dart';
 import 'package:mo_store/features/settings/logic/profile/profile_state.dart';
-
 import '../../../../core/local_database/shared_prefs.dart';
 
 class ProfileCubit extends Cubit<ProfileState> {
@@ -44,6 +43,7 @@ class ProfileCubit extends Cubit<ProfileState> {
     result.when(
       success: (data) {
         userModel = data;
+        SharedPrefHelper.setSecuredString(PrefKeys.userRole, data.role!);
         emit(ProfileState.success(data));
       },
       failure: (message) => emit(ProfileState.failure(message)),
@@ -116,3 +116,8 @@ class ProfileCubit extends Cubit<ProfileState> {
     emit(ProfileState.profileUdateImgRemove(img));
   }
 }
+//  maria@mail.com
+//  123456
+
+// moham@mail.com
+//  111111

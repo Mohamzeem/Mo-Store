@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mo_store/core/app/app_injection.dart';
 import 'package:mo_store/core/app/upload_image/logic/upload_image/upload_image_cubit.dart';
 import 'package:mo_store/core/route/routes.dart';
+import 'package:mo_store/features/admin/view/admin/admin_view.dart';
 import 'package:mo_store/features/control/control_view.dart';
 import 'package:mo_store/features/home/data/models/categories_response.dart';
 import 'package:mo_store/features/home/data/models/products_response.dart';
@@ -17,7 +18,6 @@ import 'package:mo_store/features/login/view/login_view.dart';
 import 'package:mo_store/features/onboarding/onboarding_view.dart';
 import 'package:mo_store/features/register/logic/register/register_cubit.dart';
 import 'package:mo_store/features/register/view/register_view.dart';
-import 'package:mo_store/features/settings/logic/profile/profile_cubit.dart';
 import 'package:mo_store/features/settings/view/profile_view.dart';
 
 class AppRouter {
@@ -46,6 +46,10 @@ class AppRouter {
             child: const RegisterView(),
           ),
         );
+      case Routes.adminView:
+        return MaterialPageRoute(
+          builder: (_) => const AdminView(),
+        );
       case Routes.controlView:
         return MaterialPageRoute(
           builder: (_) => const ControlView(),
@@ -60,10 +64,7 @@ class AppRouter {
         );
       case Routes.profileView:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => di<ProfileCubit>()..getProfile(),
-            child: const ProfileView(),
-          ),
+          builder: (_) => const ProfileView(),
         );
       case Routes.allProductsView:
         return MaterialPageRoute(
@@ -95,7 +96,7 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => Scaffold(
             body: Center(
-              child: Text('NO Route Found ${settings.name}'),
+              child: Text('No Route Found ${settings.name}'),
             ),
           ),
         );

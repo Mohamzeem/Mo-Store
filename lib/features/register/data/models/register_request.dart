@@ -8,12 +8,14 @@ class RegisterRequestModel {
   final String email;
   final String password;
   final String avatar;
+  final String role;
 
   RegisterRequestModel({
     required this.name,
     required this.email,
     required this.password,
     required this.avatar,
+    required this.role,
   });
 
   Map<String, dynamic> toJson() => _$RegisterRequestModelToJson(this);
