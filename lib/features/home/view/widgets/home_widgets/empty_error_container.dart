@@ -17,7 +17,7 @@ class EmptyErrorContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: width,
+      width: width.w,
       decoration: BoxDecoration(
         color: AppColors.lightGrey,
         borderRadius: BorderRadius.circular(10.r),

@@ -28,7 +28,7 @@ class ProductsCubit extends Cubit<ProductsState> {
         } else {
           allProductsList.addAll(products);
           Prints.debug(
-              message: 'allProductsList ${allProductsList.length.toString()}');
+              message: 'allProductsList ${products.length.toString()}');
           emit(ProductsState.successProducts(products));
         }
       },
