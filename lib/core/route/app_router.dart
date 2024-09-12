@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mo_store/core/app/app_injection.dart';
 import 'package:mo_store/core/app/upload_image/logic/upload_image/upload_image_cubit.dart';
 import 'package:mo_store/core/route/routes.dart';
+import 'package:mo_store/features/admin/logic/all_users_cubit/all_users_cubit.dart';
 import 'package:mo_store/features/admin/view/admin/admin_view.dart';
 import 'package:mo_store/features/control/control_view.dart';
 import 'package:mo_store/features/home/data/models/categories_response.dart';
@@ -48,7 +49,10 @@ class AppRouter {
         );
       case Routes.adminView:
         return MaterialPageRoute(
-          builder: (_) => const AdminView(),
+          builder: (_) => BlocProvider(
+            create: (context) => di<AllUsersCubit>(),
+            child: const AdminView(),
+          ),
         );
       case Routes.controlView:
         return MaterialPageRoute(

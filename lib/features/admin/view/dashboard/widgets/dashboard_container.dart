@@ -4,16 +4,19 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:mo_store/core/consts/app_colors.dart';
 import 'package:mo_store/core/helpers/text_fonts.dart';
+import 'package:mo_store/core/widgets/skelton_shimmer.dart';
 
 class DashboardContainer extends StatelessWidget {
   final String title;
   final String number;
   final String image;
+  final bool isLoading;
   const DashboardContainer({
     super.key,
     required this.title,
     required this.number,
     required this.image,
+    this.isLoading = false,
   });
 
   @override
@@ -46,10 +49,18 @@ class DashboardContainer extends StatelessWidget {
                   style: AppFonts.medium24White
                       .copyWith(fontSize: 30.sp, fontWeight: FontWeight.bold),
                 ),
-                Text(
-                  number,
-                  style: AppFonts.medium24White.copyWith(fontSize: 35.sp),
-                ),
+                isLoading
+                    ? const SkeltonShimmer(
+                        height: 30,
+                        width: 100,
+                        shape: BoxShape.rectangle,
+                        color: AppColors.black,
+                        isBorder: false,
+                      )
+                    : Text(
+                        number,
+                        style: AppFonts.medium24White.copyWith(fontSize: 35.sp),
+                      ),
               ],
             ),
           ),

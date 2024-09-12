@@ -4,6 +4,9 @@ import 'package:mo_store/core/app/upload_image/data/upload_api.dart';
 import 'package:mo_store/core/app/upload_image/data/upload_repo.dart';
 import 'package:mo_store/core/app/upload_image/logic/upload_image/upload_image_cubit.dart';
 import 'package:mo_store/core/network/dio_factory.dart';
+import 'package:mo_store/features/admin/data/api/all_users_api.dart';
+import 'package:mo_store/features/admin/data/repo/users_repo.dart';
+import 'package:mo_store/features/admin/logic/all_users_cubit/all_users_cubit.dart';
 import 'package:mo_store/features/favorites/logic/favorites_cubit/favorites_cubit.dart';
 import 'package:mo_store/features/home/data/api/all_products_api.dart';
 import 'package:mo_store/features/home/data/api/categories_api.dart';
@@ -78,6 +81,12 @@ class AppInjection {
           () => AllProductsRepo(allProductsApi: di()))
       ..registerFactory<AllProductsCubit>(
           () => AllProductsCubit(allProductsRepo: di()));
+
+//^ all users view cubit & repo & api
+    di
+      ..registerLazySingleton<AllUsersApi>(() => AllUsersApi(dio))
+      ..registerLazySingleton<AllUsersRepo>(() => AllUsersRepo(usersApi: di()))
+      ..registerFactory<AllUsersCubit>(() => AllUsersCubit(usersRepo: di()));
 
     //^ favorites cubit & repo & api
     di.registerFactory<FavoritesCubit>(() => FavoritesCubit());

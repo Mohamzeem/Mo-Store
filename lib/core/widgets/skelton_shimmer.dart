@@ -7,18 +7,20 @@ class SkeltonShimmer extends StatelessWidget {
   final double? height, width;
   final BoxShape shape;
   final bool? isBorder;
+  final Color? color;
   const SkeltonShimmer({
     super.key,
     this.height,
     this.width,
     this.shape = BoxShape.circle,
     this.isBorder = true,
+    this.color,
   });
 
   @override
   Widget build(BuildContext context) {
     return Shimmer.fromColors(
-      baseColor: AppColors.lightBlue,
+      baseColor: color ?? AppColors.lightBlue,
       highlightColor: AppColors.lightGrey,
       child: Container(
         height: height,

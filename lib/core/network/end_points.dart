@@ -7,4 +7,5 @@ class AppEndPoints {
   static const String updateUserInfo = "users";
   static const String getCategories = "categories/";
   static const String getProducts = "products/";
+  static const String getusers = "users/";
 }
