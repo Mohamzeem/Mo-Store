@@ -14,7 +14,7 @@ class _AllUsersApi implements AllUsersApi {
     this.baseUrl,
     this.errorLogger,
   }) {
-    baseUrl ??= 'https://api.escuelajs.co/api/v1/';
+    baseUrl ??= 'https://api.escuelajs.co/';
   }
 
   final Dio _dio;
@@ -24,19 +24,20 @@ class _AllUsersApi implements AllUsersApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<List<ProfileModel>> getAllUsers() async {
+  Future<AllUsersResponse> getAllUsers(Map<String, dynamic> body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<List<ProfileModel>>(Options(
-      method: 'GET',
+    final _data = <String, dynamic>{};
+    _data.addAll(body);
+    final _options = _setStreamType<AllUsersResponse>(Options(
+      method: 'POST',
       headers: _headers,
       extra: _extra,
     )
         .compose(
           _dio.options,
-          'users/',
+          'graphql',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -45,12 +46,10 @@ class _AllUsersApi implements AllUsersApi {
           _dio.options.baseUrl,
           baseUrl,
         )));
-    final _result = await _dio.fetch<List<dynamic>>(_options);
-    late List<ProfileModel> _value;
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late AllUsersResponse _value;
     try {
-      _value = _result.data!
-          .map((dynamic i) => ProfileModel.fromJson(i as Map<String, dynamic>))
-          .toList();
+      _value = AllUsersResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

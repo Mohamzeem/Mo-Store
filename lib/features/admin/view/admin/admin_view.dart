@@ -23,8 +23,8 @@ class _AdminViewState extends State<AdminView> {
   void initState() {
     super.initState();
     BlocProvider.of<CategoriesCubit>(context).getCategories();
-    BlocProvider.of<ProductsCubit>(context).getProducts();
-    BlocProvider.of<AllUsersCubit>(context).getAllUsers();
+    // BlocProvider.of<ProductsCubit>(context).getProducts();
+    // BlocProvider.of<AllUsersCubit>(context).getAllUsers();
   }
 
   @override

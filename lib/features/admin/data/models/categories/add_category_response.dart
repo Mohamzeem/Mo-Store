@@ -1,38 +1,25 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:json_annotation/json_annotation.dart';
 
-part 'categories_response.g.dart';
+part 'add_category_response.g.dart';
 
 @JsonSerializable()
-class CategoriesResponseBody {
+class AddCategoriesResponseBody {
   CategoriesAllData? data;
 
-  CategoriesResponseBody(
+  AddCategoriesResponseBody(
     this.data,
   );
 
-  List<CategoriesModel> get categoriesList {
-    if (data!.categories.isEmpty) {
-      return [];
-    }
-    return data!.categories;
-  }
-
-  String get categoryListNumber {
-    if (data!.categories.isEmpty) {
-      return '0';
-    }
-    return data!.categories.length.toString();
-  }
-
-  factory CategoriesResponseBody.fromJson(Map<String, dynamic> json) =>
-      _$CategoriesResponseBodyFromJson(json);
+  factory AddCategoriesResponseBody.fromJson(Map<String, dynamic> json) =>
+      _$AddCategoriesResponseBodyFromJson(json);
 }
 
 @JsonSerializable()
 class CategoriesAllData {
-  List<CategoriesModel> categories;
-  CategoriesAllData(this.categories);
+  @JsonKey(name: 'addCategory')
+  CategoriesModel category;
+  CategoriesAllData(this.category);
   factory CategoriesAllData.fromJson(Map<String, dynamic> json) =>
       _$CategoriesAllDataFromJson(json);
 }

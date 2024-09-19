@@ -10,6 +10,7 @@ class CustomCachedImage extends StatelessWidget {
   final Widget? child;
   final double width;
   final double height;
+  final double border;
   final BoxFit fit;
   final BoxShape shape;
   final bool? isBorder;
@@ -25,6 +26,7 @@ class CustomCachedImage extends StatelessWidget {
     this.fit = BoxFit.fill,
     this.isBorder = true,
     this.loadingCircle = 30,
+    this.border = 0,
     this.loadingColor = AppColors.lightBlue,
   });
 
@@ -43,12 +45,13 @@ class CustomCachedImage extends StatelessWidget {
           height: height.h,
           decoration: BoxDecoration(
             shape: shape,
+            borderRadius: BorderRadius.circular(border.r),
             border: isBorder!
                 ? Border.all(
                     width: 1,
                     color: AppColors.bordersGrey,
                   )
-                : Border.all(width: 0, color: Colors.transparent),
+                : Border.all(width: border, color: Colors.transparent),
             image: DecorationImage(
               image: imageProvider,
               fit: fit,
@@ -62,9 +65,8 @@ class CustomCachedImage extends StatelessWidget {
           width: loadingCircle.w,
           color: loadingColor,
         ),
-        errorWidget: (context, url, error) => Icon(
+        errorWidget: (context, url, error) => const Icon(
           Icons.error,
-          size: height / 2,
           color: AppColors.redAccent,
         ),
       ),

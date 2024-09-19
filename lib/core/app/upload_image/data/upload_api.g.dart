@@ -14,7 +14,7 @@ class _UploadImageApi implements UploadImageApi {
     this.baseUrl,
     this.errorLogger,
   }) {
-    baseUrl ??= 'https://api.escuelajs.co/api/v1/';
+    baseUrl ??= 'https://api.escuelajs.co/';
   }
 
   final Dio _dio;
@@ -36,7 +36,7 @@ class _UploadImageApi implements UploadImageApi {
     )
         .compose(
           _dio.options,
-          'files/upload',
+          'api/v1/files/upload',
           queryParameters: queryParameters,
           data: _data,
         )

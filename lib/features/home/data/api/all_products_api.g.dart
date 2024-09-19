@@ -14,7 +14,7 @@ class _AllProductsApi implements AllProductsApi {
     this.baseUrl,
     this.errorLogger,
   }) {
-    baseUrl ??= 'https://api.escuelajs.co/api/v1/';
+    baseUrl ??= 'https://api.escuelajs.co/';
   }
 
   final Dio _dio;
@@ -39,7 +39,7 @@ class _AllProductsApi implements AllProductsApi {
     )
         .compose(
           _dio.options,
-          'products//?offset=${offset}&limit=${limit}',
+          'api/v1/products//?offset=${offset}&limit=${limit}',
           queryParameters: queryParameters,
           data: _data,
         )

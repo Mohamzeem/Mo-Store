@@ -10,6 +10,20 @@ class CategoriesState with _$CategoriesState {
   const factory CategoriesState.failureCategories(String message) =
       _FailureCategories;
   const factory CategoriesState.successCategories(
-      List<CategoriesResponseBody> categories) = _SuccessCategories;
+      CategoriesResponseBody categories) = _SuccessCategories;
   const factory CategoriesState.emptyCategories() = _EmptyCategories;
+
+  const factory CategoriesState.loadingSearchCategories() =
+      _LoadingSearchCategories;
+  const factory CategoriesState.failureSearchCategories(String message) =
+      _FailureSearchCategories;
+  const factory CategoriesState.successSearchCategories(
+      List<CategoriesModel> categories) = _SuccessSearchCategories;
+  const factory CategoriesState.emptySearchCategories() =
+      _EmptySearchCategories;
+
+  const factory CategoriesState.loadingAddCategories() = _LoadingAddCategories;
+  const factory CategoriesState.failureAddCategories(String message) =
+      _FailureAddCategories;
+  const factory CategoriesState.successAddCategories() = _SuccessAddCategories;
 }

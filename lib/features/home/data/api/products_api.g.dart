@@ -14,7 +14,7 @@ class _ProductsApi implements ProductsApi {
     this.baseUrl,
     this.errorLogger,
   }) {
-    baseUrl ??= 'https://api.escuelajs.co/api/v1/';
+    baseUrl ??= 'https://api.escuelajs.co/';
   }
 
   final Dio _dio;
@@ -36,7 +36,7 @@ class _ProductsApi implements ProductsApi {
     )
         .compose(
           _dio.options,
-          'products/',
+          'api/v1/products/',
           queryParameters: queryParameters,
           data: _data,
         )

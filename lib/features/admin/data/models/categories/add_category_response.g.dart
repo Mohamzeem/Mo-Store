@@ -1,35 +1,33 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'categories_response.dart';
+part of 'add_category_response.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-CategoriesResponseBody _$CategoriesResponseBodyFromJson(
+AddCategoriesResponseBody _$AddCategoriesResponseBodyFromJson(
         Map<String, dynamic> json) =>
-    CategoriesResponseBody(
+    AddCategoriesResponseBody(
       json['data'] == null
           ? null
           : CategoriesAllData.fromJson(json['data'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$CategoriesResponseBodyToJson(
-        CategoriesResponseBody instance) =>
+Map<String, dynamic> _$AddCategoriesResponseBodyToJson(
+        AddCategoriesResponseBody instance) =>
     <String, dynamic>{
       'data': instance.data,
     };
 
 CategoriesAllData _$CategoriesAllDataFromJson(Map<String, dynamic> json) =>
     CategoriesAllData(
-      (json['categories'] as List<dynamic>)
-          .map((e) => CategoriesModel.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      CategoriesModel.fromJson(json['addCategory'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$CategoriesAllDataToJson(CategoriesAllData instance) =>
     <String, dynamic>{
-      'categories': instance.categories,
+      'addCategory': instance.category,
     };
 
 CategoriesModel _$CategoriesModelFromJson(Map<String, dynamic> json) =>

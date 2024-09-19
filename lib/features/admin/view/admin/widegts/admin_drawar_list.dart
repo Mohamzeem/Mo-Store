@@ -27,7 +27,7 @@ List<DrawerItemModel> adminDrawerList(BuildContext context) {
         'Categories',
         style: AppFonts.medium30Primary.copyWith(fontSize: 18.sp),
       ),
-      page: const CategoriesScreen(),
+      page: const CategoriesView(),
     ),
     //^ Product
     DrawerItemModel(

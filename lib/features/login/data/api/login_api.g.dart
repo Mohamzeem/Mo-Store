@@ -14,7 +14,7 @@ class _LoginApi implements LoginApi {
     this.baseUrl,
     this.errorLogger,
   }) {
-    baseUrl ??= 'https://api.escuelajs.co/api/v1/';
+    baseUrl ??= 'https://api.escuelajs.co/';
   }
 
   final Dio _dio;
@@ -37,7 +37,7 @@ class _LoginApi implements LoginApi {
     )
         .compose(
           _dio.options,
-          'auth/login',
+          'api/v1/auth/login',
           queryParameters: queryParameters,
           data: _data,
         )

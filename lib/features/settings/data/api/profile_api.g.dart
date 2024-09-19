@@ -14,7 +14,7 @@ class _ProfileApi implements ProfileApi {
     this.baseUrl,
     this.errorLogger,
   }) {
-    baseUrl ??= 'https://api.escuelajs.co/api/v1/';
+    baseUrl ??= 'https://api.escuelajs.co/';
   }
 
   final Dio _dio;
@@ -36,7 +36,7 @@ class _ProfileApi implements ProfileApi {
     )
         .compose(
           _dio.options,
-          'auth/profile',
+          'api/v1/auth/profile',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -73,7 +73,7 @@ class _ProfileApi implements ProfileApi {
     )
         .compose(
           _dio.options,
-          'users/${id}',
+          'api/v1/users/${id}',
           queryParameters: queryParameters,
           data: _data,
         )

@@ -34,7 +34,7 @@ class _CategoriesViewState extends State<CategoriesView> {
     _cubit = BlocProvider.of<ProductsCubit>(context);
     // _cubit.getProducts();
     _cubit.categoriesProducts(
-      widget.categoryInfo.category.id!,
+      widget.categoryInfo.category.categoriesList,
       widget.categoryInfo.allprodList,
     );
     Prints.debug(
@@ -52,7 +52,8 @@ class _CategoriesViewState extends State<CategoriesView> {
           child: Column(
             children: [
               CustomAppBar(
-                title: widget.categoryInfo.category.name!,
+                title:
+                    widget.categoryInfo.category.data!.categories.first.name!,
                 isArrowBack: true,
               ),
               15.verticalSpace,
