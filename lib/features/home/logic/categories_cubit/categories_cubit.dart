@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mo_store/core/helpers/prints.dart';
 import 'package:mo_store/features/admin/data/models/categories/add_category_request.dart';
@@ -14,7 +13,6 @@ class CategoriesCubit extends Cubit<CategoriesState> {
   List<CategoriesModel> allCategories = [];
   List<CategoriesModel> foundCategories = [];
   String searchText = '';
-  final scaffoldKey = GlobalKey<ScaffoldState>();
 
   Future<void> getCategories() async {
     emit(const CategoriesState.loadingCategories());

@@ -55,12 +55,7 @@ class CategoryContainer extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap: () {
-                          AppFunctions.addShowBtmSheet(
-                            context: context,
-                            body: UpdateCategoryButtonSheetBody(
-                              categoriesModel: categoriesModel,
-                            ),
-                          );
+                          _updateCategoryButtonSheet(context);
                         },
                         child: const CustomContainerIcon(
                           containerSize: 35,
@@ -83,6 +78,15 @@ class CategoryContainer extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  void _updateCategoryButtonSheet(BuildContext context) {
+    AppFunctions.addShowBtmSheet(
+      context: context,
+      body: UpdateCategoryButtonSheetBody(
+        categoriesModel: categoriesModel,
       ),
     );
   }

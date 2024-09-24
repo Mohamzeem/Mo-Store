@@ -15,7 +15,7 @@ class CategoriesResponseBody {
     if (data!.categories.isEmpty) {
       return [];
     }
-    return data!.categories;
+    return data!.categories.reversed.toList();
   }
 
   String get categoryListNumber {
