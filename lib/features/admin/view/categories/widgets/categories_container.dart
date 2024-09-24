@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
+import 'package:mo_store/core/helpers/btn_sheet.dart';
 import 'package:mo_store/core/helpers/text_fonts.dart';
 import 'package:mo_store/core/widgets/custom_cached_image.dart';
 import 'package:mo_store/core/widgets/custom_container_icon.dart';
+import 'package:mo_store/features/admin/view/categories/widgets/update_category_btn_body.dart';
 import 'package:mo_store/features/home/data/models/categories_response.dart';
 
 class CategoryContainer extends StatelessWidget {
@@ -51,11 +53,21 @@ class CategoryContainer extends StatelessWidget {
                   10.verticalSpace,
                   Row(
                     children: [
-                      const CustomContainerIcon(
-                        containerSize: 35,
-                        iconSize: 25,
-                        icon: Icons.edit,
-                        iconColor: AppColors.white,
+                      InkWell(
+                        onTap: () {
+                          AppFunctions.addShowBtmSheet(
+                            context: context,
+                            body: UpdateCategoryButtonSheetBody(
+                              categoriesModel: categoriesModel,
+                            ),
+                          );
+                        },
+                        child: const CustomContainerIcon(
+                          containerSize: 35,
+                          iconSize: 25,
+                          icon: Icons.edit,
+                          iconColor: AppColors.white,
+                        ),
                       ),
                       25.horizontalSpace,
                       const CustomContainerIcon(

@@ -32,6 +32,12 @@ mixin _$CategoriesState {
     required TResult Function() loadingAddCategories,
     required TResult Function(String message) failureAddCategories,
     required TResult Function() successAddCategories,
+    required TResult Function() loadingUpdateCategories,
+    required TResult Function(String message) failureUpdateCategories,
+    required TResult Function() successUpdateCategories,
+    required TResult Function() loadingDeleteCategories,
+    required TResult Function(String message) failureDeleteCategories,
+    required TResult Function() successDeleteCategories,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -49,6 +55,12 @@ mixin _$CategoriesState {
     TResult? Function()? loadingAddCategories,
     TResult? Function(String message)? failureAddCategories,
     TResult? Function()? successAddCategories,
+    TResult? Function()? loadingUpdateCategories,
+    TResult? Function(String message)? failureUpdateCategories,
+    TResult? Function()? successUpdateCategories,
+    TResult? Function()? loadingDeleteCategories,
+    TResult? Function(String message)? failureDeleteCategories,
+    TResult? Function()? successDeleteCategories,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,6 +77,12 @@ mixin _$CategoriesState {
     TResult Function()? loadingAddCategories,
     TResult Function(String message)? failureAddCategories,
     TResult Function()? successAddCategories,
+    TResult Function()? loadingUpdateCategories,
+    TResult Function(String message)? failureUpdateCategories,
+    TResult Function()? successUpdateCategories,
+    TResult Function()? loadingDeleteCategories,
+    TResult Function(String message)? failureDeleteCategories,
+    TResult Function()? successDeleteCategories,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -86,6 +104,18 @@ mixin _$CategoriesState {
     required TResult Function(_LoadingAddCategories value) loadingAddCategories,
     required TResult Function(_FailureAddCategories value) failureAddCategories,
     required TResult Function(_SuccessAddCategories value) successAddCategories,
+    required TResult Function(_LoadingUpdateCategories value)
+        loadingUpdateCategories,
+    required TResult Function(_FailureUpdateCategories value)
+        failureUpdateCategories,
+    required TResult Function(_SuccessUpdateCategories value)
+        successUpdateCategories,
+    required TResult Function(_LoadingDeleteCategories value)
+        loadingDeleteCategories,
+    required TResult Function(_FailureDeleteCategories value)
+        failureDeleteCategories,
+    required TResult Function(_SuccessDeleteCategories value)
+        successDeleteCategories,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -102,6 +132,12 @@ mixin _$CategoriesState {
     TResult? Function(_LoadingAddCategories value)? loadingAddCategories,
     TResult? Function(_FailureAddCategories value)? failureAddCategories,
     TResult? Function(_SuccessAddCategories value)? successAddCategories,
+    TResult? Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult? Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult? Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult? Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult? Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult? Function(_SuccessDeleteCategories value)? successDeleteCategories,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -118,6 +154,12 @@ mixin _$CategoriesState {
     TResult Function(_LoadingAddCategories value)? loadingAddCategories,
     TResult Function(_FailureAddCategories value)? failureAddCategories,
     TResult Function(_SuccessAddCategories value)? successAddCategories,
+    TResult Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult Function(_SuccessDeleteCategories value)? successDeleteCategories,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -193,6 +235,12 @@ class _$InitialImpl implements _Initial {
     required TResult Function() loadingAddCategories,
     required TResult Function(String message) failureAddCategories,
     required TResult Function() successAddCategories,
+    required TResult Function() loadingUpdateCategories,
+    required TResult Function(String message) failureUpdateCategories,
+    required TResult Function() successUpdateCategories,
+    required TResult Function() loadingDeleteCategories,
+    required TResult Function(String message) failureDeleteCategories,
+    required TResult Function() successDeleteCategories,
   }) {
     return initial();
   }
@@ -213,6 +261,12 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? loadingAddCategories,
     TResult? Function(String message)? failureAddCategories,
     TResult? Function()? successAddCategories,
+    TResult? Function()? loadingUpdateCategories,
+    TResult? Function(String message)? failureUpdateCategories,
+    TResult? Function()? successUpdateCategories,
+    TResult? Function()? loadingDeleteCategories,
+    TResult? Function(String message)? failureDeleteCategories,
+    TResult? Function()? successDeleteCategories,
   }) {
     return initial?.call();
   }
@@ -232,6 +286,12 @@ class _$InitialImpl implements _Initial {
     TResult Function()? loadingAddCategories,
     TResult Function(String message)? failureAddCategories,
     TResult Function()? successAddCategories,
+    TResult Function()? loadingUpdateCategories,
+    TResult Function(String message)? failureUpdateCategories,
+    TResult Function()? successUpdateCategories,
+    TResult Function()? loadingDeleteCategories,
+    TResult Function(String message)? failureDeleteCategories,
+    TResult Function()? successDeleteCategories,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -259,6 +319,18 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_LoadingAddCategories value) loadingAddCategories,
     required TResult Function(_FailureAddCategories value) failureAddCategories,
     required TResult Function(_SuccessAddCategories value) successAddCategories,
+    required TResult Function(_LoadingUpdateCategories value)
+        loadingUpdateCategories,
+    required TResult Function(_FailureUpdateCategories value)
+        failureUpdateCategories,
+    required TResult Function(_SuccessUpdateCategories value)
+        successUpdateCategories,
+    required TResult Function(_LoadingDeleteCategories value)
+        loadingDeleteCategories,
+    required TResult Function(_FailureDeleteCategories value)
+        failureDeleteCategories,
+    required TResult Function(_SuccessDeleteCategories value)
+        successDeleteCategories,
   }) {
     return initial(this);
   }
@@ -278,6 +350,12 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_LoadingAddCategories value)? loadingAddCategories,
     TResult? Function(_FailureAddCategories value)? failureAddCategories,
     TResult? Function(_SuccessAddCategories value)? successAddCategories,
+    TResult? Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult? Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult? Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult? Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult? Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult? Function(_SuccessDeleteCategories value)? successDeleteCategories,
   }) {
     return initial?.call(this);
   }
@@ -297,6 +375,12 @@ class _$InitialImpl implements _Initial {
     TResult Function(_LoadingAddCategories value)? loadingAddCategories,
     TResult Function(_FailureAddCategories value)? failureAddCategories,
     TResult Function(_SuccessAddCategories value)? successAddCategories,
+    TResult Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult Function(_SuccessDeleteCategories value)? successDeleteCategories,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -362,6 +446,12 @@ class _$LoadingCategoriesImpl implements _LoadingCategories {
     required TResult Function() loadingAddCategories,
     required TResult Function(String message) failureAddCategories,
     required TResult Function() successAddCategories,
+    required TResult Function() loadingUpdateCategories,
+    required TResult Function(String message) failureUpdateCategories,
+    required TResult Function() successUpdateCategories,
+    required TResult Function() loadingDeleteCategories,
+    required TResult Function(String message) failureDeleteCategories,
+    required TResult Function() successDeleteCategories,
   }) {
     return loadingCategories();
   }
@@ -382,6 +472,12 @@ class _$LoadingCategoriesImpl implements _LoadingCategories {
     TResult? Function()? loadingAddCategories,
     TResult? Function(String message)? failureAddCategories,
     TResult? Function()? successAddCategories,
+    TResult? Function()? loadingUpdateCategories,
+    TResult? Function(String message)? failureUpdateCategories,
+    TResult? Function()? successUpdateCategories,
+    TResult? Function()? loadingDeleteCategories,
+    TResult? Function(String message)? failureDeleteCategories,
+    TResult? Function()? successDeleteCategories,
   }) {
     return loadingCategories?.call();
   }
@@ -401,6 +497,12 @@ class _$LoadingCategoriesImpl implements _LoadingCategories {
     TResult Function()? loadingAddCategories,
     TResult Function(String message)? failureAddCategories,
     TResult Function()? successAddCategories,
+    TResult Function()? loadingUpdateCategories,
+    TResult Function(String message)? failureUpdateCategories,
+    TResult Function()? successUpdateCategories,
+    TResult Function()? loadingDeleteCategories,
+    TResult Function(String message)? failureDeleteCategories,
+    TResult Function()? successDeleteCategories,
     required TResult orElse(),
   }) {
     if (loadingCategories != null) {
@@ -428,6 +530,18 @@ class _$LoadingCategoriesImpl implements _LoadingCategories {
     required TResult Function(_LoadingAddCategories value) loadingAddCategories,
     required TResult Function(_FailureAddCategories value) failureAddCategories,
     required TResult Function(_SuccessAddCategories value) successAddCategories,
+    required TResult Function(_LoadingUpdateCategories value)
+        loadingUpdateCategories,
+    required TResult Function(_FailureUpdateCategories value)
+        failureUpdateCategories,
+    required TResult Function(_SuccessUpdateCategories value)
+        successUpdateCategories,
+    required TResult Function(_LoadingDeleteCategories value)
+        loadingDeleteCategories,
+    required TResult Function(_FailureDeleteCategories value)
+        failureDeleteCategories,
+    required TResult Function(_SuccessDeleteCategories value)
+        successDeleteCategories,
   }) {
     return loadingCategories(this);
   }
@@ -447,6 +561,12 @@ class _$LoadingCategoriesImpl implements _LoadingCategories {
     TResult? Function(_LoadingAddCategories value)? loadingAddCategories,
     TResult? Function(_FailureAddCategories value)? failureAddCategories,
     TResult? Function(_SuccessAddCategories value)? successAddCategories,
+    TResult? Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult? Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult? Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult? Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult? Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult? Function(_SuccessDeleteCategories value)? successDeleteCategories,
   }) {
     return loadingCategories?.call(this);
   }
@@ -466,6 +586,12 @@ class _$LoadingCategoriesImpl implements _LoadingCategories {
     TResult Function(_LoadingAddCategories value)? loadingAddCategories,
     TResult Function(_FailureAddCategories value)? failureAddCategories,
     TResult Function(_SuccessAddCategories value)? successAddCategories,
+    TResult Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult Function(_SuccessDeleteCategories value)? successDeleteCategories,
     required TResult orElse(),
   }) {
     if (loadingCategories != null) {
@@ -558,6 +684,12 @@ class _$FailureCategoriesImpl implements _FailureCategories {
     required TResult Function() loadingAddCategories,
     required TResult Function(String message) failureAddCategories,
     required TResult Function() successAddCategories,
+    required TResult Function() loadingUpdateCategories,
+    required TResult Function(String message) failureUpdateCategories,
+    required TResult Function() successUpdateCategories,
+    required TResult Function() loadingDeleteCategories,
+    required TResult Function(String message) failureDeleteCategories,
+    required TResult Function() successDeleteCategories,
   }) {
     return failureCategories(message);
   }
@@ -578,6 +710,12 @@ class _$FailureCategoriesImpl implements _FailureCategories {
     TResult? Function()? loadingAddCategories,
     TResult? Function(String message)? failureAddCategories,
     TResult? Function()? successAddCategories,
+    TResult? Function()? loadingUpdateCategories,
+    TResult? Function(String message)? failureUpdateCategories,
+    TResult? Function()? successUpdateCategories,
+    TResult? Function()? loadingDeleteCategories,
+    TResult? Function(String message)? failureDeleteCategories,
+    TResult? Function()? successDeleteCategories,
   }) {
     return failureCategories?.call(message);
   }
@@ -597,6 +735,12 @@ class _$FailureCategoriesImpl implements _FailureCategories {
     TResult Function()? loadingAddCategories,
     TResult Function(String message)? failureAddCategories,
     TResult Function()? successAddCategories,
+    TResult Function()? loadingUpdateCategories,
+    TResult Function(String message)? failureUpdateCategories,
+    TResult Function()? successUpdateCategories,
+    TResult Function()? loadingDeleteCategories,
+    TResult Function(String message)? failureDeleteCategories,
+    TResult Function()? successDeleteCategories,
     required TResult orElse(),
   }) {
     if (failureCategories != null) {
@@ -624,6 +768,18 @@ class _$FailureCategoriesImpl implements _FailureCategories {
     required TResult Function(_LoadingAddCategories value) loadingAddCategories,
     required TResult Function(_FailureAddCategories value) failureAddCategories,
     required TResult Function(_SuccessAddCategories value) successAddCategories,
+    required TResult Function(_LoadingUpdateCategories value)
+        loadingUpdateCategories,
+    required TResult Function(_FailureUpdateCategories value)
+        failureUpdateCategories,
+    required TResult Function(_SuccessUpdateCategories value)
+        successUpdateCategories,
+    required TResult Function(_LoadingDeleteCategories value)
+        loadingDeleteCategories,
+    required TResult Function(_FailureDeleteCategories value)
+        failureDeleteCategories,
+    required TResult Function(_SuccessDeleteCategories value)
+        successDeleteCategories,
   }) {
     return failureCategories(this);
   }
@@ -643,6 +799,12 @@ class _$FailureCategoriesImpl implements _FailureCategories {
     TResult? Function(_LoadingAddCategories value)? loadingAddCategories,
     TResult? Function(_FailureAddCategories value)? failureAddCategories,
     TResult? Function(_SuccessAddCategories value)? successAddCategories,
+    TResult? Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult? Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult? Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult? Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult? Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult? Function(_SuccessDeleteCategories value)? successDeleteCategories,
   }) {
     return failureCategories?.call(this);
   }
@@ -662,6 +824,12 @@ class _$FailureCategoriesImpl implements _FailureCategories {
     TResult Function(_LoadingAddCategories value)? loadingAddCategories,
     TResult Function(_FailureAddCategories value)? failureAddCategories,
     TResult Function(_SuccessAddCategories value)? successAddCategories,
+    TResult Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult Function(_SuccessDeleteCategories value)? successDeleteCategories,
     required TResult orElse(),
   }) {
     if (failureCategories != null) {
@@ -761,6 +929,12 @@ class _$SuccessCategoriesImpl implements _SuccessCategories {
     required TResult Function() loadingAddCategories,
     required TResult Function(String message) failureAddCategories,
     required TResult Function() successAddCategories,
+    required TResult Function() loadingUpdateCategories,
+    required TResult Function(String message) failureUpdateCategories,
+    required TResult Function() successUpdateCategories,
+    required TResult Function() loadingDeleteCategories,
+    required TResult Function(String message) failureDeleteCategories,
+    required TResult Function() successDeleteCategories,
   }) {
     return successCategories(categories);
   }
@@ -781,6 +955,12 @@ class _$SuccessCategoriesImpl implements _SuccessCategories {
     TResult? Function()? loadingAddCategories,
     TResult? Function(String message)? failureAddCategories,
     TResult? Function()? successAddCategories,
+    TResult? Function()? loadingUpdateCategories,
+    TResult? Function(String message)? failureUpdateCategories,
+    TResult? Function()? successUpdateCategories,
+    TResult? Function()? loadingDeleteCategories,
+    TResult? Function(String message)? failureDeleteCategories,
+    TResult? Function()? successDeleteCategories,
   }) {
     return successCategories?.call(categories);
   }
@@ -800,6 +980,12 @@ class _$SuccessCategoriesImpl implements _SuccessCategories {
     TResult Function()? loadingAddCategories,
     TResult Function(String message)? failureAddCategories,
     TResult Function()? successAddCategories,
+    TResult Function()? loadingUpdateCategories,
+    TResult Function(String message)? failureUpdateCategories,
+    TResult Function()? successUpdateCategories,
+    TResult Function()? loadingDeleteCategories,
+    TResult Function(String message)? failureDeleteCategories,
+    TResult Function()? successDeleteCategories,
     required TResult orElse(),
   }) {
     if (successCategories != null) {
@@ -827,6 +1013,18 @@ class _$SuccessCategoriesImpl implements _SuccessCategories {
     required TResult Function(_LoadingAddCategories value) loadingAddCategories,
     required TResult Function(_FailureAddCategories value) failureAddCategories,
     required TResult Function(_SuccessAddCategories value) successAddCategories,
+    required TResult Function(_LoadingUpdateCategories value)
+        loadingUpdateCategories,
+    required TResult Function(_FailureUpdateCategories value)
+        failureUpdateCategories,
+    required TResult Function(_SuccessUpdateCategories value)
+        successUpdateCategories,
+    required TResult Function(_LoadingDeleteCategories value)
+        loadingDeleteCategories,
+    required TResult Function(_FailureDeleteCategories value)
+        failureDeleteCategories,
+    required TResult Function(_SuccessDeleteCategories value)
+        successDeleteCategories,
   }) {
     return successCategories(this);
   }
@@ -846,6 +1044,12 @@ class _$SuccessCategoriesImpl implements _SuccessCategories {
     TResult? Function(_LoadingAddCategories value)? loadingAddCategories,
     TResult? Function(_FailureAddCategories value)? failureAddCategories,
     TResult? Function(_SuccessAddCategories value)? successAddCategories,
+    TResult? Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult? Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult? Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult? Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult? Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult? Function(_SuccessDeleteCategories value)? successDeleteCategories,
   }) {
     return successCategories?.call(this);
   }
@@ -865,6 +1069,12 @@ class _$SuccessCategoriesImpl implements _SuccessCategories {
     TResult Function(_LoadingAddCategories value)? loadingAddCategories,
     TResult Function(_FailureAddCategories value)? failureAddCategories,
     TResult Function(_SuccessAddCategories value)? successAddCategories,
+    TResult Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult Function(_SuccessDeleteCategories value)? successDeleteCategories,
     required TResult orElse(),
   }) {
     if (successCategories != null) {
@@ -936,6 +1146,12 @@ class _$EmptyCategoriesImpl implements _EmptyCategories {
     required TResult Function() loadingAddCategories,
     required TResult Function(String message) failureAddCategories,
     required TResult Function() successAddCategories,
+    required TResult Function() loadingUpdateCategories,
+    required TResult Function(String message) failureUpdateCategories,
+    required TResult Function() successUpdateCategories,
+    required TResult Function() loadingDeleteCategories,
+    required TResult Function(String message) failureDeleteCategories,
+    required TResult Function() successDeleteCategories,
   }) {
     return emptyCategories();
   }
@@ -956,6 +1172,12 @@ class _$EmptyCategoriesImpl implements _EmptyCategories {
     TResult? Function()? loadingAddCategories,
     TResult? Function(String message)? failureAddCategories,
     TResult? Function()? successAddCategories,
+    TResult? Function()? loadingUpdateCategories,
+    TResult? Function(String message)? failureUpdateCategories,
+    TResult? Function()? successUpdateCategories,
+    TResult? Function()? loadingDeleteCategories,
+    TResult? Function(String message)? failureDeleteCategories,
+    TResult? Function()? successDeleteCategories,
   }) {
     return emptyCategories?.call();
   }
@@ -975,6 +1197,12 @@ class _$EmptyCategoriesImpl implements _EmptyCategories {
     TResult Function()? loadingAddCategories,
     TResult Function(String message)? failureAddCategories,
     TResult Function()? successAddCategories,
+    TResult Function()? loadingUpdateCategories,
+    TResult Function(String message)? failureUpdateCategories,
+    TResult Function()? successUpdateCategories,
+    TResult Function()? loadingDeleteCategories,
+    TResult Function(String message)? failureDeleteCategories,
+    TResult Function()? successDeleteCategories,
     required TResult orElse(),
   }) {
     if (emptyCategories != null) {
@@ -1002,6 +1230,18 @@ class _$EmptyCategoriesImpl implements _EmptyCategories {
     required TResult Function(_LoadingAddCategories value) loadingAddCategories,
     required TResult Function(_FailureAddCategories value) failureAddCategories,
     required TResult Function(_SuccessAddCategories value) successAddCategories,
+    required TResult Function(_LoadingUpdateCategories value)
+        loadingUpdateCategories,
+    required TResult Function(_FailureUpdateCategories value)
+        failureUpdateCategories,
+    required TResult Function(_SuccessUpdateCategories value)
+        successUpdateCategories,
+    required TResult Function(_LoadingDeleteCategories value)
+        loadingDeleteCategories,
+    required TResult Function(_FailureDeleteCategories value)
+        failureDeleteCategories,
+    required TResult Function(_SuccessDeleteCategories value)
+        successDeleteCategories,
   }) {
     return emptyCategories(this);
   }
@@ -1021,6 +1261,12 @@ class _$EmptyCategoriesImpl implements _EmptyCategories {
     TResult? Function(_LoadingAddCategories value)? loadingAddCategories,
     TResult? Function(_FailureAddCategories value)? failureAddCategories,
     TResult? Function(_SuccessAddCategories value)? successAddCategories,
+    TResult? Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult? Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult? Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult? Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult? Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult? Function(_SuccessDeleteCategories value)? successDeleteCategories,
   }) {
     return emptyCategories?.call(this);
   }
@@ -1040,6 +1286,12 @@ class _$EmptyCategoriesImpl implements _EmptyCategories {
     TResult Function(_LoadingAddCategories value)? loadingAddCategories,
     TResult Function(_FailureAddCategories value)? failureAddCategories,
     TResult Function(_SuccessAddCategories value)? successAddCategories,
+    TResult Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult Function(_SuccessDeleteCategories value)? successDeleteCategories,
     required TResult orElse(),
   }) {
     if (emptyCategories != null) {
@@ -1108,6 +1360,12 @@ class _$LoadingSearchCategoriesImpl implements _LoadingSearchCategories {
     required TResult Function() loadingAddCategories,
     required TResult Function(String message) failureAddCategories,
     required TResult Function() successAddCategories,
+    required TResult Function() loadingUpdateCategories,
+    required TResult Function(String message) failureUpdateCategories,
+    required TResult Function() successUpdateCategories,
+    required TResult Function() loadingDeleteCategories,
+    required TResult Function(String message) failureDeleteCategories,
+    required TResult Function() successDeleteCategories,
   }) {
     return loadingSearchCategories();
   }
@@ -1128,6 +1386,12 @@ class _$LoadingSearchCategoriesImpl implements _LoadingSearchCategories {
     TResult? Function()? loadingAddCategories,
     TResult? Function(String message)? failureAddCategories,
     TResult? Function()? successAddCategories,
+    TResult? Function()? loadingUpdateCategories,
+    TResult? Function(String message)? failureUpdateCategories,
+    TResult? Function()? successUpdateCategories,
+    TResult? Function()? loadingDeleteCategories,
+    TResult? Function(String message)? failureDeleteCategories,
+    TResult? Function()? successDeleteCategories,
   }) {
     return loadingSearchCategories?.call();
   }
@@ -1147,6 +1411,12 @@ class _$LoadingSearchCategoriesImpl implements _LoadingSearchCategories {
     TResult Function()? loadingAddCategories,
     TResult Function(String message)? failureAddCategories,
     TResult Function()? successAddCategories,
+    TResult Function()? loadingUpdateCategories,
+    TResult Function(String message)? failureUpdateCategories,
+    TResult Function()? successUpdateCategories,
+    TResult Function()? loadingDeleteCategories,
+    TResult Function(String message)? failureDeleteCategories,
+    TResult Function()? successDeleteCategories,
     required TResult orElse(),
   }) {
     if (loadingSearchCategories != null) {
@@ -1174,6 +1444,18 @@ class _$LoadingSearchCategoriesImpl implements _LoadingSearchCategories {
     required TResult Function(_LoadingAddCategories value) loadingAddCategories,
     required TResult Function(_FailureAddCategories value) failureAddCategories,
     required TResult Function(_SuccessAddCategories value) successAddCategories,
+    required TResult Function(_LoadingUpdateCategories value)
+        loadingUpdateCategories,
+    required TResult Function(_FailureUpdateCategories value)
+        failureUpdateCategories,
+    required TResult Function(_SuccessUpdateCategories value)
+        successUpdateCategories,
+    required TResult Function(_LoadingDeleteCategories value)
+        loadingDeleteCategories,
+    required TResult Function(_FailureDeleteCategories value)
+        failureDeleteCategories,
+    required TResult Function(_SuccessDeleteCategories value)
+        successDeleteCategories,
   }) {
     return loadingSearchCategories(this);
   }
@@ -1193,6 +1475,12 @@ class _$LoadingSearchCategoriesImpl implements _LoadingSearchCategories {
     TResult? Function(_LoadingAddCategories value)? loadingAddCategories,
     TResult? Function(_FailureAddCategories value)? failureAddCategories,
     TResult? Function(_SuccessAddCategories value)? successAddCategories,
+    TResult? Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult? Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult? Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult? Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult? Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult? Function(_SuccessDeleteCategories value)? successDeleteCategories,
   }) {
     return loadingSearchCategories?.call(this);
   }
@@ -1212,6 +1500,12 @@ class _$LoadingSearchCategoriesImpl implements _LoadingSearchCategories {
     TResult Function(_LoadingAddCategories value)? loadingAddCategories,
     TResult Function(_FailureAddCategories value)? failureAddCategories,
     TResult Function(_SuccessAddCategories value)? successAddCategories,
+    TResult Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult Function(_SuccessDeleteCategories value)? successDeleteCategories,
     required TResult orElse(),
   }) {
     if (loadingSearchCategories != null) {
@@ -1306,6 +1600,12 @@ class _$FailureSearchCategoriesImpl implements _FailureSearchCategories {
     required TResult Function() loadingAddCategories,
     required TResult Function(String message) failureAddCategories,
     required TResult Function() successAddCategories,
+    required TResult Function() loadingUpdateCategories,
+    required TResult Function(String message) failureUpdateCategories,
+    required TResult Function() successUpdateCategories,
+    required TResult Function() loadingDeleteCategories,
+    required TResult Function(String message) failureDeleteCategories,
+    required TResult Function() successDeleteCategories,
   }) {
     return failureSearchCategories(message);
   }
@@ -1326,6 +1626,12 @@ class _$FailureSearchCategoriesImpl implements _FailureSearchCategories {
     TResult? Function()? loadingAddCategories,
     TResult? Function(String message)? failureAddCategories,
     TResult? Function()? successAddCategories,
+    TResult? Function()? loadingUpdateCategories,
+    TResult? Function(String message)? failureUpdateCategories,
+    TResult? Function()? successUpdateCategories,
+    TResult? Function()? loadingDeleteCategories,
+    TResult? Function(String message)? failureDeleteCategories,
+    TResult? Function()? successDeleteCategories,
   }) {
     return failureSearchCategories?.call(message);
   }
@@ -1345,6 +1651,12 @@ class _$FailureSearchCategoriesImpl implements _FailureSearchCategories {
     TResult Function()? loadingAddCategories,
     TResult Function(String message)? failureAddCategories,
     TResult Function()? successAddCategories,
+    TResult Function()? loadingUpdateCategories,
+    TResult Function(String message)? failureUpdateCategories,
+    TResult Function()? successUpdateCategories,
+    TResult Function()? loadingDeleteCategories,
+    TResult Function(String message)? failureDeleteCategories,
+    TResult Function()? successDeleteCategories,
     required TResult orElse(),
   }) {
     if (failureSearchCategories != null) {
@@ -1372,6 +1684,18 @@ class _$FailureSearchCategoriesImpl implements _FailureSearchCategories {
     required TResult Function(_LoadingAddCategories value) loadingAddCategories,
     required TResult Function(_FailureAddCategories value) failureAddCategories,
     required TResult Function(_SuccessAddCategories value) successAddCategories,
+    required TResult Function(_LoadingUpdateCategories value)
+        loadingUpdateCategories,
+    required TResult Function(_FailureUpdateCategories value)
+        failureUpdateCategories,
+    required TResult Function(_SuccessUpdateCategories value)
+        successUpdateCategories,
+    required TResult Function(_LoadingDeleteCategories value)
+        loadingDeleteCategories,
+    required TResult Function(_FailureDeleteCategories value)
+        failureDeleteCategories,
+    required TResult Function(_SuccessDeleteCategories value)
+        successDeleteCategories,
   }) {
     return failureSearchCategories(this);
   }
@@ -1391,6 +1715,12 @@ class _$FailureSearchCategoriesImpl implements _FailureSearchCategories {
     TResult? Function(_LoadingAddCategories value)? loadingAddCategories,
     TResult? Function(_FailureAddCategories value)? failureAddCategories,
     TResult? Function(_SuccessAddCategories value)? successAddCategories,
+    TResult? Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult? Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult? Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult? Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult? Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult? Function(_SuccessDeleteCategories value)? successDeleteCategories,
   }) {
     return failureSearchCategories?.call(this);
   }
@@ -1410,6 +1740,12 @@ class _$FailureSearchCategoriesImpl implements _FailureSearchCategories {
     TResult Function(_LoadingAddCategories value)? loadingAddCategories,
     TResult Function(_FailureAddCategories value)? failureAddCategories,
     TResult Function(_SuccessAddCategories value)? successAddCategories,
+    TResult Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult Function(_SuccessDeleteCategories value)? successDeleteCategories,
     required TResult orElse(),
   }) {
     if (failureSearchCategories != null) {
@@ -1518,6 +1854,12 @@ class _$SuccessSearchCategoriesImpl implements _SuccessSearchCategories {
     required TResult Function() loadingAddCategories,
     required TResult Function(String message) failureAddCategories,
     required TResult Function() successAddCategories,
+    required TResult Function() loadingUpdateCategories,
+    required TResult Function(String message) failureUpdateCategories,
+    required TResult Function() successUpdateCategories,
+    required TResult Function() loadingDeleteCategories,
+    required TResult Function(String message) failureDeleteCategories,
+    required TResult Function() successDeleteCategories,
   }) {
     return successSearchCategories(categories);
   }
@@ -1538,6 +1880,12 @@ class _$SuccessSearchCategoriesImpl implements _SuccessSearchCategories {
     TResult? Function()? loadingAddCategories,
     TResult? Function(String message)? failureAddCategories,
     TResult? Function()? successAddCategories,
+    TResult? Function()? loadingUpdateCategories,
+    TResult? Function(String message)? failureUpdateCategories,
+    TResult? Function()? successUpdateCategories,
+    TResult? Function()? loadingDeleteCategories,
+    TResult? Function(String message)? failureDeleteCategories,
+    TResult? Function()? successDeleteCategories,
   }) {
     return successSearchCategories?.call(categories);
   }
@@ -1557,6 +1905,12 @@ class _$SuccessSearchCategoriesImpl implements _SuccessSearchCategories {
     TResult Function()? loadingAddCategories,
     TResult Function(String message)? failureAddCategories,
     TResult Function()? successAddCategories,
+    TResult Function()? loadingUpdateCategories,
+    TResult Function(String message)? failureUpdateCategories,
+    TResult Function()? successUpdateCategories,
+    TResult Function()? loadingDeleteCategories,
+    TResult Function(String message)? failureDeleteCategories,
+    TResult Function()? successDeleteCategories,
     required TResult orElse(),
   }) {
     if (successSearchCategories != null) {
@@ -1584,6 +1938,18 @@ class _$SuccessSearchCategoriesImpl implements _SuccessSearchCategories {
     required TResult Function(_LoadingAddCategories value) loadingAddCategories,
     required TResult Function(_FailureAddCategories value) failureAddCategories,
     required TResult Function(_SuccessAddCategories value) successAddCategories,
+    required TResult Function(_LoadingUpdateCategories value)
+        loadingUpdateCategories,
+    required TResult Function(_FailureUpdateCategories value)
+        failureUpdateCategories,
+    required TResult Function(_SuccessUpdateCategories value)
+        successUpdateCategories,
+    required TResult Function(_LoadingDeleteCategories value)
+        loadingDeleteCategories,
+    required TResult Function(_FailureDeleteCategories value)
+        failureDeleteCategories,
+    required TResult Function(_SuccessDeleteCategories value)
+        successDeleteCategories,
   }) {
     return successSearchCategories(this);
   }
@@ -1603,6 +1969,12 @@ class _$SuccessSearchCategoriesImpl implements _SuccessSearchCategories {
     TResult? Function(_LoadingAddCategories value)? loadingAddCategories,
     TResult? Function(_FailureAddCategories value)? failureAddCategories,
     TResult? Function(_SuccessAddCategories value)? successAddCategories,
+    TResult? Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult? Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult? Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult? Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult? Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult? Function(_SuccessDeleteCategories value)? successDeleteCategories,
   }) {
     return successSearchCategories?.call(this);
   }
@@ -1622,6 +1994,12 @@ class _$SuccessSearchCategoriesImpl implements _SuccessSearchCategories {
     TResult Function(_LoadingAddCategories value)? loadingAddCategories,
     TResult Function(_FailureAddCategories value)? failureAddCategories,
     TResult Function(_SuccessAddCategories value)? successAddCategories,
+    TResult Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult Function(_SuccessDeleteCategories value)? successDeleteCategories,
     required TResult orElse(),
   }) {
     if (successSearchCategories != null) {
@@ -1695,6 +2073,12 @@ class _$EmptySearchCategoriesImpl implements _EmptySearchCategories {
     required TResult Function() loadingAddCategories,
     required TResult Function(String message) failureAddCategories,
     required TResult Function() successAddCategories,
+    required TResult Function() loadingUpdateCategories,
+    required TResult Function(String message) failureUpdateCategories,
+    required TResult Function() successUpdateCategories,
+    required TResult Function() loadingDeleteCategories,
+    required TResult Function(String message) failureDeleteCategories,
+    required TResult Function() successDeleteCategories,
   }) {
     return emptySearchCategories();
   }
@@ -1715,6 +2099,12 @@ class _$EmptySearchCategoriesImpl implements _EmptySearchCategories {
     TResult? Function()? loadingAddCategories,
     TResult? Function(String message)? failureAddCategories,
     TResult? Function()? successAddCategories,
+    TResult? Function()? loadingUpdateCategories,
+    TResult? Function(String message)? failureUpdateCategories,
+    TResult? Function()? successUpdateCategories,
+    TResult? Function()? loadingDeleteCategories,
+    TResult? Function(String message)? failureDeleteCategories,
+    TResult? Function()? successDeleteCategories,
   }) {
     return emptySearchCategories?.call();
   }
@@ -1734,6 +2124,12 @@ class _$EmptySearchCategoriesImpl implements _EmptySearchCategories {
     TResult Function()? loadingAddCategories,
     TResult Function(String message)? failureAddCategories,
     TResult Function()? successAddCategories,
+    TResult Function()? loadingUpdateCategories,
+    TResult Function(String message)? failureUpdateCategories,
+    TResult Function()? successUpdateCategories,
+    TResult Function()? loadingDeleteCategories,
+    TResult Function(String message)? failureDeleteCategories,
+    TResult Function()? successDeleteCategories,
     required TResult orElse(),
   }) {
     if (emptySearchCategories != null) {
@@ -1761,6 +2157,18 @@ class _$EmptySearchCategoriesImpl implements _EmptySearchCategories {
     required TResult Function(_LoadingAddCategories value) loadingAddCategories,
     required TResult Function(_FailureAddCategories value) failureAddCategories,
     required TResult Function(_SuccessAddCategories value) successAddCategories,
+    required TResult Function(_LoadingUpdateCategories value)
+        loadingUpdateCategories,
+    required TResult Function(_FailureUpdateCategories value)
+        failureUpdateCategories,
+    required TResult Function(_SuccessUpdateCategories value)
+        successUpdateCategories,
+    required TResult Function(_LoadingDeleteCategories value)
+        loadingDeleteCategories,
+    required TResult Function(_FailureDeleteCategories value)
+        failureDeleteCategories,
+    required TResult Function(_SuccessDeleteCategories value)
+        successDeleteCategories,
   }) {
     return emptySearchCategories(this);
   }
@@ -1780,6 +2188,12 @@ class _$EmptySearchCategoriesImpl implements _EmptySearchCategories {
     TResult? Function(_LoadingAddCategories value)? loadingAddCategories,
     TResult? Function(_FailureAddCategories value)? failureAddCategories,
     TResult? Function(_SuccessAddCategories value)? successAddCategories,
+    TResult? Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult? Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult? Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult? Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult? Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult? Function(_SuccessDeleteCategories value)? successDeleteCategories,
   }) {
     return emptySearchCategories?.call(this);
   }
@@ -1799,6 +2213,12 @@ class _$EmptySearchCategoriesImpl implements _EmptySearchCategories {
     TResult Function(_LoadingAddCategories value)? loadingAddCategories,
     TResult Function(_FailureAddCategories value)? failureAddCategories,
     TResult Function(_SuccessAddCategories value)? successAddCategories,
+    TResult Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult Function(_SuccessDeleteCategories value)? successDeleteCategories,
     required TResult orElse(),
   }) {
     if (emptySearchCategories != null) {
@@ -1865,6 +2285,12 @@ class _$LoadingAddCategoriesImpl implements _LoadingAddCategories {
     required TResult Function() loadingAddCategories,
     required TResult Function(String message) failureAddCategories,
     required TResult Function() successAddCategories,
+    required TResult Function() loadingUpdateCategories,
+    required TResult Function(String message) failureUpdateCategories,
+    required TResult Function() successUpdateCategories,
+    required TResult Function() loadingDeleteCategories,
+    required TResult Function(String message) failureDeleteCategories,
+    required TResult Function() successDeleteCategories,
   }) {
     return loadingAddCategories();
   }
@@ -1885,6 +2311,12 @@ class _$LoadingAddCategoriesImpl implements _LoadingAddCategories {
     TResult? Function()? loadingAddCategories,
     TResult? Function(String message)? failureAddCategories,
     TResult? Function()? successAddCategories,
+    TResult? Function()? loadingUpdateCategories,
+    TResult? Function(String message)? failureUpdateCategories,
+    TResult? Function()? successUpdateCategories,
+    TResult? Function()? loadingDeleteCategories,
+    TResult? Function(String message)? failureDeleteCategories,
+    TResult? Function()? successDeleteCategories,
   }) {
     return loadingAddCategories?.call();
   }
@@ -1904,6 +2336,12 @@ class _$LoadingAddCategoriesImpl implements _LoadingAddCategories {
     TResult Function()? loadingAddCategories,
     TResult Function(String message)? failureAddCategories,
     TResult Function()? successAddCategories,
+    TResult Function()? loadingUpdateCategories,
+    TResult Function(String message)? failureUpdateCategories,
+    TResult Function()? successUpdateCategories,
+    TResult Function()? loadingDeleteCategories,
+    TResult Function(String message)? failureDeleteCategories,
+    TResult Function()? successDeleteCategories,
     required TResult orElse(),
   }) {
     if (loadingAddCategories != null) {
@@ -1931,6 +2369,18 @@ class _$LoadingAddCategoriesImpl implements _LoadingAddCategories {
     required TResult Function(_LoadingAddCategories value) loadingAddCategories,
     required TResult Function(_FailureAddCategories value) failureAddCategories,
     required TResult Function(_SuccessAddCategories value) successAddCategories,
+    required TResult Function(_LoadingUpdateCategories value)
+        loadingUpdateCategories,
+    required TResult Function(_FailureUpdateCategories value)
+        failureUpdateCategories,
+    required TResult Function(_SuccessUpdateCategories value)
+        successUpdateCategories,
+    required TResult Function(_LoadingDeleteCategories value)
+        loadingDeleteCategories,
+    required TResult Function(_FailureDeleteCategories value)
+        failureDeleteCategories,
+    required TResult Function(_SuccessDeleteCategories value)
+        successDeleteCategories,
   }) {
     return loadingAddCategories(this);
   }
@@ -1950,6 +2400,12 @@ class _$LoadingAddCategoriesImpl implements _LoadingAddCategories {
     TResult? Function(_LoadingAddCategories value)? loadingAddCategories,
     TResult? Function(_FailureAddCategories value)? failureAddCategories,
     TResult? Function(_SuccessAddCategories value)? successAddCategories,
+    TResult? Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult? Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult? Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult? Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult? Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult? Function(_SuccessDeleteCategories value)? successDeleteCategories,
   }) {
     return loadingAddCategories?.call(this);
   }
@@ -1969,6 +2425,12 @@ class _$LoadingAddCategoriesImpl implements _LoadingAddCategories {
     TResult Function(_LoadingAddCategories value)? loadingAddCategories,
     TResult Function(_FailureAddCategories value)? failureAddCategories,
     TResult Function(_SuccessAddCategories value)? successAddCategories,
+    TResult Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult Function(_SuccessDeleteCategories value)? successDeleteCategories,
     required TResult orElse(),
   }) {
     if (loadingAddCategories != null) {
@@ -2062,6 +2524,12 @@ class _$FailureAddCategoriesImpl implements _FailureAddCategories {
     required TResult Function() loadingAddCategories,
     required TResult Function(String message) failureAddCategories,
     required TResult Function() successAddCategories,
+    required TResult Function() loadingUpdateCategories,
+    required TResult Function(String message) failureUpdateCategories,
+    required TResult Function() successUpdateCategories,
+    required TResult Function() loadingDeleteCategories,
+    required TResult Function(String message) failureDeleteCategories,
+    required TResult Function() successDeleteCategories,
   }) {
     return failureAddCategories(message);
   }
@@ -2082,6 +2550,12 @@ class _$FailureAddCategoriesImpl implements _FailureAddCategories {
     TResult? Function()? loadingAddCategories,
     TResult? Function(String message)? failureAddCategories,
     TResult? Function()? successAddCategories,
+    TResult? Function()? loadingUpdateCategories,
+    TResult? Function(String message)? failureUpdateCategories,
+    TResult? Function()? successUpdateCategories,
+    TResult? Function()? loadingDeleteCategories,
+    TResult? Function(String message)? failureDeleteCategories,
+    TResult? Function()? successDeleteCategories,
   }) {
     return failureAddCategories?.call(message);
   }
@@ -2101,6 +2575,12 @@ class _$FailureAddCategoriesImpl implements _FailureAddCategories {
     TResult Function()? loadingAddCategories,
     TResult Function(String message)? failureAddCategories,
     TResult Function()? successAddCategories,
+    TResult Function()? loadingUpdateCategories,
+    TResult Function(String message)? failureUpdateCategories,
+    TResult Function()? successUpdateCategories,
+    TResult Function()? loadingDeleteCategories,
+    TResult Function(String message)? failureDeleteCategories,
+    TResult Function()? successDeleteCategories,
     required TResult orElse(),
   }) {
     if (failureAddCategories != null) {
@@ -2128,6 +2608,18 @@ class _$FailureAddCategoriesImpl implements _FailureAddCategories {
     required TResult Function(_LoadingAddCategories value) loadingAddCategories,
     required TResult Function(_FailureAddCategories value) failureAddCategories,
     required TResult Function(_SuccessAddCategories value) successAddCategories,
+    required TResult Function(_LoadingUpdateCategories value)
+        loadingUpdateCategories,
+    required TResult Function(_FailureUpdateCategories value)
+        failureUpdateCategories,
+    required TResult Function(_SuccessUpdateCategories value)
+        successUpdateCategories,
+    required TResult Function(_LoadingDeleteCategories value)
+        loadingDeleteCategories,
+    required TResult Function(_FailureDeleteCategories value)
+        failureDeleteCategories,
+    required TResult Function(_SuccessDeleteCategories value)
+        successDeleteCategories,
   }) {
     return failureAddCategories(this);
   }
@@ -2147,6 +2639,12 @@ class _$FailureAddCategoriesImpl implements _FailureAddCategories {
     TResult? Function(_LoadingAddCategories value)? loadingAddCategories,
     TResult? Function(_FailureAddCategories value)? failureAddCategories,
     TResult? Function(_SuccessAddCategories value)? successAddCategories,
+    TResult? Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult? Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult? Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult? Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult? Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult? Function(_SuccessDeleteCategories value)? successDeleteCategories,
   }) {
     return failureAddCategories?.call(this);
   }
@@ -2166,6 +2664,12 @@ class _$FailureAddCategoriesImpl implements _FailureAddCategories {
     TResult Function(_LoadingAddCategories value)? loadingAddCategories,
     TResult Function(_FailureAddCategories value)? failureAddCategories,
     TResult Function(_SuccessAddCategories value)? successAddCategories,
+    TResult Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult Function(_SuccessDeleteCategories value)? successDeleteCategories,
     required TResult orElse(),
   }) {
     if (failureAddCategories != null) {
@@ -2238,6 +2742,12 @@ class _$SuccessAddCategoriesImpl implements _SuccessAddCategories {
     required TResult Function() loadingAddCategories,
     required TResult Function(String message) failureAddCategories,
     required TResult Function() successAddCategories,
+    required TResult Function() loadingUpdateCategories,
+    required TResult Function(String message) failureUpdateCategories,
+    required TResult Function() successUpdateCategories,
+    required TResult Function() loadingDeleteCategories,
+    required TResult Function(String message) failureDeleteCategories,
+    required TResult Function() successDeleteCategories,
   }) {
     return successAddCategories();
   }
@@ -2258,6 +2768,12 @@ class _$SuccessAddCategoriesImpl implements _SuccessAddCategories {
     TResult? Function()? loadingAddCategories,
     TResult? Function(String message)? failureAddCategories,
     TResult? Function()? successAddCategories,
+    TResult? Function()? loadingUpdateCategories,
+    TResult? Function(String message)? failureUpdateCategories,
+    TResult? Function()? successUpdateCategories,
+    TResult? Function()? loadingDeleteCategories,
+    TResult? Function(String message)? failureDeleteCategories,
+    TResult? Function()? successDeleteCategories,
   }) {
     return successAddCategories?.call();
   }
@@ -2277,6 +2793,12 @@ class _$SuccessAddCategoriesImpl implements _SuccessAddCategories {
     TResult Function()? loadingAddCategories,
     TResult Function(String message)? failureAddCategories,
     TResult Function()? successAddCategories,
+    TResult Function()? loadingUpdateCategories,
+    TResult Function(String message)? failureUpdateCategories,
+    TResult Function()? successUpdateCategories,
+    TResult Function()? loadingDeleteCategories,
+    TResult Function(String message)? failureDeleteCategories,
+    TResult Function()? successDeleteCategories,
     required TResult orElse(),
   }) {
     if (successAddCategories != null) {
@@ -2304,6 +2826,18 @@ class _$SuccessAddCategoriesImpl implements _SuccessAddCategories {
     required TResult Function(_LoadingAddCategories value) loadingAddCategories,
     required TResult Function(_FailureAddCategories value) failureAddCategories,
     required TResult Function(_SuccessAddCategories value) successAddCategories,
+    required TResult Function(_LoadingUpdateCategories value)
+        loadingUpdateCategories,
+    required TResult Function(_FailureUpdateCategories value)
+        failureUpdateCategories,
+    required TResult Function(_SuccessUpdateCategories value)
+        successUpdateCategories,
+    required TResult Function(_LoadingDeleteCategories value)
+        loadingDeleteCategories,
+    required TResult Function(_FailureDeleteCategories value)
+        failureDeleteCategories,
+    required TResult Function(_SuccessDeleteCategories value)
+        successDeleteCategories,
   }) {
     return successAddCategories(this);
   }
@@ -2323,6 +2857,12 @@ class _$SuccessAddCategoriesImpl implements _SuccessAddCategories {
     TResult? Function(_LoadingAddCategories value)? loadingAddCategories,
     TResult? Function(_FailureAddCategories value)? failureAddCategories,
     TResult? Function(_SuccessAddCategories value)? successAddCategories,
+    TResult? Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult? Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult? Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult? Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult? Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult? Function(_SuccessDeleteCategories value)? successDeleteCategories,
   }) {
     return successAddCategories?.call(this);
   }
@@ -2342,6 +2882,12 @@ class _$SuccessAddCategoriesImpl implements _SuccessAddCategories {
     TResult Function(_LoadingAddCategories value)? loadingAddCategories,
     TResult Function(_FailureAddCategories value)? failureAddCategories,
     TResult Function(_SuccessAddCategories value)? successAddCategories,
+    TResult Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult Function(_SuccessDeleteCategories value)? successDeleteCategories,
     required TResult orElse(),
   }) {
     if (successAddCategories != null) {
@@ -2353,4 +2899,1352 @@ class _$SuccessAddCategoriesImpl implements _SuccessAddCategories {
 
 abstract class _SuccessAddCategories implements CategoriesState {
   const factory _SuccessAddCategories() = _$SuccessAddCategoriesImpl;
+}
+
+/// @nodoc
+abstract class _$$LoadingUpdateCategoriesImplCopyWith<$Res> {
+  factory _$$LoadingUpdateCategoriesImplCopyWith(
+          _$LoadingUpdateCategoriesImpl value,
+          $Res Function(_$LoadingUpdateCategoriesImpl) then) =
+      __$$LoadingUpdateCategoriesImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadingUpdateCategoriesImplCopyWithImpl<$Res>
+    extends _$CategoriesStateCopyWithImpl<$Res, _$LoadingUpdateCategoriesImpl>
+    implements _$$LoadingUpdateCategoriesImplCopyWith<$Res> {
+  __$$LoadingUpdateCategoriesImplCopyWithImpl(
+      _$LoadingUpdateCategoriesImpl _value,
+      $Res Function(_$LoadingUpdateCategoriesImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LoadingUpdateCategoriesImpl implements _LoadingUpdateCategories {
+  const _$LoadingUpdateCategoriesImpl();
+
+  @override
+  String toString() {
+    return 'CategoriesState.loadingUpdateCategories()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadingUpdateCategoriesImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingCategories,
+    required TResult Function(String message) failureCategories,
+    required TResult Function(CategoriesResponseBody categories)
+        successCategories,
+    required TResult Function() emptyCategories,
+    required TResult Function() loadingSearchCategories,
+    required TResult Function(String message) failureSearchCategories,
+    required TResult Function(List<CategoriesModel> categories)
+        successSearchCategories,
+    required TResult Function() emptySearchCategories,
+    required TResult Function() loadingAddCategories,
+    required TResult Function(String message) failureAddCategories,
+    required TResult Function() successAddCategories,
+    required TResult Function() loadingUpdateCategories,
+    required TResult Function(String message) failureUpdateCategories,
+    required TResult Function() successUpdateCategories,
+    required TResult Function() loadingDeleteCategories,
+    required TResult Function(String message) failureDeleteCategories,
+    required TResult Function() successDeleteCategories,
+  }) {
+    return loadingUpdateCategories();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingCategories,
+    TResult? Function(String message)? failureCategories,
+    TResult? Function(CategoriesResponseBody categories)? successCategories,
+    TResult? Function()? emptyCategories,
+    TResult? Function()? loadingSearchCategories,
+    TResult? Function(String message)? failureSearchCategories,
+    TResult? Function(List<CategoriesModel> categories)?
+        successSearchCategories,
+    TResult? Function()? emptySearchCategories,
+    TResult? Function()? loadingAddCategories,
+    TResult? Function(String message)? failureAddCategories,
+    TResult? Function()? successAddCategories,
+    TResult? Function()? loadingUpdateCategories,
+    TResult? Function(String message)? failureUpdateCategories,
+    TResult? Function()? successUpdateCategories,
+    TResult? Function()? loadingDeleteCategories,
+    TResult? Function(String message)? failureDeleteCategories,
+    TResult? Function()? successDeleteCategories,
+  }) {
+    return loadingUpdateCategories?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingCategories,
+    TResult Function(String message)? failureCategories,
+    TResult Function(CategoriesResponseBody categories)? successCategories,
+    TResult Function()? emptyCategories,
+    TResult Function()? loadingSearchCategories,
+    TResult Function(String message)? failureSearchCategories,
+    TResult Function(List<CategoriesModel> categories)? successSearchCategories,
+    TResult Function()? emptySearchCategories,
+    TResult Function()? loadingAddCategories,
+    TResult Function(String message)? failureAddCategories,
+    TResult Function()? successAddCategories,
+    TResult Function()? loadingUpdateCategories,
+    TResult Function(String message)? failureUpdateCategories,
+    TResult Function()? successUpdateCategories,
+    TResult Function()? loadingDeleteCategories,
+    TResult Function(String message)? failureDeleteCategories,
+    TResult Function()? successDeleteCategories,
+    required TResult orElse(),
+  }) {
+    if (loadingUpdateCategories != null) {
+      return loadingUpdateCategories();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadingCategories value) loadingCategories,
+    required TResult Function(_FailureCategories value) failureCategories,
+    required TResult Function(_SuccessCategories value) successCategories,
+    required TResult Function(_EmptyCategories value) emptyCategories,
+    required TResult Function(_LoadingSearchCategories value)
+        loadingSearchCategories,
+    required TResult Function(_FailureSearchCategories value)
+        failureSearchCategories,
+    required TResult Function(_SuccessSearchCategories value)
+        successSearchCategories,
+    required TResult Function(_EmptySearchCategories value)
+        emptySearchCategories,
+    required TResult Function(_LoadingAddCategories value) loadingAddCategories,
+    required TResult Function(_FailureAddCategories value) failureAddCategories,
+    required TResult Function(_SuccessAddCategories value) successAddCategories,
+    required TResult Function(_LoadingUpdateCategories value)
+        loadingUpdateCategories,
+    required TResult Function(_FailureUpdateCategories value)
+        failureUpdateCategories,
+    required TResult Function(_SuccessUpdateCategories value)
+        successUpdateCategories,
+    required TResult Function(_LoadingDeleteCategories value)
+        loadingDeleteCategories,
+    required TResult Function(_FailureDeleteCategories value)
+        failureDeleteCategories,
+    required TResult Function(_SuccessDeleteCategories value)
+        successDeleteCategories,
+  }) {
+    return loadingUpdateCategories(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingCategories value)? loadingCategories,
+    TResult? Function(_FailureCategories value)? failureCategories,
+    TResult? Function(_SuccessCategories value)? successCategories,
+    TResult? Function(_EmptyCategories value)? emptyCategories,
+    TResult? Function(_LoadingSearchCategories value)? loadingSearchCategories,
+    TResult? Function(_FailureSearchCategories value)? failureSearchCategories,
+    TResult? Function(_SuccessSearchCategories value)? successSearchCategories,
+    TResult? Function(_EmptySearchCategories value)? emptySearchCategories,
+    TResult? Function(_LoadingAddCategories value)? loadingAddCategories,
+    TResult? Function(_FailureAddCategories value)? failureAddCategories,
+    TResult? Function(_SuccessAddCategories value)? successAddCategories,
+    TResult? Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult? Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult? Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult? Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult? Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult? Function(_SuccessDeleteCategories value)? successDeleteCategories,
+  }) {
+    return loadingUpdateCategories?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadingCategories value)? loadingCategories,
+    TResult Function(_FailureCategories value)? failureCategories,
+    TResult Function(_SuccessCategories value)? successCategories,
+    TResult Function(_EmptyCategories value)? emptyCategories,
+    TResult Function(_LoadingSearchCategories value)? loadingSearchCategories,
+    TResult Function(_FailureSearchCategories value)? failureSearchCategories,
+    TResult Function(_SuccessSearchCategories value)? successSearchCategories,
+    TResult Function(_EmptySearchCategories value)? emptySearchCategories,
+    TResult Function(_LoadingAddCategories value)? loadingAddCategories,
+    TResult Function(_FailureAddCategories value)? failureAddCategories,
+    TResult Function(_SuccessAddCategories value)? successAddCategories,
+    TResult Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult Function(_SuccessDeleteCategories value)? successDeleteCategories,
+    required TResult orElse(),
+  }) {
+    if (loadingUpdateCategories != null) {
+      return loadingUpdateCategories(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadingUpdateCategories implements CategoriesState {
+  const factory _LoadingUpdateCategories() = _$LoadingUpdateCategoriesImpl;
+}
+
+/// @nodoc
+abstract class _$$FailureUpdateCategoriesImplCopyWith<$Res> {
+  factory _$$FailureUpdateCategoriesImplCopyWith(
+          _$FailureUpdateCategoriesImpl value,
+          $Res Function(_$FailureUpdateCategoriesImpl) then) =
+      __$$FailureUpdateCategoriesImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$FailureUpdateCategoriesImplCopyWithImpl<$Res>
+    extends _$CategoriesStateCopyWithImpl<$Res, _$FailureUpdateCategoriesImpl>
+    implements _$$FailureUpdateCategoriesImplCopyWith<$Res> {
+  __$$FailureUpdateCategoriesImplCopyWithImpl(
+      _$FailureUpdateCategoriesImpl _value,
+      $Res Function(_$FailureUpdateCategoriesImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$FailureUpdateCategoriesImpl(
+      null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FailureUpdateCategoriesImpl implements _FailureUpdateCategories {
+  const _$FailureUpdateCategoriesImpl(this.message);
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'CategoriesState.failureUpdateCategories(message: $message)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FailureUpdateCategoriesImpl &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FailureUpdateCategoriesImplCopyWith<_$FailureUpdateCategoriesImpl>
+      get copyWith => __$$FailureUpdateCategoriesImplCopyWithImpl<
+          _$FailureUpdateCategoriesImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingCategories,
+    required TResult Function(String message) failureCategories,
+    required TResult Function(CategoriesResponseBody categories)
+        successCategories,
+    required TResult Function() emptyCategories,
+    required TResult Function() loadingSearchCategories,
+    required TResult Function(String message) failureSearchCategories,
+    required TResult Function(List<CategoriesModel> categories)
+        successSearchCategories,
+    required TResult Function() emptySearchCategories,
+    required TResult Function() loadingAddCategories,
+    required TResult Function(String message) failureAddCategories,
+    required TResult Function() successAddCategories,
+    required TResult Function() loadingUpdateCategories,
+    required TResult Function(String message) failureUpdateCategories,
+    required TResult Function() successUpdateCategories,
+    required TResult Function() loadingDeleteCategories,
+    required TResult Function(String message) failureDeleteCategories,
+    required TResult Function() successDeleteCategories,
+  }) {
+    return failureUpdateCategories(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingCategories,
+    TResult? Function(String message)? failureCategories,
+    TResult? Function(CategoriesResponseBody categories)? successCategories,
+    TResult? Function()? emptyCategories,
+    TResult? Function()? loadingSearchCategories,
+    TResult? Function(String message)? failureSearchCategories,
+    TResult? Function(List<CategoriesModel> categories)?
+        successSearchCategories,
+    TResult? Function()? emptySearchCategories,
+    TResult? Function()? loadingAddCategories,
+    TResult? Function(String message)? failureAddCategories,
+    TResult? Function()? successAddCategories,
+    TResult? Function()? loadingUpdateCategories,
+    TResult? Function(String message)? failureUpdateCategories,
+    TResult? Function()? successUpdateCategories,
+    TResult? Function()? loadingDeleteCategories,
+    TResult? Function(String message)? failureDeleteCategories,
+    TResult? Function()? successDeleteCategories,
+  }) {
+    return failureUpdateCategories?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingCategories,
+    TResult Function(String message)? failureCategories,
+    TResult Function(CategoriesResponseBody categories)? successCategories,
+    TResult Function()? emptyCategories,
+    TResult Function()? loadingSearchCategories,
+    TResult Function(String message)? failureSearchCategories,
+    TResult Function(List<CategoriesModel> categories)? successSearchCategories,
+    TResult Function()? emptySearchCategories,
+    TResult Function()? loadingAddCategories,
+    TResult Function(String message)? failureAddCategories,
+    TResult Function()? successAddCategories,
+    TResult Function()? loadingUpdateCategories,
+    TResult Function(String message)? failureUpdateCategories,
+    TResult Function()? successUpdateCategories,
+    TResult Function()? loadingDeleteCategories,
+    TResult Function(String message)? failureDeleteCategories,
+    TResult Function()? successDeleteCategories,
+    required TResult orElse(),
+  }) {
+    if (failureUpdateCategories != null) {
+      return failureUpdateCategories(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadingCategories value) loadingCategories,
+    required TResult Function(_FailureCategories value) failureCategories,
+    required TResult Function(_SuccessCategories value) successCategories,
+    required TResult Function(_EmptyCategories value) emptyCategories,
+    required TResult Function(_LoadingSearchCategories value)
+        loadingSearchCategories,
+    required TResult Function(_FailureSearchCategories value)
+        failureSearchCategories,
+    required TResult Function(_SuccessSearchCategories value)
+        successSearchCategories,
+    required TResult Function(_EmptySearchCategories value)
+        emptySearchCategories,
+    required TResult Function(_LoadingAddCategories value) loadingAddCategories,
+    required TResult Function(_FailureAddCategories value) failureAddCategories,
+    required TResult Function(_SuccessAddCategories value) successAddCategories,
+    required TResult Function(_LoadingUpdateCategories value)
+        loadingUpdateCategories,
+    required TResult Function(_FailureUpdateCategories value)
+        failureUpdateCategories,
+    required TResult Function(_SuccessUpdateCategories value)
+        successUpdateCategories,
+    required TResult Function(_LoadingDeleteCategories value)
+        loadingDeleteCategories,
+    required TResult Function(_FailureDeleteCategories value)
+        failureDeleteCategories,
+    required TResult Function(_SuccessDeleteCategories value)
+        successDeleteCategories,
+  }) {
+    return failureUpdateCategories(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingCategories value)? loadingCategories,
+    TResult? Function(_FailureCategories value)? failureCategories,
+    TResult? Function(_SuccessCategories value)? successCategories,
+    TResult? Function(_EmptyCategories value)? emptyCategories,
+    TResult? Function(_LoadingSearchCategories value)? loadingSearchCategories,
+    TResult? Function(_FailureSearchCategories value)? failureSearchCategories,
+    TResult? Function(_SuccessSearchCategories value)? successSearchCategories,
+    TResult? Function(_EmptySearchCategories value)? emptySearchCategories,
+    TResult? Function(_LoadingAddCategories value)? loadingAddCategories,
+    TResult? Function(_FailureAddCategories value)? failureAddCategories,
+    TResult? Function(_SuccessAddCategories value)? successAddCategories,
+    TResult? Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult? Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult? Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult? Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult? Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult? Function(_SuccessDeleteCategories value)? successDeleteCategories,
+  }) {
+    return failureUpdateCategories?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadingCategories value)? loadingCategories,
+    TResult Function(_FailureCategories value)? failureCategories,
+    TResult Function(_SuccessCategories value)? successCategories,
+    TResult Function(_EmptyCategories value)? emptyCategories,
+    TResult Function(_LoadingSearchCategories value)? loadingSearchCategories,
+    TResult Function(_FailureSearchCategories value)? failureSearchCategories,
+    TResult Function(_SuccessSearchCategories value)? successSearchCategories,
+    TResult Function(_EmptySearchCategories value)? emptySearchCategories,
+    TResult Function(_LoadingAddCategories value)? loadingAddCategories,
+    TResult Function(_FailureAddCategories value)? failureAddCategories,
+    TResult Function(_SuccessAddCategories value)? successAddCategories,
+    TResult Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult Function(_SuccessDeleteCategories value)? successDeleteCategories,
+    required TResult orElse(),
+  }) {
+    if (failureUpdateCategories != null) {
+      return failureUpdateCategories(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FailureUpdateCategories implements CategoriesState {
+  const factory _FailureUpdateCategories(final String message) =
+      _$FailureUpdateCategoriesImpl;
+
+  String get message;
+  @JsonKey(ignore: true)
+  _$$FailureUpdateCategoriesImplCopyWith<_$FailureUpdateCategoriesImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SuccessUpdateCategoriesImplCopyWith<$Res> {
+  factory _$$SuccessUpdateCategoriesImplCopyWith(
+          _$SuccessUpdateCategoriesImpl value,
+          $Res Function(_$SuccessUpdateCategoriesImpl) then) =
+      __$$SuccessUpdateCategoriesImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SuccessUpdateCategoriesImplCopyWithImpl<$Res>
+    extends _$CategoriesStateCopyWithImpl<$Res, _$SuccessUpdateCategoriesImpl>
+    implements _$$SuccessUpdateCategoriesImplCopyWith<$Res> {
+  __$$SuccessUpdateCategoriesImplCopyWithImpl(
+      _$SuccessUpdateCategoriesImpl _value,
+      $Res Function(_$SuccessUpdateCategoriesImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SuccessUpdateCategoriesImpl implements _SuccessUpdateCategories {
+  const _$SuccessUpdateCategoriesImpl();
+
+  @override
+  String toString() {
+    return 'CategoriesState.successUpdateCategories()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessUpdateCategoriesImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingCategories,
+    required TResult Function(String message) failureCategories,
+    required TResult Function(CategoriesResponseBody categories)
+        successCategories,
+    required TResult Function() emptyCategories,
+    required TResult Function() loadingSearchCategories,
+    required TResult Function(String message) failureSearchCategories,
+    required TResult Function(List<CategoriesModel> categories)
+        successSearchCategories,
+    required TResult Function() emptySearchCategories,
+    required TResult Function() loadingAddCategories,
+    required TResult Function(String message) failureAddCategories,
+    required TResult Function() successAddCategories,
+    required TResult Function() loadingUpdateCategories,
+    required TResult Function(String message) failureUpdateCategories,
+    required TResult Function() successUpdateCategories,
+    required TResult Function() loadingDeleteCategories,
+    required TResult Function(String message) failureDeleteCategories,
+    required TResult Function() successDeleteCategories,
+  }) {
+    return successUpdateCategories();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingCategories,
+    TResult? Function(String message)? failureCategories,
+    TResult? Function(CategoriesResponseBody categories)? successCategories,
+    TResult? Function()? emptyCategories,
+    TResult? Function()? loadingSearchCategories,
+    TResult? Function(String message)? failureSearchCategories,
+    TResult? Function(List<CategoriesModel> categories)?
+        successSearchCategories,
+    TResult? Function()? emptySearchCategories,
+    TResult? Function()? loadingAddCategories,
+    TResult? Function(String message)? failureAddCategories,
+    TResult? Function()? successAddCategories,
+    TResult? Function()? loadingUpdateCategories,
+    TResult? Function(String message)? failureUpdateCategories,
+    TResult? Function()? successUpdateCategories,
+    TResult? Function()? loadingDeleteCategories,
+    TResult? Function(String message)? failureDeleteCategories,
+    TResult? Function()? successDeleteCategories,
+  }) {
+    return successUpdateCategories?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingCategories,
+    TResult Function(String message)? failureCategories,
+    TResult Function(CategoriesResponseBody categories)? successCategories,
+    TResult Function()? emptyCategories,
+    TResult Function()? loadingSearchCategories,
+    TResult Function(String message)? failureSearchCategories,
+    TResult Function(List<CategoriesModel> categories)? successSearchCategories,
+    TResult Function()? emptySearchCategories,
+    TResult Function()? loadingAddCategories,
+    TResult Function(String message)? failureAddCategories,
+    TResult Function()? successAddCategories,
+    TResult Function()? loadingUpdateCategories,
+    TResult Function(String message)? failureUpdateCategories,
+    TResult Function()? successUpdateCategories,
+    TResult Function()? loadingDeleteCategories,
+    TResult Function(String message)? failureDeleteCategories,
+    TResult Function()? successDeleteCategories,
+    required TResult orElse(),
+  }) {
+    if (successUpdateCategories != null) {
+      return successUpdateCategories();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadingCategories value) loadingCategories,
+    required TResult Function(_FailureCategories value) failureCategories,
+    required TResult Function(_SuccessCategories value) successCategories,
+    required TResult Function(_EmptyCategories value) emptyCategories,
+    required TResult Function(_LoadingSearchCategories value)
+        loadingSearchCategories,
+    required TResult Function(_FailureSearchCategories value)
+        failureSearchCategories,
+    required TResult Function(_SuccessSearchCategories value)
+        successSearchCategories,
+    required TResult Function(_EmptySearchCategories value)
+        emptySearchCategories,
+    required TResult Function(_LoadingAddCategories value) loadingAddCategories,
+    required TResult Function(_FailureAddCategories value) failureAddCategories,
+    required TResult Function(_SuccessAddCategories value) successAddCategories,
+    required TResult Function(_LoadingUpdateCategories value)
+        loadingUpdateCategories,
+    required TResult Function(_FailureUpdateCategories value)
+        failureUpdateCategories,
+    required TResult Function(_SuccessUpdateCategories value)
+        successUpdateCategories,
+    required TResult Function(_LoadingDeleteCategories value)
+        loadingDeleteCategories,
+    required TResult Function(_FailureDeleteCategories value)
+        failureDeleteCategories,
+    required TResult Function(_SuccessDeleteCategories value)
+        successDeleteCategories,
+  }) {
+    return successUpdateCategories(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingCategories value)? loadingCategories,
+    TResult? Function(_FailureCategories value)? failureCategories,
+    TResult? Function(_SuccessCategories value)? successCategories,
+    TResult? Function(_EmptyCategories value)? emptyCategories,
+    TResult? Function(_LoadingSearchCategories value)? loadingSearchCategories,
+    TResult? Function(_FailureSearchCategories value)? failureSearchCategories,
+    TResult? Function(_SuccessSearchCategories value)? successSearchCategories,
+    TResult? Function(_EmptySearchCategories value)? emptySearchCategories,
+    TResult? Function(_LoadingAddCategories value)? loadingAddCategories,
+    TResult? Function(_FailureAddCategories value)? failureAddCategories,
+    TResult? Function(_SuccessAddCategories value)? successAddCategories,
+    TResult? Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult? Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult? Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult? Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult? Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult? Function(_SuccessDeleteCategories value)? successDeleteCategories,
+  }) {
+    return successUpdateCategories?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadingCategories value)? loadingCategories,
+    TResult Function(_FailureCategories value)? failureCategories,
+    TResult Function(_SuccessCategories value)? successCategories,
+    TResult Function(_EmptyCategories value)? emptyCategories,
+    TResult Function(_LoadingSearchCategories value)? loadingSearchCategories,
+    TResult Function(_FailureSearchCategories value)? failureSearchCategories,
+    TResult Function(_SuccessSearchCategories value)? successSearchCategories,
+    TResult Function(_EmptySearchCategories value)? emptySearchCategories,
+    TResult Function(_LoadingAddCategories value)? loadingAddCategories,
+    TResult Function(_FailureAddCategories value)? failureAddCategories,
+    TResult Function(_SuccessAddCategories value)? successAddCategories,
+    TResult Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult Function(_SuccessDeleteCategories value)? successDeleteCategories,
+    required TResult orElse(),
+  }) {
+    if (successUpdateCategories != null) {
+      return successUpdateCategories(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SuccessUpdateCategories implements CategoriesState {
+  const factory _SuccessUpdateCategories() = _$SuccessUpdateCategoriesImpl;
+}
+
+/// @nodoc
+abstract class _$$LoadingDeleteCategoriesImplCopyWith<$Res> {
+  factory _$$LoadingDeleteCategoriesImplCopyWith(
+          _$LoadingDeleteCategoriesImpl value,
+          $Res Function(_$LoadingDeleteCategoriesImpl) then) =
+      __$$LoadingDeleteCategoriesImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadingDeleteCategoriesImplCopyWithImpl<$Res>
+    extends _$CategoriesStateCopyWithImpl<$Res, _$LoadingDeleteCategoriesImpl>
+    implements _$$LoadingDeleteCategoriesImplCopyWith<$Res> {
+  __$$LoadingDeleteCategoriesImplCopyWithImpl(
+      _$LoadingDeleteCategoriesImpl _value,
+      $Res Function(_$LoadingDeleteCategoriesImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LoadingDeleteCategoriesImpl implements _LoadingDeleteCategories {
+  const _$LoadingDeleteCategoriesImpl();
+
+  @override
+  String toString() {
+    return 'CategoriesState.loadingDeleteCategories()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadingDeleteCategoriesImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingCategories,
+    required TResult Function(String message) failureCategories,
+    required TResult Function(CategoriesResponseBody categories)
+        successCategories,
+    required TResult Function() emptyCategories,
+    required TResult Function() loadingSearchCategories,
+    required TResult Function(String message) failureSearchCategories,
+    required TResult Function(List<CategoriesModel> categories)
+        successSearchCategories,
+    required TResult Function() emptySearchCategories,
+    required TResult Function() loadingAddCategories,
+    required TResult Function(String message) failureAddCategories,
+    required TResult Function() successAddCategories,
+    required TResult Function() loadingUpdateCategories,
+    required TResult Function(String message) failureUpdateCategories,
+    required TResult Function() successUpdateCategories,
+    required TResult Function() loadingDeleteCategories,
+    required TResult Function(String message) failureDeleteCategories,
+    required TResult Function() successDeleteCategories,
+  }) {
+    return loadingDeleteCategories();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingCategories,
+    TResult? Function(String message)? failureCategories,
+    TResult? Function(CategoriesResponseBody categories)? successCategories,
+    TResult? Function()? emptyCategories,
+    TResult? Function()? loadingSearchCategories,
+    TResult? Function(String message)? failureSearchCategories,
+    TResult? Function(List<CategoriesModel> categories)?
+        successSearchCategories,
+    TResult? Function()? emptySearchCategories,
+    TResult? Function()? loadingAddCategories,
+    TResult? Function(String message)? failureAddCategories,
+    TResult? Function()? successAddCategories,
+    TResult? Function()? loadingUpdateCategories,
+    TResult? Function(String message)? failureUpdateCategories,
+    TResult? Function()? successUpdateCategories,
+    TResult? Function()? loadingDeleteCategories,
+    TResult? Function(String message)? failureDeleteCategories,
+    TResult? Function()? successDeleteCategories,
+  }) {
+    return loadingDeleteCategories?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingCategories,
+    TResult Function(String message)? failureCategories,
+    TResult Function(CategoriesResponseBody categories)? successCategories,
+    TResult Function()? emptyCategories,
+    TResult Function()? loadingSearchCategories,
+    TResult Function(String message)? failureSearchCategories,
+    TResult Function(List<CategoriesModel> categories)? successSearchCategories,
+    TResult Function()? emptySearchCategories,
+    TResult Function()? loadingAddCategories,
+    TResult Function(String message)? failureAddCategories,
+    TResult Function()? successAddCategories,
+    TResult Function()? loadingUpdateCategories,
+    TResult Function(String message)? failureUpdateCategories,
+    TResult Function()? successUpdateCategories,
+    TResult Function()? loadingDeleteCategories,
+    TResult Function(String message)? failureDeleteCategories,
+    TResult Function()? successDeleteCategories,
+    required TResult orElse(),
+  }) {
+    if (loadingDeleteCategories != null) {
+      return loadingDeleteCategories();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadingCategories value) loadingCategories,
+    required TResult Function(_FailureCategories value) failureCategories,
+    required TResult Function(_SuccessCategories value) successCategories,
+    required TResult Function(_EmptyCategories value) emptyCategories,
+    required TResult Function(_LoadingSearchCategories value)
+        loadingSearchCategories,
+    required TResult Function(_FailureSearchCategories value)
+        failureSearchCategories,
+    required TResult Function(_SuccessSearchCategories value)
+        successSearchCategories,
+    required TResult Function(_EmptySearchCategories value)
+        emptySearchCategories,
+    required TResult Function(_LoadingAddCategories value) loadingAddCategories,
+    required TResult Function(_FailureAddCategories value) failureAddCategories,
+    required TResult Function(_SuccessAddCategories value) successAddCategories,
+    required TResult Function(_LoadingUpdateCategories value)
+        loadingUpdateCategories,
+    required TResult Function(_FailureUpdateCategories value)
+        failureUpdateCategories,
+    required TResult Function(_SuccessUpdateCategories value)
+        successUpdateCategories,
+    required TResult Function(_LoadingDeleteCategories value)
+        loadingDeleteCategories,
+    required TResult Function(_FailureDeleteCategories value)
+        failureDeleteCategories,
+    required TResult Function(_SuccessDeleteCategories value)
+        successDeleteCategories,
+  }) {
+    return loadingDeleteCategories(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingCategories value)? loadingCategories,
+    TResult? Function(_FailureCategories value)? failureCategories,
+    TResult? Function(_SuccessCategories value)? successCategories,
+    TResult? Function(_EmptyCategories value)? emptyCategories,
+    TResult? Function(_LoadingSearchCategories value)? loadingSearchCategories,
+    TResult? Function(_FailureSearchCategories value)? failureSearchCategories,
+    TResult? Function(_SuccessSearchCategories value)? successSearchCategories,
+    TResult? Function(_EmptySearchCategories value)? emptySearchCategories,
+    TResult? Function(_LoadingAddCategories value)? loadingAddCategories,
+    TResult? Function(_FailureAddCategories value)? failureAddCategories,
+    TResult? Function(_SuccessAddCategories value)? successAddCategories,
+    TResult? Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult? Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult? Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult? Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult? Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult? Function(_SuccessDeleteCategories value)? successDeleteCategories,
+  }) {
+    return loadingDeleteCategories?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadingCategories value)? loadingCategories,
+    TResult Function(_FailureCategories value)? failureCategories,
+    TResult Function(_SuccessCategories value)? successCategories,
+    TResult Function(_EmptyCategories value)? emptyCategories,
+    TResult Function(_LoadingSearchCategories value)? loadingSearchCategories,
+    TResult Function(_FailureSearchCategories value)? failureSearchCategories,
+    TResult Function(_SuccessSearchCategories value)? successSearchCategories,
+    TResult Function(_EmptySearchCategories value)? emptySearchCategories,
+    TResult Function(_LoadingAddCategories value)? loadingAddCategories,
+    TResult Function(_FailureAddCategories value)? failureAddCategories,
+    TResult Function(_SuccessAddCategories value)? successAddCategories,
+    TResult Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult Function(_SuccessDeleteCategories value)? successDeleteCategories,
+    required TResult orElse(),
+  }) {
+    if (loadingDeleteCategories != null) {
+      return loadingDeleteCategories(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadingDeleteCategories implements CategoriesState {
+  const factory _LoadingDeleteCategories() = _$LoadingDeleteCategoriesImpl;
+}
+
+/// @nodoc
+abstract class _$$FailureDeleteCategoriesImplCopyWith<$Res> {
+  factory _$$FailureDeleteCategoriesImplCopyWith(
+          _$FailureDeleteCategoriesImpl value,
+          $Res Function(_$FailureDeleteCategoriesImpl) then) =
+      __$$FailureDeleteCategoriesImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$FailureDeleteCategoriesImplCopyWithImpl<$Res>
+    extends _$CategoriesStateCopyWithImpl<$Res, _$FailureDeleteCategoriesImpl>
+    implements _$$FailureDeleteCategoriesImplCopyWith<$Res> {
+  __$$FailureDeleteCategoriesImplCopyWithImpl(
+      _$FailureDeleteCategoriesImpl _value,
+      $Res Function(_$FailureDeleteCategoriesImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$FailureDeleteCategoriesImpl(
+      null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FailureDeleteCategoriesImpl implements _FailureDeleteCategories {
+  const _$FailureDeleteCategoriesImpl(this.message);
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'CategoriesState.failureDeleteCategories(message: $message)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FailureDeleteCategoriesImpl &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FailureDeleteCategoriesImplCopyWith<_$FailureDeleteCategoriesImpl>
+      get copyWith => __$$FailureDeleteCategoriesImplCopyWithImpl<
+          _$FailureDeleteCategoriesImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingCategories,
+    required TResult Function(String message) failureCategories,
+    required TResult Function(CategoriesResponseBody categories)
+        successCategories,
+    required TResult Function() emptyCategories,
+    required TResult Function() loadingSearchCategories,
+    required TResult Function(String message) failureSearchCategories,
+    required TResult Function(List<CategoriesModel> categories)
+        successSearchCategories,
+    required TResult Function() emptySearchCategories,
+    required TResult Function() loadingAddCategories,
+    required TResult Function(String message) failureAddCategories,
+    required TResult Function() successAddCategories,
+    required TResult Function() loadingUpdateCategories,
+    required TResult Function(String message) failureUpdateCategories,
+    required TResult Function() successUpdateCategories,
+    required TResult Function() loadingDeleteCategories,
+    required TResult Function(String message) failureDeleteCategories,
+    required TResult Function() successDeleteCategories,
+  }) {
+    return failureDeleteCategories(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingCategories,
+    TResult? Function(String message)? failureCategories,
+    TResult? Function(CategoriesResponseBody categories)? successCategories,
+    TResult? Function()? emptyCategories,
+    TResult? Function()? loadingSearchCategories,
+    TResult? Function(String message)? failureSearchCategories,
+    TResult? Function(List<CategoriesModel> categories)?
+        successSearchCategories,
+    TResult? Function()? emptySearchCategories,
+    TResult? Function()? loadingAddCategories,
+    TResult? Function(String message)? failureAddCategories,
+    TResult? Function()? successAddCategories,
+    TResult? Function()? loadingUpdateCategories,
+    TResult? Function(String message)? failureUpdateCategories,
+    TResult? Function()? successUpdateCategories,
+    TResult? Function()? loadingDeleteCategories,
+    TResult? Function(String message)? failureDeleteCategories,
+    TResult? Function()? successDeleteCategories,
+  }) {
+    return failureDeleteCategories?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingCategories,
+    TResult Function(String message)? failureCategories,
+    TResult Function(CategoriesResponseBody categories)? successCategories,
+    TResult Function()? emptyCategories,
+    TResult Function()? loadingSearchCategories,
+    TResult Function(String message)? failureSearchCategories,
+    TResult Function(List<CategoriesModel> categories)? successSearchCategories,
+    TResult Function()? emptySearchCategories,
+    TResult Function()? loadingAddCategories,
+    TResult Function(String message)? failureAddCategories,
+    TResult Function()? successAddCategories,
+    TResult Function()? loadingUpdateCategories,
+    TResult Function(String message)? failureUpdateCategories,
+    TResult Function()? successUpdateCategories,
+    TResult Function()? loadingDeleteCategories,
+    TResult Function(String message)? failureDeleteCategories,
+    TResult Function()? successDeleteCategories,
+    required TResult orElse(),
+  }) {
+    if (failureDeleteCategories != null) {
+      return failureDeleteCategories(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadingCategories value) loadingCategories,
+    required TResult Function(_FailureCategories value) failureCategories,
+    required TResult Function(_SuccessCategories value) successCategories,
+    required TResult Function(_EmptyCategories value) emptyCategories,
+    required TResult Function(_LoadingSearchCategories value)
+        loadingSearchCategories,
+    required TResult Function(_FailureSearchCategories value)
+        failureSearchCategories,
+    required TResult Function(_SuccessSearchCategories value)
+        successSearchCategories,
+    required TResult Function(_EmptySearchCategories value)
+        emptySearchCategories,
+    required TResult Function(_LoadingAddCategories value) loadingAddCategories,
+    required TResult Function(_FailureAddCategories value) failureAddCategories,
+    required TResult Function(_SuccessAddCategories value) successAddCategories,
+    required TResult Function(_LoadingUpdateCategories value)
+        loadingUpdateCategories,
+    required TResult Function(_FailureUpdateCategories value)
+        failureUpdateCategories,
+    required TResult Function(_SuccessUpdateCategories value)
+        successUpdateCategories,
+    required TResult Function(_LoadingDeleteCategories value)
+        loadingDeleteCategories,
+    required TResult Function(_FailureDeleteCategories value)
+        failureDeleteCategories,
+    required TResult Function(_SuccessDeleteCategories value)
+        successDeleteCategories,
+  }) {
+    return failureDeleteCategories(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingCategories value)? loadingCategories,
+    TResult? Function(_FailureCategories value)? failureCategories,
+    TResult? Function(_SuccessCategories value)? successCategories,
+    TResult? Function(_EmptyCategories value)? emptyCategories,
+    TResult? Function(_LoadingSearchCategories value)? loadingSearchCategories,
+    TResult? Function(_FailureSearchCategories value)? failureSearchCategories,
+    TResult? Function(_SuccessSearchCategories value)? successSearchCategories,
+    TResult? Function(_EmptySearchCategories value)? emptySearchCategories,
+    TResult? Function(_LoadingAddCategories value)? loadingAddCategories,
+    TResult? Function(_FailureAddCategories value)? failureAddCategories,
+    TResult? Function(_SuccessAddCategories value)? successAddCategories,
+    TResult? Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult? Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult? Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult? Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult? Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult? Function(_SuccessDeleteCategories value)? successDeleteCategories,
+  }) {
+    return failureDeleteCategories?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadingCategories value)? loadingCategories,
+    TResult Function(_FailureCategories value)? failureCategories,
+    TResult Function(_SuccessCategories value)? successCategories,
+    TResult Function(_EmptyCategories value)? emptyCategories,
+    TResult Function(_LoadingSearchCategories value)? loadingSearchCategories,
+    TResult Function(_FailureSearchCategories value)? failureSearchCategories,
+    TResult Function(_SuccessSearchCategories value)? successSearchCategories,
+    TResult Function(_EmptySearchCategories value)? emptySearchCategories,
+    TResult Function(_LoadingAddCategories value)? loadingAddCategories,
+    TResult Function(_FailureAddCategories value)? failureAddCategories,
+    TResult Function(_SuccessAddCategories value)? successAddCategories,
+    TResult Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult Function(_SuccessDeleteCategories value)? successDeleteCategories,
+    required TResult orElse(),
+  }) {
+    if (failureDeleteCategories != null) {
+      return failureDeleteCategories(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FailureDeleteCategories implements CategoriesState {
+  const factory _FailureDeleteCategories(final String message) =
+      _$FailureDeleteCategoriesImpl;
+
+  String get message;
+  @JsonKey(ignore: true)
+  _$$FailureDeleteCategoriesImplCopyWith<_$FailureDeleteCategoriesImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SuccessDeleteCategoriesImplCopyWith<$Res> {
+  factory _$$SuccessDeleteCategoriesImplCopyWith(
+          _$SuccessDeleteCategoriesImpl value,
+          $Res Function(_$SuccessDeleteCategoriesImpl) then) =
+      __$$SuccessDeleteCategoriesImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SuccessDeleteCategoriesImplCopyWithImpl<$Res>
+    extends _$CategoriesStateCopyWithImpl<$Res, _$SuccessDeleteCategoriesImpl>
+    implements _$$SuccessDeleteCategoriesImplCopyWith<$Res> {
+  __$$SuccessDeleteCategoriesImplCopyWithImpl(
+      _$SuccessDeleteCategoriesImpl _value,
+      $Res Function(_$SuccessDeleteCategoriesImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SuccessDeleteCategoriesImpl implements _SuccessDeleteCategories {
+  const _$SuccessDeleteCategoriesImpl();
+
+  @override
+  String toString() {
+    return 'CategoriesState.successDeleteCategories()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessDeleteCategoriesImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingCategories,
+    required TResult Function(String message) failureCategories,
+    required TResult Function(CategoriesResponseBody categories)
+        successCategories,
+    required TResult Function() emptyCategories,
+    required TResult Function() loadingSearchCategories,
+    required TResult Function(String message) failureSearchCategories,
+    required TResult Function(List<CategoriesModel> categories)
+        successSearchCategories,
+    required TResult Function() emptySearchCategories,
+    required TResult Function() loadingAddCategories,
+    required TResult Function(String message) failureAddCategories,
+    required TResult Function() successAddCategories,
+    required TResult Function() loadingUpdateCategories,
+    required TResult Function(String message) failureUpdateCategories,
+    required TResult Function() successUpdateCategories,
+    required TResult Function() loadingDeleteCategories,
+    required TResult Function(String message) failureDeleteCategories,
+    required TResult Function() successDeleteCategories,
+  }) {
+    return successDeleteCategories();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingCategories,
+    TResult? Function(String message)? failureCategories,
+    TResult? Function(CategoriesResponseBody categories)? successCategories,
+    TResult? Function()? emptyCategories,
+    TResult? Function()? loadingSearchCategories,
+    TResult? Function(String message)? failureSearchCategories,
+    TResult? Function(List<CategoriesModel> categories)?
+        successSearchCategories,
+    TResult? Function()? emptySearchCategories,
+    TResult? Function()? loadingAddCategories,
+    TResult? Function(String message)? failureAddCategories,
+    TResult? Function()? successAddCategories,
+    TResult? Function()? loadingUpdateCategories,
+    TResult? Function(String message)? failureUpdateCategories,
+    TResult? Function()? successUpdateCategories,
+    TResult? Function()? loadingDeleteCategories,
+    TResult? Function(String message)? failureDeleteCategories,
+    TResult? Function()? successDeleteCategories,
+  }) {
+    return successDeleteCategories?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingCategories,
+    TResult Function(String message)? failureCategories,
+    TResult Function(CategoriesResponseBody categories)? successCategories,
+    TResult Function()? emptyCategories,
+    TResult Function()? loadingSearchCategories,
+    TResult Function(String message)? failureSearchCategories,
+    TResult Function(List<CategoriesModel> categories)? successSearchCategories,
+    TResult Function()? emptySearchCategories,
+    TResult Function()? loadingAddCategories,
+    TResult Function(String message)? failureAddCategories,
+    TResult Function()? successAddCategories,
+    TResult Function()? loadingUpdateCategories,
+    TResult Function(String message)? failureUpdateCategories,
+    TResult Function()? successUpdateCategories,
+    TResult Function()? loadingDeleteCategories,
+    TResult Function(String message)? failureDeleteCategories,
+    TResult Function()? successDeleteCategories,
+    required TResult orElse(),
+  }) {
+    if (successDeleteCategories != null) {
+      return successDeleteCategories();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadingCategories value) loadingCategories,
+    required TResult Function(_FailureCategories value) failureCategories,
+    required TResult Function(_SuccessCategories value) successCategories,
+    required TResult Function(_EmptyCategories value) emptyCategories,
+    required TResult Function(_LoadingSearchCategories value)
+        loadingSearchCategories,
+    required TResult Function(_FailureSearchCategories value)
+        failureSearchCategories,
+    required TResult Function(_SuccessSearchCategories value)
+        successSearchCategories,
+    required TResult Function(_EmptySearchCategories value)
+        emptySearchCategories,
+    required TResult Function(_LoadingAddCategories value) loadingAddCategories,
+    required TResult Function(_FailureAddCategories value) failureAddCategories,
+    required TResult Function(_SuccessAddCategories value) successAddCategories,
+    required TResult Function(_LoadingUpdateCategories value)
+        loadingUpdateCategories,
+    required TResult Function(_FailureUpdateCategories value)
+        failureUpdateCategories,
+    required TResult Function(_SuccessUpdateCategories value)
+        successUpdateCategories,
+    required TResult Function(_LoadingDeleteCategories value)
+        loadingDeleteCategories,
+    required TResult Function(_FailureDeleteCategories value)
+        failureDeleteCategories,
+    required TResult Function(_SuccessDeleteCategories value)
+        successDeleteCategories,
+  }) {
+    return successDeleteCategories(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingCategories value)? loadingCategories,
+    TResult? Function(_FailureCategories value)? failureCategories,
+    TResult? Function(_SuccessCategories value)? successCategories,
+    TResult? Function(_EmptyCategories value)? emptyCategories,
+    TResult? Function(_LoadingSearchCategories value)? loadingSearchCategories,
+    TResult? Function(_FailureSearchCategories value)? failureSearchCategories,
+    TResult? Function(_SuccessSearchCategories value)? successSearchCategories,
+    TResult? Function(_EmptySearchCategories value)? emptySearchCategories,
+    TResult? Function(_LoadingAddCategories value)? loadingAddCategories,
+    TResult? Function(_FailureAddCategories value)? failureAddCategories,
+    TResult? Function(_SuccessAddCategories value)? successAddCategories,
+    TResult? Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult? Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult? Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult? Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult? Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult? Function(_SuccessDeleteCategories value)? successDeleteCategories,
+  }) {
+    return successDeleteCategories?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadingCategories value)? loadingCategories,
+    TResult Function(_FailureCategories value)? failureCategories,
+    TResult Function(_SuccessCategories value)? successCategories,
+    TResult Function(_EmptyCategories value)? emptyCategories,
+    TResult Function(_LoadingSearchCategories value)? loadingSearchCategories,
+    TResult Function(_FailureSearchCategories value)? failureSearchCategories,
+    TResult Function(_SuccessSearchCategories value)? successSearchCategories,
+    TResult Function(_EmptySearchCategories value)? emptySearchCategories,
+    TResult Function(_LoadingAddCategories value)? loadingAddCategories,
+    TResult Function(_FailureAddCategories value)? failureAddCategories,
+    TResult Function(_SuccessAddCategories value)? successAddCategories,
+    TResult Function(_LoadingUpdateCategories value)? loadingUpdateCategories,
+    TResult Function(_FailureUpdateCategories value)? failureUpdateCategories,
+    TResult Function(_SuccessUpdateCategories value)? successUpdateCategories,
+    TResult Function(_LoadingDeleteCategories value)? loadingDeleteCategories,
+    TResult Function(_FailureDeleteCategories value)? failureDeleteCategories,
+    TResult Function(_SuccessDeleteCategories value)? successDeleteCategories,
+    required TResult orElse(),
+  }) {
+    if (successDeleteCategories != null) {
+      return successDeleteCategories(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SuccessDeleteCategories implements CategoriesState {
+  const factory _SuccessDeleteCategories() = _$SuccessDeleteCategoriesImpl;
 }

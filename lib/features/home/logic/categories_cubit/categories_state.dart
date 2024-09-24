@@ -26,4 +26,18 @@ class CategoriesState with _$CategoriesState {
   const factory CategoriesState.failureAddCategories(String message) =
       _FailureAddCategories;
   const factory CategoriesState.successAddCategories() = _SuccessAddCategories;
+
+  const factory CategoriesState.loadingUpdateCategories() =
+      _LoadingUpdateCategories;
+  const factory CategoriesState.failureUpdateCategories(String message) =
+      _FailureUpdateCategories;
+  const factory CategoriesState.successUpdateCategories() =
+      _SuccessUpdateCategories;
+
+  const factory CategoriesState.loadingDeleteCategories() =
+      _LoadingDeleteCategories;
+  const factory CategoriesState.failureDeleteCategories(String message) =
+      _FailureDeleteCategories;
+  const factory CategoriesState.successDeleteCategories() =
+      _SuccessDeleteCategories;
 }

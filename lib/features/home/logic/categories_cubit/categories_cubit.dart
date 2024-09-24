@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mo_store/core/helpers/prints.dart';
 import 'package:mo_store/features/admin/data/models/categories/add_category_request.dart';
+import 'package:mo_store/features/home/data/models/categories_request.dart';
 import 'package:mo_store/features/home/data/models/categories_response.dart';
 import 'package:mo_store/features/home/data/repo/categories_repo.dart';
 import 'package:mo_store/features/home/logic/categories_cubit/categories_state.dart';
@@ -13,7 +14,9 @@ class CategoriesCubit extends Cubit<CategoriesState> {
   List<CategoriesModel> allCategories = [];
   List<CategoriesModel> foundCategories = [];
   String searchText = '';
-  final TextEditingController controller = TextEditingController();
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+  final addCategoryController = TextEditingController();
+  final updateCategoryController = TextEditingController();
 
   Future<void> getCategories() async {
     emit(const CategoriesState.loadingCategories());
@@ -47,11 +50,11 @@ class CategoriesCubit extends Cubit<CategoriesState> {
     }
   }
 
-  Future<void> addCategory(String? image) async {
+  Future<void> addCategoryGraphQl(String? image) async {
     emit(const CategoriesState.loadingAddCategories());
     final result = await categoriesRepo.addCategoryGraphql(
       AddCategoriesRequest(
-        name: controller.text.trim(),
+        name: addCategoryController.text.trim(),
         image: image ?? '',
       ),
     );
@@ -61,6 +64,21 @@ class CategoriesCubit extends Cubit<CategoriesState> {
     );
   }
 
-  Future<void> updateCategory() async {}
-  Future<void> deleteCategory() async {}
+  Future<void> updateCategoryGraphQl(
+      String categoryId, String? image, String? name) async {
+    emit(const CategoriesState.loadingUpdateCategories());
+    final result = await categoriesRepo.updateCategoryGraphql(CategoriesRequest(
+      id: categoryId,
+      name: name ?? updateCategoryController.text.trim(),
+      image: image ?? '',
+    ));
+    result.when(
+      success: (response) =>
+          emit(const CategoriesState.successUpdateCategories()),
+      failure: (message) =>
+          emit(CategoriesState.failureUpdateCategories(message)),
+    );
+  }
+
+  Future<void> deleteCategoryGraphQl() async {}
 }

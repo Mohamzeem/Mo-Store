@@ -16,10 +16,22 @@ import 'package:mo_store/core/widgets/custom_txt_fom_field.dart';
 import 'package:mo_store/core/widgets/skelton_shimmer.dart';
 import 'package:mo_store/features/home/logic/categories_cubit/categories_cubit.dart';
 
-class CreateNewCategoryButton extends StatelessWidget {
+class CreateNewCategoryButton extends StatefulWidget {
   const CreateNewCategoryButton({
     super.key,
   });
+
+  @override
+  State<CreateNewCategoryButton> createState() =>
+      _CreateNewCategoryButtonState();
+}
+
+class _CreateNewCategoryButtonState extends State<CreateNewCategoryButton> {
+  @override
+  void dispose() {
+    BlocProvider.of<CategoriesCubit>(context).addCategoryController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +40,7 @@ class CreateNewCategoryButton extends StatelessWidget {
     return CustomButton(
       onPressed: () {
         AppFunctions.addShowBtmSheet(
-          context: context,
+          context: categoriesCubit.scaffoldKey.currentContext!,
           body: BlocProvider(
             create: (context) => di<UploadImageCubit>(),
             child: BlocBuilder<UploadImageCubit, UploadImageState>(
@@ -110,7 +122,7 @@ class CreateNewCategoryButton extends StatelessWidget {
                       padding: 0,
                       label: 'Category Name',
                       maxLength: 50,
-                      controller: categoriesCubit.controller,
+                      controller: categoriesCubit.addCategoryController,
                       keyBoard: TextInputType.emailAddress,
                       filled: AppColors.lightGrey,
                     ),
@@ -118,7 +130,19 @@ class CreateNewCategoryButton extends StatelessWidget {
                     CustomButton(
                       padding: 0,
                       text: 'Save',
-                      onPressed: () {},
+                      onPressed: () {
+                        if (categoriesCubit.addCategoryController.text
+                                .isNullOrEmptyString() ||
+                            uploadImageCubit.imageUrl.isNullOrEmptyString()) {
+                          CustomDialog.show(
+                              context: context,
+                              text: 'Data Required',
+                              isSuccess: false);
+                        } else {
+                          categoriesCubit
+                              .addCategoryGraphQl(uploadImageCubit.imageUrl);
+                        }
+                      },
                       width: double.infinity,
                       height: 45,
                       threeRadius: 10,

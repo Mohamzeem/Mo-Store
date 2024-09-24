@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
 import 'package:mo_store/core/helpers/extensions.dart';
-import 'package:mo_store/core/widgets/custom_circular_loading.dart';
 
 class CustomCachedImage extends StatelessWidget {
   final String photoUrl;

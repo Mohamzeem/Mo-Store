@@ -16,6 +16,7 @@ class CategoriesView extends StatelessWidget {
     final categoriesCubit = BlocProvider.of<CategoriesCubit>(context);
 
     return Scaffold(
+      key: categoriesCubit.scaffoldKey,
       //^ create new category button
       bottomNavigationBar: BlocListener<CategoriesCubit, CategoriesState>(
         listener: (context, state) {
@@ -27,7 +28,7 @@ class CategoriesView extends StatelessWidget {
                 'Category Created Successfully',
                 (dismiss) {},
               );
-              categoriesCubit.controller.clear();
+              categoriesCubit.addCategoryController.clear();
             },
             failureAddCategories: (message) => CustomDialog.awsomeError(
               context,
