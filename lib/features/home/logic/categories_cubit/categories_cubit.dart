@@ -15,8 +15,6 @@ class CategoriesCubit extends Cubit<CategoriesState> {
   List<CategoriesModel> foundCategories = [];
   String searchText = '';
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  final addCategoryController = TextEditingController();
-  final updateCategoryController = TextEditingController();
 
   Future<void> getCategories() async {
     emit(const CategoriesState.loadingCategories());
@@ -50,11 +48,12 @@ class CategoriesCubit extends Cubit<CategoriesState> {
     }
   }
 
-  Future<void> addCategoryGraphQl(String? image) async {
+  Future<void> addCategoryGraphQl(
+      {required String? image, required String? name}) async {
     emit(const CategoriesState.loadingAddCategories());
     final result = await categoriesRepo.addCategoryGraphql(
       AddCategoriesRequest(
-        name: addCategoryController.text.trim(),
+        name: name ?? '',
         image: image ?? '',
       ),
     );
@@ -65,11 +64,13 @@ class CategoriesCubit extends Cubit<CategoriesState> {
   }
 
   Future<void> updateCategoryGraphQl(
-      String categoryId, String? image, String? name) async {
+      {required String categoryId,
+      required String? image,
+      required String? name}) async {
     emit(const CategoriesState.loadingUpdateCategories());
     final result = await categoriesRepo.updateCategoryGraphql(CategoriesRequest(
       id: categoryId,
-      name: name ?? updateCategoryController.text.trim(),
+      name: name ?? '',
       image: image ?? '',
     ));
     result.when(
