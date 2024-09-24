@@ -1,7 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mo_store/core/helpers/prints.dart';
 import 'package:mo_store/features/admin/data/models/categories/add_category_request.dart';
-import 'package:mo_store/features/home/data/models/categories_request.dart';
 import 'package:mo_store/features/home/data/models/categories_response.dart';
 import 'package:mo_store/features/home/data/repo/categories_repo.dart';
 import 'package:mo_store/features/home/logic/categories_cubit/categories_state.dart';
@@ -13,6 +13,7 @@ class CategoriesCubit extends Cubit<CategoriesState> {
   List<CategoriesModel> allCategories = [];
   List<CategoriesModel> foundCategories = [];
   String searchText = '';
+  final TextEditingController controller = TextEditingController();
 
   Future<void> getCategories() async {
     emit(const CategoriesState.loadingCategories());
@@ -46,9 +47,14 @@ class CategoriesCubit extends Cubit<CategoriesState> {
     }
   }
 
-  Future<void> addCategory(AddCategoriesRequest body) async {
+  Future<void> addCategory(String? image) async {
     emit(const CategoriesState.loadingAddCategories());
-    final result = await categoriesRepo.addCategoryGraphql(body);
+    final result = await categoriesRepo.addCategoryGraphql(
+      AddCategoriesRequest(
+        name: controller.text.trim(),
+        image: image ?? '',
+      ),
+    );
     result.when(
       success: (response) => emit(const CategoriesState.successAddCategories()),
       failure: (message) => emit(CategoriesState.failureAddCategories(message)),

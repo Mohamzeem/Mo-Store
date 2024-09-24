@@ -5,6 +5,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:mo_store/core/app/upload_image/data/upload_repo.dart';
 import 'package:mo_store/core/app/upload_image/logic/upload_image/upload_image_state.dart';
 import 'package:mo_store/core/helpers/image_picker.dart';
+import 'package:mo_store/core/helpers/prints.dart';
 
 class UploadImageCubit extends Cubit<UploadImageState> {
   final UploadImageRepo uploadImageRepo;
@@ -22,6 +23,7 @@ class UploadImageCubit extends Cubit<UploadImageState> {
     result.when(
       success: (data) {
         imageUrl = data.location ?? "";
+        Prints.debug(message: "imageUrl: $imageUrl");
         emit(UploadImageState.success(imageUrl));
       },
       failure: (error) {

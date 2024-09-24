@@ -59,12 +59,12 @@ class CustomCachedImage extends StatelessWidget {
           ),
           child: child,
         ),
-        progressIndicatorBuilder: (context, url, progress) =>
-            CustomCircularLoading(
-          height: loadingCircle.h,
-          width: loadingCircle.w,
-          color: loadingColor,
-        ),
+        // progressIndicatorBuilder: (context, url, progress) =>
+        //     CustomCircularLoading(
+        //   height: loadingCircle.h,
+        //   width: loadingCircle.w,
+        //   color: loadingColor,
+        // ),
         errorWidget: (context, url, error) => const Icon(
           Icons.error,
           color: AppColors.redAccent,

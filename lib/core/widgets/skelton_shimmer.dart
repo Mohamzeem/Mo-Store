@@ -8,6 +8,7 @@ class SkeltonShimmer extends StatelessWidget {
   final BoxShape shape;
   final bool? isBorder;
   final Color? color;
+  final double? borderRadius;
   const SkeltonShimmer({
     super.key,
     this.height,
@@ -15,6 +16,7 @@ class SkeltonShimmer extends StatelessWidget {
     this.shape = BoxShape.circle,
     this.isBorder = true,
     this.color,
+    this.borderRadius = 10,
   });
 
   @override
@@ -35,7 +37,7 @@ class SkeltonShimmer extends StatelessWidget {
                 )
               : Border.all(width: 0, color: Colors.transparent),
           color: AppColors.lightBlue.withOpacity(0.4),
-          borderRadius: BorderRadius.circular(10.r),
+          borderRadius: BorderRadius.circular(borderRadius!.r),
         ),
       ),
     );
