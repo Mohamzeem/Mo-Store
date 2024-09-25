@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mo_store/core/app/app_injection.dart';
+import 'package:mo_store/core/app/upload_image/logic/upload_image/upload_image_cubit.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
 import 'package:mo_store/core/helpers/btn_sheet.dart';
 import 'package:mo_store/core/helpers/text_fonts.dart';
@@ -55,7 +58,15 @@ class CategoryContainer extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap: () {
-                          _updateCategoryButtonSheet(context);
+                          AppFunctions.addShowBtmSheet(
+                            context: context,
+                            body: BlocProvider(
+                              create: (context) => di<UploadImageCubit>(),
+                              child: UpdateCategoryButtonSheetBody(
+                                categoriesModel: categoriesModel,
+                              ),
+                            ),
+                          );
                         },
                         child: const CustomContainerIcon(
                           containerSize: 35,
@@ -78,15 +89,6 @@ class CategoryContainer extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  void _updateCategoryButtonSheet(BuildContext context) {
-    AppFunctions.addShowBtmSheet(
-      context: context,
-      body: UpdateCategoryButtonSheetBody(
-        categoriesModel: categoriesModel,
       ),
     );
   }

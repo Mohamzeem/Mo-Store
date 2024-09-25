@@ -45,17 +45,16 @@ class GraphQlCategoriesQueries {
   Map<String, dynamic> updateCategoriesMapQuery(CategoriesRequest body) {
     return {
       'query': r'''
-          mutation UpdateCategory($categoryId: ID!,$name: String!, $image: String!) {
-            updateCategory(id:$id, changes:{name: $name, image: $image}
-            ) {
+            mutation Update($id: ID!, $name: String!, $image: String!) {
+            updateCategory(id: $id, changes: {name: $name, image: $image}) {
               id
             }
           }
-      ''',
+        ''',
       'variables': {
-        'name': body,
-        'image': body,
         'id': body.id,
+        'name': body.name,
+        'image': body.image,
       },
     };
   }

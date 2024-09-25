@@ -26,6 +26,7 @@ class AddCategoryButtonSheetBody extends StatefulWidget {
 class _AddCategoryButtonSheetBodyState
     extends State<AddCategoryButtonSheetBody> {
   TextEditingController addCategoryController = TextEditingController();
+
   @override
   void dispose() {
     addCategoryController.dispose();
@@ -38,7 +39,10 @@ class _AddCategoryButtonSheetBodyState
             .imageUrl
             .isNullOrEmptyString()) {
       CustomDialog.show(
-          context: context, text: 'Data Required', isSuccess: false);
+        context: context,
+        text: 'Image & Name Required',
+        isSuccess: false,
+      );
     } else {
       BlocProvider.of<CategoriesCubit>(context).addCategoryGraphQl(
         image: BlocProvider.of<UploadImageCubit>(context).imageUrl,
@@ -49,64 +53,61 @@ class _AddCategoryButtonSheetBodyState
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => di<UploadImageCubit>(),
-      child: ListView(
-        shrinkWrap: true,
-        children: [
-          Text(
-            'Create New Category',
-            style: AppFonts.regular18LightBlue.copyWith(
-              fontWeight: FontWeight.bold,
-              fontSize: 22.sp,
-            ),
+    return ListView(
+      shrinkWrap: true,
+      children: [
+        Text(
+          'Create New Category',
+          style: AppFonts.regular18LightBlue.copyWith(
+            fontWeight: FontWeight.bold,
+            fontSize: 22.sp,
           ),
-          10.verticalSpace,
-          const AddCategoryImage(),
-          10.verticalSpace,
-          CustomTextFormField(
-            padding: 0,
-            label: 'Category Name',
-            maxLength: 50,
-            controller: addCategoryController,
-            keyBoard: TextInputType.emailAddress,
-            filled: AppColors.lightGrey,
-          ),
-          10.verticalSpace,
-          BlocConsumer<CategoriesCubit, CategoriesState>(
-            listener: (context, state) {
-              state.whenOrNull(
-                successAddCategories: () {
-                  context.pop();
-                  BlocProvider.of<CategoriesCubit>(context).getCategories();
-                  CustomDialog.show(
-                    context: context,
-                    text: 'Category Created Successfully',
-                  );
-                },
-                failureAddCategories: (message) => CustomDialog.awsomeError(
-                  context,
-                  message.toString(),
-                ),
-              );
-            },
-            builder: (context, state) {
-              return CustomButton(
-                padding: 0,
-                text: 'Save',
-                onPressed: () {
-                  _addCategoryByValidation();
-                },
-                width: double.infinity,
-                height: 45,
-                threeRadius: 10,
-                lastRadius: 10,
-                backgroundColor: AppColors.lightBlue,
-              );
-            },
-          ),
-        ],
-      ),
+        ),
+        10.verticalSpace,
+        const AddCategoryImage(),
+        10.verticalSpace,
+        CustomTextFormField(
+          padding: 0,
+          label: 'Category Name',
+          maxLength: 50,
+          controller: addCategoryController,
+          keyBoard: TextInputType.emailAddress,
+          filled: AppColors.lightGrey,
+        ),
+        10.verticalSpace,
+        BlocConsumer<CategoriesCubit, CategoriesState>(
+          listener: (context, state) {
+            state.whenOrNull(
+              successAddCategories: () {
+                context.pop();
+                BlocProvider.of<CategoriesCubit>(context).getCategories();
+                CustomDialog.show(
+                  context: context,
+                  text: 'Category Created Successfully',
+                );
+              },
+              failureAddCategories: (message) => CustomDialog.awsomeError(
+                context,
+                message.toString(),
+              ),
+            );
+          },
+          builder: (context, state) {
+            return CustomButton(
+              padding: 0,
+              text: 'Add Category',
+              onPressed: () {
+                _addCategoryByValidation();
+              },
+              width: double.infinity,
+              height: 45,
+              threeRadius: 10,
+              lastRadius: 10,
+              backgroundColor: AppColors.lightBlue,
+            );
+          },
+        ),
+      ],
     );
   }
 }
