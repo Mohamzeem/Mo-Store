@@ -59,17 +59,16 @@ class GraphQlCategoriesQueries {
     };
   }
 
-  Map<String, dynamic> deleteCategoriesMapQuery() {
+  Map<String, dynamic> deleteCategoriesMapQuery(String categoryId) {
     return {
-      'query': '''
-            {
-            categories{
-              id
-              name
-              image
+      'query': r'''
+            mutation DeleteCategory($categoryId: ID!) {
+              deleteCategory(id: $categoryId)
             }
-          }
       ''',
+      'variables': {
+        'categoryId': categoryId,
+      },
     };
   }
 }

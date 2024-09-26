@@ -28,4 +28,10 @@ class HomeDataSource {
         GraphQlCategoriesQueries().updateCategoriesMapQuery(body));
     return response;
   }
+
+  Future<void> deleteCategoryGraphql(String categoryId) async {
+    final response = await categoriesApi.deleteCategoryGraphql(
+        GraphQlCategoriesQueries().deleteCategoriesMapQuery(categoryId));
+    return response;
+  }
 }

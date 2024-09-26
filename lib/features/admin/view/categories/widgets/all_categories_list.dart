@@ -52,7 +52,8 @@ class AllCategoriesList extends StatelessWidget {
                         final categoriesModel =
                             categories.categoriesList[index];
                         return CategoryContainer(
-                            categoriesModel: categoriesModel);
+                          categoriesModel: categoriesModel,
+                        );
                       },
                     ),
                   ),

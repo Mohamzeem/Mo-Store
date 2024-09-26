@@ -36,4 +36,13 @@ class CategoriesRepo {
       return ApiResult.failure(e.toString());
     }
   }
+
+  Future<ApiResult<void>> deleteCategoryGraphql(String categoryId) async {
+    try {
+      final response = await dataSource.deleteCategoryGraphql(categoryId);
+      return ApiResult.success(response);
+    } catch (e) {
+      return ApiResult.failure(e.toString());
+    }
+  }
 }

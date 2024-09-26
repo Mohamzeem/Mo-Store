@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mo_store/core/app/app_injection.dart';
 import 'package:mo_store/core/app/upload_image/logic/upload_image/upload_image_cubit.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
 import 'package:mo_store/core/helpers/extensions.dart';
@@ -9,7 +8,7 @@ import 'package:mo_store/core/helpers/text_fonts.dart';
 import 'package:mo_store/core/widgets/custom_button.dart';
 import 'package:mo_store/core/widgets/custom_dialog.dart';
 import 'package:mo_store/core/widgets/custom_txt_fom_field.dart';
-import 'package:mo_store/features/admin/view/categories/widgets/add_categ_image.dart';
+import 'package:mo_store/features/admin/view/categories/widgets/add_prod_categ_image.dart';
 import 'package:mo_store/features/home/logic/categories_cubit/categories_cubit.dart';
 import 'package:mo_store/features/home/logic/categories_cubit/categories_state.dart';
 
@@ -64,7 +63,7 @@ class _AddCategoryButtonSheetBodyState
           ),
         ),
         10.verticalSpace,
-        const AddCategoryImage(),
+        const AddproductAndCategoryImage(),
         10.verticalSpace,
         CustomTextFormField(
           padding: 0,
@@ -104,6 +103,10 @@ class _AddCategoryButtonSheetBodyState
               threeRadius: 10,
               lastRadius: 10,
               backgroundColor: AppColors.lightBlue,
+              isLoading: state.maybeWhen(
+                orElse: () => false,
+                loadingAddCategories: () => true,
+              ),
             );
           },
         ),

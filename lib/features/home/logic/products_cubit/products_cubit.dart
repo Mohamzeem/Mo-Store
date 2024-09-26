@@ -18,6 +18,9 @@ class ProductsCubit extends Cubit<ProductsState> {
   List<ProductsResponseBody> foundProductsList = [];
   List<ProductsResponseBody> categoryProductsList = [];
 
+  List<String> roleList = ['customer', 'admin', 'moderator', 'super_admin'];
+  String selectedRole = '';
+  void dropDownValue(String val) => selectedRole = val;
   Future<void> getProducts() async {
     emit(const ProductsState.loadingProducts());
     final result = await productsRepo.getProducts();

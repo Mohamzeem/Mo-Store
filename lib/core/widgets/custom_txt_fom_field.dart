@@ -10,8 +10,10 @@ class CustomTextFormField extends StatelessWidget {
   final VoidCallback? suffixIconFunction;
   final bool suffixIconShow;
   final bool obscureText;
+  final bool readOnly;
   final TextInputType keyBoard;
   final int maxLength;
+  final int maxLines;
   final Color filled;
   final double height;
   final double padding;
@@ -22,8 +24,10 @@ class CustomTextFormField extends StatelessWidget {
     this.suffixIconFunction,
     this.suffixIconShow = false,
     this.obscureText = false,
+    this.readOnly = false,
     required this.keyBoard,
     this.maxLength = 50,
+    this.maxLines = 1,
     this.filled = AppColors.white,
     this.height = 55,
     this.padding = 20,
@@ -37,12 +41,13 @@ class CustomTextFormField extends StatelessWidget {
         height: height.h,
         child: TextFormField(
           controller: controller,
+          readOnly: readOnly,
           keyboardType: keyBoard,
           inputFormatters: [LengthLimitingTextInputFormatter(maxLength)],
           cursorColor: AppColors.primaryColor,
           textInputAction: TextInputAction.done,
           obscureText: obscureText,
-          maxLines: 1,
+          maxLines: maxLines,
           style: TextStyle(
               fontSize: 20.sp,
               color: AppColors.primaryColor,

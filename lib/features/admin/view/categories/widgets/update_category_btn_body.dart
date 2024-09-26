@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mo_store/core/app/app_injection.dart';
 import 'package:mo_store/core/app/upload_image/logic/upload_image/upload_image_cubit.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
 import 'package:mo_store/core/helpers/extensions.dart';
@@ -112,6 +111,10 @@ class _UpdateCategoryButtonSheetBodyState
               threeRadius: 10,
               lastRadius: 10,
               backgroundColor: AppColors.lightBlue,
+              isLoading: state.maybeWhen(
+                orElse: () => false,
+                loadingUpdateCategories: () => true,
+              ),
             );
           },
         ),

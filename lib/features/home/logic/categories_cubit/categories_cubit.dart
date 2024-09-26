@@ -79,5 +79,14 @@ class CategoriesCubit extends Cubit<CategoriesState> {
     );
   }
 
-  Future<void> deleteCategoryGraphQl() async {}
+  Future<void> deleteCategoryGraphQl({required String categoryId}) async {
+    emit(const CategoriesState.loadingDeleteCategories());
+    final result = await categoriesRepo.deleteCategoryGraphql(categoryId);
+    result.when(
+      success: (response) =>
+          emit(const CategoriesState.successDeleteCategories()),
+      failure: (message) =>
+          emit(CategoriesState.failureDeleteCategories(message)),
+    );
+  }
 }

@@ -7,12 +7,14 @@ import 'package:mo_store/core/app/upload_image/logic/upload_image/upload_image_s
 import 'package:mo_store/core/consts/app_colors.dart';
 import 'package:mo_store/core/helpers/text_fonts.dart';
 import 'package:mo_store/core/widgets/custom_cached_image.dart';
+import 'package:mo_store/core/widgets/custom_circular_loading.dart';
 import 'package:mo_store/core/widgets/custom_dialog.dart';
-import 'package:mo_store/core/widgets/skelton_shimmer.dart';
 
-class AddCategoryImage extends StatelessWidget {
-  const AddCategoryImage({
+class AddproductAndCategoryImage extends StatelessWidget {
+  final bool isCateg;
+  const AddproductAndCategoryImage({
     super.key,
+    this.isCateg = false,
   });
 
   @override
@@ -44,7 +46,7 @@ class AddCategoryImage extends StatelessWidget {
             color: AppColors.white,
             borderRadius: BorderRadius.circular(20.r),
           ),
-          height: 150,
+          height: isCateg ? 90 : 150,
           width: double.infinity,
           child: InkWell(
             onTap: () => uploadImageCubit.uploadImage(
@@ -58,11 +60,13 @@ class AddCategoryImage extends StatelessWidget {
                   children: [
                     Icon(
                       Icons.add_a_photo_outlined,
-                      size: 70.r,
+                      size: isCateg ? 50.r : 70.r,
                       color: AppColors.lightBlue,
                     ),
-                    Text('Add Category Photo',
-                        style: AppFonts.regular18LightBlue),
+                    Text(
+                      isCateg ? 'Add Product Photo' : 'Add Category Photo',
+                      style: AppFonts.regular18LightBlue,
+                    ),
                   ],
                 );
               },
@@ -75,11 +79,10 @@ class AddCategoryImage extends StatelessWidget {
                   border: 20,
                 );
               },
-              loading: () => const SkeltonShimmer(
-                height: 150,
-                shape: BoxShape.rectangle,
-                width: double.infinity,
-                borderRadius: 20,
+              loading: () => const CustomCircularLoading(
+                height: 30,
+                width: 30,
+                color: AppColors.lightBlue,
               ),
             ),
           ),
