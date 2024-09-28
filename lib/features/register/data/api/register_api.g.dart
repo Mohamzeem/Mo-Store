@@ -14,7 +14,7 @@ class _RegisterApi implements RegisterApi {
     this.baseUrl,
     this.errorLogger,
   }) {
-    baseUrl ??= 'https://api.escuelajs.co/api/v1/';
+    baseUrl ??= 'https://api.escuelajs.co/';
   }
 
   final Dio _dio;
@@ -37,7 +37,7 @@ class _RegisterApi implements RegisterApi {
     )
         .compose(
           _dio.options,
-          'users/',
+          'api/v1/users/',
           queryParameters: queryParameters,
           data: _data,
         )

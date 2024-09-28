@@ -5,19 +5,56 @@ part 'categories_response.g.dart';
 
 @JsonSerializable()
 class CategoriesResponseBody {
-  int? id;
-  String? name;
-  String? image;
-  String? creationAt;
-  String? updatedAt;
+  CategoriesAllData? data;
+
   CategoriesResponseBody(
-    this.id,
-    this.name,
-    this.image,
-    this.creationAt,
-    this.updatedAt,
+    this.data,
   );
+
+  List<CategoriesModel> get categoriesList {
+    if (data!.categories.isEmpty) {
+      return [];
+    }
+    return data!.categories.reversed.toList();
+  }
+
+  List get categoryListName {
+    List<String> names = [];
+    for (var element in data!.categories) {
+      names.add(element.name!);
+    }
+    return names;
+  }
+
+  String get categoryListNumber {
+    if (data!.categories.isEmpty) {
+      return '0';
+    }
+    return data!.categories.length.toString();
+  }
 
   factory CategoriesResponseBody.fromJson(Map<String, dynamic> json) =>
       _$CategoriesResponseBodyFromJson(json);
+}
+
+@JsonSerializable()
+class CategoriesAllData {
+  List<CategoriesModel> categories;
+  CategoriesAllData(this.categories);
+  factory CategoriesAllData.fromJson(Map<String, dynamic> json) =>
+      _$CategoriesAllDataFromJson(json);
+}
+
+@JsonSerializable()
+class CategoriesModel {
+  String? id;
+  String? name;
+  String? image;
+  CategoriesModel({
+    this.id,
+    this.name,
+    this.image,
+  });
+  factory CategoriesModel.fromJson(Map<String, dynamic> json) =>
+      _$CategoriesModelFromJson(json);
 }

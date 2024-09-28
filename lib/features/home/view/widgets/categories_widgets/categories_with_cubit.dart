@@ -25,7 +25,7 @@ class CategoriesWithCubit extends StatelessWidget {
         return state.maybeWhen(
           successCategories: (categories) {
             return CategoryList(
-              categories: categories,
+              categories: categories.categoriesList,
               allprodList: allprodList,
             );
           },

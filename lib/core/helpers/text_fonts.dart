@@ -18,7 +18,7 @@ class AppFonts {
     color: AppColors.primaryColor,
     height: 1,
   );
-  static TextStyle medium30Primary = TextStyle(
+  static TextStyle medium22Primary = TextStyle(
     fontSize: 22.sp,
     fontWeight: FontWeight.w700,
     fontFamily: AppGlobals.appFont,

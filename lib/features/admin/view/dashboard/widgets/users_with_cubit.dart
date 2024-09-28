@@ -20,7 +20,7 @@ class UsersContainerWithCubit extends StatelessWidget {
           ),
           success: (users) => DashboardContainer(
             title: 'Users',
-            number: users.length.toString(),
+            number: users.usersListNumber,
             image: 'assets/images/pngs/users.png',
           ),
           loading: () => const DashboardContainer(

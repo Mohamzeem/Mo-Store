@@ -21,7 +21,7 @@ mixin _$AllUsersState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) failure,
-    required TResult Function(List<ProfileModel> users) success,
+    required TResult Function(AllUsersResponse users) success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -29,7 +29,7 @@ mixin _$AllUsersState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? failure,
-    TResult? Function(List<ProfileModel> users)? success,
+    TResult? Function(AllUsersResponse users)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,7 +37,7 @@ mixin _$AllUsersState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? failure,
-    TResult Function(List<ProfileModel> users)? success,
+    TResult Function(AllUsersResponse users)? success,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -127,7 +127,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) failure,
-    required TResult Function(List<ProfileModel> users) success,
+    required TResult Function(AllUsersResponse users) success,
   }) {
     return initial();
   }
@@ -138,7 +138,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? failure,
-    TResult? Function(List<ProfileModel> users)? success,
+    TResult? Function(AllUsersResponse users)? success,
   }) {
     return initial?.call();
   }
@@ -149,7 +149,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? failure,
-    TResult Function(List<ProfileModel> users)? success,
+    TResult Function(AllUsersResponse users)? success,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -241,7 +241,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) failure,
-    required TResult Function(List<ProfileModel> users) success,
+    required TResult Function(AllUsersResponse users) success,
   }) {
     return loading();
   }
@@ -252,7 +252,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? failure,
-    TResult? Function(List<ProfileModel> users)? success,
+    TResult? Function(AllUsersResponse users)? success,
   }) {
     return loading?.call();
   }
@@ -263,7 +263,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? failure,
-    TResult Function(List<ProfileModel> users)? success,
+    TResult Function(AllUsersResponse users)? success,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -381,7 +381,7 @@ class _$FailureImpl implements _Failure {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) failure,
-    required TResult Function(List<ProfileModel> users) success,
+    required TResult Function(AllUsersResponse users) success,
   }) {
     return failure(message);
   }
@@ -392,7 +392,7 @@ class _$FailureImpl implements _Failure {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? failure,
-    TResult? Function(List<ProfileModel> users)? success,
+    TResult? Function(AllUsersResponse users)? success,
   }) {
     return failure?.call(message);
   }
@@ -403,7 +403,7 @@ class _$FailureImpl implements _Failure {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? failure,
-    TResult Function(List<ProfileModel> users)? success,
+    TResult Function(AllUsersResponse users)? success,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -465,7 +465,7 @@ abstract class _$$SuccessImplCopyWith<$Res> {
           _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
       __$$SuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<ProfileModel> users});
+  $Res call({AllUsersResponse users});
 }
 
 /// @nodoc
@@ -483,9 +483,9 @@ class __$$SuccessImplCopyWithImpl<$Res>
   }) {
     return _then(_$SuccessImpl(
       null == users
-          ? _value._users
+          ? _value.users
           : users // ignore: cast_nullable_to_non_nullable
-              as List<ProfileModel>,
+              as AllUsersResponse,
     ));
   }
 }
@@ -493,15 +493,10 @@ class __$$SuccessImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SuccessImpl implements _Success {
-  const _$SuccessImpl(final List<ProfileModel> users) : _users = users;
+  const _$SuccessImpl(this.users);
 
-  final List<ProfileModel> _users;
   @override
-  List<ProfileModel> get users {
-    if (_users is EqualUnmodifiableListView) return _users;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_users);
-  }
+  final AllUsersResponse users;
 
   @override
   String toString() {
@@ -513,12 +508,11 @@ class _$SuccessImpl implements _Success {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SuccessImpl &&
-            const DeepCollectionEquality().equals(other._users, _users));
+            (identical(other.users, users) || other.users == users));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_users));
+  int get hashCode => Object.hash(runtimeType, users);
 
   @JsonKey(ignore: true)
   @override
@@ -532,7 +526,7 @@ class _$SuccessImpl implements _Success {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) failure,
-    required TResult Function(List<ProfileModel> users) success,
+    required TResult Function(AllUsersResponse users) success,
   }) {
     return success(users);
   }
@@ -543,7 +537,7 @@ class _$SuccessImpl implements _Success {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? failure,
-    TResult? Function(List<ProfileModel> users)? success,
+    TResult? Function(AllUsersResponse users)? success,
   }) {
     return success?.call(users);
   }
@@ -554,7 +548,7 @@ class _$SuccessImpl implements _Success {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? failure,
-    TResult Function(List<ProfileModel> users)? success,
+    TResult Function(AllUsersResponse users)? success,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -602,9 +596,9 @@ class _$SuccessImpl implements _Success {
 }
 
 abstract class _Success implements AllUsersState {
-  const factory _Success(final List<ProfileModel> users) = _$SuccessImpl;
+  const factory _Success(final AllUsersResponse users) = _$SuccessImpl;
 
-  List<ProfileModel> get users;
+  AllUsersResponse get users;
   @JsonKey(ignore: true)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;

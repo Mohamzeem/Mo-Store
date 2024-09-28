@@ -20,7 +20,7 @@ class CategoriesContainerWIthCubit extends StatelessWidget {
           ),
           successCategories: (categories) => DashboardContainer(
             title: 'Categories',
-            number: categories.length.toString(),
+            number: categories.data!.categories.length.toString(),
             image: 'assets/images/pngs/category.png',
           ),
           loadingCategories: () => const DashboardContainer(

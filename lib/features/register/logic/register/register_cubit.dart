@@ -25,7 +25,7 @@ class RegisterCubit extends Cubit<RegisterState> {
     passwordController.dispose();
   }
 
-  void register(String imageUrl) async {
+  void _register(String imageUrl) async {
     emit(const RegisterState.loading());
     final result = await registerRepo.register(
       RegisterRequestModel(
@@ -59,7 +59,7 @@ class RegisterCubit extends Cubit<RegisterState> {
       return CustomDialog.show(
           context: context, text: 'Password Required', isSuccess: false);
     } else {
-      register(imageUrl);
+      _register(imageUrl);
     }
   }
 }

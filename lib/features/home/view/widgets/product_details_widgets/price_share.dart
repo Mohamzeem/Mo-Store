@@ -21,7 +21,7 @@ class PriceAndShare extends StatelessWidget {
           width: 320.w,
           child: Text(
             '${product.price!.toString()} \$',
-            style: AppFonts.medium30Primary.copyWith(fontSize: 30.sp),
+            style: AppFonts.medium22Primary.copyWith(fontSize: 30.sp),
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           ),

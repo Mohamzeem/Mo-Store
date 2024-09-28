@@ -5,7 +5,7 @@ import 'package:mo_store/features/home/data/models/products_response.dart';
 import 'package:mo_store/features/home/view/widgets/categories_widgets/category_item.dart';
 
 class CategoryList extends StatelessWidget {
-  final List<CategoriesResponseBody> categories;
+  final List<CategoriesModel> categories;
   final List<ProductsResponseBody> allprodList;
 
   const CategoryList({
@@ -26,7 +26,10 @@ class CategoryList extends StatelessWidget {
           final category = categories[index];
           return CategoryItem(
             index: index,
-            categoryInfo: (allprodList: allprodList, category: category),
+            categoryInfo: (
+              allprodList: allprodList,
+              category: category,
+            ),
           );
         },
       ),

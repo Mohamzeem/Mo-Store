@@ -21,7 +21,7 @@ class SettingsSubTitle extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(title, style: AppFonts.medium30Primary),
+          Text(title, style: AppFonts.medium22Primary),
           visibleIcon
               ? Icon(icon, color: AppColors.primaryColor, size: 30.h)
               : const SizedBox.shrink(),

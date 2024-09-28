@@ -12,7 +12,7 @@ import 'package:mo_store/features/home/view/widgets/home_widgets/home_cached_ima
 class CategoryItem extends StatelessWidget {
   final int index;
   final ({
-    CategoriesResponseBody category,
+    CategoriesModel category,
     List<ProductsResponseBody> allprodList
   }) categoryInfo;
 

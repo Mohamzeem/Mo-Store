@@ -14,7 +14,8 @@ class AllUsersCubit extends Cubit<AllUsersState> {
     final result = await usersRepo.getAllUsers();
     result.when(
       success: (users) {
-        Prints.debug(message: 'allUsersList ${users.length.toString()}');
+        Prints.debug(
+            message: 'allUsersList ${users.usersList.length.toString()}');
         emit(AllUsersState.success(users));
       },
       failure: (message) => emit(AllUsersState.failure(message)),

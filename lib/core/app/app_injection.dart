@@ -5,12 +5,14 @@ import 'package:mo_store/core/app/upload_image/data/upload_repo.dart';
 import 'package:mo_store/core/app/upload_image/logic/upload_image/upload_image_cubit.dart';
 import 'package:mo_store/core/network/dio_factory.dart';
 import 'package:mo_store/features/admin/data/api/all_users_api.dart';
+import 'package:mo_store/features/admin/data/data_source/users_data_source.dart';
 import 'package:mo_store/features/admin/data/repo/users_repo.dart';
 import 'package:mo_store/features/admin/logic/all_users_cubit/all_users_cubit.dart';
 import 'package:mo_store/features/favorites/logic/favorites_cubit/favorites_cubit.dart';
 import 'package:mo_store/features/home/data/api/all_products_api.dart';
 import 'package:mo_store/features/home/data/api/categories_api.dart';
 import 'package:mo_store/features/home/data/api/products_api.dart';
+import 'package:mo_store/features/home/data/data_source/home_data_source.dart';
 import 'package:mo_store/features/home/data/repo/all_products_repo.dart';
 import 'package:mo_store/features/home/data/repo/categories_repo.dart';
 import 'package:mo_store/features/home/data/repo/products_repo.dart';
@@ -66,10 +68,12 @@ class AppInjection {
     di
       ..registerLazySingleton<CategoriesApi>(() => CategoriesApi(dio))
       ..registerLazySingleton<ProductsApi>(() => ProductsApi(dio))
+      ..registerLazySingleton<HomeDataSource>(
+          () => HomeDataSource(categoriesApi: di(), productsApi: di()))
       ..registerLazySingleton<CategoriesRepo>(
-          () => CategoriesRepo(categoriesApi: di()))
+          () => CategoriesRepo(dataSource: di()))
       ..registerLazySingleton<ProductsRepo>(
-          () => ProductsRepo(productsApi: di()))
+          () => ProductsRepo(productsApi: di(), homeDataSource: di()))
       ..registerFactory<CategoriesCubit>(
           () => CategoriesCubit(categoriesRepo: di()))
       ..registerFactory<ProductsCubit>(() => ProductsCubit(productsRepo: di()));
@@ -85,7 +89,10 @@ class AppInjection {
 //^ all users view cubit & repo & api
     di
       ..registerLazySingleton<AllUsersApi>(() => AllUsersApi(dio))
-      ..registerLazySingleton<AllUsersRepo>(() => AllUsersRepo(usersApi: di()))
+      ..registerLazySingleton<UsersDataSource>(
+          () => UsersDataSource(usersApi: di()))
+      ..registerLazySingleton<AllUsersRepo>(
+          () => AllUsersRepo(usersDataSource: di()))
       ..registerFactory<AllUsersCubit>(() => AllUsersCubit(usersRepo: di()));
 
     //^ favorites cubit & repo & api

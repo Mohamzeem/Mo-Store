@@ -16,7 +16,7 @@ List<DrawerItemModel> adminDrawerList(BuildContext context) {
       icon: const Icon(Icons.dashboard, color: AppColors.primaryColor),
       title: Text(
         'DashBoard',
-        style: AppFonts.medium30Primary.copyWith(fontSize: 18.sp),
+        style: AppFonts.medium22Primary.copyWith(fontSize: 18.sp),
       ),
       page: const DashboardView(),
     ),
@@ -25,9 +25,9 @@ List<DrawerItemModel> adminDrawerList(BuildContext context) {
       icon: const Icon(Icons.category_outlined, color: AppColors.primaryColor),
       title: Text(
         'Categories',
-        style: AppFonts.medium30Primary.copyWith(fontSize: 18.sp),
+        style: AppFonts.medium22Primary.copyWith(fontSize: 18.sp),
       ),
-      page: const CategoriesScreen(),
+      page: const CategoriesView(),
     ),
     //^ Product
     DrawerItemModel(
@@ -37,7 +37,7 @@ List<DrawerItemModel> adminDrawerList(BuildContext context) {
       ),
       title: Text(
         'Products',
-        style: AppFonts.medium30Primary.copyWith(fontSize: 18.sp),
+        style: AppFonts.medium22Primary.copyWith(fontSize: 18.sp),
       ),
       page: const ProductsScreen(),
     ),
@@ -46,7 +46,7 @@ List<DrawerItemModel> adminDrawerList(BuildContext context) {
       icon: const Icon(Icons.people_alt_rounded, color: AppColors.primaryColor),
       title: Text(
         'Users',
-        style: AppFonts.medium30Primary.copyWith(fontSize: 18.sp),
+        style: AppFonts.medium22Primary.copyWith(fontSize: 18.sp),
       ),
       page: const UsersView(),
     ),
@@ -56,7 +56,7 @@ List<DrawerItemModel> adminDrawerList(BuildContext context) {
           const Icon(Icons.notifications_active, color: AppColors.primaryColor),
       title: Text(
         'Notifications',
-        style: AppFonts.medium30Primary.copyWith(fontSize: 18.sp),
+        style: AppFonts.medium22Primary.copyWith(fontSize: 18.sp),
       ),
       page: const NotificationsView(),
     ),
@@ -67,7 +67,7 @@ List<DrawerItemModel> adminDrawerList(BuildContext context) {
         onTap: () => AppGlobals.logOut(context),
         child: Text(
           'Logout',
-          style: AppFonts.medium30Primary.copyWith(fontSize: 18.sp),
+          style: AppFonts.medium22Primary.copyWith(fontSize: 18.sp),
         ),
       ),
       page: const UsersView(),

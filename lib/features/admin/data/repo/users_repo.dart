@@ -1,14 +1,14 @@
 import 'package:mo_store/core/network/api_result.dart';
-import 'package:mo_store/features/admin/data/api/all_users_api.dart';
-import 'package:mo_store/features/settings/data/models/profile_model.dart';
+import 'package:mo_store/features/admin/data/data_source/users_data_source.dart';
+import 'package:mo_store/features/admin/data/models/all_users_respons.dart';
 
 class AllUsersRepo {
-  final AllUsersApi usersApi;
-  AllUsersRepo({required this.usersApi});
+  final UsersDataSource usersDataSource;
+  AllUsersRepo({required this.usersDataSource});
 
-  Future<ApiResult<List<ProfileModel>>> getAllUsers() async {
+  Future<ApiResult<AllUsersResponse>> getAllUsers() async {
     try {
-      final response = await usersApi.getAllUsers();
+      final response = await usersDataSource.getAllUsers();
       return ApiResult.success(response);
     } catch (e) {
       return ApiResult.failure(e.toString());

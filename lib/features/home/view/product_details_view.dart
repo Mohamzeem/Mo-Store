@@ -27,7 +27,7 @@ class ProductDetailsView extends StatelessWidget {
               CustomAppBar(
                 title: product.title!,
                 isArrowBack: true,
-                style: AppFonts.medium30Primary.copyWith(fontSize: 25.sp),
+                style: AppFonts.medium22Primary.copyWith(fontSize: 25.sp),
               ),
               20.verticalSpace,
               ProductDetailsImages(product: product),
