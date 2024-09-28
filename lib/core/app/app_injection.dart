@@ -69,11 +69,11 @@ class AppInjection {
       ..registerLazySingleton<CategoriesApi>(() => CategoriesApi(dio))
       ..registerLazySingleton<ProductsApi>(() => ProductsApi(dio))
       ..registerLazySingleton<HomeDataSource>(
-          () => HomeDataSource(categoriesApi: di()))
+          () => HomeDataSource(categoriesApi: di(), productsApi: di()))
       ..registerLazySingleton<CategoriesRepo>(
           () => CategoriesRepo(dataSource: di()))
       ..registerLazySingleton<ProductsRepo>(
-          () => ProductsRepo(productsApi: di()))
+          () => ProductsRepo(productsApi: di(), homeDataSource: di()))
       ..registerFactory<CategoriesCubit>(
           () => CategoriesCubit(categoriesRepo: di()))
       ..registerFactory<ProductsCubit>(() => ProductsCubit(productsRepo: di()));

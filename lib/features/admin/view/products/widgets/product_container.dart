@@ -10,11 +10,11 @@ import 'package:mo_store/core/widgets/custom_cached_image.dart';
 import 'package:mo_store/core/widgets/custom_container_icon.dart';
 import 'package:mo_store/features/admin/view/categories/widgets/del_categ_btn_body.dart';
 import 'package:mo_store/features/admin/view/categories/widgets/update_category_btn_body.dart';
-import 'package:mo_store/features/home/data/models/categories_response.dart';
+import 'package:mo_store/features/home/data/models/products_response.dart';
 
-class CategoryContainer extends StatelessWidget {
-  final CategoriesModel categoriesModel;
-  const CategoryContainer({super.key, required this.categoriesModel});
+class ProductContainer extends StatelessWidget {
+  final ProductsResponseBody productModel;
+  const ProductContainer({super.key, required this.productModel});
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +31,8 @@ class CategoryContainer extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CustomCachedImage(
-              photoUrl: categoriesModel.image!,
-              width: 220,
+              photoUrl: productModel.images!.first,
+              width: 160,
               height: double.infinity,
               shape: BoxShape.rectangle,
               fit: BoxFit.fill,
@@ -41,16 +41,30 @@ class CategoryContainer extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.h),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: 140.w,
+                    width: 200.w,
                     child: Center(
                       child: Text(
-                        categoriesModel.name!,
-                        maxLines: 3,
+                        productModel.title!,
+                        maxLines: 2,
                         style: AppFonts.medium22Primary,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                  ),
+                  8.verticalSpace,
+                  SizedBox(
+                    width: 200.w,
+                    child: Center(
+                      child: Text(
+                        '${productModel.price!} \$',
+                        maxLines: 2,
+                        style: AppFonts.medium22Primary.copyWith(
+                            color: AppColors.black.withOpacity(0.4),
+                            fontSize: 25.sp),
                       ),
                     ),
                   ),
@@ -59,15 +73,15 @@ class CategoryContainer extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap: () {
-                          AppFunctions.addShowBtmSheet(
-                            context: context,
-                            body: BlocProvider(
-                              create: (context) => di<UploadImageCubit>(),
-                              child: UpdateCategoryButtonSheetBody(
-                                categoriesModel: categoriesModel,
-                              ),
-                            ),
-                          );
+                          // AppFunctions.addShowBtmSheet(
+                          //   context: context,
+                          //   body: BlocProvider(
+                          //     create: (context) => di<UploadImageCubit>(),
+                          //     child: UpdateCategoryButtonSheetBody(
+                          //       categoriesModel: categoriesModel,
+                          //     ),
+                          //   ),
+                          // );
                         },
                         child: const CustomContainerIcon(
                           containerSize: 35,
@@ -79,12 +93,12 @@ class CategoryContainer extends StatelessWidget {
                       25.horizontalSpace,
                       InkWell(
                         onTap: () {
-                          AppFunctions.addShowBtmSheet(
-                            context: context,
-                            body: DeleteCategoryButtonBody(
-                              categoriesModel: categoriesModel,
-                            ),
-                          );
+                          // AppFunctions.addShowBtmSheet(
+                          //   context: context,
+                          //   body: DeleteCategoryButtonBody(
+                          //     categoriesModel: categoriesModel,
+                          //   ),
+                          // );
                         },
                         child: const CustomContainerIcon(
                           containerSize: 35,

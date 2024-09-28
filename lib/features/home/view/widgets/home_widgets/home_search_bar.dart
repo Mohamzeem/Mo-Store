@@ -25,7 +25,7 @@ class HomeSearchBar extends StatelessWidget {
           children: [
             Text(
               'Search Products',
-              style: AppFonts.medium30Primary
+              style: AppFonts.medium22Primary
                   .copyWith(fontSize: 25.sp, fontWeight: FontWeight.w600),
             ),
             Container(

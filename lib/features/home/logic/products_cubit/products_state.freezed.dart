@@ -29,6 +29,15 @@ mixin _$ProductsState {
     required TResult Function(List<ProductsResponseBody> searchProducts)
         successSearch,
     required TResult Function() emptySearch,
+    required TResult Function() loadingAddProduct,
+    required TResult Function(String message) failureAddProduct,
+    required TResult Function() successAddProduct,
+    required TResult Function() loadingUpdateProduct,
+    required TResult Function(String message) failureUpdateProduct,
+    required TResult Function() successUpdateProduct,
+    required TResult Function() loadingDeleteProduct,
+    required TResult Function(String message) failureDeleteProduct,
+    required TResult Function() successDeleteProduct,
     required TResult Function() loadingCategory,
     required TResult Function(String message) failureCategory,
     required TResult Function(List<ProductsResponseBody> categoryProducts)
@@ -47,6 +56,15 @@ mixin _$ProductsState {
     TResult? Function(String message)? failureSearch,
     TResult? Function(List<ProductsResponseBody> searchProducts)? successSearch,
     TResult? Function()? emptySearch,
+    TResult? Function()? loadingAddProduct,
+    TResult? Function(String message)? failureAddProduct,
+    TResult? Function()? successAddProduct,
+    TResult? Function()? loadingUpdateProduct,
+    TResult? Function(String message)? failureUpdateProduct,
+    TResult? Function()? successUpdateProduct,
+    TResult? Function()? loadingDeleteProduct,
+    TResult? Function(String message)? failureDeleteProduct,
+    TResult? Function()? successDeleteProduct,
     TResult? Function()? loadingCategory,
     TResult? Function(String message)? failureCategory,
     TResult? Function(List<ProductsResponseBody> categoryProducts)?
@@ -65,6 +83,15 @@ mixin _$ProductsState {
     TResult Function(String message)? failureSearch,
     TResult Function(List<ProductsResponseBody> searchProducts)? successSearch,
     TResult Function()? emptySearch,
+    TResult Function()? loadingAddProduct,
+    TResult Function(String message)? failureAddProduct,
+    TResult Function()? successAddProduct,
+    TResult Function()? loadingUpdateProduct,
+    TResult Function(String message)? failureUpdateProduct,
+    TResult Function()? successUpdateProduct,
+    TResult Function()? loadingDeleteProduct,
+    TResult Function(String message)? failureDeleteProduct,
+    TResult Function()? successDeleteProduct,
     TResult Function()? loadingCategory,
     TResult Function(String message)? failureCategory,
     TResult Function(List<ProductsResponseBody> categoryProducts)?
@@ -84,6 +111,15 @@ mixin _$ProductsState {
     required TResult Function(_FailureSearch value) failureSearch,
     required TResult Function(_SuccessSearch value) successSearch,
     required TResult Function(_EmptySearch value) emptySearch,
+    required TResult Function(_LoadingAddProduct value) loadingAddProduct,
+    required TResult Function(_FailureAddProduct value) failureAddProduct,
+    required TResult Function(_SuccessAddProduct value) successAddProduct,
+    required TResult Function(_LoadingUpdateProduct value) loadingUpdateProduct,
+    required TResult Function(_FailureUpdateProduct value) failureUpdateProduct,
+    required TResult Function(_SuccessUpdateProduct value) successUpdateProduct,
+    required TResult Function(_LoadingDeleteProduct value) loadingDeleteProduct,
+    required TResult Function(_FailureDeleteProduct value) failureDeleteProduct,
+    required TResult Function(_SuccessDeleteProduct value) successDeleteProduct,
     required TResult Function(_LoadingCategory value) loadingCategory,
     required TResult Function(_FailureCategory value) failureCategory,
     required TResult Function(_SuccessCategory value) successCategory,
@@ -101,6 +137,15 @@ mixin _$ProductsState {
     TResult? Function(_FailureSearch value)? failureSearch,
     TResult? Function(_SuccessSearch value)? successSearch,
     TResult? Function(_EmptySearch value)? emptySearch,
+    TResult? Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult? Function(_FailureAddProduct value)? failureAddProduct,
+    TResult? Function(_SuccessAddProduct value)? successAddProduct,
+    TResult? Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult? Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult? Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult? Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult? Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult? Function(_SuccessDeleteProduct value)? successDeleteProduct,
     TResult? Function(_LoadingCategory value)? loadingCategory,
     TResult? Function(_FailureCategory value)? failureCategory,
     TResult? Function(_SuccessCategory value)? successCategory,
@@ -118,6 +163,15 @@ mixin _$ProductsState {
     TResult Function(_FailureSearch value)? failureSearch,
     TResult Function(_SuccessSearch value)? successSearch,
     TResult Function(_EmptySearch value)? emptySearch,
+    TResult Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult Function(_FailureAddProduct value)? failureAddProduct,
+    TResult Function(_SuccessAddProduct value)? successAddProduct,
+    TResult Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult Function(_SuccessDeleteProduct value)? successDeleteProduct,
     TResult Function(_LoadingCategory value)? loadingCategory,
     TResult Function(_FailureCategory value)? failureCategory,
     TResult Function(_SuccessCategory value)? successCategory,
@@ -194,6 +248,15 @@ class _$InitialImpl implements _Initial {
     required TResult Function(List<ProductsResponseBody> searchProducts)
         successSearch,
     required TResult Function() emptySearch,
+    required TResult Function() loadingAddProduct,
+    required TResult Function(String message) failureAddProduct,
+    required TResult Function() successAddProduct,
+    required TResult Function() loadingUpdateProduct,
+    required TResult Function(String message) failureUpdateProduct,
+    required TResult Function() successUpdateProduct,
+    required TResult Function() loadingDeleteProduct,
+    required TResult Function(String message) failureDeleteProduct,
+    required TResult Function() successDeleteProduct,
     required TResult Function() loadingCategory,
     required TResult Function(String message) failureCategory,
     required TResult Function(List<ProductsResponseBody> categoryProducts)
@@ -215,6 +278,15 @@ class _$InitialImpl implements _Initial {
     TResult? Function(String message)? failureSearch,
     TResult? Function(List<ProductsResponseBody> searchProducts)? successSearch,
     TResult? Function()? emptySearch,
+    TResult? Function()? loadingAddProduct,
+    TResult? Function(String message)? failureAddProduct,
+    TResult? Function()? successAddProduct,
+    TResult? Function()? loadingUpdateProduct,
+    TResult? Function(String message)? failureUpdateProduct,
+    TResult? Function()? successUpdateProduct,
+    TResult? Function()? loadingDeleteProduct,
+    TResult? Function(String message)? failureDeleteProduct,
+    TResult? Function()? successDeleteProduct,
     TResult? Function()? loadingCategory,
     TResult? Function(String message)? failureCategory,
     TResult? Function(List<ProductsResponseBody> categoryProducts)?
@@ -236,6 +308,15 @@ class _$InitialImpl implements _Initial {
     TResult Function(String message)? failureSearch,
     TResult Function(List<ProductsResponseBody> searchProducts)? successSearch,
     TResult Function()? emptySearch,
+    TResult Function()? loadingAddProduct,
+    TResult Function(String message)? failureAddProduct,
+    TResult Function()? successAddProduct,
+    TResult Function()? loadingUpdateProduct,
+    TResult Function(String message)? failureUpdateProduct,
+    TResult Function()? successUpdateProduct,
+    TResult Function()? loadingDeleteProduct,
+    TResult Function(String message)? failureDeleteProduct,
+    TResult Function()? successDeleteProduct,
     TResult Function()? loadingCategory,
     TResult Function(String message)? failureCategory,
     TResult Function(List<ProductsResponseBody> categoryProducts)?
@@ -261,6 +342,15 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_FailureSearch value) failureSearch,
     required TResult Function(_SuccessSearch value) successSearch,
     required TResult Function(_EmptySearch value) emptySearch,
+    required TResult Function(_LoadingAddProduct value) loadingAddProduct,
+    required TResult Function(_FailureAddProduct value) failureAddProduct,
+    required TResult Function(_SuccessAddProduct value) successAddProduct,
+    required TResult Function(_LoadingUpdateProduct value) loadingUpdateProduct,
+    required TResult Function(_FailureUpdateProduct value) failureUpdateProduct,
+    required TResult Function(_SuccessUpdateProduct value) successUpdateProduct,
+    required TResult Function(_LoadingDeleteProduct value) loadingDeleteProduct,
+    required TResult Function(_FailureDeleteProduct value) failureDeleteProduct,
+    required TResult Function(_SuccessDeleteProduct value) successDeleteProduct,
     required TResult Function(_LoadingCategory value) loadingCategory,
     required TResult Function(_FailureCategory value) failureCategory,
     required TResult Function(_SuccessCategory value) successCategory,
@@ -281,6 +371,15 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_FailureSearch value)? failureSearch,
     TResult? Function(_SuccessSearch value)? successSearch,
     TResult? Function(_EmptySearch value)? emptySearch,
+    TResult? Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult? Function(_FailureAddProduct value)? failureAddProduct,
+    TResult? Function(_SuccessAddProduct value)? successAddProduct,
+    TResult? Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult? Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult? Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult? Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult? Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult? Function(_SuccessDeleteProduct value)? successDeleteProduct,
     TResult? Function(_LoadingCategory value)? loadingCategory,
     TResult? Function(_FailureCategory value)? failureCategory,
     TResult? Function(_SuccessCategory value)? successCategory,
@@ -301,6 +400,15 @@ class _$InitialImpl implements _Initial {
     TResult Function(_FailureSearch value)? failureSearch,
     TResult Function(_SuccessSearch value)? successSearch,
     TResult Function(_EmptySearch value)? emptySearch,
+    TResult Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult Function(_FailureAddProduct value)? failureAddProduct,
+    TResult Function(_SuccessAddProduct value)? successAddProduct,
+    TResult Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult Function(_SuccessDeleteProduct value)? successDeleteProduct,
     TResult Function(_LoadingCategory value)? loadingCategory,
     TResult Function(_FailureCategory value)? failureCategory,
     TResult Function(_SuccessCategory value)? successCategory,
@@ -367,6 +475,15 @@ class _$LoadingProductsImpl implements _LoadingProducts {
     required TResult Function(List<ProductsResponseBody> searchProducts)
         successSearch,
     required TResult Function() emptySearch,
+    required TResult Function() loadingAddProduct,
+    required TResult Function(String message) failureAddProduct,
+    required TResult Function() successAddProduct,
+    required TResult Function() loadingUpdateProduct,
+    required TResult Function(String message) failureUpdateProduct,
+    required TResult Function() successUpdateProduct,
+    required TResult Function() loadingDeleteProduct,
+    required TResult Function(String message) failureDeleteProduct,
+    required TResult Function() successDeleteProduct,
     required TResult Function() loadingCategory,
     required TResult Function(String message) failureCategory,
     required TResult Function(List<ProductsResponseBody> categoryProducts)
@@ -388,6 +505,15 @@ class _$LoadingProductsImpl implements _LoadingProducts {
     TResult? Function(String message)? failureSearch,
     TResult? Function(List<ProductsResponseBody> searchProducts)? successSearch,
     TResult? Function()? emptySearch,
+    TResult? Function()? loadingAddProduct,
+    TResult? Function(String message)? failureAddProduct,
+    TResult? Function()? successAddProduct,
+    TResult? Function()? loadingUpdateProduct,
+    TResult? Function(String message)? failureUpdateProduct,
+    TResult? Function()? successUpdateProduct,
+    TResult? Function()? loadingDeleteProduct,
+    TResult? Function(String message)? failureDeleteProduct,
+    TResult? Function()? successDeleteProduct,
     TResult? Function()? loadingCategory,
     TResult? Function(String message)? failureCategory,
     TResult? Function(List<ProductsResponseBody> categoryProducts)?
@@ -409,6 +535,15 @@ class _$LoadingProductsImpl implements _LoadingProducts {
     TResult Function(String message)? failureSearch,
     TResult Function(List<ProductsResponseBody> searchProducts)? successSearch,
     TResult Function()? emptySearch,
+    TResult Function()? loadingAddProduct,
+    TResult Function(String message)? failureAddProduct,
+    TResult Function()? successAddProduct,
+    TResult Function()? loadingUpdateProduct,
+    TResult Function(String message)? failureUpdateProduct,
+    TResult Function()? successUpdateProduct,
+    TResult Function()? loadingDeleteProduct,
+    TResult Function(String message)? failureDeleteProduct,
+    TResult Function()? successDeleteProduct,
     TResult Function()? loadingCategory,
     TResult Function(String message)? failureCategory,
     TResult Function(List<ProductsResponseBody> categoryProducts)?
@@ -434,6 +569,15 @@ class _$LoadingProductsImpl implements _LoadingProducts {
     required TResult Function(_FailureSearch value) failureSearch,
     required TResult Function(_SuccessSearch value) successSearch,
     required TResult Function(_EmptySearch value) emptySearch,
+    required TResult Function(_LoadingAddProduct value) loadingAddProduct,
+    required TResult Function(_FailureAddProduct value) failureAddProduct,
+    required TResult Function(_SuccessAddProduct value) successAddProduct,
+    required TResult Function(_LoadingUpdateProduct value) loadingUpdateProduct,
+    required TResult Function(_FailureUpdateProduct value) failureUpdateProduct,
+    required TResult Function(_SuccessUpdateProduct value) successUpdateProduct,
+    required TResult Function(_LoadingDeleteProduct value) loadingDeleteProduct,
+    required TResult Function(_FailureDeleteProduct value) failureDeleteProduct,
+    required TResult Function(_SuccessDeleteProduct value) successDeleteProduct,
     required TResult Function(_LoadingCategory value) loadingCategory,
     required TResult Function(_FailureCategory value) failureCategory,
     required TResult Function(_SuccessCategory value) successCategory,
@@ -454,6 +598,15 @@ class _$LoadingProductsImpl implements _LoadingProducts {
     TResult? Function(_FailureSearch value)? failureSearch,
     TResult? Function(_SuccessSearch value)? successSearch,
     TResult? Function(_EmptySearch value)? emptySearch,
+    TResult? Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult? Function(_FailureAddProduct value)? failureAddProduct,
+    TResult? Function(_SuccessAddProduct value)? successAddProduct,
+    TResult? Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult? Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult? Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult? Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult? Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult? Function(_SuccessDeleteProduct value)? successDeleteProduct,
     TResult? Function(_LoadingCategory value)? loadingCategory,
     TResult? Function(_FailureCategory value)? failureCategory,
     TResult? Function(_SuccessCategory value)? successCategory,
@@ -474,6 +627,15 @@ class _$LoadingProductsImpl implements _LoadingProducts {
     TResult Function(_FailureSearch value)? failureSearch,
     TResult Function(_SuccessSearch value)? successSearch,
     TResult Function(_EmptySearch value)? emptySearch,
+    TResult Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult Function(_FailureAddProduct value)? failureAddProduct,
+    TResult Function(_SuccessAddProduct value)? successAddProduct,
+    TResult Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult Function(_SuccessDeleteProduct value)? successDeleteProduct,
     TResult Function(_LoadingCategory value)? loadingCategory,
     TResult Function(_FailureCategory value)? failureCategory,
     TResult Function(_SuccessCategory value)? successCategory,
@@ -567,6 +729,15 @@ class _$FailureProductsImpl implements _FailureProducts {
     required TResult Function(List<ProductsResponseBody> searchProducts)
         successSearch,
     required TResult Function() emptySearch,
+    required TResult Function() loadingAddProduct,
+    required TResult Function(String message) failureAddProduct,
+    required TResult Function() successAddProduct,
+    required TResult Function() loadingUpdateProduct,
+    required TResult Function(String message) failureUpdateProduct,
+    required TResult Function() successUpdateProduct,
+    required TResult Function() loadingDeleteProduct,
+    required TResult Function(String message) failureDeleteProduct,
+    required TResult Function() successDeleteProduct,
     required TResult Function() loadingCategory,
     required TResult Function(String message) failureCategory,
     required TResult Function(List<ProductsResponseBody> categoryProducts)
@@ -588,6 +759,15 @@ class _$FailureProductsImpl implements _FailureProducts {
     TResult? Function(String message)? failureSearch,
     TResult? Function(List<ProductsResponseBody> searchProducts)? successSearch,
     TResult? Function()? emptySearch,
+    TResult? Function()? loadingAddProduct,
+    TResult? Function(String message)? failureAddProduct,
+    TResult? Function()? successAddProduct,
+    TResult? Function()? loadingUpdateProduct,
+    TResult? Function(String message)? failureUpdateProduct,
+    TResult? Function()? successUpdateProduct,
+    TResult? Function()? loadingDeleteProduct,
+    TResult? Function(String message)? failureDeleteProduct,
+    TResult? Function()? successDeleteProduct,
     TResult? Function()? loadingCategory,
     TResult? Function(String message)? failureCategory,
     TResult? Function(List<ProductsResponseBody> categoryProducts)?
@@ -609,6 +789,15 @@ class _$FailureProductsImpl implements _FailureProducts {
     TResult Function(String message)? failureSearch,
     TResult Function(List<ProductsResponseBody> searchProducts)? successSearch,
     TResult Function()? emptySearch,
+    TResult Function()? loadingAddProduct,
+    TResult Function(String message)? failureAddProduct,
+    TResult Function()? successAddProduct,
+    TResult Function()? loadingUpdateProduct,
+    TResult Function(String message)? failureUpdateProduct,
+    TResult Function()? successUpdateProduct,
+    TResult Function()? loadingDeleteProduct,
+    TResult Function(String message)? failureDeleteProduct,
+    TResult Function()? successDeleteProduct,
     TResult Function()? loadingCategory,
     TResult Function(String message)? failureCategory,
     TResult Function(List<ProductsResponseBody> categoryProducts)?
@@ -634,6 +823,15 @@ class _$FailureProductsImpl implements _FailureProducts {
     required TResult Function(_FailureSearch value) failureSearch,
     required TResult Function(_SuccessSearch value) successSearch,
     required TResult Function(_EmptySearch value) emptySearch,
+    required TResult Function(_LoadingAddProduct value) loadingAddProduct,
+    required TResult Function(_FailureAddProduct value) failureAddProduct,
+    required TResult Function(_SuccessAddProduct value) successAddProduct,
+    required TResult Function(_LoadingUpdateProduct value) loadingUpdateProduct,
+    required TResult Function(_FailureUpdateProduct value) failureUpdateProduct,
+    required TResult Function(_SuccessUpdateProduct value) successUpdateProduct,
+    required TResult Function(_LoadingDeleteProduct value) loadingDeleteProduct,
+    required TResult Function(_FailureDeleteProduct value) failureDeleteProduct,
+    required TResult Function(_SuccessDeleteProduct value) successDeleteProduct,
     required TResult Function(_LoadingCategory value) loadingCategory,
     required TResult Function(_FailureCategory value) failureCategory,
     required TResult Function(_SuccessCategory value) successCategory,
@@ -654,6 +852,15 @@ class _$FailureProductsImpl implements _FailureProducts {
     TResult? Function(_FailureSearch value)? failureSearch,
     TResult? Function(_SuccessSearch value)? successSearch,
     TResult? Function(_EmptySearch value)? emptySearch,
+    TResult? Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult? Function(_FailureAddProduct value)? failureAddProduct,
+    TResult? Function(_SuccessAddProduct value)? successAddProduct,
+    TResult? Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult? Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult? Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult? Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult? Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult? Function(_SuccessDeleteProduct value)? successDeleteProduct,
     TResult? Function(_LoadingCategory value)? loadingCategory,
     TResult? Function(_FailureCategory value)? failureCategory,
     TResult? Function(_SuccessCategory value)? successCategory,
@@ -674,6 +881,15 @@ class _$FailureProductsImpl implements _FailureProducts {
     TResult Function(_FailureSearch value)? failureSearch,
     TResult Function(_SuccessSearch value)? successSearch,
     TResult Function(_EmptySearch value)? emptySearch,
+    TResult Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult Function(_FailureAddProduct value)? failureAddProduct,
+    TResult Function(_SuccessAddProduct value)? successAddProduct,
+    TResult Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult Function(_SuccessDeleteProduct value)? successDeleteProduct,
     TResult Function(_LoadingCategory value)? loadingCategory,
     TResult Function(_FailureCategory value)? failureCategory,
     TResult Function(_SuccessCategory value)? successCategory,
@@ -779,6 +995,15 @@ class _$SuccessProductsImpl implements _SuccessProducts {
     required TResult Function(List<ProductsResponseBody> searchProducts)
         successSearch,
     required TResult Function() emptySearch,
+    required TResult Function() loadingAddProduct,
+    required TResult Function(String message) failureAddProduct,
+    required TResult Function() successAddProduct,
+    required TResult Function() loadingUpdateProduct,
+    required TResult Function(String message) failureUpdateProduct,
+    required TResult Function() successUpdateProduct,
+    required TResult Function() loadingDeleteProduct,
+    required TResult Function(String message) failureDeleteProduct,
+    required TResult Function() successDeleteProduct,
     required TResult Function() loadingCategory,
     required TResult Function(String message) failureCategory,
     required TResult Function(List<ProductsResponseBody> categoryProducts)
@@ -800,6 +1025,15 @@ class _$SuccessProductsImpl implements _SuccessProducts {
     TResult? Function(String message)? failureSearch,
     TResult? Function(List<ProductsResponseBody> searchProducts)? successSearch,
     TResult? Function()? emptySearch,
+    TResult? Function()? loadingAddProduct,
+    TResult? Function(String message)? failureAddProduct,
+    TResult? Function()? successAddProduct,
+    TResult? Function()? loadingUpdateProduct,
+    TResult? Function(String message)? failureUpdateProduct,
+    TResult? Function()? successUpdateProduct,
+    TResult? Function()? loadingDeleteProduct,
+    TResult? Function(String message)? failureDeleteProduct,
+    TResult? Function()? successDeleteProduct,
     TResult? Function()? loadingCategory,
     TResult? Function(String message)? failureCategory,
     TResult? Function(List<ProductsResponseBody> categoryProducts)?
@@ -821,6 +1055,15 @@ class _$SuccessProductsImpl implements _SuccessProducts {
     TResult Function(String message)? failureSearch,
     TResult Function(List<ProductsResponseBody> searchProducts)? successSearch,
     TResult Function()? emptySearch,
+    TResult Function()? loadingAddProduct,
+    TResult Function(String message)? failureAddProduct,
+    TResult Function()? successAddProduct,
+    TResult Function()? loadingUpdateProduct,
+    TResult Function(String message)? failureUpdateProduct,
+    TResult Function()? successUpdateProduct,
+    TResult Function()? loadingDeleteProduct,
+    TResult Function(String message)? failureDeleteProduct,
+    TResult Function()? successDeleteProduct,
     TResult Function()? loadingCategory,
     TResult Function(String message)? failureCategory,
     TResult Function(List<ProductsResponseBody> categoryProducts)?
@@ -846,6 +1089,15 @@ class _$SuccessProductsImpl implements _SuccessProducts {
     required TResult Function(_FailureSearch value) failureSearch,
     required TResult Function(_SuccessSearch value) successSearch,
     required TResult Function(_EmptySearch value) emptySearch,
+    required TResult Function(_LoadingAddProduct value) loadingAddProduct,
+    required TResult Function(_FailureAddProduct value) failureAddProduct,
+    required TResult Function(_SuccessAddProduct value) successAddProduct,
+    required TResult Function(_LoadingUpdateProduct value) loadingUpdateProduct,
+    required TResult Function(_FailureUpdateProduct value) failureUpdateProduct,
+    required TResult Function(_SuccessUpdateProduct value) successUpdateProduct,
+    required TResult Function(_LoadingDeleteProduct value) loadingDeleteProduct,
+    required TResult Function(_FailureDeleteProduct value) failureDeleteProduct,
+    required TResult Function(_SuccessDeleteProduct value) successDeleteProduct,
     required TResult Function(_LoadingCategory value) loadingCategory,
     required TResult Function(_FailureCategory value) failureCategory,
     required TResult Function(_SuccessCategory value) successCategory,
@@ -866,6 +1118,15 @@ class _$SuccessProductsImpl implements _SuccessProducts {
     TResult? Function(_FailureSearch value)? failureSearch,
     TResult? Function(_SuccessSearch value)? successSearch,
     TResult? Function(_EmptySearch value)? emptySearch,
+    TResult? Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult? Function(_FailureAddProduct value)? failureAddProduct,
+    TResult? Function(_SuccessAddProduct value)? successAddProduct,
+    TResult? Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult? Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult? Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult? Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult? Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult? Function(_SuccessDeleteProduct value)? successDeleteProduct,
     TResult? Function(_LoadingCategory value)? loadingCategory,
     TResult? Function(_FailureCategory value)? failureCategory,
     TResult? Function(_SuccessCategory value)? successCategory,
@@ -886,6 +1147,15 @@ class _$SuccessProductsImpl implements _SuccessProducts {
     TResult Function(_FailureSearch value)? failureSearch,
     TResult Function(_SuccessSearch value)? successSearch,
     TResult Function(_EmptySearch value)? emptySearch,
+    TResult Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult Function(_FailureAddProduct value)? failureAddProduct,
+    TResult Function(_SuccessAddProduct value)? successAddProduct,
+    TResult Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult Function(_SuccessDeleteProduct value)? successDeleteProduct,
     TResult Function(_LoadingCategory value)? loadingCategory,
     TResult Function(_FailureCategory value)? failureCategory,
     TResult Function(_SuccessCategory value)? successCategory,
@@ -958,6 +1228,15 @@ class _$EmptyProductsImpl implements _EmptyProducts {
     required TResult Function(List<ProductsResponseBody> searchProducts)
         successSearch,
     required TResult Function() emptySearch,
+    required TResult Function() loadingAddProduct,
+    required TResult Function(String message) failureAddProduct,
+    required TResult Function() successAddProduct,
+    required TResult Function() loadingUpdateProduct,
+    required TResult Function(String message) failureUpdateProduct,
+    required TResult Function() successUpdateProduct,
+    required TResult Function() loadingDeleteProduct,
+    required TResult Function(String message) failureDeleteProduct,
+    required TResult Function() successDeleteProduct,
     required TResult Function() loadingCategory,
     required TResult Function(String message) failureCategory,
     required TResult Function(List<ProductsResponseBody> categoryProducts)
@@ -979,6 +1258,15 @@ class _$EmptyProductsImpl implements _EmptyProducts {
     TResult? Function(String message)? failureSearch,
     TResult? Function(List<ProductsResponseBody> searchProducts)? successSearch,
     TResult? Function()? emptySearch,
+    TResult? Function()? loadingAddProduct,
+    TResult? Function(String message)? failureAddProduct,
+    TResult? Function()? successAddProduct,
+    TResult? Function()? loadingUpdateProduct,
+    TResult? Function(String message)? failureUpdateProduct,
+    TResult? Function()? successUpdateProduct,
+    TResult? Function()? loadingDeleteProduct,
+    TResult? Function(String message)? failureDeleteProduct,
+    TResult? Function()? successDeleteProduct,
     TResult? Function()? loadingCategory,
     TResult? Function(String message)? failureCategory,
     TResult? Function(List<ProductsResponseBody> categoryProducts)?
@@ -1000,6 +1288,15 @@ class _$EmptyProductsImpl implements _EmptyProducts {
     TResult Function(String message)? failureSearch,
     TResult Function(List<ProductsResponseBody> searchProducts)? successSearch,
     TResult Function()? emptySearch,
+    TResult Function()? loadingAddProduct,
+    TResult Function(String message)? failureAddProduct,
+    TResult Function()? successAddProduct,
+    TResult Function()? loadingUpdateProduct,
+    TResult Function(String message)? failureUpdateProduct,
+    TResult Function()? successUpdateProduct,
+    TResult Function()? loadingDeleteProduct,
+    TResult Function(String message)? failureDeleteProduct,
+    TResult Function()? successDeleteProduct,
     TResult Function()? loadingCategory,
     TResult Function(String message)? failureCategory,
     TResult Function(List<ProductsResponseBody> categoryProducts)?
@@ -1025,6 +1322,15 @@ class _$EmptyProductsImpl implements _EmptyProducts {
     required TResult Function(_FailureSearch value) failureSearch,
     required TResult Function(_SuccessSearch value) successSearch,
     required TResult Function(_EmptySearch value) emptySearch,
+    required TResult Function(_LoadingAddProduct value) loadingAddProduct,
+    required TResult Function(_FailureAddProduct value) failureAddProduct,
+    required TResult Function(_SuccessAddProduct value) successAddProduct,
+    required TResult Function(_LoadingUpdateProduct value) loadingUpdateProduct,
+    required TResult Function(_FailureUpdateProduct value) failureUpdateProduct,
+    required TResult Function(_SuccessUpdateProduct value) successUpdateProduct,
+    required TResult Function(_LoadingDeleteProduct value) loadingDeleteProduct,
+    required TResult Function(_FailureDeleteProduct value) failureDeleteProduct,
+    required TResult Function(_SuccessDeleteProduct value) successDeleteProduct,
     required TResult Function(_LoadingCategory value) loadingCategory,
     required TResult Function(_FailureCategory value) failureCategory,
     required TResult Function(_SuccessCategory value) successCategory,
@@ -1045,6 +1351,15 @@ class _$EmptyProductsImpl implements _EmptyProducts {
     TResult? Function(_FailureSearch value)? failureSearch,
     TResult? Function(_SuccessSearch value)? successSearch,
     TResult? Function(_EmptySearch value)? emptySearch,
+    TResult? Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult? Function(_FailureAddProduct value)? failureAddProduct,
+    TResult? Function(_SuccessAddProduct value)? successAddProduct,
+    TResult? Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult? Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult? Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult? Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult? Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult? Function(_SuccessDeleteProduct value)? successDeleteProduct,
     TResult? Function(_LoadingCategory value)? loadingCategory,
     TResult? Function(_FailureCategory value)? failureCategory,
     TResult? Function(_SuccessCategory value)? successCategory,
@@ -1065,6 +1380,15 @@ class _$EmptyProductsImpl implements _EmptyProducts {
     TResult Function(_FailureSearch value)? failureSearch,
     TResult Function(_SuccessSearch value)? successSearch,
     TResult Function(_EmptySearch value)? emptySearch,
+    TResult Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult Function(_FailureAddProduct value)? failureAddProduct,
+    TResult Function(_SuccessAddProduct value)? successAddProduct,
+    TResult Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult Function(_SuccessDeleteProduct value)? successDeleteProduct,
     TResult Function(_LoadingCategory value)? loadingCategory,
     TResult Function(_FailureCategory value)? failureCategory,
     TResult Function(_SuccessCategory value)? successCategory,
@@ -1131,6 +1455,15 @@ class _$LoadingSearchImpl implements _LoadingSearch {
     required TResult Function(List<ProductsResponseBody> searchProducts)
         successSearch,
     required TResult Function() emptySearch,
+    required TResult Function() loadingAddProduct,
+    required TResult Function(String message) failureAddProduct,
+    required TResult Function() successAddProduct,
+    required TResult Function() loadingUpdateProduct,
+    required TResult Function(String message) failureUpdateProduct,
+    required TResult Function() successUpdateProduct,
+    required TResult Function() loadingDeleteProduct,
+    required TResult Function(String message) failureDeleteProduct,
+    required TResult Function() successDeleteProduct,
     required TResult Function() loadingCategory,
     required TResult Function(String message) failureCategory,
     required TResult Function(List<ProductsResponseBody> categoryProducts)
@@ -1152,6 +1485,15 @@ class _$LoadingSearchImpl implements _LoadingSearch {
     TResult? Function(String message)? failureSearch,
     TResult? Function(List<ProductsResponseBody> searchProducts)? successSearch,
     TResult? Function()? emptySearch,
+    TResult? Function()? loadingAddProduct,
+    TResult? Function(String message)? failureAddProduct,
+    TResult? Function()? successAddProduct,
+    TResult? Function()? loadingUpdateProduct,
+    TResult? Function(String message)? failureUpdateProduct,
+    TResult? Function()? successUpdateProduct,
+    TResult? Function()? loadingDeleteProduct,
+    TResult? Function(String message)? failureDeleteProduct,
+    TResult? Function()? successDeleteProduct,
     TResult? Function()? loadingCategory,
     TResult? Function(String message)? failureCategory,
     TResult? Function(List<ProductsResponseBody> categoryProducts)?
@@ -1173,6 +1515,15 @@ class _$LoadingSearchImpl implements _LoadingSearch {
     TResult Function(String message)? failureSearch,
     TResult Function(List<ProductsResponseBody> searchProducts)? successSearch,
     TResult Function()? emptySearch,
+    TResult Function()? loadingAddProduct,
+    TResult Function(String message)? failureAddProduct,
+    TResult Function()? successAddProduct,
+    TResult Function()? loadingUpdateProduct,
+    TResult Function(String message)? failureUpdateProduct,
+    TResult Function()? successUpdateProduct,
+    TResult Function()? loadingDeleteProduct,
+    TResult Function(String message)? failureDeleteProduct,
+    TResult Function()? successDeleteProduct,
     TResult Function()? loadingCategory,
     TResult Function(String message)? failureCategory,
     TResult Function(List<ProductsResponseBody> categoryProducts)?
@@ -1198,6 +1549,15 @@ class _$LoadingSearchImpl implements _LoadingSearch {
     required TResult Function(_FailureSearch value) failureSearch,
     required TResult Function(_SuccessSearch value) successSearch,
     required TResult Function(_EmptySearch value) emptySearch,
+    required TResult Function(_LoadingAddProduct value) loadingAddProduct,
+    required TResult Function(_FailureAddProduct value) failureAddProduct,
+    required TResult Function(_SuccessAddProduct value) successAddProduct,
+    required TResult Function(_LoadingUpdateProduct value) loadingUpdateProduct,
+    required TResult Function(_FailureUpdateProduct value) failureUpdateProduct,
+    required TResult Function(_SuccessUpdateProduct value) successUpdateProduct,
+    required TResult Function(_LoadingDeleteProduct value) loadingDeleteProduct,
+    required TResult Function(_FailureDeleteProduct value) failureDeleteProduct,
+    required TResult Function(_SuccessDeleteProduct value) successDeleteProduct,
     required TResult Function(_LoadingCategory value) loadingCategory,
     required TResult Function(_FailureCategory value) failureCategory,
     required TResult Function(_SuccessCategory value) successCategory,
@@ -1218,6 +1578,15 @@ class _$LoadingSearchImpl implements _LoadingSearch {
     TResult? Function(_FailureSearch value)? failureSearch,
     TResult? Function(_SuccessSearch value)? successSearch,
     TResult? Function(_EmptySearch value)? emptySearch,
+    TResult? Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult? Function(_FailureAddProduct value)? failureAddProduct,
+    TResult? Function(_SuccessAddProduct value)? successAddProduct,
+    TResult? Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult? Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult? Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult? Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult? Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult? Function(_SuccessDeleteProduct value)? successDeleteProduct,
     TResult? Function(_LoadingCategory value)? loadingCategory,
     TResult? Function(_FailureCategory value)? failureCategory,
     TResult? Function(_SuccessCategory value)? successCategory,
@@ -1238,6 +1607,15 @@ class _$LoadingSearchImpl implements _LoadingSearch {
     TResult Function(_FailureSearch value)? failureSearch,
     TResult Function(_SuccessSearch value)? successSearch,
     TResult Function(_EmptySearch value)? emptySearch,
+    TResult Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult Function(_FailureAddProduct value)? failureAddProduct,
+    TResult Function(_SuccessAddProduct value)? successAddProduct,
+    TResult Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult Function(_SuccessDeleteProduct value)? successDeleteProduct,
     TResult Function(_LoadingCategory value)? loadingCategory,
     TResult Function(_FailureCategory value)? failureCategory,
     TResult Function(_SuccessCategory value)? successCategory,
@@ -1330,6 +1708,15 @@ class _$FailureSearchImpl implements _FailureSearch {
     required TResult Function(List<ProductsResponseBody> searchProducts)
         successSearch,
     required TResult Function() emptySearch,
+    required TResult Function() loadingAddProduct,
+    required TResult Function(String message) failureAddProduct,
+    required TResult Function() successAddProduct,
+    required TResult Function() loadingUpdateProduct,
+    required TResult Function(String message) failureUpdateProduct,
+    required TResult Function() successUpdateProduct,
+    required TResult Function() loadingDeleteProduct,
+    required TResult Function(String message) failureDeleteProduct,
+    required TResult Function() successDeleteProduct,
     required TResult Function() loadingCategory,
     required TResult Function(String message) failureCategory,
     required TResult Function(List<ProductsResponseBody> categoryProducts)
@@ -1351,6 +1738,15 @@ class _$FailureSearchImpl implements _FailureSearch {
     TResult? Function(String message)? failureSearch,
     TResult? Function(List<ProductsResponseBody> searchProducts)? successSearch,
     TResult? Function()? emptySearch,
+    TResult? Function()? loadingAddProduct,
+    TResult? Function(String message)? failureAddProduct,
+    TResult? Function()? successAddProduct,
+    TResult? Function()? loadingUpdateProduct,
+    TResult? Function(String message)? failureUpdateProduct,
+    TResult? Function()? successUpdateProduct,
+    TResult? Function()? loadingDeleteProduct,
+    TResult? Function(String message)? failureDeleteProduct,
+    TResult? Function()? successDeleteProduct,
     TResult? Function()? loadingCategory,
     TResult? Function(String message)? failureCategory,
     TResult? Function(List<ProductsResponseBody> categoryProducts)?
@@ -1372,6 +1768,15 @@ class _$FailureSearchImpl implements _FailureSearch {
     TResult Function(String message)? failureSearch,
     TResult Function(List<ProductsResponseBody> searchProducts)? successSearch,
     TResult Function()? emptySearch,
+    TResult Function()? loadingAddProduct,
+    TResult Function(String message)? failureAddProduct,
+    TResult Function()? successAddProduct,
+    TResult Function()? loadingUpdateProduct,
+    TResult Function(String message)? failureUpdateProduct,
+    TResult Function()? successUpdateProduct,
+    TResult Function()? loadingDeleteProduct,
+    TResult Function(String message)? failureDeleteProduct,
+    TResult Function()? successDeleteProduct,
     TResult Function()? loadingCategory,
     TResult Function(String message)? failureCategory,
     TResult Function(List<ProductsResponseBody> categoryProducts)?
@@ -1397,6 +1802,15 @@ class _$FailureSearchImpl implements _FailureSearch {
     required TResult Function(_FailureSearch value) failureSearch,
     required TResult Function(_SuccessSearch value) successSearch,
     required TResult Function(_EmptySearch value) emptySearch,
+    required TResult Function(_LoadingAddProduct value) loadingAddProduct,
+    required TResult Function(_FailureAddProduct value) failureAddProduct,
+    required TResult Function(_SuccessAddProduct value) successAddProduct,
+    required TResult Function(_LoadingUpdateProduct value) loadingUpdateProduct,
+    required TResult Function(_FailureUpdateProduct value) failureUpdateProduct,
+    required TResult Function(_SuccessUpdateProduct value) successUpdateProduct,
+    required TResult Function(_LoadingDeleteProduct value) loadingDeleteProduct,
+    required TResult Function(_FailureDeleteProduct value) failureDeleteProduct,
+    required TResult Function(_SuccessDeleteProduct value) successDeleteProduct,
     required TResult Function(_LoadingCategory value) loadingCategory,
     required TResult Function(_FailureCategory value) failureCategory,
     required TResult Function(_SuccessCategory value) successCategory,
@@ -1417,6 +1831,15 @@ class _$FailureSearchImpl implements _FailureSearch {
     TResult? Function(_FailureSearch value)? failureSearch,
     TResult? Function(_SuccessSearch value)? successSearch,
     TResult? Function(_EmptySearch value)? emptySearch,
+    TResult? Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult? Function(_FailureAddProduct value)? failureAddProduct,
+    TResult? Function(_SuccessAddProduct value)? successAddProduct,
+    TResult? Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult? Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult? Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult? Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult? Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult? Function(_SuccessDeleteProduct value)? successDeleteProduct,
     TResult? Function(_LoadingCategory value)? loadingCategory,
     TResult? Function(_FailureCategory value)? failureCategory,
     TResult? Function(_SuccessCategory value)? successCategory,
@@ -1437,6 +1860,15 @@ class _$FailureSearchImpl implements _FailureSearch {
     TResult Function(_FailureSearch value)? failureSearch,
     TResult Function(_SuccessSearch value)? successSearch,
     TResult Function(_EmptySearch value)? emptySearch,
+    TResult Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult Function(_FailureAddProduct value)? failureAddProduct,
+    TResult Function(_SuccessAddProduct value)? successAddProduct,
+    TResult Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult Function(_SuccessDeleteProduct value)? successDeleteProduct,
     TResult Function(_LoadingCategory value)? loadingCategory,
     TResult Function(_FailureCategory value)? failureCategory,
     TResult Function(_SuccessCategory value)? successCategory,
@@ -1542,6 +1974,15 @@ class _$SuccessSearchImpl implements _SuccessSearch {
     required TResult Function(List<ProductsResponseBody> searchProducts)
         successSearch,
     required TResult Function() emptySearch,
+    required TResult Function() loadingAddProduct,
+    required TResult Function(String message) failureAddProduct,
+    required TResult Function() successAddProduct,
+    required TResult Function() loadingUpdateProduct,
+    required TResult Function(String message) failureUpdateProduct,
+    required TResult Function() successUpdateProduct,
+    required TResult Function() loadingDeleteProduct,
+    required TResult Function(String message) failureDeleteProduct,
+    required TResult Function() successDeleteProduct,
     required TResult Function() loadingCategory,
     required TResult Function(String message) failureCategory,
     required TResult Function(List<ProductsResponseBody> categoryProducts)
@@ -1563,6 +2004,15 @@ class _$SuccessSearchImpl implements _SuccessSearch {
     TResult? Function(String message)? failureSearch,
     TResult? Function(List<ProductsResponseBody> searchProducts)? successSearch,
     TResult? Function()? emptySearch,
+    TResult? Function()? loadingAddProduct,
+    TResult? Function(String message)? failureAddProduct,
+    TResult? Function()? successAddProduct,
+    TResult? Function()? loadingUpdateProduct,
+    TResult? Function(String message)? failureUpdateProduct,
+    TResult? Function()? successUpdateProduct,
+    TResult? Function()? loadingDeleteProduct,
+    TResult? Function(String message)? failureDeleteProduct,
+    TResult? Function()? successDeleteProduct,
     TResult? Function()? loadingCategory,
     TResult? Function(String message)? failureCategory,
     TResult? Function(List<ProductsResponseBody> categoryProducts)?
@@ -1584,6 +2034,15 @@ class _$SuccessSearchImpl implements _SuccessSearch {
     TResult Function(String message)? failureSearch,
     TResult Function(List<ProductsResponseBody> searchProducts)? successSearch,
     TResult Function()? emptySearch,
+    TResult Function()? loadingAddProduct,
+    TResult Function(String message)? failureAddProduct,
+    TResult Function()? successAddProduct,
+    TResult Function()? loadingUpdateProduct,
+    TResult Function(String message)? failureUpdateProduct,
+    TResult Function()? successUpdateProduct,
+    TResult Function()? loadingDeleteProduct,
+    TResult Function(String message)? failureDeleteProduct,
+    TResult Function()? successDeleteProduct,
     TResult Function()? loadingCategory,
     TResult Function(String message)? failureCategory,
     TResult Function(List<ProductsResponseBody> categoryProducts)?
@@ -1609,6 +2068,15 @@ class _$SuccessSearchImpl implements _SuccessSearch {
     required TResult Function(_FailureSearch value) failureSearch,
     required TResult Function(_SuccessSearch value) successSearch,
     required TResult Function(_EmptySearch value) emptySearch,
+    required TResult Function(_LoadingAddProduct value) loadingAddProduct,
+    required TResult Function(_FailureAddProduct value) failureAddProduct,
+    required TResult Function(_SuccessAddProduct value) successAddProduct,
+    required TResult Function(_LoadingUpdateProduct value) loadingUpdateProduct,
+    required TResult Function(_FailureUpdateProduct value) failureUpdateProduct,
+    required TResult Function(_SuccessUpdateProduct value) successUpdateProduct,
+    required TResult Function(_LoadingDeleteProduct value) loadingDeleteProduct,
+    required TResult Function(_FailureDeleteProduct value) failureDeleteProduct,
+    required TResult Function(_SuccessDeleteProduct value) successDeleteProduct,
     required TResult Function(_LoadingCategory value) loadingCategory,
     required TResult Function(_FailureCategory value) failureCategory,
     required TResult Function(_SuccessCategory value) successCategory,
@@ -1629,6 +2097,15 @@ class _$SuccessSearchImpl implements _SuccessSearch {
     TResult? Function(_FailureSearch value)? failureSearch,
     TResult? Function(_SuccessSearch value)? successSearch,
     TResult? Function(_EmptySearch value)? emptySearch,
+    TResult? Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult? Function(_FailureAddProduct value)? failureAddProduct,
+    TResult? Function(_SuccessAddProduct value)? successAddProduct,
+    TResult? Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult? Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult? Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult? Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult? Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult? Function(_SuccessDeleteProduct value)? successDeleteProduct,
     TResult? Function(_LoadingCategory value)? loadingCategory,
     TResult? Function(_FailureCategory value)? failureCategory,
     TResult? Function(_SuccessCategory value)? successCategory,
@@ -1649,6 +2126,15 @@ class _$SuccessSearchImpl implements _SuccessSearch {
     TResult Function(_FailureSearch value)? failureSearch,
     TResult Function(_SuccessSearch value)? successSearch,
     TResult Function(_EmptySearch value)? emptySearch,
+    TResult Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult Function(_FailureAddProduct value)? failureAddProduct,
+    TResult Function(_SuccessAddProduct value)? successAddProduct,
+    TResult Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult Function(_SuccessDeleteProduct value)? successDeleteProduct,
     TResult Function(_LoadingCategory value)? loadingCategory,
     TResult Function(_FailureCategory value)? failureCategory,
     TResult Function(_SuccessCategory value)? successCategory,
@@ -1721,6 +2207,15 @@ class _$EmptySearchImpl implements _EmptySearch {
     required TResult Function(List<ProductsResponseBody> searchProducts)
         successSearch,
     required TResult Function() emptySearch,
+    required TResult Function() loadingAddProduct,
+    required TResult Function(String message) failureAddProduct,
+    required TResult Function() successAddProduct,
+    required TResult Function() loadingUpdateProduct,
+    required TResult Function(String message) failureUpdateProduct,
+    required TResult Function() successUpdateProduct,
+    required TResult Function() loadingDeleteProduct,
+    required TResult Function(String message) failureDeleteProduct,
+    required TResult Function() successDeleteProduct,
     required TResult Function() loadingCategory,
     required TResult Function(String message) failureCategory,
     required TResult Function(List<ProductsResponseBody> categoryProducts)
@@ -1742,6 +2237,15 @@ class _$EmptySearchImpl implements _EmptySearch {
     TResult? Function(String message)? failureSearch,
     TResult? Function(List<ProductsResponseBody> searchProducts)? successSearch,
     TResult? Function()? emptySearch,
+    TResult? Function()? loadingAddProduct,
+    TResult? Function(String message)? failureAddProduct,
+    TResult? Function()? successAddProduct,
+    TResult? Function()? loadingUpdateProduct,
+    TResult? Function(String message)? failureUpdateProduct,
+    TResult? Function()? successUpdateProduct,
+    TResult? Function()? loadingDeleteProduct,
+    TResult? Function(String message)? failureDeleteProduct,
+    TResult? Function()? successDeleteProduct,
     TResult? Function()? loadingCategory,
     TResult? Function(String message)? failureCategory,
     TResult? Function(List<ProductsResponseBody> categoryProducts)?
@@ -1763,6 +2267,15 @@ class _$EmptySearchImpl implements _EmptySearch {
     TResult Function(String message)? failureSearch,
     TResult Function(List<ProductsResponseBody> searchProducts)? successSearch,
     TResult Function()? emptySearch,
+    TResult Function()? loadingAddProduct,
+    TResult Function(String message)? failureAddProduct,
+    TResult Function()? successAddProduct,
+    TResult Function()? loadingUpdateProduct,
+    TResult Function(String message)? failureUpdateProduct,
+    TResult Function()? successUpdateProduct,
+    TResult Function()? loadingDeleteProduct,
+    TResult Function(String message)? failureDeleteProduct,
+    TResult Function()? successDeleteProduct,
     TResult Function()? loadingCategory,
     TResult Function(String message)? failureCategory,
     TResult Function(List<ProductsResponseBody> categoryProducts)?
@@ -1788,6 +2301,15 @@ class _$EmptySearchImpl implements _EmptySearch {
     required TResult Function(_FailureSearch value) failureSearch,
     required TResult Function(_SuccessSearch value) successSearch,
     required TResult Function(_EmptySearch value) emptySearch,
+    required TResult Function(_LoadingAddProduct value) loadingAddProduct,
+    required TResult Function(_FailureAddProduct value) failureAddProduct,
+    required TResult Function(_SuccessAddProduct value) successAddProduct,
+    required TResult Function(_LoadingUpdateProduct value) loadingUpdateProduct,
+    required TResult Function(_FailureUpdateProduct value) failureUpdateProduct,
+    required TResult Function(_SuccessUpdateProduct value) successUpdateProduct,
+    required TResult Function(_LoadingDeleteProduct value) loadingDeleteProduct,
+    required TResult Function(_FailureDeleteProduct value) failureDeleteProduct,
+    required TResult Function(_SuccessDeleteProduct value) successDeleteProduct,
     required TResult Function(_LoadingCategory value) loadingCategory,
     required TResult Function(_FailureCategory value) failureCategory,
     required TResult Function(_SuccessCategory value) successCategory,
@@ -1808,6 +2330,15 @@ class _$EmptySearchImpl implements _EmptySearch {
     TResult? Function(_FailureSearch value)? failureSearch,
     TResult? Function(_SuccessSearch value)? successSearch,
     TResult? Function(_EmptySearch value)? emptySearch,
+    TResult? Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult? Function(_FailureAddProduct value)? failureAddProduct,
+    TResult? Function(_SuccessAddProduct value)? successAddProduct,
+    TResult? Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult? Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult? Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult? Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult? Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult? Function(_SuccessDeleteProduct value)? successDeleteProduct,
     TResult? Function(_LoadingCategory value)? loadingCategory,
     TResult? Function(_FailureCategory value)? failureCategory,
     TResult? Function(_SuccessCategory value)? successCategory,
@@ -1828,6 +2359,15 @@ class _$EmptySearchImpl implements _EmptySearch {
     TResult Function(_FailureSearch value)? failureSearch,
     TResult Function(_SuccessSearch value)? successSearch,
     TResult Function(_EmptySearch value)? emptySearch,
+    TResult Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult Function(_FailureAddProduct value)? failureAddProduct,
+    TResult Function(_SuccessAddProduct value)? successAddProduct,
+    TResult Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult Function(_SuccessDeleteProduct value)? successDeleteProduct,
     TResult Function(_LoadingCategory value)? loadingCategory,
     TResult Function(_FailureCategory value)? failureCategory,
     TResult Function(_SuccessCategory value)? successCategory,
@@ -1843,6 +2383,2154 @@ class _$EmptySearchImpl implements _EmptySearch {
 
 abstract class _EmptySearch implements ProductsState {
   const factory _EmptySearch() = _$EmptySearchImpl;
+}
+
+/// @nodoc
+abstract class _$$LoadingAddProductImplCopyWith<$Res> {
+  factory _$$LoadingAddProductImplCopyWith(_$LoadingAddProductImpl value,
+          $Res Function(_$LoadingAddProductImpl) then) =
+      __$$LoadingAddProductImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadingAddProductImplCopyWithImpl<$Res>
+    extends _$ProductsStateCopyWithImpl<$Res, _$LoadingAddProductImpl>
+    implements _$$LoadingAddProductImplCopyWith<$Res> {
+  __$$LoadingAddProductImplCopyWithImpl(_$LoadingAddProductImpl _value,
+      $Res Function(_$LoadingAddProductImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LoadingAddProductImpl implements _LoadingAddProduct {
+  const _$LoadingAddProductImpl();
+
+  @override
+  String toString() {
+    return 'ProductsState.loadingAddProduct()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoadingAddProductImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingProducts,
+    required TResult Function(String message) failureProducts,
+    required TResult Function(List<ProductsResponseBody> products)
+        successProducts,
+    required TResult Function() emptyProducts,
+    required TResult Function() loadingSearch,
+    required TResult Function(String message) failureSearch,
+    required TResult Function(List<ProductsResponseBody> searchProducts)
+        successSearch,
+    required TResult Function() emptySearch,
+    required TResult Function() loadingAddProduct,
+    required TResult Function(String message) failureAddProduct,
+    required TResult Function() successAddProduct,
+    required TResult Function() loadingUpdateProduct,
+    required TResult Function(String message) failureUpdateProduct,
+    required TResult Function() successUpdateProduct,
+    required TResult Function() loadingDeleteProduct,
+    required TResult Function(String message) failureDeleteProduct,
+    required TResult Function() successDeleteProduct,
+    required TResult Function() loadingCategory,
+    required TResult Function(String message) failureCategory,
+    required TResult Function(List<ProductsResponseBody> categoryProducts)
+        successCategory,
+    required TResult Function() emptyCategory,
+  }) {
+    return loadingAddProduct();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingProducts,
+    TResult? Function(String message)? failureProducts,
+    TResult? Function(List<ProductsResponseBody> products)? successProducts,
+    TResult? Function()? emptyProducts,
+    TResult? Function()? loadingSearch,
+    TResult? Function(String message)? failureSearch,
+    TResult? Function(List<ProductsResponseBody> searchProducts)? successSearch,
+    TResult? Function()? emptySearch,
+    TResult? Function()? loadingAddProduct,
+    TResult? Function(String message)? failureAddProduct,
+    TResult? Function()? successAddProduct,
+    TResult? Function()? loadingUpdateProduct,
+    TResult? Function(String message)? failureUpdateProduct,
+    TResult? Function()? successUpdateProduct,
+    TResult? Function()? loadingDeleteProduct,
+    TResult? Function(String message)? failureDeleteProduct,
+    TResult? Function()? successDeleteProduct,
+    TResult? Function()? loadingCategory,
+    TResult? Function(String message)? failureCategory,
+    TResult? Function(List<ProductsResponseBody> categoryProducts)?
+        successCategory,
+    TResult? Function()? emptyCategory,
+  }) {
+    return loadingAddProduct?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingProducts,
+    TResult Function(String message)? failureProducts,
+    TResult Function(List<ProductsResponseBody> products)? successProducts,
+    TResult Function()? emptyProducts,
+    TResult Function()? loadingSearch,
+    TResult Function(String message)? failureSearch,
+    TResult Function(List<ProductsResponseBody> searchProducts)? successSearch,
+    TResult Function()? emptySearch,
+    TResult Function()? loadingAddProduct,
+    TResult Function(String message)? failureAddProduct,
+    TResult Function()? successAddProduct,
+    TResult Function()? loadingUpdateProduct,
+    TResult Function(String message)? failureUpdateProduct,
+    TResult Function()? successUpdateProduct,
+    TResult Function()? loadingDeleteProduct,
+    TResult Function(String message)? failureDeleteProduct,
+    TResult Function()? successDeleteProduct,
+    TResult Function()? loadingCategory,
+    TResult Function(String message)? failureCategory,
+    TResult Function(List<ProductsResponseBody> categoryProducts)?
+        successCategory,
+    TResult Function()? emptyCategory,
+    required TResult orElse(),
+  }) {
+    if (loadingAddProduct != null) {
+      return loadingAddProduct();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadingProducts value) loadingProducts,
+    required TResult Function(_FailureProducts value) failureProducts,
+    required TResult Function(_SuccessProducts value) successProducts,
+    required TResult Function(_EmptyProducts value) emptyProducts,
+    required TResult Function(_LoadingSearch value) loadingSearch,
+    required TResult Function(_FailureSearch value) failureSearch,
+    required TResult Function(_SuccessSearch value) successSearch,
+    required TResult Function(_EmptySearch value) emptySearch,
+    required TResult Function(_LoadingAddProduct value) loadingAddProduct,
+    required TResult Function(_FailureAddProduct value) failureAddProduct,
+    required TResult Function(_SuccessAddProduct value) successAddProduct,
+    required TResult Function(_LoadingUpdateProduct value) loadingUpdateProduct,
+    required TResult Function(_FailureUpdateProduct value) failureUpdateProduct,
+    required TResult Function(_SuccessUpdateProduct value) successUpdateProduct,
+    required TResult Function(_LoadingDeleteProduct value) loadingDeleteProduct,
+    required TResult Function(_FailureDeleteProduct value) failureDeleteProduct,
+    required TResult Function(_SuccessDeleteProduct value) successDeleteProduct,
+    required TResult Function(_LoadingCategory value) loadingCategory,
+    required TResult Function(_FailureCategory value) failureCategory,
+    required TResult Function(_SuccessCategory value) successCategory,
+    required TResult Function(_EmptyCategory value) emptyCategory,
+  }) {
+    return loadingAddProduct(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingProducts value)? loadingProducts,
+    TResult? Function(_FailureProducts value)? failureProducts,
+    TResult? Function(_SuccessProducts value)? successProducts,
+    TResult? Function(_EmptyProducts value)? emptyProducts,
+    TResult? Function(_LoadingSearch value)? loadingSearch,
+    TResult? Function(_FailureSearch value)? failureSearch,
+    TResult? Function(_SuccessSearch value)? successSearch,
+    TResult? Function(_EmptySearch value)? emptySearch,
+    TResult? Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult? Function(_FailureAddProduct value)? failureAddProduct,
+    TResult? Function(_SuccessAddProduct value)? successAddProduct,
+    TResult? Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult? Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult? Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult? Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult? Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult? Function(_SuccessDeleteProduct value)? successDeleteProduct,
+    TResult? Function(_LoadingCategory value)? loadingCategory,
+    TResult? Function(_FailureCategory value)? failureCategory,
+    TResult? Function(_SuccessCategory value)? successCategory,
+    TResult? Function(_EmptyCategory value)? emptyCategory,
+  }) {
+    return loadingAddProduct?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadingProducts value)? loadingProducts,
+    TResult Function(_FailureProducts value)? failureProducts,
+    TResult Function(_SuccessProducts value)? successProducts,
+    TResult Function(_EmptyProducts value)? emptyProducts,
+    TResult Function(_LoadingSearch value)? loadingSearch,
+    TResult Function(_FailureSearch value)? failureSearch,
+    TResult Function(_SuccessSearch value)? successSearch,
+    TResult Function(_EmptySearch value)? emptySearch,
+    TResult Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult Function(_FailureAddProduct value)? failureAddProduct,
+    TResult Function(_SuccessAddProduct value)? successAddProduct,
+    TResult Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult Function(_SuccessDeleteProduct value)? successDeleteProduct,
+    TResult Function(_LoadingCategory value)? loadingCategory,
+    TResult Function(_FailureCategory value)? failureCategory,
+    TResult Function(_SuccessCategory value)? successCategory,
+    TResult Function(_EmptyCategory value)? emptyCategory,
+    required TResult orElse(),
+  }) {
+    if (loadingAddProduct != null) {
+      return loadingAddProduct(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadingAddProduct implements ProductsState {
+  const factory _LoadingAddProduct() = _$LoadingAddProductImpl;
+}
+
+/// @nodoc
+abstract class _$$FailureAddProductImplCopyWith<$Res> {
+  factory _$$FailureAddProductImplCopyWith(_$FailureAddProductImpl value,
+          $Res Function(_$FailureAddProductImpl) then) =
+      __$$FailureAddProductImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$FailureAddProductImplCopyWithImpl<$Res>
+    extends _$ProductsStateCopyWithImpl<$Res, _$FailureAddProductImpl>
+    implements _$$FailureAddProductImplCopyWith<$Res> {
+  __$$FailureAddProductImplCopyWithImpl(_$FailureAddProductImpl _value,
+      $Res Function(_$FailureAddProductImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$FailureAddProductImpl(
+      null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FailureAddProductImpl implements _FailureAddProduct {
+  const _$FailureAddProductImpl(this.message);
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'ProductsState.failureAddProduct(message: $message)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FailureAddProductImpl &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FailureAddProductImplCopyWith<_$FailureAddProductImpl> get copyWith =>
+      __$$FailureAddProductImplCopyWithImpl<_$FailureAddProductImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingProducts,
+    required TResult Function(String message) failureProducts,
+    required TResult Function(List<ProductsResponseBody> products)
+        successProducts,
+    required TResult Function() emptyProducts,
+    required TResult Function() loadingSearch,
+    required TResult Function(String message) failureSearch,
+    required TResult Function(List<ProductsResponseBody> searchProducts)
+        successSearch,
+    required TResult Function() emptySearch,
+    required TResult Function() loadingAddProduct,
+    required TResult Function(String message) failureAddProduct,
+    required TResult Function() successAddProduct,
+    required TResult Function() loadingUpdateProduct,
+    required TResult Function(String message) failureUpdateProduct,
+    required TResult Function() successUpdateProduct,
+    required TResult Function() loadingDeleteProduct,
+    required TResult Function(String message) failureDeleteProduct,
+    required TResult Function() successDeleteProduct,
+    required TResult Function() loadingCategory,
+    required TResult Function(String message) failureCategory,
+    required TResult Function(List<ProductsResponseBody> categoryProducts)
+        successCategory,
+    required TResult Function() emptyCategory,
+  }) {
+    return failureAddProduct(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingProducts,
+    TResult? Function(String message)? failureProducts,
+    TResult? Function(List<ProductsResponseBody> products)? successProducts,
+    TResult? Function()? emptyProducts,
+    TResult? Function()? loadingSearch,
+    TResult? Function(String message)? failureSearch,
+    TResult? Function(List<ProductsResponseBody> searchProducts)? successSearch,
+    TResult? Function()? emptySearch,
+    TResult? Function()? loadingAddProduct,
+    TResult? Function(String message)? failureAddProduct,
+    TResult? Function()? successAddProduct,
+    TResult? Function()? loadingUpdateProduct,
+    TResult? Function(String message)? failureUpdateProduct,
+    TResult? Function()? successUpdateProduct,
+    TResult? Function()? loadingDeleteProduct,
+    TResult? Function(String message)? failureDeleteProduct,
+    TResult? Function()? successDeleteProduct,
+    TResult? Function()? loadingCategory,
+    TResult? Function(String message)? failureCategory,
+    TResult? Function(List<ProductsResponseBody> categoryProducts)?
+        successCategory,
+    TResult? Function()? emptyCategory,
+  }) {
+    return failureAddProduct?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingProducts,
+    TResult Function(String message)? failureProducts,
+    TResult Function(List<ProductsResponseBody> products)? successProducts,
+    TResult Function()? emptyProducts,
+    TResult Function()? loadingSearch,
+    TResult Function(String message)? failureSearch,
+    TResult Function(List<ProductsResponseBody> searchProducts)? successSearch,
+    TResult Function()? emptySearch,
+    TResult Function()? loadingAddProduct,
+    TResult Function(String message)? failureAddProduct,
+    TResult Function()? successAddProduct,
+    TResult Function()? loadingUpdateProduct,
+    TResult Function(String message)? failureUpdateProduct,
+    TResult Function()? successUpdateProduct,
+    TResult Function()? loadingDeleteProduct,
+    TResult Function(String message)? failureDeleteProduct,
+    TResult Function()? successDeleteProduct,
+    TResult Function()? loadingCategory,
+    TResult Function(String message)? failureCategory,
+    TResult Function(List<ProductsResponseBody> categoryProducts)?
+        successCategory,
+    TResult Function()? emptyCategory,
+    required TResult orElse(),
+  }) {
+    if (failureAddProduct != null) {
+      return failureAddProduct(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadingProducts value) loadingProducts,
+    required TResult Function(_FailureProducts value) failureProducts,
+    required TResult Function(_SuccessProducts value) successProducts,
+    required TResult Function(_EmptyProducts value) emptyProducts,
+    required TResult Function(_LoadingSearch value) loadingSearch,
+    required TResult Function(_FailureSearch value) failureSearch,
+    required TResult Function(_SuccessSearch value) successSearch,
+    required TResult Function(_EmptySearch value) emptySearch,
+    required TResult Function(_LoadingAddProduct value) loadingAddProduct,
+    required TResult Function(_FailureAddProduct value) failureAddProduct,
+    required TResult Function(_SuccessAddProduct value) successAddProduct,
+    required TResult Function(_LoadingUpdateProduct value) loadingUpdateProduct,
+    required TResult Function(_FailureUpdateProduct value) failureUpdateProduct,
+    required TResult Function(_SuccessUpdateProduct value) successUpdateProduct,
+    required TResult Function(_LoadingDeleteProduct value) loadingDeleteProduct,
+    required TResult Function(_FailureDeleteProduct value) failureDeleteProduct,
+    required TResult Function(_SuccessDeleteProduct value) successDeleteProduct,
+    required TResult Function(_LoadingCategory value) loadingCategory,
+    required TResult Function(_FailureCategory value) failureCategory,
+    required TResult Function(_SuccessCategory value) successCategory,
+    required TResult Function(_EmptyCategory value) emptyCategory,
+  }) {
+    return failureAddProduct(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingProducts value)? loadingProducts,
+    TResult? Function(_FailureProducts value)? failureProducts,
+    TResult? Function(_SuccessProducts value)? successProducts,
+    TResult? Function(_EmptyProducts value)? emptyProducts,
+    TResult? Function(_LoadingSearch value)? loadingSearch,
+    TResult? Function(_FailureSearch value)? failureSearch,
+    TResult? Function(_SuccessSearch value)? successSearch,
+    TResult? Function(_EmptySearch value)? emptySearch,
+    TResult? Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult? Function(_FailureAddProduct value)? failureAddProduct,
+    TResult? Function(_SuccessAddProduct value)? successAddProduct,
+    TResult? Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult? Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult? Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult? Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult? Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult? Function(_SuccessDeleteProduct value)? successDeleteProduct,
+    TResult? Function(_LoadingCategory value)? loadingCategory,
+    TResult? Function(_FailureCategory value)? failureCategory,
+    TResult? Function(_SuccessCategory value)? successCategory,
+    TResult? Function(_EmptyCategory value)? emptyCategory,
+  }) {
+    return failureAddProduct?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadingProducts value)? loadingProducts,
+    TResult Function(_FailureProducts value)? failureProducts,
+    TResult Function(_SuccessProducts value)? successProducts,
+    TResult Function(_EmptyProducts value)? emptyProducts,
+    TResult Function(_LoadingSearch value)? loadingSearch,
+    TResult Function(_FailureSearch value)? failureSearch,
+    TResult Function(_SuccessSearch value)? successSearch,
+    TResult Function(_EmptySearch value)? emptySearch,
+    TResult Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult Function(_FailureAddProduct value)? failureAddProduct,
+    TResult Function(_SuccessAddProduct value)? successAddProduct,
+    TResult Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult Function(_SuccessDeleteProduct value)? successDeleteProduct,
+    TResult Function(_LoadingCategory value)? loadingCategory,
+    TResult Function(_FailureCategory value)? failureCategory,
+    TResult Function(_SuccessCategory value)? successCategory,
+    TResult Function(_EmptyCategory value)? emptyCategory,
+    required TResult orElse(),
+  }) {
+    if (failureAddProduct != null) {
+      return failureAddProduct(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FailureAddProduct implements ProductsState {
+  const factory _FailureAddProduct(final String message) =
+      _$FailureAddProductImpl;
+
+  String get message;
+  @JsonKey(ignore: true)
+  _$$FailureAddProductImplCopyWith<_$FailureAddProductImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SuccessAddProductImplCopyWith<$Res> {
+  factory _$$SuccessAddProductImplCopyWith(_$SuccessAddProductImpl value,
+          $Res Function(_$SuccessAddProductImpl) then) =
+      __$$SuccessAddProductImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SuccessAddProductImplCopyWithImpl<$Res>
+    extends _$ProductsStateCopyWithImpl<$Res, _$SuccessAddProductImpl>
+    implements _$$SuccessAddProductImplCopyWith<$Res> {
+  __$$SuccessAddProductImplCopyWithImpl(_$SuccessAddProductImpl _value,
+      $Res Function(_$SuccessAddProductImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SuccessAddProductImpl implements _SuccessAddProduct {
+  const _$SuccessAddProductImpl();
+
+  @override
+  String toString() {
+    return 'ProductsState.successAddProduct()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SuccessAddProductImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingProducts,
+    required TResult Function(String message) failureProducts,
+    required TResult Function(List<ProductsResponseBody> products)
+        successProducts,
+    required TResult Function() emptyProducts,
+    required TResult Function() loadingSearch,
+    required TResult Function(String message) failureSearch,
+    required TResult Function(List<ProductsResponseBody> searchProducts)
+        successSearch,
+    required TResult Function() emptySearch,
+    required TResult Function() loadingAddProduct,
+    required TResult Function(String message) failureAddProduct,
+    required TResult Function() successAddProduct,
+    required TResult Function() loadingUpdateProduct,
+    required TResult Function(String message) failureUpdateProduct,
+    required TResult Function() successUpdateProduct,
+    required TResult Function() loadingDeleteProduct,
+    required TResult Function(String message) failureDeleteProduct,
+    required TResult Function() successDeleteProduct,
+    required TResult Function() loadingCategory,
+    required TResult Function(String message) failureCategory,
+    required TResult Function(List<ProductsResponseBody> categoryProducts)
+        successCategory,
+    required TResult Function() emptyCategory,
+  }) {
+    return successAddProduct();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingProducts,
+    TResult? Function(String message)? failureProducts,
+    TResult? Function(List<ProductsResponseBody> products)? successProducts,
+    TResult? Function()? emptyProducts,
+    TResult? Function()? loadingSearch,
+    TResult? Function(String message)? failureSearch,
+    TResult? Function(List<ProductsResponseBody> searchProducts)? successSearch,
+    TResult? Function()? emptySearch,
+    TResult? Function()? loadingAddProduct,
+    TResult? Function(String message)? failureAddProduct,
+    TResult? Function()? successAddProduct,
+    TResult? Function()? loadingUpdateProduct,
+    TResult? Function(String message)? failureUpdateProduct,
+    TResult? Function()? successUpdateProduct,
+    TResult? Function()? loadingDeleteProduct,
+    TResult? Function(String message)? failureDeleteProduct,
+    TResult? Function()? successDeleteProduct,
+    TResult? Function()? loadingCategory,
+    TResult? Function(String message)? failureCategory,
+    TResult? Function(List<ProductsResponseBody> categoryProducts)?
+        successCategory,
+    TResult? Function()? emptyCategory,
+  }) {
+    return successAddProduct?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingProducts,
+    TResult Function(String message)? failureProducts,
+    TResult Function(List<ProductsResponseBody> products)? successProducts,
+    TResult Function()? emptyProducts,
+    TResult Function()? loadingSearch,
+    TResult Function(String message)? failureSearch,
+    TResult Function(List<ProductsResponseBody> searchProducts)? successSearch,
+    TResult Function()? emptySearch,
+    TResult Function()? loadingAddProduct,
+    TResult Function(String message)? failureAddProduct,
+    TResult Function()? successAddProduct,
+    TResult Function()? loadingUpdateProduct,
+    TResult Function(String message)? failureUpdateProduct,
+    TResult Function()? successUpdateProduct,
+    TResult Function()? loadingDeleteProduct,
+    TResult Function(String message)? failureDeleteProduct,
+    TResult Function()? successDeleteProduct,
+    TResult Function()? loadingCategory,
+    TResult Function(String message)? failureCategory,
+    TResult Function(List<ProductsResponseBody> categoryProducts)?
+        successCategory,
+    TResult Function()? emptyCategory,
+    required TResult orElse(),
+  }) {
+    if (successAddProduct != null) {
+      return successAddProduct();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadingProducts value) loadingProducts,
+    required TResult Function(_FailureProducts value) failureProducts,
+    required TResult Function(_SuccessProducts value) successProducts,
+    required TResult Function(_EmptyProducts value) emptyProducts,
+    required TResult Function(_LoadingSearch value) loadingSearch,
+    required TResult Function(_FailureSearch value) failureSearch,
+    required TResult Function(_SuccessSearch value) successSearch,
+    required TResult Function(_EmptySearch value) emptySearch,
+    required TResult Function(_LoadingAddProduct value) loadingAddProduct,
+    required TResult Function(_FailureAddProduct value) failureAddProduct,
+    required TResult Function(_SuccessAddProduct value) successAddProduct,
+    required TResult Function(_LoadingUpdateProduct value) loadingUpdateProduct,
+    required TResult Function(_FailureUpdateProduct value) failureUpdateProduct,
+    required TResult Function(_SuccessUpdateProduct value) successUpdateProduct,
+    required TResult Function(_LoadingDeleteProduct value) loadingDeleteProduct,
+    required TResult Function(_FailureDeleteProduct value) failureDeleteProduct,
+    required TResult Function(_SuccessDeleteProduct value) successDeleteProduct,
+    required TResult Function(_LoadingCategory value) loadingCategory,
+    required TResult Function(_FailureCategory value) failureCategory,
+    required TResult Function(_SuccessCategory value) successCategory,
+    required TResult Function(_EmptyCategory value) emptyCategory,
+  }) {
+    return successAddProduct(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingProducts value)? loadingProducts,
+    TResult? Function(_FailureProducts value)? failureProducts,
+    TResult? Function(_SuccessProducts value)? successProducts,
+    TResult? Function(_EmptyProducts value)? emptyProducts,
+    TResult? Function(_LoadingSearch value)? loadingSearch,
+    TResult? Function(_FailureSearch value)? failureSearch,
+    TResult? Function(_SuccessSearch value)? successSearch,
+    TResult? Function(_EmptySearch value)? emptySearch,
+    TResult? Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult? Function(_FailureAddProduct value)? failureAddProduct,
+    TResult? Function(_SuccessAddProduct value)? successAddProduct,
+    TResult? Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult? Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult? Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult? Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult? Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult? Function(_SuccessDeleteProduct value)? successDeleteProduct,
+    TResult? Function(_LoadingCategory value)? loadingCategory,
+    TResult? Function(_FailureCategory value)? failureCategory,
+    TResult? Function(_SuccessCategory value)? successCategory,
+    TResult? Function(_EmptyCategory value)? emptyCategory,
+  }) {
+    return successAddProduct?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadingProducts value)? loadingProducts,
+    TResult Function(_FailureProducts value)? failureProducts,
+    TResult Function(_SuccessProducts value)? successProducts,
+    TResult Function(_EmptyProducts value)? emptyProducts,
+    TResult Function(_LoadingSearch value)? loadingSearch,
+    TResult Function(_FailureSearch value)? failureSearch,
+    TResult Function(_SuccessSearch value)? successSearch,
+    TResult Function(_EmptySearch value)? emptySearch,
+    TResult Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult Function(_FailureAddProduct value)? failureAddProduct,
+    TResult Function(_SuccessAddProduct value)? successAddProduct,
+    TResult Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult Function(_SuccessDeleteProduct value)? successDeleteProduct,
+    TResult Function(_LoadingCategory value)? loadingCategory,
+    TResult Function(_FailureCategory value)? failureCategory,
+    TResult Function(_SuccessCategory value)? successCategory,
+    TResult Function(_EmptyCategory value)? emptyCategory,
+    required TResult orElse(),
+  }) {
+    if (successAddProduct != null) {
+      return successAddProduct(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SuccessAddProduct implements ProductsState {
+  const factory _SuccessAddProduct() = _$SuccessAddProductImpl;
+}
+
+/// @nodoc
+abstract class _$$LoadingUpdateProductImplCopyWith<$Res> {
+  factory _$$LoadingUpdateProductImplCopyWith(_$LoadingUpdateProductImpl value,
+          $Res Function(_$LoadingUpdateProductImpl) then) =
+      __$$LoadingUpdateProductImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadingUpdateProductImplCopyWithImpl<$Res>
+    extends _$ProductsStateCopyWithImpl<$Res, _$LoadingUpdateProductImpl>
+    implements _$$LoadingUpdateProductImplCopyWith<$Res> {
+  __$$LoadingUpdateProductImplCopyWithImpl(_$LoadingUpdateProductImpl _value,
+      $Res Function(_$LoadingUpdateProductImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LoadingUpdateProductImpl implements _LoadingUpdateProduct {
+  const _$LoadingUpdateProductImpl();
+
+  @override
+  String toString() {
+    return 'ProductsState.loadingUpdateProduct()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadingUpdateProductImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingProducts,
+    required TResult Function(String message) failureProducts,
+    required TResult Function(List<ProductsResponseBody> products)
+        successProducts,
+    required TResult Function() emptyProducts,
+    required TResult Function() loadingSearch,
+    required TResult Function(String message) failureSearch,
+    required TResult Function(List<ProductsResponseBody> searchProducts)
+        successSearch,
+    required TResult Function() emptySearch,
+    required TResult Function() loadingAddProduct,
+    required TResult Function(String message) failureAddProduct,
+    required TResult Function() successAddProduct,
+    required TResult Function() loadingUpdateProduct,
+    required TResult Function(String message) failureUpdateProduct,
+    required TResult Function() successUpdateProduct,
+    required TResult Function() loadingDeleteProduct,
+    required TResult Function(String message) failureDeleteProduct,
+    required TResult Function() successDeleteProduct,
+    required TResult Function() loadingCategory,
+    required TResult Function(String message) failureCategory,
+    required TResult Function(List<ProductsResponseBody> categoryProducts)
+        successCategory,
+    required TResult Function() emptyCategory,
+  }) {
+    return loadingUpdateProduct();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingProducts,
+    TResult? Function(String message)? failureProducts,
+    TResult? Function(List<ProductsResponseBody> products)? successProducts,
+    TResult? Function()? emptyProducts,
+    TResult? Function()? loadingSearch,
+    TResult? Function(String message)? failureSearch,
+    TResult? Function(List<ProductsResponseBody> searchProducts)? successSearch,
+    TResult? Function()? emptySearch,
+    TResult? Function()? loadingAddProduct,
+    TResult? Function(String message)? failureAddProduct,
+    TResult? Function()? successAddProduct,
+    TResult? Function()? loadingUpdateProduct,
+    TResult? Function(String message)? failureUpdateProduct,
+    TResult? Function()? successUpdateProduct,
+    TResult? Function()? loadingDeleteProduct,
+    TResult? Function(String message)? failureDeleteProduct,
+    TResult? Function()? successDeleteProduct,
+    TResult? Function()? loadingCategory,
+    TResult? Function(String message)? failureCategory,
+    TResult? Function(List<ProductsResponseBody> categoryProducts)?
+        successCategory,
+    TResult? Function()? emptyCategory,
+  }) {
+    return loadingUpdateProduct?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingProducts,
+    TResult Function(String message)? failureProducts,
+    TResult Function(List<ProductsResponseBody> products)? successProducts,
+    TResult Function()? emptyProducts,
+    TResult Function()? loadingSearch,
+    TResult Function(String message)? failureSearch,
+    TResult Function(List<ProductsResponseBody> searchProducts)? successSearch,
+    TResult Function()? emptySearch,
+    TResult Function()? loadingAddProduct,
+    TResult Function(String message)? failureAddProduct,
+    TResult Function()? successAddProduct,
+    TResult Function()? loadingUpdateProduct,
+    TResult Function(String message)? failureUpdateProduct,
+    TResult Function()? successUpdateProduct,
+    TResult Function()? loadingDeleteProduct,
+    TResult Function(String message)? failureDeleteProduct,
+    TResult Function()? successDeleteProduct,
+    TResult Function()? loadingCategory,
+    TResult Function(String message)? failureCategory,
+    TResult Function(List<ProductsResponseBody> categoryProducts)?
+        successCategory,
+    TResult Function()? emptyCategory,
+    required TResult orElse(),
+  }) {
+    if (loadingUpdateProduct != null) {
+      return loadingUpdateProduct();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadingProducts value) loadingProducts,
+    required TResult Function(_FailureProducts value) failureProducts,
+    required TResult Function(_SuccessProducts value) successProducts,
+    required TResult Function(_EmptyProducts value) emptyProducts,
+    required TResult Function(_LoadingSearch value) loadingSearch,
+    required TResult Function(_FailureSearch value) failureSearch,
+    required TResult Function(_SuccessSearch value) successSearch,
+    required TResult Function(_EmptySearch value) emptySearch,
+    required TResult Function(_LoadingAddProduct value) loadingAddProduct,
+    required TResult Function(_FailureAddProduct value) failureAddProduct,
+    required TResult Function(_SuccessAddProduct value) successAddProduct,
+    required TResult Function(_LoadingUpdateProduct value) loadingUpdateProduct,
+    required TResult Function(_FailureUpdateProduct value) failureUpdateProduct,
+    required TResult Function(_SuccessUpdateProduct value) successUpdateProduct,
+    required TResult Function(_LoadingDeleteProduct value) loadingDeleteProduct,
+    required TResult Function(_FailureDeleteProduct value) failureDeleteProduct,
+    required TResult Function(_SuccessDeleteProduct value) successDeleteProduct,
+    required TResult Function(_LoadingCategory value) loadingCategory,
+    required TResult Function(_FailureCategory value) failureCategory,
+    required TResult Function(_SuccessCategory value) successCategory,
+    required TResult Function(_EmptyCategory value) emptyCategory,
+  }) {
+    return loadingUpdateProduct(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingProducts value)? loadingProducts,
+    TResult? Function(_FailureProducts value)? failureProducts,
+    TResult? Function(_SuccessProducts value)? successProducts,
+    TResult? Function(_EmptyProducts value)? emptyProducts,
+    TResult? Function(_LoadingSearch value)? loadingSearch,
+    TResult? Function(_FailureSearch value)? failureSearch,
+    TResult? Function(_SuccessSearch value)? successSearch,
+    TResult? Function(_EmptySearch value)? emptySearch,
+    TResult? Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult? Function(_FailureAddProduct value)? failureAddProduct,
+    TResult? Function(_SuccessAddProduct value)? successAddProduct,
+    TResult? Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult? Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult? Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult? Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult? Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult? Function(_SuccessDeleteProduct value)? successDeleteProduct,
+    TResult? Function(_LoadingCategory value)? loadingCategory,
+    TResult? Function(_FailureCategory value)? failureCategory,
+    TResult? Function(_SuccessCategory value)? successCategory,
+    TResult? Function(_EmptyCategory value)? emptyCategory,
+  }) {
+    return loadingUpdateProduct?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadingProducts value)? loadingProducts,
+    TResult Function(_FailureProducts value)? failureProducts,
+    TResult Function(_SuccessProducts value)? successProducts,
+    TResult Function(_EmptyProducts value)? emptyProducts,
+    TResult Function(_LoadingSearch value)? loadingSearch,
+    TResult Function(_FailureSearch value)? failureSearch,
+    TResult Function(_SuccessSearch value)? successSearch,
+    TResult Function(_EmptySearch value)? emptySearch,
+    TResult Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult Function(_FailureAddProduct value)? failureAddProduct,
+    TResult Function(_SuccessAddProduct value)? successAddProduct,
+    TResult Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult Function(_SuccessDeleteProduct value)? successDeleteProduct,
+    TResult Function(_LoadingCategory value)? loadingCategory,
+    TResult Function(_FailureCategory value)? failureCategory,
+    TResult Function(_SuccessCategory value)? successCategory,
+    TResult Function(_EmptyCategory value)? emptyCategory,
+    required TResult orElse(),
+  }) {
+    if (loadingUpdateProduct != null) {
+      return loadingUpdateProduct(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadingUpdateProduct implements ProductsState {
+  const factory _LoadingUpdateProduct() = _$LoadingUpdateProductImpl;
+}
+
+/// @nodoc
+abstract class _$$FailureUpdateProductImplCopyWith<$Res> {
+  factory _$$FailureUpdateProductImplCopyWith(_$FailureUpdateProductImpl value,
+          $Res Function(_$FailureUpdateProductImpl) then) =
+      __$$FailureUpdateProductImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$FailureUpdateProductImplCopyWithImpl<$Res>
+    extends _$ProductsStateCopyWithImpl<$Res, _$FailureUpdateProductImpl>
+    implements _$$FailureUpdateProductImplCopyWith<$Res> {
+  __$$FailureUpdateProductImplCopyWithImpl(_$FailureUpdateProductImpl _value,
+      $Res Function(_$FailureUpdateProductImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$FailureUpdateProductImpl(
+      null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FailureUpdateProductImpl implements _FailureUpdateProduct {
+  const _$FailureUpdateProductImpl(this.message);
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'ProductsState.failureUpdateProduct(message: $message)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FailureUpdateProductImpl &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FailureUpdateProductImplCopyWith<_$FailureUpdateProductImpl>
+      get copyWith =>
+          __$$FailureUpdateProductImplCopyWithImpl<_$FailureUpdateProductImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingProducts,
+    required TResult Function(String message) failureProducts,
+    required TResult Function(List<ProductsResponseBody> products)
+        successProducts,
+    required TResult Function() emptyProducts,
+    required TResult Function() loadingSearch,
+    required TResult Function(String message) failureSearch,
+    required TResult Function(List<ProductsResponseBody> searchProducts)
+        successSearch,
+    required TResult Function() emptySearch,
+    required TResult Function() loadingAddProduct,
+    required TResult Function(String message) failureAddProduct,
+    required TResult Function() successAddProduct,
+    required TResult Function() loadingUpdateProduct,
+    required TResult Function(String message) failureUpdateProduct,
+    required TResult Function() successUpdateProduct,
+    required TResult Function() loadingDeleteProduct,
+    required TResult Function(String message) failureDeleteProduct,
+    required TResult Function() successDeleteProduct,
+    required TResult Function() loadingCategory,
+    required TResult Function(String message) failureCategory,
+    required TResult Function(List<ProductsResponseBody> categoryProducts)
+        successCategory,
+    required TResult Function() emptyCategory,
+  }) {
+    return failureUpdateProduct(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingProducts,
+    TResult? Function(String message)? failureProducts,
+    TResult? Function(List<ProductsResponseBody> products)? successProducts,
+    TResult? Function()? emptyProducts,
+    TResult? Function()? loadingSearch,
+    TResult? Function(String message)? failureSearch,
+    TResult? Function(List<ProductsResponseBody> searchProducts)? successSearch,
+    TResult? Function()? emptySearch,
+    TResult? Function()? loadingAddProduct,
+    TResult? Function(String message)? failureAddProduct,
+    TResult? Function()? successAddProduct,
+    TResult? Function()? loadingUpdateProduct,
+    TResult? Function(String message)? failureUpdateProduct,
+    TResult? Function()? successUpdateProduct,
+    TResult? Function()? loadingDeleteProduct,
+    TResult? Function(String message)? failureDeleteProduct,
+    TResult? Function()? successDeleteProduct,
+    TResult? Function()? loadingCategory,
+    TResult? Function(String message)? failureCategory,
+    TResult? Function(List<ProductsResponseBody> categoryProducts)?
+        successCategory,
+    TResult? Function()? emptyCategory,
+  }) {
+    return failureUpdateProduct?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingProducts,
+    TResult Function(String message)? failureProducts,
+    TResult Function(List<ProductsResponseBody> products)? successProducts,
+    TResult Function()? emptyProducts,
+    TResult Function()? loadingSearch,
+    TResult Function(String message)? failureSearch,
+    TResult Function(List<ProductsResponseBody> searchProducts)? successSearch,
+    TResult Function()? emptySearch,
+    TResult Function()? loadingAddProduct,
+    TResult Function(String message)? failureAddProduct,
+    TResult Function()? successAddProduct,
+    TResult Function()? loadingUpdateProduct,
+    TResult Function(String message)? failureUpdateProduct,
+    TResult Function()? successUpdateProduct,
+    TResult Function()? loadingDeleteProduct,
+    TResult Function(String message)? failureDeleteProduct,
+    TResult Function()? successDeleteProduct,
+    TResult Function()? loadingCategory,
+    TResult Function(String message)? failureCategory,
+    TResult Function(List<ProductsResponseBody> categoryProducts)?
+        successCategory,
+    TResult Function()? emptyCategory,
+    required TResult orElse(),
+  }) {
+    if (failureUpdateProduct != null) {
+      return failureUpdateProduct(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadingProducts value) loadingProducts,
+    required TResult Function(_FailureProducts value) failureProducts,
+    required TResult Function(_SuccessProducts value) successProducts,
+    required TResult Function(_EmptyProducts value) emptyProducts,
+    required TResult Function(_LoadingSearch value) loadingSearch,
+    required TResult Function(_FailureSearch value) failureSearch,
+    required TResult Function(_SuccessSearch value) successSearch,
+    required TResult Function(_EmptySearch value) emptySearch,
+    required TResult Function(_LoadingAddProduct value) loadingAddProduct,
+    required TResult Function(_FailureAddProduct value) failureAddProduct,
+    required TResult Function(_SuccessAddProduct value) successAddProduct,
+    required TResult Function(_LoadingUpdateProduct value) loadingUpdateProduct,
+    required TResult Function(_FailureUpdateProduct value) failureUpdateProduct,
+    required TResult Function(_SuccessUpdateProduct value) successUpdateProduct,
+    required TResult Function(_LoadingDeleteProduct value) loadingDeleteProduct,
+    required TResult Function(_FailureDeleteProduct value) failureDeleteProduct,
+    required TResult Function(_SuccessDeleteProduct value) successDeleteProduct,
+    required TResult Function(_LoadingCategory value) loadingCategory,
+    required TResult Function(_FailureCategory value) failureCategory,
+    required TResult Function(_SuccessCategory value) successCategory,
+    required TResult Function(_EmptyCategory value) emptyCategory,
+  }) {
+    return failureUpdateProduct(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingProducts value)? loadingProducts,
+    TResult? Function(_FailureProducts value)? failureProducts,
+    TResult? Function(_SuccessProducts value)? successProducts,
+    TResult? Function(_EmptyProducts value)? emptyProducts,
+    TResult? Function(_LoadingSearch value)? loadingSearch,
+    TResult? Function(_FailureSearch value)? failureSearch,
+    TResult? Function(_SuccessSearch value)? successSearch,
+    TResult? Function(_EmptySearch value)? emptySearch,
+    TResult? Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult? Function(_FailureAddProduct value)? failureAddProduct,
+    TResult? Function(_SuccessAddProduct value)? successAddProduct,
+    TResult? Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult? Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult? Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult? Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult? Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult? Function(_SuccessDeleteProduct value)? successDeleteProduct,
+    TResult? Function(_LoadingCategory value)? loadingCategory,
+    TResult? Function(_FailureCategory value)? failureCategory,
+    TResult? Function(_SuccessCategory value)? successCategory,
+    TResult? Function(_EmptyCategory value)? emptyCategory,
+  }) {
+    return failureUpdateProduct?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadingProducts value)? loadingProducts,
+    TResult Function(_FailureProducts value)? failureProducts,
+    TResult Function(_SuccessProducts value)? successProducts,
+    TResult Function(_EmptyProducts value)? emptyProducts,
+    TResult Function(_LoadingSearch value)? loadingSearch,
+    TResult Function(_FailureSearch value)? failureSearch,
+    TResult Function(_SuccessSearch value)? successSearch,
+    TResult Function(_EmptySearch value)? emptySearch,
+    TResult Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult Function(_FailureAddProduct value)? failureAddProduct,
+    TResult Function(_SuccessAddProduct value)? successAddProduct,
+    TResult Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult Function(_SuccessDeleteProduct value)? successDeleteProduct,
+    TResult Function(_LoadingCategory value)? loadingCategory,
+    TResult Function(_FailureCategory value)? failureCategory,
+    TResult Function(_SuccessCategory value)? successCategory,
+    TResult Function(_EmptyCategory value)? emptyCategory,
+    required TResult orElse(),
+  }) {
+    if (failureUpdateProduct != null) {
+      return failureUpdateProduct(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FailureUpdateProduct implements ProductsState {
+  const factory _FailureUpdateProduct(final String message) =
+      _$FailureUpdateProductImpl;
+
+  String get message;
+  @JsonKey(ignore: true)
+  _$$FailureUpdateProductImplCopyWith<_$FailureUpdateProductImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SuccessUpdateProductImplCopyWith<$Res> {
+  factory _$$SuccessUpdateProductImplCopyWith(_$SuccessUpdateProductImpl value,
+          $Res Function(_$SuccessUpdateProductImpl) then) =
+      __$$SuccessUpdateProductImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SuccessUpdateProductImplCopyWithImpl<$Res>
+    extends _$ProductsStateCopyWithImpl<$Res, _$SuccessUpdateProductImpl>
+    implements _$$SuccessUpdateProductImplCopyWith<$Res> {
+  __$$SuccessUpdateProductImplCopyWithImpl(_$SuccessUpdateProductImpl _value,
+      $Res Function(_$SuccessUpdateProductImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SuccessUpdateProductImpl implements _SuccessUpdateProduct {
+  const _$SuccessUpdateProductImpl();
+
+  @override
+  String toString() {
+    return 'ProductsState.successUpdateProduct()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessUpdateProductImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingProducts,
+    required TResult Function(String message) failureProducts,
+    required TResult Function(List<ProductsResponseBody> products)
+        successProducts,
+    required TResult Function() emptyProducts,
+    required TResult Function() loadingSearch,
+    required TResult Function(String message) failureSearch,
+    required TResult Function(List<ProductsResponseBody> searchProducts)
+        successSearch,
+    required TResult Function() emptySearch,
+    required TResult Function() loadingAddProduct,
+    required TResult Function(String message) failureAddProduct,
+    required TResult Function() successAddProduct,
+    required TResult Function() loadingUpdateProduct,
+    required TResult Function(String message) failureUpdateProduct,
+    required TResult Function() successUpdateProduct,
+    required TResult Function() loadingDeleteProduct,
+    required TResult Function(String message) failureDeleteProduct,
+    required TResult Function() successDeleteProduct,
+    required TResult Function() loadingCategory,
+    required TResult Function(String message) failureCategory,
+    required TResult Function(List<ProductsResponseBody> categoryProducts)
+        successCategory,
+    required TResult Function() emptyCategory,
+  }) {
+    return successUpdateProduct();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingProducts,
+    TResult? Function(String message)? failureProducts,
+    TResult? Function(List<ProductsResponseBody> products)? successProducts,
+    TResult? Function()? emptyProducts,
+    TResult? Function()? loadingSearch,
+    TResult? Function(String message)? failureSearch,
+    TResult? Function(List<ProductsResponseBody> searchProducts)? successSearch,
+    TResult? Function()? emptySearch,
+    TResult? Function()? loadingAddProduct,
+    TResult? Function(String message)? failureAddProduct,
+    TResult? Function()? successAddProduct,
+    TResult? Function()? loadingUpdateProduct,
+    TResult? Function(String message)? failureUpdateProduct,
+    TResult? Function()? successUpdateProduct,
+    TResult? Function()? loadingDeleteProduct,
+    TResult? Function(String message)? failureDeleteProduct,
+    TResult? Function()? successDeleteProduct,
+    TResult? Function()? loadingCategory,
+    TResult? Function(String message)? failureCategory,
+    TResult? Function(List<ProductsResponseBody> categoryProducts)?
+        successCategory,
+    TResult? Function()? emptyCategory,
+  }) {
+    return successUpdateProduct?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingProducts,
+    TResult Function(String message)? failureProducts,
+    TResult Function(List<ProductsResponseBody> products)? successProducts,
+    TResult Function()? emptyProducts,
+    TResult Function()? loadingSearch,
+    TResult Function(String message)? failureSearch,
+    TResult Function(List<ProductsResponseBody> searchProducts)? successSearch,
+    TResult Function()? emptySearch,
+    TResult Function()? loadingAddProduct,
+    TResult Function(String message)? failureAddProduct,
+    TResult Function()? successAddProduct,
+    TResult Function()? loadingUpdateProduct,
+    TResult Function(String message)? failureUpdateProduct,
+    TResult Function()? successUpdateProduct,
+    TResult Function()? loadingDeleteProduct,
+    TResult Function(String message)? failureDeleteProduct,
+    TResult Function()? successDeleteProduct,
+    TResult Function()? loadingCategory,
+    TResult Function(String message)? failureCategory,
+    TResult Function(List<ProductsResponseBody> categoryProducts)?
+        successCategory,
+    TResult Function()? emptyCategory,
+    required TResult orElse(),
+  }) {
+    if (successUpdateProduct != null) {
+      return successUpdateProduct();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadingProducts value) loadingProducts,
+    required TResult Function(_FailureProducts value) failureProducts,
+    required TResult Function(_SuccessProducts value) successProducts,
+    required TResult Function(_EmptyProducts value) emptyProducts,
+    required TResult Function(_LoadingSearch value) loadingSearch,
+    required TResult Function(_FailureSearch value) failureSearch,
+    required TResult Function(_SuccessSearch value) successSearch,
+    required TResult Function(_EmptySearch value) emptySearch,
+    required TResult Function(_LoadingAddProduct value) loadingAddProduct,
+    required TResult Function(_FailureAddProduct value) failureAddProduct,
+    required TResult Function(_SuccessAddProduct value) successAddProduct,
+    required TResult Function(_LoadingUpdateProduct value) loadingUpdateProduct,
+    required TResult Function(_FailureUpdateProduct value) failureUpdateProduct,
+    required TResult Function(_SuccessUpdateProduct value) successUpdateProduct,
+    required TResult Function(_LoadingDeleteProduct value) loadingDeleteProduct,
+    required TResult Function(_FailureDeleteProduct value) failureDeleteProduct,
+    required TResult Function(_SuccessDeleteProduct value) successDeleteProduct,
+    required TResult Function(_LoadingCategory value) loadingCategory,
+    required TResult Function(_FailureCategory value) failureCategory,
+    required TResult Function(_SuccessCategory value) successCategory,
+    required TResult Function(_EmptyCategory value) emptyCategory,
+  }) {
+    return successUpdateProduct(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingProducts value)? loadingProducts,
+    TResult? Function(_FailureProducts value)? failureProducts,
+    TResult? Function(_SuccessProducts value)? successProducts,
+    TResult? Function(_EmptyProducts value)? emptyProducts,
+    TResult? Function(_LoadingSearch value)? loadingSearch,
+    TResult? Function(_FailureSearch value)? failureSearch,
+    TResult? Function(_SuccessSearch value)? successSearch,
+    TResult? Function(_EmptySearch value)? emptySearch,
+    TResult? Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult? Function(_FailureAddProduct value)? failureAddProduct,
+    TResult? Function(_SuccessAddProduct value)? successAddProduct,
+    TResult? Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult? Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult? Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult? Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult? Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult? Function(_SuccessDeleteProduct value)? successDeleteProduct,
+    TResult? Function(_LoadingCategory value)? loadingCategory,
+    TResult? Function(_FailureCategory value)? failureCategory,
+    TResult? Function(_SuccessCategory value)? successCategory,
+    TResult? Function(_EmptyCategory value)? emptyCategory,
+  }) {
+    return successUpdateProduct?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadingProducts value)? loadingProducts,
+    TResult Function(_FailureProducts value)? failureProducts,
+    TResult Function(_SuccessProducts value)? successProducts,
+    TResult Function(_EmptyProducts value)? emptyProducts,
+    TResult Function(_LoadingSearch value)? loadingSearch,
+    TResult Function(_FailureSearch value)? failureSearch,
+    TResult Function(_SuccessSearch value)? successSearch,
+    TResult Function(_EmptySearch value)? emptySearch,
+    TResult Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult Function(_FailureAddProduct value)? failureAddProduct,
+    TResult Function(_SuccessAddProduct value)? successAddProduct,
+    TResult Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult Function(_SuccessDeleteProduct value)? successDeleteProduct,
+    TResult Function(_LoadingCategory value)? loadingCategory,
+    TResult Function(_FailureCategory value)? failureCategory,
+    TResult Function(_SuccessCategory value)? successCategory,
+    TResult Function(_EmptyCategory value)? emptyCategory,
+    required TResult orElse(),
+  }) {
+    if (successUpdateProduct != null) {
+      return successUpdateProduct(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SuccessUpdateProduct implements ProductsState {
+  const factory _SuccessUpdateProduct() = _$SuccessUpdateProductImpl;
+}
+
+/// @nodoc
+abstract class _$$LoadingDeleteProductImplCopyWith<$Res> {
+  factory _$$LoadingDeleteProductImplCopyWith(_$LoadingDeleteProductImpl value,
+          $Res Function(_$LoadingDeleteProductImpl) then) =
+      __$$LoadingDeleteProductImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadingDeleteProductImplCopyWithImpl<$Res>
+    extends _$ProductsStateCopyWithImpl<$Res, _$LoadingDeleteProductImpl>
+    implements _$$LoadingDeleteProductImplCopyWith<$Res> {
+  __$$LoadingDeleteProductImplCopyWithImpl(_$LoadingDeleteProductImpl _value,
+      $Res Function(_$LoadingDeleteProductImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LoadingDeleteProductImpl implements _LoadingDeleteProduct {
+  const _$LoadingDeleteProductImpl();
+
+  @override
+  String toString() {
+    return 'ProductsState.loadingDeleteProduct()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadingDeleteProductImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingProducts,
+    required TResult Function(String message) failureProducts,
+    required TResult Function(List<ProductsResponseBody> products)
+        successProducts,
+    required TResult Function() emptyProducts,
+    required TResult Function() loadingSearch,
+    required TResult Function(String message) failureSearch,
+    required TResult Function(List<ProductsResponseBody> searchProducts)
+        successSearch,
+    required TResult Function() emptySearch,
+    required TResult Function() loadingAddProduct,
+    required TResult Function(String message) failureAddProduct,
+    required TResult Function() successAddProduct,
+    required TResult Function() loadingUpdateProduct,
+    required TResult Function(String message) failureUpdateProduct,
+    required TResult Function() successUpdateProduct,
+    required TResult Function() loadingDeleteProduct,
+    required TResult Function(String message) failureDeleteProduct,
+    required TResult Function() successDeleteProduct,
+    required TResult Function() loadingCategory,
+    required TResult Function(String message) failureCategory,
+    required TResult Function(List<ProductsResponseBody> categoryProducts)
+        successCategory,
+    required TResult Function() emptyCategory,
+  }) {
+    return loadingDeleteProduct();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingProducts,
+    TResult? Function(String message)? failureProducts,
+    TResult? Function(List<ProductsResponseBody> products)? successProducts,
+    TResult? Function()? emptyProducts,
+    TResult? Function()? loadingSearch,
+    TResult? Function(String message)? failureSearch,
+    TResult? Function(List<ProductsResponseBody> searchProducts)? successSearch,
+    TResult? Function()? emptySearch,
+    TResult? Function()? loadingAddProduct,
+    TResult? Function(String message)? failureAddProduct,
+    TResult? Function()? successAddProduct,
+    TResult? Function()? loadingUpdateProduct,
+    TResult? Function(String message)? failureUpdateProduct,
+    TResult? Function()? successUpdateProduct,
+    TResult? Function()? loadingDeleteProduct,
+    TResult? Function(String message)? failureDeleteProduct,
+    TResult? Function()? successDeleteProduct,
+    TResult? Function()? loadingCategory,
+    TResult? Function(String message)? failureCategory,
+    TResult? Function(List<ProductsResponseBody> categoryProducts)?
+        successCategory,
+    TResult? Function()? emptyCategory,
+  }) {
+    return loadingDeleteProduct?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingProducts,
+    TResult Function(String message)? failureProducts,
+    TResult Function(List<ProductsResponseBody> products)? successProducts,
+    TResult Function()? emptyProducts,
+    TResult Function()? loadingSearch,
+    TResult Function(String message)? failureSearch,
+    TResult Function(List<ProductsResponseBody> searchProducts)? successSearch,
+    TResult Function()? emptySearch,
+    TResult Function()? loadingAddProduct,
+    TResult Function(String message)? failureAddProduct,
+    TResult Function()? successAddProduct,
+    TResult Function()? loadingUpdateProduct,
+    TResult Function(String message)? failureUpdateProduct,
+    TResult Function()? successUpdateProduct,
+    TResult Function()? loadingDeleteProduct,
+    TResult Function(String message)? failureDeleteProduct,
+    TResult Function()? successDeleteProduct,
+    TResult Function()? loadingCategory,
+    TResult Function(String message)? failureCategory,
+    TResult Function(List<ProductsResponseBody> categoryProducts)?
+        successCategory,
+    TResult Function()? emptyCategory,
+    required TResult orElse(),
+  }) {
+    if (loadingDeleteProduct != null) {
+      return loadingDeleteProduct();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadingProducts value) loadingProducts,
+    required TResult Function(_FailureProducts value) failureProducts,
+    required TResult Function(_SuccessProducts value) successProducts,
+    required TResult Function(_EmptyProducts value) emptyProducts,
+    required TResult Function(_LoadingSearch value) loadingSearch,
+    required TResult Function(_FailureSearch value) failureSearch,
+    required TResult Function(_SuccessSearch value) successSearch,
+    required TResult Function(_EmptySearch value) emptySearch,
+    required TResult Function(_LoadingAddProduct value) loadingAddProduct,
+    required TResult Function(_FailureAddProduct value) failureAddProduct,
+    required TResult Function(_SuccessAddProduct value) successAddProduct,
+    required TResult Function(_LoadingUpdateProduct value) loadingUpdateProduct,
+    required TResult Function(_FailureUpdateProduct value) failureUpdateProduct,
+    required TResult Function(_SuccessUpdateProduct value) successUpdateProduct,
+    required TResult Function(_LoadingDeleteProduct value) loadingDeleteProduct,
+    required TResult Function(_FailureDeleteProduct value) failureDeleteProduct,
+    required TResult Function(_SuccessDeleteProduct value) successDeleteProduct,
+    required TResult Function(_LoadingCategory value) loadingCategory,
+    required TResult Function(_FailureCategory value) failureCategory,
+    required TResult Function(_SuccessCategory value) successCategory,
+    required TResult Function(_EmptyCategory value) emptyCategory,
+  }) {
+    return loadingDeleteProduct(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingProducts value)? loadingProducts,
+    TResult? Function(_FailureProducts value)? failureProducts,
+    TResult? Function(_SuccessProducts value)? successProducts,
+    TResult? Function(_EmptyProducts value)? emptyProducts,
+    TResult? Function(_LoadingSearch value)? loadingSearch,
+    TResult? Function(_FailureSearch value)? failureSearch,
+    TResult? Function(_SuccessSearch value)? successSearch,
+    TResult? Function(_EmptySearch value)? emptySearch,
+    TResult? Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult? Function(_FailureAddProduct value)? failureAddProduct,
+    TResult? Function(_SuccessAddProduct value)? successAddProduct,
+    TResult? Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult? Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult? Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult? Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult? Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult? Function(_SuccessDeleteProduct value)? successDeleteProduct,
+    TResult? Function(_LoadingCategory value)? loadingCategory,
+    TResult? Function(_FailureCategory value)? failureCategory,
+    TResult? Function(_SuccessCategory value)? successCategory,
+    TResult? Function(_EmptyCategory value)? emptyCategory,
+  }) {
+    return loadingDeleteProduct?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadingProducts value)? loadingProducts,
+    TResult Function(_FailureProducts value)? failureProducts,
+    TResult Function(_SuccessProducts value)? successProducts,
+    TResult Function(_EmptyProducts value)? emptyProducts,
+    TResult Function(_LoadingSearch value)? loadingSearch,
+    TResult Function(_FailureSearch value)? failureSearch,
+    TResult Function(_SuccessSearch value)? successSearch,
+    TResult Function(_EmptySearch value)? emptySearch,
+    TResult Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult Function(_FailureAddProduct value)? failureAddProduct,
+    TResult Function(_SuccessAddProduct value)? successAddProduct,
+    TResult Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult Function(_SuccessDeleteProduct value)? successDeleteProduct,
+    TResult Function(_LoadingCategory value)? loadingCategory,
+    TResult Function(_FailureCategory value)? failureCategory,
+    TResult Function(_SuccessCategory value)? successCategory,
+    TResult Function(_EmptyCategory value)? emptyCategory,
+    required TResult orElse(),
+  }) {
+    if (loadingDeleteProduct != null) {
+      return loadingDeleteProduct(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadingDeleteProduct implements ProductsState {
+  const factory _LoadingDeleteProduct() = _$LoadingDeleteProductImpl;
+}
+
+/// @nodoc
+abstract class _$$FailureDeleteProductImplCopyWith<$Res> {
+  factory _$$FailureDeleteProductImplCopyWith(_$FailureDeleteProductImpl value,
+          $Res Function(_$FailureDeleteProductImpl) then) =
+      __$$FailureDeleteProductImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$FailureDeleteProductImplCopyWithImpl<$Res>
+    extends _$ProductsStateCopyWithImpl<$Res, _$FailureDeleteProductImpl>
+    implements _$$FailureDeleteProductImplCopyWith<$Res> {
+  __$$FailureDeleteProductImplCopyWithImpl(_$FailureDeleteProductImpl _value,
+      $Res Function(_$FailureDeleteProductImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$FailureDeleteProductImpl(
+      null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FailureDeleteProductImpl implements _FailureDeleteProduct {
+  const _$FailureDeleteProductImpl(this.message);
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'ProductsState.failureDeleteProduct(message: $message)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FailureDeleteProductImpl &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FailureDeleteProductImplCopyWith<_$FailureDeleteProductImpl>
+      get copyWith =>
+          __$$FailureDeleteProductImplCopyWithImpl<_$FailureDeleteProductImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingProducts,
+    required TResult Function(String message) failureProducts,
+    required TResult Function(List<ProductsResponseBody> products)
+        successProducts,
+    required TResult Function() emptyProducts,
+    required TResult Function() loadingSearch,
+    required TResult Function(String message) failureSearch,
+    required TResult Function(List<ProductsResponseBody> searchProducts)
+        successSearch,
+    required TResult Function() emptySearch,
+    required TResult Function() loadingAddProduct,
+    required TResult Function(String message) failureAddProduct,
+    required TResult Function() successAddProduct,
+    required TResult Function() loadingUpdateProduct,
+    required TResult Function(String message) failureUpdateProduct,
+    required TResult Function() successUpdateProduct,
+    required TResult Function() loadingDeleteProduct,
+    required TResult Function(String message) failureDeleteProduct,
+    required TResult Function() successDeleteProduct,
+    required TResult Function() loadingCategory,
+    required TResult Function(String message) failureCategory,
+    required TResult Function(List<ProductsResponseBody> categoryProducts)
+        successCategory,
+    required TResult Function() emptyCategory,
+  }) {
+    return failureDeleteProduct(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingProducts,
+    TResult? Function(String message)? failureProducts,
+    TResult? Function(List<ProductsResponseBody> products)? successProducts,
+    TResult? Function()? emptyProducts,
+    TResult? Function()? loadingSearch,
+    TResult? Function(String message)? failureSearch,
+    TResult? Function(List<ProductsResponseBody> searchProducts)? successSearch,
+    TResult? Function()? emptySearch,
+    TResult? Function()? loadingAddProduct,
+    TResult? Function(String message)? failureAddProduct,
+    TResult? Function()? successAddProduct,
+    TResult? Function()? loadingUpdateProduct,
+    TResult? Function(String message)? failureUpdateProduct,
+    TResult? Function()? successUpdateProduct,
+    TResult? Function()? loadingDeleteProduct,
+    TResult? Function(String message)? failureDeleteProduct,
+    TResult? Function()? successDeleteProduct,
+    TResult? Function()? loadingCategory,
+    TResult? Function(String message)? failureCategory,
+    TResult? Function(List<ProductsResponseBody> categoryProducts)?
+        successCategory,
+    TResult? Function()? emptyCategory,
+  }) {
+    return failureDeleteProduct?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingProducts,
+    TResult Function(String message)? failureProducts,
+    TResult Function(List<ProductsResponseBody> products)? successProducts,
+    TResult Function()? emptyProducts,
+    TResult Function()? loadingSearch,
+    TResult Function(String message)? failureSearch,
+    TResult Function(List<ProductsResponseBody> searchProducts)? successSearch,
+    TResult Function()? emptySearch,
+    TResult Function()? loadingAddProduct,
+    TResult Function(String message)? failureAddProduct,
+    TResult Function()? successAddProduct,
+    TResult Function()? loadingUpdateProduct,
+    TResult Function(String message)? failureUpdateProduct,
+    TResult Function()? successUpdateProduct,
+    TResult Function()? loadingDeleteProduct,
+    TResult Function(String message)? failureDeleteProduct,
+    TResult Function()? successDeleteProduct,
+    TResult Function()? loadingCategory,
+    TResult Function(String message)? failureCategory,
+    TResult Function(List<ProductsResponseBody> categoryProducts)?
+        successCategory,
+    TResult Function()? emptyCategory,
+    required TResult orElse(),
+  }) {
+    if (failureDeleteProduct != null) {
+      return failureDeleteProduct(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadingProducts value) loadingProducts,
+    required TResult Function(_FailureProducts value) failureProducts,
+    required TResult Function(_SuccessProducts value) successProducts,
+    required TResult Function(_EmptyProducts value) emptyProducts,
+    required TResult Function(_LoadingSearch value) loadingSearch,
+    required TResult Function(_FailureSearch value) failureSearch,
+    required TResult Function(_SuccessSearch value) successSearch,
+    required TResult Function(_EmptySearch value) emptySearch,
+    required TResult Function(_LoadingAddProduct value) loadingAddProduct,
+    required TResult Function(_FailureAddProduct value) failureAddProduct,
+    required TResult Function(_SuccessAddProduct value) successAddProduct,
+    required TResult Function(_LoadingUpdateProduct value) loadingUpdateProduct,
+    required TResult Function(_FailureUpdateProduct value) failureUpdateProduct,
+    required TResult Function(_SuccessUpdateProduct value) successUpdateProduct,
+    required TResult Function(_LoadingDeleteProduct value) loadingDeleteProduct,
+    required TResult Function(_FailureDeleteProduct value) failureDeleteProduct,
+    required TResult Function(_SuccessDeleteProduct value) successDeleteProduct,
+    required TResult Function(_LoadingCategory value) loadingCategory,
+    required TResult Function(_FailureCategory value) failureCategory,
+    required TResult Function(_SuccessCategory value) successCategory,
+    required TResult Function(_EmptyCategory value) emptyCategory,
+  }) {
+    return failureDeleteProduct(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingProducts value)? loadingProducts,
+    TResult? Function(_FailureProducts value)? failureProducts,
+    TResult? Function(_SuccessProducts value)? successProducts,
+    TResult? Function(_EmptyProducts value)? emptyProducts,
+    TResult? Function(_LoadingSearch value)? loadingSearch,
+    TResult? Function(_FailureSearch value)? failureSearch,
+    TResult? Function(_SuccessSearch value)? successSearch,
+    TResult? Function(_EmptySearch value)? emptySearch,
+    TResult? Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult? Function(_FailureAddProduct value)? failureAddProduct,
+    TResult? Function(_SuccessAddProduct value)? successAddProduct,
+    TResult? Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult? Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult? Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult? Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult? Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult? Function(_SuccessDeleteProduct value)? successDeleteProduct,
+    TResult? Function(_LoadingCategory value)? loadingCategory,
+    TResult? Function(_FailureCategory value)? failureCategory,
+    TResult? Function(_SuccessCategory value)? successCategory,
+    TResult? Function(_EmptyCategory value)? emptyCategory,
+  }) {
+    return failureDeleteProduct?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadingProducts value)? loadingProducts,
+    TResult Function(_FailureProducts value)? failureProducts,
+    TResult Function(_SuccessProducts value)? successProducts,
+    TResult Function(_EmptyProducts value)? emptyProducts,
+    TResult Function(_LoadingSearch value)? loadingSearch,
+    TResult Function(_FailureSearch value)? failureSearch,
+    TResult Function(_SuccessSearch value)? successSearch,
+    TResult Function(_EmptySearch value)? emptySearch,
+    TResult Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult Function(_FailureAddProduct value)? failureAddProduct,
+    TResult Function(_SuccessAddProduct value)? successAddProduct,
+    TResult Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult Function(_SuccessDeleteProduct value)? successDeleteProduct,
+    TResult Function(_LoadingCategory value)? loadingCategory,
+    TResult Function(_FailureCategory value)? failureCategory,
+    TResult Function(_SuccessCategory value)? successCategory,
+    TResult Function(_EmptyCategory value)? emptyCategory,
+    required TResult orElse(),
+  }) {
+    if (failureDeleteProduct != null) {
+      return failureDeleteProduct(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FailureDeleteProduct implements ProductsState {
+  const factory _FailureDeleteProduct(final String message) =
+      _$FailureDeleteProductImpl;
+
+  String get message;
+  @JsonKey(ignore: true)
+  _$$FailureDeleteProductImplCopyWith<_$FailureDeleteProductImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SuccessDeleteProductImplCopyWith<$Res> {
+  factory _$$SuccessDeleteProductImplCopyWith(_$SuccessDeleteProductImpl value,
+          $Res Function(_$SuccessDeleteProductImpl) then) =
+      __$$SuccessDeleteProductImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SuccessDeleteProductImplCopyWithImpl<$Res>
+    extends _$ProductsStateCopyWithImpl<$Res, _$SuccessDeleteProductImpl>
+    implements _$$SuccessDeleteProductImplCopyWith<$Res> {
+  __$$SuccessDeleteProductImplCopyWithImpl(_$SuccessDeleteProductImpl _value,
+      $Res Function(_$SuccessDeleteProductImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SuccessDeleteProductImpl implements _SuccessDeleteProduct {
+  const _$SuccessDeleteProductImpl();
+
+  @override
+  String toString() {
+    return 'ProductsState.successDeleteProduct()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessDeleteProductImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingProducts,
+    required TResult Function(String message) failureProducts,
+    required TResult Function(List<ProductsResponseBody> products)
+        successProducts,
+    required TResult Function() emptyProducts,
+    required TResult Function() loadingSearch,
+    required TResult Function(String message) failureSearch,
+    required TResult Function(List<ProductsResponseBody> searchProducts)
+        successSearch,
+    required TResult Function() emptySearch,
+    required TResult Function() loadingAddProduct,
+    required TResult Function(String message) failureAddProduct,
+    required TResult Function() successAddProduct,
+    required TResult Function() loadingUpdateProduct,
+    required TResult Function(String message) failureUpdateProduct,
+    required TResult Function() successUpdateProduct,
+    required TResult Function() loadingDeleteProduct,
+    required TResult Function(String message) failureDeleteProduct,
+    required TResult Function() successDeleteProduct,
+    required TResult Function() loadingCategory,
+    required TResult Function(String message) failureCategory,
+    required TResult Function(List<ProductsResponseBody> categoryProducts)
+        successCategory,
+    required TResult Function() emptyCategory,
+  }) {
+    return successDeleteProduct();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingProducts,
+    TResult? Function(String message)? failureProducts,
+    TResult? Function(List<ProductsResponseBody> products)? successProducts,
+    TResult? Function()? emptyProducts,
+    TResult? Function()? loadingSearch,
+    TResult? Function(String message)? failureSearch,
+    TResult? Function(List<ProductsResponseBody> searchProducts)? successSearch,
+    TResult? Function()? emptySearch,
+    TResult? Function()? loadingAddProduct,
+    TResult? Function(String message)? failureAddProduct,
+    TResult? Function()? successAddProduct,
+    TResult? Function()? loadingUpdateProduct,
+    TResult? Function(String message)? failureUpdateProduct,
+    TResult? Function()? successUpdateProduct,
+    TResult? Function()? loadingDeleteProduct,
+    TResult? Function(String message)? failureDeleteProduct,
+    TResult? Function()? successDeleteProduct,
+    TResult? Function()? loadingCategory,
+    TResult? Function(String message)? failureCategory,
+    TResult? Function(List<ProductsResponseBody> categoryProducts)?
+        successCategory,
+    TResult? Function()? emptyCategory,
+  }) {
+    return successDeleteProduct?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingProducts,
+    TResult Function(String message)? failureProducts,
+    TResult Function(List<ProductsResponseBody> products)? successProducts,
+    TResult Function()? emptyProducts,
+    TResult Function()? loadingSearch,
+    TResult Function(String message)? failureSearch,
+    TResult Function(List<ProductsResponseBody> searchProducts)? successSearch,
+    TResult Function()? emptySearch,
+    TResult Function()? loadingAddProduct,
+    TResult Function(String message)? failureAddProduct,
+    TResult Function()? successAddProduct,
+    TResult Function()? loadingUpdateProduct,
+    TResult Function(String message)? failureUpdateProduct,
+    TResult Function()? successUpdateProduct,
+    TResult Function()? loadingDeleteProduct,
+    TResult Function(String message)? failureDeleteProduct,
+    TResult Function()? successDeleteProduct,
+    TResult Function()? loadingCategory,
+    TResult Function(String message)? failureCategory,
+    TResult Function(List<ProductsResponseBody> categoryProducts)?
+        successCategory,
+    TResult Function()? emptyCategory,
+    required TResult orElse(),
+  }) {
+    if (successDeleteProduct != null) {
+      return successDeleteProduct();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadingProducts value) loadingProducts,
+    required TResult Function(_FailureProducts value) failureProducts,
+    required TResult Function(_SuccessProducts value) successProducts,
+    required TResult Function(_EmptyProducts value) emptyProducts,
+    required TResult Function(_LoadingSearch value) loadingSearch,
+    required TResult Function(_FailureSearch value) failureSearch,
+    required TResult Function(_SuccessSearch value) successSearch,
+    required TResult Function(_EmptySearch value) emptySearch,
+    required TResult Function(_LoadingAddProduct value) loadingAddProduct,
+    required TResult Function(_FailureAddProduct value) failureAddProduct,
+    required TResult Function(_SuccessAddProduct value) successAddProduct,
+    required TResult Function(_LoadingUpdateProduct value) loadingUpdateProduct,
+    required TResult Function(_FailureUpdateProduct value) failureUpdateProduct,
+    required TResult Function(_SuccessUpdateProduct value) successUpdateProduct,
+    required TResult Function(_LoadingDeleteProduct value) loadingDeleteProduct,
+    required TResult Function(_FailureDeleteProduct value) failureDeleteProduct,
+    required TResult Function(_SuccessDeleteProduct value) successDeleteProduct,
+    required TResult Function(_LoadingCategory value) loadingCategory,
+    required TResult Function(_FailureCategory value) failureCategory,
+    required TResult Function(_SuccessCategory value) successCategory,
+    required TResult Function(_EmptyCategory value) emptyCategory,
+  }) {
+    return successDeleteProduct(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingProducts value)? loadingProducts,
+    TResult? Function(_FailureProducts value)? failureProducts,
+    TResult? Function(_SuccessProducts value)? successProducts,
+    TResult? Function(_EmptyProducts value)? emptyProducts,
+    TResult? Function(_LoadingSearch value)? loadingSearch,
+    TResult? Function(_FailureSearch value)? failureSearch,
+    TResult? Function(_SuccessSearch value)? successSearch,
+    TResult? Function(_EmptySearch value)? emptySearch,
+    TResult? Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult? Function(_FailureAddProduct value)? failureAddProduct,
+    TResult? Function(_SuccessAddProduct value)? successAddProduct,
+    TResult? Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult? Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult? Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult? Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult? Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult? Function(_SuccessDeleteProduct value)? successDeleteProduct,
+    TResult? Function(_LoadingCategory value)? loadingCategory,
+    TResult? Function(_FailureCategory value)? failureCategory,
+    TResult? Function(_SuccessCategory value)? successCategory,
+    TResult? Function(_EmptyCategory value)? emptyCategory,
+  }) {
+    return successDeleteProduct?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadingProducts value)? loadingProducts,
+    TResult Function(_FailureProducts value)? failureProducts,
+    TResult Function(_SuccessProducts value)? successProducts,
+    TResult Function(_EmptyProducts value)? emptyProducts,
+    TResult Function(_LoadingSearch value)? loadingSearch,
+    TResult Function(_FailureSearch value)? failureSearch,
+    TResult Function(_SuccessSearch value)? successSearch,
+    TResult Function(_EmptySearch value)? emptySearch,
+    TResult Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult Function(_FailureAddProduct value)? failureAddProduct,
+    TResult Function(_SuccessAddProduct value)? successAddProduct,
+    TResult Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult Function(_SuccessDeleteProduct value)? successDeleteProduct,
+    TResult Function(_LoadingCategory value)? loadingCategory,
+    TResult Function(_FailureCategory value)? failureCategory,
+    TResult Function(_SuccessCategory value)? successCategory,
+    TResult Function(_EmptyCategory value)? emptyCategory,
+    required TResult orElse(),
+  }) {
+    if (successDeleteProduct != null) {
+      return successDeleteProduct(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SuccessDeleteProduct implements ProductsState {
+  const factory _SuccessDeleteProduct() = _$SuccessDeleteProductImpl;
 }
 
 /// @nodoc
@@ -1894,6 +4582,15 @@ class _$LoadingCategoryImpl implements _LoadingCategory {
     required TResult Function(List<ProductsResponseBody> searchProducts)
         successSearch,
     required TResult Function() emptySearch,
+    required TResult Function() loadingAddProduct,
+    required TResult Function(String message) failureAddProduct,
+    required TResult Function() successAddProduct,
+    required TResult Function() loadingUpdateProduct,
+    required TResult Function(String message) failureUpdateProduct,
+    required TResult Function() successUpdateProduct,
+    required TResult Function() loadingDeleteProduct,
+    required TResult Function(String message) failureDeleteProduct,
+    required TResult Function() successDeleteProduct,
     required TResult Function() loadingCategory,
     required TResult Function(String message) failureCategory,
     required TResult Function(List<ProductsResponseBody> categoryProducts)
@@ -1915,6 +4612,15 @@ class _$LoadingCategoryImpl implements _LoadingCategory {
     TResult? Function(String message)? failureSearch,
     TResult? Function(List<ProductsResponseBody> searchProducts)? successSearch,
     TResult? Function()? emptySearch,
+    TResult? Function()? loadingAddProduct,
+    TResult? Function(String message)? failureAddProduct,
+    TResult? Function()? successAddProduct,
+    TResult? Function()? loadingUpdateProduct,
+    TResult? Function(String message)? failureUpdateProduct,
+    TResult? Function()? successUpdateProduct,
+    TResult? Function()? loadingDeleteProduct,
+    TResult? Function(String message)? failureDeleteProduct,
+    TResult? Function()? successDeleteProduct,
     TResult? Function()? loadingCategory,
     TResult? Function(String message)? failureCategory,
     TResult? Function(List<ProductsResponseBody> categoryProducts)?
@@ -1936,6 +4642,15 @@ class _$LoadingCategoryImpl implements _LoadingCategory {
     TResult Function(String message)? failureSearch,
     TResult Function(List<ProductsResponseBody> searchProducts)? successSearch,
     TResult Function()? emptySearch,
+    TResult Function()? loadingAddProduct,
+    TResult Function(String message)? failureAddProduct,
+    TResult Function()? successAddProduct,
+    TResult Function()? loadingUpdateProduct,
+    TResult Function(String message)? failureUpdateProduct,
+    TResult Function()? successUpdateProduct,
+    TResult Function()? loadingDeleteProduct,
+    TResult Function(String message)? failureDeleteProduct,
+    TResult Function()? successDeleteProduct,
     TResult Function()? loadingCategory,
     TResult Function(String message)? failureCategory,
     TResult Function(List<ProductsResponseBody> categoryProducts)?
@@ -1961,6 +4676,15 @@ class _$LoadingCategoryImpl implements _LoadingCategory {
     required TResult Function(_FailureSearch value) failureSearch,
     required TResult Function(_SuccessSearch value) successSearch,
     required TResult Function(_EmptySearch value) emptySearch,
+    required TResult Function(_LoadingAddProduct value) loadingAddProduct,
+    required TResult Function(_FailureAddProduct value) failureAddProduct,
+    required TResult Function(_SuccessAddProduct value) successAddProduct,
+    required TResult Function(_LoadingUpdateProduct value) loadingUpdateProduct,
+    required TResult Function(_FailureUpdateProduct value) failureUpdateProduct,
+    required TResult Function(_SuccessUpdateProduct value) successUpdateProduct,
+    required TResult Function(_LoadingDeleteProduct value) loadingDeleteProduct,
+    required TResult Function(_FailureDeleteProduct value) failureDeleteProduct,
+    required TResult Function(_SuccessDeleteProduct value) successDeleteProduct,
     required TResult Function(_LoadingCategory value) loadingCategory,
     required TResult Function(_FailureCategory value) failureCategory,
     required TResult Function(_SuccessCategory value) successCategory,
@@ -1981,6 +4705,15 @@ class _$LoadingCategoryImpl implements _LoadingCategory {
     TResult? Function(_FailureSearch value)? failureSearch,
     TResult? Function(_SuccessSearch value)? successSearch,
     TResult? Function(_EmptySearch value)? emptySearch,
+    TResult? Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult? Function(_FailureAddProduct value)? failureAddProduct,
+    TResult? Function(_SuccessAddProduct value)? successAddProduct,
+    TResult? Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult? Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult? Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult? Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult? Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult? Function(_SuccessDeleteProduct value)? successDeleteProduct,
     TResult? Function(_LoadingCategory value)? loadingCategory,
     TResult? Function(_FailureCategory value)? failureCategory,
     TResult? Function(_SuccessCategory value)? successCategory,
@@ -2001,6 +4734,15 @@ class _$LoadingCategoryImpl implements _LoadingCategory {
     TResult Function(_FailureSearch value)? failureSearch,
     TResult Function(_SuccessSearch value)? successSearch,
     TResult Function(_EmptySearch value)? emptySearch,
+    TResult Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult Function(_FailureAddProduct value)? failureAddProduct,
+    TResult Function(_SuccessAddProduct value)? successAddProduct,
+    TResult Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult Function(_SuccessDeleteProduct value)? successDeleteProduct,
     TResult Function(_LoadingCategory value)? loadingCategory,
     TResult Function(_FailureCategory value)? failureCategory,
     TResult Function(_SuccessCategory value)? successCategory,
@@ -2094,6 +4836,15 @@ class _$FailureCategoryImpl implements _FailureCategory {
     required TResult Function(List<ProductsResponseBody> searchProducts)
         successSearch,
     required TResult Function() emptySearch,
+    required TResult Function() loadingAddProduct,
+    required TResult Function(String message) failureAddProduct,
+    required TResult Function() successAddProduct,
+    required TResult Function() loadingUpdateProduct,
+    required TResult Function(String message) failureUpdateProduct,
+    required TResult Function() successUpdateProduct,
+    required TResult Function() loadingDeleteProduct,
+    required TResult Function(String message) failureDeleteProduct,
+    required TResult Function() successDeleteProduct,
     required TResult Function() loadingCategory,
     required TResult Function(String message) failureCategory,
     required TResult Function(List<ProductsResponseBody> categoryProducts)
@@ -2115,6 +4866,15 @@ class _$FailureCategoryImpl implements _FailureCategory {
     TResult? Function(String message)? failureSearch,
     TResult? Function(List<ProductsResponseBody> searchProducts)? successSearch,
     TResult? Function()? emptySearch,
+    TResult? Function()? loadingAddProduct,
+    TResult? Function(String message)? failureAddProduct,
+    TResult? Function()? successAddProduct,
+    TResult? Function()? loadingUpdateProduct,
+    TResult? Function(String message)? failureUpdateProduct,
+    TResult? Function()? successUpdateProduct,
+    TResult? Function()? loadingDeleteProduct,
+    TResult? Function(String message)? failureDeleteProduct,
+    TResult? Function()? successDeleteProduct,
     TResult? Function()? loadingCategory,
     TResult? Function(String message)? failureCategory,
     TResult? Function(List<ProductsResponseBody> categoryProducts)?
@@ -2136,6 +4896,15 @@ class _$FailureCategoryImpl implements _FailureCategory {
     TResult Function(String message)? failureSearch,
     TResult Function(List<ProductsResponseBody> searchProducts)? successSearch,
     TResult Function()? emptySearch,
+    TResult Function()? loadingAddProduct,
+    TResult Function(String message)? failureAddProduct,
+    TResult Function()? successAddProduct,
+    TResult Function()? loadingUpdateProduct,
+    TResult Function(String message)? failureUpdateProduct,
+    TResult Function()? successUpdateProduct,
+    TResult Function()? loadingDeleteProduct,
+    TResult Function(String message)? failureDeleteProduct,
+    TResult Function()? successDeleteProduct,
     TResult Function()? loadingCategory,
     TResult Function(String message)? failureCategory,
     TResult Function(List<ProductsResponseBody> categoryProducts)?
@@ -2161,6 +4930,15 @@ class _$FailureCategoryImpl implements _FailureCategory {
     required TResult Function(_FailureSearch value) failureSearch,
     required TResult Function(_SuccessSearch value) successSearch,
     required TResult Function(_EmptySearch value) emptySearch,
+    required TResult Function(_LoadingAddProduct value) loadingAddProduct,
+    required TResult Function(_FailureAddProduct value) failureAddProduct,
+    required TResult Function(_SuccessAddProduct value) successAddProduct,
+    required TResult Function(_LoadingUpdateProduct value) loadingUpdateProduct,
+    required TResult Function(_FailureUpdateProduct value) failureUpdateProduct,
+    required TResult Function(_SuccessUpdateProduct value) successUpdateProduct,
+    required TResult Function(_LoadingDeleteProduct value) loadingDeleteProduct,
+    required TResult Function(_FailureDeleteProduct value) failureDeleteProduct,
+    required TResult Function(_SuccessDeleteProduct value) successDeleteProduct,
     required TResult Function(_LoadingCategory value) loadingCategory,
     required TResult Function(_FailureCategory value) failureCategory,
     required TResult Function(_SuccessCategory value) successCategory,
@@ -2181,6 +4959,15 @@ class _$FailureCategoryImpl implements _FailureCategory {
     TResult? Function(_FailureSearch value)? failureSearch,
     TResult? Function(_SuccessSearch value)? successSearch,
     TResult? Function(_EmptySearch value)? emptySearch,
+    TResult? Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult? Function(_FailureAddProduct value)? failureAddProduct,
+    TResult? Function(_SuccessAddProduct value)? successAddProduct,
+    TResult? Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult? Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult? Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult? Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult? Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult? Function(_SuccessDeleteProduct value)? successDeleteProduct,
     TResult? Function(_LoadingCategory value)? loadingCategory,
     TResult? Function(_FailureCategory value)? failureCategory,
     TResult? Function(_SuccessCategory value)? successCategory,
@@ -2201,6 +4988,15 @@ class _$FailureCategoryImpl implements _FailureCategory {
     TResult Function(_FailureSearch value)? failureSearch,
     TResult Function(_SuccessSearch value)? successSearch,
     TResult Function(_EmptySearch value)? emptySearch,
+    TResult Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult Function(_FailureAddProduct value)? failureAddProduct,
+    TResult Function(_SuccessAddProduct value)? successAddProduct,
+    TResult Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult Function(_SuccessDeleteProduct value)? successDeleteProduct,
     TResult Function(_LoadingCategory value)? loadingCategory,
     TResult Function(_FailureCategory value)? failureCategory,
     TResult Function(_SuccessCategory value)? successCategory,
@@ -2308,6 +5104,15 @@ class _$SuccessCategoryImpl implements _SuccessCategory {
     required TResult Function(List<ProductsResponseBody> searchProducts)
         successSearch,
     required TResult Function() emptySearch,
+    required TResult Function() loadingAddProduct,
+    required TResult Function(String message) failureAddProduct,
+    required TResult Function() successAddProduct,
+    required TResult Function() loadingUpdateProduct,
+    required TResult Function(String message) failureUpdateProduct,
+    required TResult Function() successUpdateProduct,
+    required TResult Function() loadingDeleteProduct,
+    required TResult Function(String message) failureDeleteProduct,
+    required TResult Function() successDeleteProduct,
     required TResult Function() loadingCategory,
     required TResult Function(String message) failureCategory,
     required TResult Function(List<ProductsResponseBody> categoryProducts)
@@ -2329,6 +5134,15 @@ class _$SuccessCategoryImpl implements _SuccessCategory {
     TResult? Function(String message)? failureSearch,
     TResult? Function(List<ProductsResponseBody> searchProducts)? successSearch,
     TResult? Function()? emptySearch,
+    TResult? Function()? loadingAddProduct,
+    TResult? Function(String message)? failureAddProduct,
+    TResult? Function()? successAddProduct,
+    TResult? Function()? loadingUpdateProduct,
+    TResult? Function(String message)? failureUpdateProduct,
+    TResult? Function()? successUpdateProduct,
+    TResult? Function()? loadingDeleteProduct,
+    TResult? Function(String message)? failureDeleteProduct,
+    TResult? Function()? successDeleteProduct,
     TResult? Function()? loadingCategory,
     TResult? Function(String message)? failureCategory,
     TResult? Function(List<ProductsResponseBody> categoryProducts)?
@@ -2350,6 +5164,15 @@ class _$SuccessCategoryImpl implements _SuccessCategory {
     TResult Function(String message)? failureSearch,
     TResult Function(List<ProductsResponseBody> searchProducts)? successSearch,
     TResult Function()? emptySearch,
+    TResult Function()? loadingAddProduct,
+    TResult Function(String message)? failureAddProduct,
+    TResult Function()? successAddProduct,
+    TResult Function()? loadingUpdateProduct,
+    TResult Function(String message)? failureUpdateProduct,
+    TResult Function()? successUpdateProduct,
+    TResult Function()? loadingDeleteProduct,
+    TResult Function(String message)? failureDeleteProduct,
+    TResult Function()? successDeleteProduct,
     TResult Function()? loadingCategory,
     TResult Function(String message)? failureCategory,
     TResult Function(List<ProductsResponseBody> categoryProducts)?
@@ -2375,6 +5198,15 @@ class _$SuccessCategoryImpl implements _SuccessCategory {
     required TResult Function(_FailureSearch value) failureSearch,
     required TResult Function(_SuccessSearch value) successSearch,
     required TResult Function(_EmptySearch value) emptySearch,
+    required TResult Function(_LoadingAddProduct value) loadingAddProduct,
+    required TResult Function(_FailureAddProduct value) failureAddProduct,
+    required TResult Function(_SuccessAddProduct value) successAddProduct,
+    required TResult Function(_LoadingUpdateProduct value) loadingUpdateProduct,
+    required TResult Function(_FailureUpdateProduct value) failureUpdateProduct,
+    required TResult Function(_SuccessUpdateProduct value) successUpdateProduct,
+    required TResult Function(_LoadingDeleteProduct value) loadingDeleteProduct,
+    required TResult Function(_FailureDeleteProduct value) failureDeleteProduct,
+    required TResult Function(_SuccessDeleteProduct value) successDeleteProduct,
     required TResult Function(_LoadingCategory value) loadingCategory,
     required TResult Function(_FailureCategory value) failureCategory,
     required TResult Function(_SuccessCategory value) successCategory,
@@ -2395,6 +5227,15 @@ class _$SuccessCategoryImpl implements _SuccessCategory {
     TResult? Function(_FailureSearch value)? failureSearch,
     TResult? Function(_SuccessSearch value)? successSearch,
     TResult? Function(_EmptySearch value)? emptySearch,
+    TResult? Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult? Function(_FailureAddProduct value)? failureAddProduct,
+    TResult? Function(_SuccessAddProduct value)? successAddProduct,
+    TResult? Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult? Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult? Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult? Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult? Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult? Function(_SuccessDeleteProduct value)? successDeleteProduct,
     TResult? Function(_LoadingCategory value)? loadingCategory,
     TResult? Function(_FailureCategory value)? failureCategory,
     TResult? Function(_SuccessCategory value)? successCategory,
@@ -2415,6 +5256,15 @@ class _$SuccessCategoryImpl implements _SuccessCategory {
     TResult Function(_FailureSearch value)? failureSearch,
     TResult Function(_SuccessSearch value)? successSearch,
     TResult Function(_EmptySearch value)? emptySearch,
+    TResult Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult Function(_FailureAddProduct value)? failureAddProduct,
+    TResult Function(_SuccessAddProduct value)? successAddProduct,
+    TResult Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult Function(_SuccessDeleteProduct value)? successDeleteProduct,
     TResult Function(_LoadingCategory value)? loadingCategory,
     TResult Function(_FailureCategory value)? failureCategory,
     TResult Function(_SuccessCategory value)? successCategory,
@@ -2488,6 +5338,15 @@ class _$EmptyCategoryImpl implements _EmptyCategory {
     required TResult Function(List<ProductsResponseBody> searchProducts)
         successSearch,
     required TResult Function() emptySearch,
+    required TResult Function() loadingAddProduct,
+    required TResult Function(String message) failureAddProduct,
+    required TResult Function() successAddProduct,
+    required TResult Function() loadingUpdateProduct,
+    required TResult Function(String message) failureUpdateProduct,
+    required TResult Function() successUpdateProduct,
+    required TResult Function() loadingDeleteProduct,
+    required TResult Function(String message) failureDeleteProduct,
+    required TResult Function() successDeleteProduct,
     required TResult Function() loadingCategory,
     required TResult Function(String message) failureCategory,
     required TResult Function(List<ProductsResponseBody> categoryProducts)
@@ -2509,6 +5368,15 @@ class _$EmptyCategoryImpl implements _EmptyCategory {
     TResult? Function(String message)? failureSearch,
     TResult? Function(List<ProductsResponseBody> searchProducts)? successSearch,
     TResult? Function()? emptySearch,
+    TResult? Function()? loadingAddProduct,
+    TResult? Function(String message)? failureAddProduct,
+    TResult? Function()? successAddProduct,
+    TResult? Function()? loadingUpdateProduct,
+    TResult? Function(String message)? failureUpdateProduct,
+    TResult? Function()? successUpdateProduct,
+    TResult? Function()? loadingDeleteProduct,
+    TResult? Function(String message)? failureDeleteProduct,
+    TResult? Function()? successDeleteProduct,
     TResult? Function()? loadingCategory,
     TResult? Function(String message)? failureCategory,
     TResult? Function(List<ProductsResponseBody> categoryProducts)?
@@ -2530,6 +5398,15 @@ class _$EmptyCategoryImpl implements _EmptyCategory {
     TResult Function(String message)? failureSearch,
     TResult Function(List<ProductsResponseBody> searchProducts)? successSearch,
     TResult Function()? emptySearch,
+    TResult Function()? loadingAddProduct,
+    TResult Function(String message)? failureAddProduct,
+    TResult Function()? successAddProduct,
+    TResult Function()? loadingUpdateProduct,
+    TResult Function(String message)? failureUpdateProduct,
+    TResult Function()? successUpdateProduct,
+    TResult Function()? loadingDeleteProduct,
+    TResult Function(String message)? failureDeleteProduct,
+    TResult Function()? successDeleteProduct,
     TResult Function()? loadingCategory,
     TResult Function(String message)? failureCategory,
     TResult Function(List<ProductsResponseBody> categoryProducts)?
@@ -2555,6 +5432,15 @@ class _$EmptyCategoryImpl implements _EmptyCategory {
     required TResult Function(_FailureSearch value) failureSearch,
     required TResult Function(_SuccessSearch value) successSearch,
     required TResult Function(_EmptySearch value) emptySearch,
+    required TResult Function(_LoadingAddProduct value) loadingAddProduct,
+    required TResult Function(_FailureAddProduct value) failureAddProduct,
+    required TResult Function(_SuccessAddProduct value) successAddProduct,
+    required TResult Function(_LoadingUpdateProduct value) loadingUpdateProduct,
+    required TResult Function(_FailureUpdateProduct value) failureUpdateProduct,
+    required TResult Function(_SuccessUpdateProduct value) successUpdateProduct,
+    required TResult Function(_LoadingDeleteProduct value) loadingDeleteProduct,
+    required TResult Function(_FailureDeleteProduct value) failureDeleteProduct,
+    required TResult Function(_SuccessDeleteProduct value) successDeleteProduct,
     required TResult Function(_LoadingCategory value) loadingCategory,
     required TResult Function(_FailureCategory value) failureCategory,
     required TResult Function(_SuccessCategory value) successCategory,
@@ -2575,6 +5461,15 @@ class _$EmptyCategoryImpl implements _EmptyCategory {
     TResult? Function(_FailureSearch value)? failureSearch,
     TResult? Function(_SuccessSearch value)? successSearch,
     TResult? Function(_EmptySearch value)? emptySearch,
+    TResult? Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult? Function(_FailureAddProduct value)? failureAddProduct,
+    TResult? Function(_SuccessAddProduct value)? successAddProduct,
+    TResult? Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult? Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult? Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult? Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult? Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult? Function(_SuccessDeleteProduct value)? successDeleteProduct,
     TResult? Function(_LoadingCategory value)? loadingCategory,
     TResult? Function(_FailureCategory value)? failureCategory,
     TResult? Function(_SuccessCategory value)? successCategory,
@@ -2595,6 +5490,15 @@ class _$EmptyCategoryImpl implements _EmptyCategory {
     TResult Function(_FailureSearch value)? failureSearch,
     TResult Function(_SuccessSearch value)? successSearch,
     TResult Function(_EmptySearch value)? emptySearch,
+    TResult Function(_LoadingAddProduct value)? loadingAddProduct,
+    TResult Function(_FailureAddProduct value)? failureAddProduct,
+    TResult Function(_SuccessAddProduct value)? successAddProduct,
+    TResult Function(_LoadingUpdateProduct value)? loadingUpdateProduct,
+    TResult Function(_FailureUpdateProduct value)? failureUpdateProduct,
+    TResult Function(_SuccessUpdateProduct value)? successUpdateProduct,
+    TResult Function(_LoadingDeleteProduct value)? loadingDeleteProduct,
+    TResult Function(_FailureDeleteProduct value)? failureDeleteProduct,
+    TResult Function(_SuccessDeleteProduct value)? successDeleteProduct,
     TResult Function(_LoadingCategory value)? loadingCategory,
     TResult Function(_FailureCategory value)? failureCategory,
     TResult Function(_SuccessCategory value)? successCategory,

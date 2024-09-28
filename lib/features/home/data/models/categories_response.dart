@@ -18,6 +18,14 @@ class CategoriesResponseBody {
     return data!.categories.reversed.toList();
   }
 
+  List get categoryListName {
+    List<String> names = [];
+    for (var element in data!.categories) {
+      names.add(element.name!);
+    }
+    return names;
+  }
+
   String get categoryListNumber {
     if (data!.categories.isEmpty) {
       return '0';

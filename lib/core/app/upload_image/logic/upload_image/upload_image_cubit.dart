@@ -13,6 +13,7 @@ class UploadImageCubit extends Cubit<UploadImageState> {
       : super(const UploadImageState.initial());
 
   String imageUrl = "";
+  List<String> imagesList = ['', '', ''];
   Future uploadImage(ImageSource source, BuildContext context) async {
     final response =
         await AppImagePicker().pickImage(source: source, context: context);
@@ -24,6 +25,28 @@ class UploadImageCubit extends Cubit<UploadImageState> {
       success: (data) {
         imageUrl = data.location ?? "";
         Prints.debug(message: "imageUrl: $imageUrl");
+        emit(UploadImageState.success(imageUrl));
+      },
+      failure: (error) {
+        emit(UploadImageState.failure(error));
+      },
+    );
+  }
+
+  Future<void> addproductImages(
+      int index, ImageSource source, BuildContext context) async {
+    final response =
+        await AppImagePicker().pickImage(source: source, context: context);
+    if (response == null) return;
+
+    emit(UploadImageState.loadingIndex(index));
+    final result = await uploadImageRepo.uploadImage(image: response);
+    result.when(
+      success: (data) {
+        imagesList
+          ..removeAt(index)
+          ..insert(index, data.location ?? "");
+
         emit(UploadImageState.success(imageUrl));
       },
       failure: (error) {

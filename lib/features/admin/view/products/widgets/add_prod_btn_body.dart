@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mo_store/core/app/upload_image/logic/upload_image/upload_image_cubit.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
 import 'package:mo_store/core/helpers/extensions.dart';
 import 'package:mo_store/core/helpers/text_fonts.dart';
 import 'package:mo_store/core/widgets/custom_button.dart';
 import 'package:mo_store/core/widgets/custom_dialog.dart';
 import 'package:mo_store/core/widgets/custom_txt_fom_field.dart';
-import 'package:mo_store/features/admin/view/categories/widgets/add_prod_categ_image.dart';
-import 'package:mo_store/features/admin/view/products/widgets/add_image.dart';
+import 'package:mo_store/features/admin/view/products/widgets/add_prod_images.dart';
 import 'package:mo_store/features/admin/view/products/widgets/categ_select.dart';
 import 'package:mo_store/features/home/logic/categories_cubit/categories_cubit.dart';
-import 'package:mo_store/features/home/logic/categories_cubit/categories_state.dart';
+import 'package:mo_store/features/home/logic/products_cubit/products_cubit.dart';
+import 'package:mo_store/features/home/logic/products_cubit/products_state.dart';
 
 class AddProductButtonSheetBody extends StatefulWidget {
   const AddProductButtonSheetBody({
@@ -24,33 +25,72 @@ class AddProductButtonSheetBody extends StatefulWidget {
 }
 
 class _AddProductButtonSheetBodyState extends State<AddProductButtonSheetBody> {
-  TextEditingController nameController = TextEditingController();
-  TextEditingController priceController = TextEditingController();
-  TextEditingController descriptionController = TextEditingController();
+  final nameController = TextEditingController();
+  final priceController = TextEditingController();
+  final descriptionController = TextEditingController();
+  late ProductsCubit _productsCubit;
+
+  @override
+  void initState() {
+    super.initState();
+    _productsCubit = BlocProvider.of<ProductsCubit>(context);
+  }
+
+  @override
+  void didChangeDependencies() {
+    _productsCubit.selectedCategory = '';
+    super.didChangeDependencies();
+  }
 
   @override
   void dispose() {
     nameController.dispose();
     priceController.dispose();
+    descriptionController.dispose();
     super.dispose();
   }
 
-  void _addCategoryByValidation() {
-    // if (addCategoryController.text.isNullOrEmptyString() ||
-    //     BlocProvider.of<UploadImageCubit>(context)
-    //         .imageUrl
-    //         .isNullOrEmptyString()) {
-    //   CustomDialog.show(
-    //     context: context,
-    //     text: 'Image & Name Required',
-    //     isSuccess: false,
-    //   );
-    // } else {
-    //   BlocProvider.of<CategoriesCubit>(context).addCategoryGraphQl(
-    //     image: BlocProvider.of<UploadImageCubit>(context).imageUrl,
-    //     name: addCategoryController.text.trim(),
-    //   );
-    // }
+  String getCategoryId() {
+    return BlocProvider.of<CategoriesCubit>(context)
+        .allCategories
+        .where((e) => e.name == _productsCubit.selectedCategory)
+        .first
+        .id
+        .toString();
+  }
+
+  void _addProductByValidation() {
+    if (BlocProvider.of<UploadImageCubit>(context)
+        .imagesList
+        .isNullOrEmptyList()) {
+      CustomDialog.show(
+        context: context,
+        text: 'At least one Image Required',
+        isSuccess: false,
+      );
+    } else if (nameController.text.isNullOrEmptyString() ||
+        descriptionController.text.isNullOrEmptyString()) {
+      CustomDialog.show(
+        context: context,
+        text: 'Name & Description Required',
+        isSuccess: false,
+      );
+    } else if (priceController.text.isNullOrEmptyString() ||
+        _productsCubit.selectedCategory.isNullOrEmptyString()) {
+      CustomDialog.show(
+        context: context,
+        text: 'Price & Category Required',
+        isSuccess: false,
+      );
+    } else {
+      _productsCubit.addProductGraphql(
+        title: nameController.text.trim(),
+        price: double.parse(priceController.text.trim()),
+        description: descriptionController.text.trim(),
+        categoryId: double.parse(getCategoryId()),
+        images: BlocProvider.of<UploadImageCubit>(context).imagesList,
+      );
+    }
   }
 
   @override
@@ -66,11 +106,7 @@ class _AddProductButtonSheetBodyState extends State<AddProductButtonSheetBody> {
           ),
         ),
         10.verticalSpace,
-        const AddImageTest(isCateg: true),
-        5.verticalSpace,
-        const AddImageTest(isCateg: true),
-        5.verticalSpace,
-        const AddImageTest(isCateg: true),
+        const AddProductImages(),
         10.verticalSpace,
         CustomTextFormField(
           padding: 0,
@@ -110,18 +146,18 @@ class _AddProductButtonSheetBodyState extends State<AddProductButtonSheetBody> {
           ],
         ),
         10.verticalSpace,
-        BlocConsumer<CategoriesCubit, CategoriesState>(
+        BlocConsumer<ProductsCubit, ProductsState>(
           listener: (context, state) {
             state.whenOrNull(
-              successAddCategories: () {
+              successAddProduct: () {
                 context.pop();
-                BlocProvider.of<CategoriesCubit>(context).getCategories();
+                _productsCubit.getProducts();
                 CustomDialog.show(
                   context: context,
                   text: 'Product Created Successfully',
                 );
               },
-              failureAddCategories: (message) => CustomDialog.awsomeError(
+              failureAddProduct: (message) => CustomDialog.awsomeError(
                 context,
                 message.toString(),
               ),
@@ -132,7 +168,7 @@ class _AddProductButtonSheetBodyState extends State<AddProductButtonSheetBody> {
               padding: 0,
               text: 'Add Product',
               onPressed: () {
-                _addCategoryByValidation();
+                _addProductByValidation();
               },
               width: double.infinity,
               height: 45,
@@ -141,7 +177,7 @@ class _AddProductButtonSheetBodyState extends State<AddProductButtonSheetBody> {
               backgroundColor: AppColors.lightBlue,
               isLoading: state.maybeWhen(
                 orElse: () => false,
-                loadingAddCategories: () => true,
+                loadingAddProduct: () => true,
               ),
             );
           },

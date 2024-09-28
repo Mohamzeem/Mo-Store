@@ -4,25 +4,24 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
 import 'package:mo_store/core/helpers/text_fonts.dart';
 import 'package:mo_store/core/widgets/custom_search_field.dart';
-import 'package:mo_store/features/home/logic/categories_cubit/categories_cubit.dart';
+import 'package:mo_store/features/home/logic/products_cubit/products_cubit.dart';
 
-class AllCategoriesTextAndSearch extends StatefulWidget {
-  const AllCategoriesTextAndSearch({super.key});
+class AllProductsTextAndSearch extends StatefulWidget {
+  const AllProductsTextAndSearch({super.key});
 
   @override
-  State<AllCategoriesTextAndSearch> createState() =>
-      _AllCategoriesTextAndSearchState();
+  State<AllProductsTextAndSearch> createState() =>
+      _AllProductsTextAndSearchState();
 }
 
-class _AllCategoriesTextAndSearchState
-    extends State<AllCategoriesTextAndSearch> {
+class _AllProductsTextAndSearchState extends State<AllProductsTextAndSearch> {
   bool showSearch = false;
-  late CategoriesCubit _cubit;
+  late ProductsCubit _cubit;
 
   @override
   void initState() {
     super.initState();
-    _cubit = BlocProvider.of<CategoriesCubit>(context);
+    _cubit = BlocProvider.of<ProductsCubit>(context);
   }
 
   @override
@@ -40,22 +39,22 @@ class _AllCategoriesTextAndSearchState
                       height: 45,
                       child: CustomSearchField(
                         padding: 0,
-                        label: 'Category Name',
+                        label: 'product Name',
                         keyBoard: TextInputType.text,
                         onChanged: (value) {
                           _cubit.searchText = value;
-                          _cubit.searchCategory();
+                          _cubit.adminSearchProduct();
                         },
                       ),
                     )
-                  : Text('All Categories', style: AppFonts.medium22Primary),
+                  : Text('All products', style: AppFonts.medium22Primary),
               InkWell(
                 onTap: () {
                   setState(() => showSearch = !showSearch);
                   if (showSearch == false) {
                     _cubit.searchText = '';
-                    _cubit.foundCategories.clear();
-                    _cubit.getCategories();
+                    _cubit.foundProductsList.clear();
+                    _cubit.getProducts();
                   }
                 },
                 child: Container(

@@ -19,6 +19,21 @@ class ProductsState with _$ProductsState {
       List<ProductsResponseBody> searchProducts) = _SuccessSearch;
   const factory ProductsState.emptySearch() = _EmptySearch;
 
+  const factory ProductsState.loadingAddProduct() = _LoadingAddProduct;
+  const factory ProductsState.failureAddProduct(String message) =
+      _FailureAddProduct;
+  const factory ProductsState.successAddProduct() = _SuccessAddProduct;
+
+  const factory ProductsState.loadingUpdateProduct() = _LoadingUpdateProduct;
+  const factory ProductsState.failureUpdateProduct(String message) =
+      _FailureUpdateProduct;
+  const factory ProductsState.successUpdateProduct() = _SuccessUpdateProduct;
+
+  const factory ProductsState.loadingDeleteProduct() = _LoadingDeleteProduct;
+  const factory ProductsState.failureDeleteProduct(String message) =
+      _FailureDeleteProduct;
+  const factory ProductsState.successDeleteProduct() = _SuccessDeleteProduct;
+
   const factory ProductsState.loadingCategory() = _LoadingCategory;
   const factory ProductsState.failureCategory(String message) =
       _FailureCategory;

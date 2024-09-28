@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
 import 'package:mo_store/core/helpers/extensions.dart';
 import 'package:mo_store/core/helpers/text_fonts.dart';
+import 'package:mo_store/features/home/logic/categories_cubit/categories_cubit.dart';
 import 'package:mo_store/features/home/logic/products_cubit/products_cubit.dart';
 import 'package:mo_store/features/home/logic/products_cubit/products_state.dart';
 
@@ -22,6 +23,11 @@ class _CategorySelectState extends State<CategorySelect> {
     final cubit = BlocProvider.of<ProductsCubit>(context);
     return BlocBuilder<ProductsCubit, ProductsState>(
       builder: (context, state) {
+        final list = BlocProvider.of<CategoriesCubit>(context)
+            .allCategories
+            .map((e) => e.name)
+            .toList();
+
         return Container(
           width: 210.w,
           height: 45.h,
@@ -44,15 +50,17 @@ class _CategorySelectState extends State<CategorySelect> {
                 'Category Name',
                 style: AppFonts.regular18LightBlue,
               ),
-              onChanged: (value) => setState(() => cubit.dropDownValue(value!)),
-              value: cubit.selectedRole.isNullOrEmptyString()
+              onChanged: (value) => setState(() {
+                cubit.dropDownValue(value!);
+              }),
+              value: cubit.selectedCategory.isNullOrEmptyString()
                   ? null
-                  : cubit.selectedRole,
-              items: cubit.roleList.map((role) {
+                  : cubit.selectedCategory,
+              items: list.map((category) {
                 return DropdownMenuItem(
-                  value: role,
+                  value: category,
                   alignment: Alignment.center,
-                  child: Text(role),
+                  child: Text(category!),
                 );
               }).toList(),
             ),
