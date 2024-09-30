@@ -39,9 +39,9 @@ class HomeDataSource {
     return response;
   }
 
-  Future<void> addProductGraphql() async {
-    final response = await productsApi.addProductGraphql(
-        GraphQlProductsQueries().addProductsMapQuery(CreateProductRequest()));
+  Future<void> addProductGraphql(AddProductRequest body) async {
+    final response = await productsApi
+        .addProductGraphql(GraphQlProductsQueries().addProductsMapQuery(body));
     return response;
   }
 }

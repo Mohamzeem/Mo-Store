@@ -4,43 +4,57 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mo_store/core/app/upload_image/logic/upload_image/upload_image_cubit.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
 import 'package:mo_store/core/helpers/extensions.dart';
-import 'package:mo_store/core/helpers/prints.dart';
 import 'package:mo_store/core/helpers/text_fonts.dart';
 import 'package:mo_store/core/widgets/custom_button.dart';
 import 'package:mo_store/core/widgets/custom_dialog.dart';
 import 'package:mo_store/core/widgets/custom_txt_fom_field.dart';
 import 'package:mo_store/features/admin/view/products/widgets/add_prod_images.dart';
 import 'package:mo_store/features/admin/view/products/widgets/categ_select.dart';
-import 'package:mo_store/features/home/logic/categories_cubit/categories_cubit.dart';
+import 'package:mo_store/features/admin/view/products/widgets/update_prod_images.dart';
+import 'package:mo_store/features/home/data/models/products_response.dart';
 import 'package:mo_store/features/home/logic/products_cubit/products_cubit.dart';
 import 'package:mo_store/features/home/logic/products_cubit/products_state.dart';
 
-class AddProductButtonSheetBody extends StatefulWidget {
-  const AddProductButtonSheetBody({
+class UpdateProductButtonSheetBody extends StatefulWidget {
+  final ProductsResponseBody prodModel;
+  const UpdateProductButtonSheetBody({
     super.key,
+    required this.prodModel,
   });
 
   @override
-  State<AddProductButtonSheetBody> createState() =>
-      _AddProductButtonSheetBodyState();
+  State<UpdateProductButtonSheetBody> createState() =>
+      _UpdateProductButtonSheetBodyState();
 }
 
-class _AddProductButtonSheetBodyState extends State<AddProductButtonSheetBody> {
+class _UpdateProductButtonSheetBodyState
+    extends State<UpdateProductButtonSheetBody> {
   final nameController = TextEditingController();
   final priceController = TextEditingController();
   final descriptionController = TextEditingController();
   late ProductsCubit _productsCubit;
+  void _updateProductWithValidation() {
+    final uploadImageCubit = BlocProvider.of<UploadImageCubit>(context);
+    if (nameController.text.isNullOrEmptyString() &&
+        uploadImageCubit.imageUrl.isNullOrEmptyString()) {
+      CustomDialog.show(
+        context: context,
+        text: 'Nothing to update',
+        isSuccess: false,
+      );
+    } else {
+      //update function
+    }
+  }
 
   @override
   void initState() {
     super.initState();
     _productsCubit = BlocProvider.of<ProductsCubit>(context);
-  }
-
-  @override
-  void didChangeDependencies() {
-    _productsCubit.selectedCategory = '';
-    super.didChangeDependencies();
+    nameController.text = widget.prodModel.title!;
+    descriptionController.text = widget.prodModel.description!;
+    priceController.text = widget.prodModel.price.toString();
+    _productsCubit.selectedCategory = widget.prodModel.category!.name!;
   }
 
   @override
@@ -51,70 +65,27 @@ class _AddProductButtonSheetBodyState extends State<AddProductButtonSheetBody> {
     super.dispose();
   }
 
-  String getCategoryId() {
-    return BlocProvider.of<CategoriesCubit>(context)
-        .allCategories
-        .where((e) => e.name == _productsCubit.selectedCategory)
-        .first
-        .id
-        .toString();
-  }
-
-  void _addProductByValidation() {
-    if (BlocProvider.of<UploadImageCubit>(context)
-            .imagesList
-            .indexWhere((e) => e.isNotEmpty) ==
-        -1) {
-      CustomDialog.show(
-        context: context,
-        text: 'All Images Required',
-        isSuccess: false,
-      );
-    } else if (nameController.text.isNullOrEmptyString() ||
-        descriptionController.text.isNullOrEmptyString()) {
-      CustomDialog.show(
-        context: context,
-        text: 'Name & Description Required',
-        isSuccess: false,
-      );
-    } else if (priceController.text.isNullOrEmptyString() ||
-        _productsCubit.selectedCategory.isNullOrEmptyString()) {
-      CustomDialog.show(
-        context: context,
-        text: 'Price & Category Required',
-        isSuccess: false,
-      );
-    } else {
-      _productsCubit.addProductGraphql(
-        title: nameController.text.trim(),
-        price: double.parse(priceController.text.trim()),
-        description: descriptionController.text.trim(),
-        categoryId: double.parse(getCategoryId()),
-        images: BlocProvider.of<UploadImageCubit>(context).imagesList,
-      );
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return ListView(
       shrinkWrap: true,
       children: [
         Text(
-          'Create New Product',
+          'Update Product',
           style: AppFonts.regular18LightBlue.copyWith(
             fontWeight: FontWeight.bold,
             fontSize: 22.sp,
           ),
         ),
         10.verticalSpace,
-        const AddProductImages(),
+        UpdateProductImages(prodModel: widget.prodModel),
         10.verticalSpace,
         CustomTextFormField(
           padding: 0,
           label: 'Product Name',
           maxLength: 50,
           controller: nameController,
+          textStyle: AppFonts.medium18Primary,
           keyBoard: TextInputType.text,
           filled: AppColors.lightGrey,
         ),
@@ -127,7 +98,8 @@ class _AddProductButtonSheetBodyState extends State<AddProductButtonSheetBody> {
           filled: AppColors.lightGrey,
           maxLines: 4,
           height: 150,
-          maxLength: 1000,
+          maxLength: 5000,
+          textStyle: AppFonts.medium18Primary.copyWith(),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -137,12 +109,14 @@ class _AddProductButtonSheetBodyState extends State<AddProductButtonSheetBody> {
               width: 140.w,
               child: CustomTextFormField(
                 padding: 0,
+                textStyle: AppFonts.medium18Primary.copyWith(fontSize: 20.sp),
                 height: 45,
-                label: 'Price (\$)',
+                label: 'Product Price',
                 maxLength: 50,
                 controller: priceController,
                 keyBoard: TextInputType.number,
                 filled: AppColors.lightGrey,
+                contentPadding: EdgeInsets.zero,
               ),
             ),
           ],
@@ -156,7 +130,7 @@ class _AddProductButtonSheetBodyState extends State<AddProductButtonSheetBody> {
                 _productsCubit.getProducts();
                 CustomDialog.show(
                   context: context,
-                  text: 'Product Created Successfully',
+                  text: 'Product Updated Successfully',
                 );
               },
               failureAddProduct: (message) => CustomDialog.awsomeError(
@@ -168,9 +142,9 @@ class _AddProductButtonSheetBodyState extends State<AddProductButtonSheetBody> {
           builder: (context, state) {
             return CustomButton(
               padding: 0,
-              text: 'Add Product',
+              text: 'Update Product',
               onPressed: () {
-                _addProductByValidation();
+                // _addProductByValidation();
                 // _productsCubit.addProductGraphql(
                 //   title: 'product test',
                 //   price: 11,

@@ -112,7 +112,7 @@ class ProductsCubit extends Cubit<ProductsState> {
     required List<String> images,
   }) async {
     emit(const ProductsState.loadingAddProduct());
-    final result = await productsRepo.addProductGraphql(CreateProductRequest(
+    final result = await productsRepo.addProductGraphql(AddProductRequest(
       title: title,
       price: price,
       description: description,

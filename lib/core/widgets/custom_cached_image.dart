@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mo_store/core/consts/app_colors.dart';
 import 'package:mo_store/core/helpers/extensions.dart';
+import 'package:mo_store/core/helpers/text_fonts.dart';
 import 'package:mo_store/core/widgets/custom_circular_loading.dart';
 
 class CustomCachedImage extends StatelessWidget {
@@ -65,9 +66,27 @@ class CustomCachedImage extends StatelessWidget {
           width: loadingCircle.w,
           color: loadingColor,
         ),
-        errorWidget: (context, url, error) => const Icon(
-          Icons.error,
-          color: AppColors.redAccent,
+        errorWidget: (context, url, error) => Container(
+          height: height,
+          width: width,
+          decoration: BoxDecoration(
+              color: AppColors.lightBlue.withOpacity(0.3),
+              borderRadius: BorderRadius.circular(border.r)),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Text(
+                'Something went wrong',
+                style: AppFonts.medium18Primary,
+                textAlign: TextAlign.center,
+              ),
+              Icon(
+                Icons.error,
+                color: AppColors.redAccent,
+                size: loadingCircle.r,
+              ),
+            ],
+          ),
         ),
       ),
     );

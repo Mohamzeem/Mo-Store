@@ -22,9 +22,9 @@ class ProductsRepo {
     }
   }
 
-  Future<ApiResult<void>> addProductGraphql(CreateProductRequest body) async {
+  Future<ApiResult<void>> addProductGraphql(AddProductRequest body) async {
     try {
-      final response = await homeDataSource.addProductGraphql();
+      final response = await homeDataSource.addProductGraphql(body);
       return ApiResult.success(response);
     } catch (e) {
       return ApiResult.failure(e.toString());

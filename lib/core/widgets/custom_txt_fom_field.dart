@@ -17,6 +17,8 @@ class CustomTextFormField extends StatelessWidget {
   final Color filled;
   final double height;
   final double padding;
+  final TextStyle? textStyle;
+  final EdgeInsetsGeometry? contentPadding;
   const CustomTextFormField({
     super.key,
     this.controller,
@@ -31,6 +33,8 @@ class CustomTextFormField extends StatelessWidget {
     this.filled = AppColors.white,
     this.height = 55,
     this.padding = 20,
+    this.textStyle,
+    this.contentPadding,
   });
 
   @override
@@ -48,10 +52,13 @@ class CustomTextFormField extends StatelessWidget {
           textInputAction: TextInputAction.done,
           obscureText: obscureText,
           maxLines: maxLines,
-          style: TextStyle(
-              fontSize: 20.sp,
-              color: AppColors.primaryColor,
-              fontWeight: FontWeight.w700),
+          textAlignVertical: TextAlignVertical.center,
+          textAlign: TextAlign.center,
+          style: textStyle ??
+              TextStyle(
+                  fontSize: 20.sp,
+                  color: AppColors.primaryColor,
+                  fontWeight: FontWeight.w700),
           decoration: InputDecoration(
             suffixIcon: suffixIconShow
                 ? InkWell(
@@ -67,13 +74,14 @@ class CustomTextFormField extends StatelessWidget {
                           ),
                   )
                 : const SizedBox(),
-            contentPadding:
+            contentPadding: contentPadding ??
                 EdgeInsets.symmetric(horizontal: 10.w, vertical: 12.h),
             fillColor: AppColors.white,
             filled: true,
             label: Text(
               label,
               style: AppFonts.regular18LightBlue,
+              overflow: TextOverflow.fade,
             ),
             border: const OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(16)),

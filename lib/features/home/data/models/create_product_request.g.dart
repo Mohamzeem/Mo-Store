@@ -6,9 +6,8 @@ part of 'create_product_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-CreateProductRequest _$CreateProductRequestFromJson(
-        Map<String, dynamic> json) =>
-    CreateProductRequest(
+AddProductRequest _$AddProductRequestFromJson(Map<String, dynamic> json) =>
+    AddProductRequest(
       title: json['title'] as String?,
       description: json['description'] as String?,
       price: (json['price'] as num?)?.toDouble(),
@@ -17,8 +16,7 @@ CreateProductRequest _$CreateProductRequestFromJson(
           (json['images'] as List<dynamic>?)?.map((e) => e as String).toList(),
     );
 
-Map<String, dynamic> _$CreateProductRequestToJson(
-        CreateProductRequest instance) =>
+Map<String, dynamic> _$AddProductRequestToJson(AddProductRequest instance) =>
     <String, dynamic>{
       'title': instance.title,
       'description': instance.description,

@@ -5,7 +5,6 @@ import 'package:mo_store/core/app/upload_image/logic/upload_image/upload_image_c
 import 'package:mo_store/core/helpers/btn_sheet.dart';
 import 'package:mo_store/core/widgets/custom_button.dart';
 import 'package:mo_store/features/admin/view/admin/widegts/admin_app_bar.dart';
-import 'package:mo_store/features/admin/view/categories/widgets/all_categories_list.dart';
 import 'package:mo_store/features/admin/view/products/widgets/add_prod_btn_body.dart';
 import 'package:mo_store/features/admin/view/products/widgets/all_prods_list.dart';
 import 'package:mo_store/features/admin/view/products/widgets/all_prods_text_search.dart';

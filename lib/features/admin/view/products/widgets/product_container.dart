@@ -10,6 +10,7 @@ import 'package:mo_store/core/widgets/custom_cached_image.dart';
 import 'package:mo_store/core/widgets/custom_container_icon.dart';
 import 'package:mo_store/features/admin/view/categories/widgets/del_categ_btn_body.dart';
 import 'package:mo_store/features/admin/view/categories/widgets/update_category_btn_body.dart';
+import 'package:mo_store/features/admin/view/products/widgets/update_prod_btn_body.dart';
 import 'package:mo_store/features/home/data/models/products_response.dart';
 
 class ProductContainer extends StatelessWidget {
@@ -37,6 +38,7 @@ class ProductContainer extends StatelessWidget {
               shape: BoxShape.rectangle,
               fit: BoxFit.fill,
               border: 20,
+              loadingCircle: 40,
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.h),
@@ -45,7 +47,7 @@ class ProductContainer extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: 200.w,
+                    width: 195.w,
                     child: Center(
                       child: Text(
                         productModel.title!,
@@ -56,8 +58,8 @@ class ProductContainer extends StatelessWidget {
                     ),
                   ),
                   8.verticalSpace,
-                  SizedBox(
-                    width: 200.w,
+                  FittedBox(
+                    // width: 200.w,
                     child: Center(
                       child: Text(
                         '${productModel.price!} \$',
@@ -73,15 +75,15 @@ class ProductContainer extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap: () {
-                          // AppFunctions.addShowBtmSheet(
-                          //   context: context,
-                          //   body: BlocProvider(
-                          //     create: (context) => di<UploadImageCubit>(),
-                          //     child: UpdateCategoryButtonSheetBody(
-                          //       categoriesModel: categoriesModel,
-                          //     ),
-                          //   ),
-                          // );
+                          AppFunctions.addShowBtmSheet(
+                            context: context,
+                            body: BlocProvider(
+                              create: (context) => di<UploadImageCubit>(),
+                              child: UpdateProductButtonSheetBody(
+                                prodModel: productModel,
+                              ),
+                            ),
+                          );
                         },
                         child: const CustomContainerIcon(
                           containerSize: 35,

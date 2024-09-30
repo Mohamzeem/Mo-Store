@@ -27,10 +27,10 @@ class GraphQlProductsQueries {
     };
   }
 
-  Map<String, dynamic> addProductsMapQuery(CreateProductRequest body) {
+  Map<String, dynamic> addProductsMapQuery(AddProductRequest body) {
     return {
       'query': r'''
-          mutation CreateProduct($title: String!, $price: Float!, $description:String!, $categoryId: Float!,$imagesList:[String!]!  ) {
+          mutation CreateProduct($title: String!, $price: Float!, $description:String!, $categoryId: Float!,$imagesList:[String!]!) {
               addProduct(
                 data: {
                   title: $title,

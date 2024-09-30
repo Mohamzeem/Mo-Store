@@ -3,13 +3,13 @@ import 'package:json_annotation/json_annotation.dart';
 part 'create_product_request.g.dart';
 
 @JsonSerializable()
-class CreateProductRequest {
+class AddProductRequest {
   String? title;
   String? description;
   double? price;
   double? categoryId;
   List<String>? images;
-  CreateProductRequest({
+  AddProductRequest({
     this.title,
     this.description,
     this.price,
@@ -17,5 +17,5 @@ class CreateProductRequest {
     this.images,
   });
 
-  Map<String, dynamic> toJson() => _$CreateProductRequestToJson(this);
+  Map<String, dynamic> toJson() => _$AddProductRequestToJson(this);
 }
